@@ -1,0 +1,1145 @@
+{
+  "buildId": "plt-resident-tight-interval-2026-10-13.5",
+  "executionRequested": false,
+  "actualGPUExecuted": false,
+  "allPass": true,
+  "status": "passed",
+  "backend": "null",
+  "nodeVersion": "v24.19.0",
+  "vulkanICD": null,
+  "fullCPUShadowRequired": true,
+  "physicalGPUValidated": false,
+  "browserValidated": false,
+  "hardwarePerformanceClaim": false,
+  "modes": [
+    {
+      "id": "anchor-batched",
+      "guard": "axis-mirror-anchor",
+      "axisSubmission": "batched"
+    },
+    {
+      "id": "anchor-round",
+      "guard": "axis-mirror-anchor",
+      "axisSubmission": "round"
+    },
+    {
+      "id": "tight-batched",
+      "guard": "axis-mirror-tight",
+      "axisSubmission": "batched"
+    },
+    {
+      "id": "tight-round",
+      "guard": "axis-mirror-tight",
+      "axisSubmission": "round"
+    }
+  ],
+  "baseline": {
+    "file": "plt-resident-anchor-validation.json",
+    "commit": "72fe8da5df129ab22aaa2940586d9811cb6face3",
+    "buildId": "plt-resident-anchor-interval-2026-10-13.4",
+    "sha256": "e8410d3a98149bb53eed8d57e17d266fb9285abdabc52fa663cbb05c77a0adff",
+    "mode": "anchor-batched",
+    "fixtureDefinitionSHA256": "e95b5afeb6615d15b813e271898e50bf2ca8bbd5a8eeac4fee3c774929af40f4",
+    "paths": 4608,
+    "replayPaths": 1596,
+    "retainedMirrorPaths": 2913
+  },
+  "testSHA256": "e7f80a17e065465991ac089b545e6450b3393100df95602d7000d6c150be083f",
+  "sourceSHA256": {
+    "utd-functions.wgsl": "47b811d100d8385e8191c655908d97825b8211b5cba7a0c06d160991f65939cb",
+    "plt-resident-geometry.wgsl": "8b006b17e100bfa1633a801c4f62c87ecefabf89a4488f0ad7b3235223e6d180",
+    "plt-resident-interval.wgsl": "34069064ed22208adefc9224d7ba8ac99c49506660dbbf5297c3fb5cf438f0f2",
+    "plt-resident-axis-guard.wgsl": "794469d7223bcbad443fa088aaa7610f9e4c87443496fa8be1a49801bd06893f",
+    "plt-resident-rng.wgsl": "0e693465e3e85039c5135b6d34f0e5d1762aebf528c9d57d5d1b24e3c7bab3b4",
+    "plt-resident-fsd.wgsl": "6873cbd1533da35650b2f9f79e09dd136c8ac4e07a168f64de1c4df98f759d7a",
+    "plt-resident-walker.wgsl": "2fa2f1e966cdfc33b8462d8872f45261372ea9333ec56bd7581b3d74ab214c06"
+  },
+  "hostSHA256": {
+    "plt-resident-gpu.js": "f7580b2cf3b8f7de8089d0a7103890330370b155719203324c484660f7170a72",
+    "plt-resident-geometry.js": "14a4d9b58c46dcda6e393c3ab8525fd757afa63d68a6ff137f3622753fb8e628",
+    "plt-resident-recovery.js": "badc2c28f472875f9746fbe579041d37820084edbbc625b6fb641957d16fb1d4",
+    "plt-resident-reference.js": "14449de794afc79ca5ee2f2645d48274ce71b57f2ab55aa7e7280f3eb5e1acc2",
+    "plt-core.js": "f15c8ff265ddb44fe7b27bf3c8dfd24f52c77014cdfd0c21f1d6a29f0998bef0"
+  },
+  "cpuFixtures": [
+    {
+      "name": "one-mirror-emission",
+      "seeds": [
+        7391,
+        1,
+        3735928559
+      ],
+      "paths": 576,
+      "mirrorPaths": 576,
+      "contributions": 576,
+      "escapes": 0,
+      "expectedRadiance": 4,
+      "mirrors": 1,
+      "eligibility": {
+        "eligible": true,
+        "globalKappa": 1.0000001192092896,
+        "domain": "at most64 exact-f32 axis triangles on 2^-16 source/rebase grid; abs world/local <=256; min feature >=2^-12; area cancellation <=16",
+        "assumption": "normal binary64 basic arithmetic; Math.hypot relative error <=16*2^-53; full shadow still required"
+      },
+      "sourceNormals": [
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      "scale": 1,
+      "translation": [
+        0,
+        0,
+        0
+      ],
+      "permutation": [
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "name": "eighth-scale-one-mirror-emission",
+      "seeds": [
+        7391
+      ],
+      "paths": 192,
+      "mirrorPaths": 192,
+      "contributions": 192,
+      "escapes": 0,
+      "expectedRadiance": 4,
+      "mirrors": 1,
+      "eligibility": {
+        "eligible": true,
+        "globalKappa": 1.0000001192092896,
+        "domain": "at most64 exact-f32 axis triangles on 2^-16 source/rebase grid; abs world/local <=256; min feature >=2^-12; area cancellation <=16",
+        "assumption": "normal binary64 basic arithmetic; Math.hypot relative error <=16*2^-53; full shadow still required"
+      },
+      "sourceNormals": [
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      "scale": 0.125,
+      "translation": [
+        0,
+        0,
+        0
+      ],
+      "permutation": [
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "name": "two-mirrors-emission",
+      "seeds": [
+        7391,
+        1,
+        3735928559
+      ],
+      "paths": 576,
+      "mirrorPaths": 576,
+      "contributions": 576,
+      "escapes": 0,
+      "expectedRadiance": 3,
+      "mirrors": 2,
+      "eligibility": {
+        "eligible": true,
+        "globalKappa": 1.0000001192092896,
+        "domain": "at most64 exact-f32 axis triangles on 2^-16 source/rebase grid; abs world/local <=256; min feature >=2^-12; area cancellation <=16",
+        "assumption": "normal binary64 basic arithmetic; Math.hypot relative error <=16*2^-53; full shadow still required"
+      },
+      "sourceNormals": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      "scale": 1,
+      "translation": [
+        0,
+        0,
+        0
+      ],
+      "permutation": [
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "name": "quarter-scale-shifted-yzx",
+      "seeds": [
+        7391,
+        1,
+        3735928559
+      ],
+      "paths": 576,
+      "mirrorPaths": 576,
+      "contributions": 576,
+      "escapes": 0,
+      "expectedRadiance": 3,
+      "mirrors": 2,
+      "eligibility": {
+        "eligible": true,
+        "globalKappa": 1.0000001192092896,
+        "domain": "at most64 exact-f32 axis triangles on 2^-16 source/rebase grid; abs world/local <=256; min feature >=2^-12; area cancellation <=16",
+        "assumption": "normal binary64 basic arithmetic; Math.hypot relative error <=16*2^-53; full shadow still required"
+      },
+      "sourceNormals": [
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ]
+      ],
+      "scale": 0.25,
+      "translation": [
+        16,
+        -8,
+        32
+      ],
+      "permutation": [
+        1,
+        2,
+        0
+      ]
+    },
+    {
+      "name": "four-scale-shifted-zxy",
+      "seeds": [
+        7391
+      ],
+      "paths": 192,
+      "mirrorPaths": 192,
+      "contributions": 192,
+      "escapes": 0,
+      "expectedRadiance": 3,
+      "mirrors": 2,
+      "eligibility": {
+        "eligible": true,
+        "globalKappa": 1.0000001192092896,
+        "domain": "at most64 exact-f32 axis triangles on 2^-16 source/rebase grid; abs world/local <=256; min feature >=2^-12; area cancellation <=16",
+        "assumption": "normal binary64 basic arithmetic; Math.hypot relative error <=16*2^-53; full shadow still required"
+      },
+      "sourceNormals": [
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0
+        ]
+      ],
+      "scale": 4,
+      "translation": [
+        -32,
+        16,
+        -8
+      ],
+      "permutation": [
+        2,
+        0,
+        1
+      ]
+    },
+    {
+      "name": "one-mirror-escape",
+      "seeds": [
+        7391
+      ],
+      "paths": 192,
+      "mirrorPaths": 192,
+      "contributions": 0,
+      "escapes": 192,
+      "expectedRadiance": 0,
+      "mirrors": 1,
+      "eligibility": {
+        "eligible": true,
+        "globalKappa": 1.0000001192092896,
+        "domain": "at most64 exact-f32 axis triangles on 2^-16 source/rebase grid; abs world/local <=256; min feature >=2^-12; area cancellation <=16",
+        "assumption": "normal binary64 basic arithmetic; Math.hypot relative error <=16*2^-53; full shadow still required"
+      },
+      "sourceNormals": [
+        [
+          0,
+          0,
+          -1
+        ],
+        [
+          0,
+          0,
+          -1
+        ]
+      ],
+      "scale": 1,
+      "translation": [
+        0,
+        0,
+        0
+      ],
+      "permutation": [
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "name": "seam-after-mirror",
+      "seeds": [
+        7391
+      ],
+      "paths": 192,
+      "mirrorPaths": 192,
+      "contributions": 192,
+      "escapes": 0,
+      "expectedRadiance": 4,
+      "mirrors": 1,
+      "eligibility": {
+        "eligible": true,
+        "globalKappa": 1.0000001192092896,
+        "domain": "at most64 exact-f32 axis triangles on 2^-16 source/rebase grid; abs world/local <=256; min feature >=2^-12; area cancellation <=16",
+        "assumption": "normal binary64 basic arithmetic; Math.hypot relative error <=16*2^-53; full shadow still required"
+      },
+      "sourceNormals": [
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      "scale": 1,
+      "translation": [
+        0,
+        0,
+        0
+      ],
+      "permutation": [
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "name": "grazing-mirror-escape",
+      "seeds": [
+        7391
+      ],
+      "paths": 192,
+      "mirrorPaths": 92,
+      "contributions": 0,
+      "escapes": 192,
+      "expectedRadiance": 0,
+      "mirrors": 1,
+      "eligibility": {
+        "eligible": true,
+        "globalKappa": 1.0000001192092896,
+        "domain": "at most64 exact-f32 axis triangles on 2^-16 source/rebase grid; abs world/local <=256; min feature >=2^-12; area cancellation <=16",
+        "assumption": "normal binary64 basic arithmetic; Math.hypot relative error <=16*2^-53; full shadow still required"
+      },
+      "sourceNormals": [
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      "scale": 1,
+      "translation": [
+        0,
+        0,
+        0
+      ],
+      "permutation": [
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "name": "near-threshold-mirror",
+      "seeds": [
+        7391
+      ],
+      "paths": 192,
+      "mirrorPaths": 192,
+      "contributions": 0,
+      "escapes": 192,
+      "expectedRadiance": 0,
+      "mirrors": 1,
+      "eligibility": {
+        "eligible": true,
+        "globalKappa": 1.0000001192092896,
+        "domain": "at most64 exact-f32 axis triangles on 2^-16 source/rebase grid; abs world/local <=256; min feature >=2^-12; area cancellation <=16",
+        "assumption": "normal binary64 basic arithmetic; Math.hypot relative error <=16*2^-53; full shadow still required"
+      },
+      "sourceNormals": [
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      "scale": 1,
+      "translation": [
+        0,
+        0,
+        0
+      ],
+      "permutation": [
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "name": "below-near-mirror",
+      "seeds": [
+        7391
+      ],
+      "paths": 192,
+      "mirrorPaths": 0,
+      "contributions": 0,
+      "escapes": 192,
+      "expectedRadiance": 0,
+      "mirrors": 1,
+      "eligibility": {
+        "eligible": true,
+        "globalKappa": 1.0000001192092896,
+        "domain": "at most64 exact-f32 axis triangles on 2^-16 source/rebase grid; abs world/local <=256; min feature >=2^-12; area cancellation <=16",
+        "assumption": "normal binary64 basic arithmetic; Math.hypot relative error <=16*2^-53; full shadow still required"
+      },
+      "sourceNormals": [
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      "scale": 1,
+      "translation": [
+        0,
+        0,
+        0
+      ],
+      "permutation": [
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "name": "long-distance-mirror",
+      "seeds": [
+        7391
+      ],
+      "paths": 192,
+      "mirrorPaths": 96,
+      "contributions": 0,
+      "escapes": 192,
+      "expectedRadiance": 0,
+      "mirrors": 1,
+      "eligibility": {
+        "eligible": true,
+        "globalKappa": 1.0000001192092896,
+        "domain": "at most64 exact-f32 axis triangles on 2^-16 source/rebase grid; abs world/local <=256; min feature >=2^-12; area cancellation <=16",
+        "assumption": "normal binary64 basic arithmetic; Math.hypot relative error <=16*2^-53; full shadow still required"
+      },
+      "sourceNormals": [
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      "scale": 1,
+      "translation": [
+        0,
+        0,
+        0
+      ],
+      "permutation": [
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "name": "unsupported-tilted-mirror",
+      "seeds": [
+        7391
+      ],
+      "paths": 192,
+      "mirrorPaths": 192,
+      "contributions": 192,
+      "escapes": 0,
+      "mirrors": 1,
+      "eligibility": {
+        "eligible": false,
+        "globalKappa": 1.0000001192092896,
+        "domain": "at most64 exact-f32 axis triangles on 2^-16 source/rebase grid; abs world/local <=256; min feature >=2^-12; area cancellation <=16",
+        "assumption": "normal binary64 basic arithmetic; Math.hypot relative error <=16*2^-53; full shadow still required"
+      },
+      "sourceNormals": [
+        [
+          0,
+          -0.0039062201980186685,
+          0.9999923706927791
+        ],
+        [
+          0,
+          -0.0039062201980186685,
+          0.9999923706927791
+        ],
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      "scale": 1,
+      "translation": [
+        0,
+        0,
+        0
+      ],
+      "permutation": [
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "name": "unsupported-decimal-world",
+      "seeds": [
+        7391
+      ],
+      "paths": 192,
+      "mirrorPaths": 192,
+      "contributions": 192,
+      "escapes": 0,
+      "expectedRadiance": 4,
+      "mirrors": 1,
+      "eligibility": {
+        "eligible": false,
+        "globalKappa": 1.0000001192092896,
+        "domain": "at most64 exact-f32 axis triangles on 2^-16 source/rebase grid; abs world/local <=256; min feature >=2^-12; area cancellation <=16",
+        "assumption": "normal binary64 basic arithmetic; Math.hypot relative error <=16*2^-53; full shadow still required"
+      },
+      "sourceNormals": [
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      "scale": 1,
+      "translation": [
+        0.1,
+        0.1,
+        0.1
+      ],
+      "permutation": [
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "name": "half-scale-three-mirrors-negative-permutation",
+      "seeds": [
+        7391,
+        1,
+        3735928559
+      ],
+      "paths": 576,
+      "mirrorPaths": 576,
+      "contributions": 576,
+      "escapes": 0,
+      "expectedRadiance": 0.75,
+      "mirrors": 3,
+      "eligibility": {
+        "eligible": true,
+        "globalKappa": 1.0000001192092896,
+        "domain": "at most64 exact-f32 axis triangles on 2^-16 source/rebase grid; abs world/local <=256; min feature >=2^-12; area cancellation <=16",
+        "assumption": "normal binary64 basic arithmetic; Math.hypot relative error <=16*2^-53; full shadow still required"
+      },
+      "sourceNormals": [
+        [
+          0,
+          0,
+          -1
+        ],
+        [
+          0,
+          0,
+          -1
+        ],
+        [
+          -1,
+          0,
+          0
+        ],
+        [
+          -1,
+          0,
+          0
+        ],
+        [
+          0,
+          -1,
+          0
+        ],
+        [
+          0,
+          -1,
+          0
+        ],
+        [
+          -1,
+          0,
+          0
+        ],
+        [
+          -1,
+          0,
+          0
+        ]
+      ],
+      "scale": 0.5,
+      "translation": [
+        -16,
+        8,
+        -32
+      ],
+      "permutation": [
+        2,
+        1,
+        0
+      ]
+    },
+    {
+      "name": "small-grid-two-mirrors",
+      "seeds": [
+        7391
+      ],
+      "paths": 192,
+      "mirrorPaths": 192,
+      "contributions": 192,
+      "escapes": 0,
+      "expectedRadiance": 3,
+      "mirrors": 2,
+      "eligibility": {
+        "eligible": true,
+        "globalKappa": 1.0000001192092896,
+        "domain": "at most64 exact-f32 axis triangles on 2^-16 source/rebase grid; abs world/local <=256; min feature >=2^-12; area cancellation <=16",
+        "assumption": "normal binary64 basic arithmetic; Math.hypot relative error <=16*2^-53; full shadow still required"
+      },
+      "sourceNormals": [
+        [
+          -1,
+          0,
+          0
+        ],
+        [
+          -1,
+          0,
+          0
+        ],
+        [
+          0,
+          -1,
+          0
+        ],
+        [
+          0,
+          -1,
+          0
+        ],
+        [
+          0,
+          -1,
+          0
+        ],
+        [
+          0,
+          -1,
+          0
+        ]
+      ],
+      "scale": 0.015625,
+      "translation": [
+        1,
+        -2,
+        3
+      ],
+      "permutation": [
+        0,
+        2,
+        1
+      ]
+    },
+    {
+      "name": "eight-scale-two-mirrors",
+      "seeds": [
+        7391
+      ],
+      "paths": 192,
+      "mirrorPaths": 192,
+      "contributions": 192,
+      "escapes": 0,
+      "expectedRadiance": 3,
+      "mirrors": 2,
+      "eligibility": {
+        "eligible": true,
+        "globalKappa": 1.0000001192092896,
+        "domain": "at most64 exact-f32 axis triangles on 2^-16 source/rebase grid; abs world/local <=256; min feature >=2^-12; area cancellation <=16",
+        "assumption": "normal binary64 basic arithmetic; Math.hypot relative error <=16*2^-53; full shadow still required"
+      },
+      "sourceNormals": [
+        [
+          0,
+          -1,
+          0
+        ],
+        [
+          0,
+          -1,
+          0
+        ],
+        [
+          0,
+          0,
+          -1
+        ],
+        [
+          0,
+          0,
+          -1
+        ],
+        [
+          0,
+          0,
+          -1
+        ],
+        [
+          0,
+          0,
+          -1
+        ]
+      ],
+      "scale": 8,
+      "translation": [
+        16,
+        -16,
+        0
+      ],
+      "permutation": [
+        1,
+        0,
+        2
+      ]
+    }
+  ],
+  "cpuFixtureCorpusMatchesV20": true,
+  "selectedFixtures": [
+    "one-mirror-emission",
+    "eighth-scale-one-mirror-emission",
+    "two-mirrors-emission",
+    "quarter-scale-shifted-yzx",
+    "four-scale-shifted-zxy",
+    "one-mirror-escape",
+    "seam-after-mirror",
+    "grazing-mirror-escape",
+    "near-threshold-mirror",
+    "below-near-mirror",
+    "long-distance-mirror",
+    "unsupported-tilted-mirror",
+    "unsupported-decimal-world",
+    "half-scale-three-mirrors-negative-permutation",
+    "small-grid-two-mirrors",
+    "eight-scale-two-mirrors"
+  ],
+  "fullFixtureSuite": true,
+  "cases": [
+    {
+      "name": "one-mirror-emission",
+      "setupWallMs": 249.68102299999998,
+      "adapter": {
+        "vendor": "",
+        "architecture": "",
+        "device": "null-backend",
+        "description": "",
+        "isFallbackAdapter": false
+      },
+      "eligibility": {
+        "eligible": true,
+        "globalKappa": 1.0000001192092896,
+        "domain": "at most64 exact-f32 axis triangles on 2^-16 source/rebase grid; abs world/local <=256; min feature >=2^-12; area cancellation <=16",
+        "assumption": "normal binary64 basic arithmetic; Math.hypot relative error <=16*2^-53; full shadow still required"
+      },
+      "batches": []
+    },
+    {
+      "name": "eighth-scale-one-mirror-emission",
+      "setupWallMs": 8.432867999999985,
+      "adapter": {
+        "vendor": "",
+        "architecture": "",
+        "device": "null-backend",
+        "description": "",
+        "isFallbackAdapter": false
+      },
+      "eligibility": {
+        "eligible": true,
+        "globalKappa": 1.0000001192092896,
+        "domain": "at most64 exact-f32 axis triangles on 2^-16 source/rebase grid; abs world/local <=256; min feature >=2^-12; area cancellation <=16",
+        "assumption": "normal binary64 basic arithmetic; Math.hypot relative error <=16*2^-53; full shadow still required"
+      },
+      "batches": []
+    }
+  ],
+  "limitations": [
+    "Mandatory complete independent CPU shadow; no numerical geometry replacement",
+    "Four modes use one shared tight-compiled runner per fixture; anchor mode skips tight proof arithmetic, not a separately compiled historical v20 runner",
+    "Batched/round pairing changes only submission grouping and retains per-lane-round status/replay checkpoints",
+    "Compile/setup, full CPU shadow, renderer wall time, replay, readbacks and admission are reported separately",
+    "Descriptive software-adapter execution does not establish browser or physical-GPU performance"
+  ],
+  "nativeDeviceReuse": {
+    "enabled": true,
+    "sequentialLeases": true,
+    "realExecutionPreserved": true,
+    "scope": "Test harness only; shared shader/pipeline/device setup, genuine per-scene buffers/bind groups/dispatch/readback/error scopes",
+    "adapterRequests": 2,
+    "realAdapterRequests": 1,
+    "deviceLeases": 2,
+    "realDeviceRequests": 1,
+    "releasedLeases": 2,
+    "realDeviceDestroyCalls": 1,
+    "shaderHits": 1,
+    "shaderMisses": 1,
+    "pipelineHits": 11,
+    "pipelineMisses": 11,
+    "shaderEntries": [
+      {
+        "descriptorSHA256": "36b22496211c7b8e81602e283f3e862d4dafade7ca365c18c7d092fe87b04b01",
+        "sourceSHA256": "5a1d4ee4137cf8be22fbe094a53ea6253972934e2c72b8ab23b154d6228e1f2f",
+        "label": "Experimental resident 3D PLT shadow walker",
+        "sourceBytes": 143895
+      }
+    ],
+    "pipelineEntries": [
+      {
+        "keySHA256": "743485a9a33b6844db67b6018a8944cee5c35d7b0bac9efb8dcdb9510f889d38",
+        "sourceSHA256": "5a1d4ee4137cf8be22fbe094a53ea6253972934e2c72b8ab23b154d6228e1f2f",
+        "shaderDescriptorSHA256": "36b22496211c7b8e81602e283f3e862d4dafade7ca365c18c7d092fe87b04b01",
+        "label": null,
+        "layout": "auto",
+        "entryPoint": "rr_init_anchored",
+        "constants": {
+          "RR_AXIS_INTERVAL_ENABLED": 1,
+          "RR_ANCHOR_ENABLED": 1,
+          "RR_TIGHT_ENABLED": 1
+        }
+      },
+      {
+        "keySHA256": "0e3155991163e1b7bee787f0b17f261e378c4d5c4c72efa5eb91d02b21f21633",
+        "sourceSHA256": "5a1d4ee4137cf8be22fbe094a53ea6253972934e2c72b8ab23b154d6228e1f2f",
+        "shaderDescriptorSHA256": "36b22496211c7b8e81602e283f3e862d4dafade7ca365c18c7d092fe87b04b01",
+        "label": null,
+        "layout": "auto",
+        "entryPoint": "rr_traverse_step",
+        "constants": {
+          "RR_AXIS_INTERVAL_ENABLED": 1,
+          "RR_ANCHOR_ENABLED": 1,
+          "RR_TIGHT_ENABLED": 1
+        }
+      },
+      {
+        "keySHA256": "76549250ab99074f1b3ebdb793d30a77d2ee8ee70d82c15112badb4384a330e4",
+        "sourceSHA256": "5a1d4ee4137cf8be22fbe094a53ea6253972934e2c72b8ab23b154d6228e1f2f",
+        "shaderDescriptorSHA256": "36b22496211c7b8e81602e283f3e862d4dafade7ca365c18c7d092fe87b04b01",
+        "label": null,
+        "layout": "auto",
+        "entryPoint": "rr_anchor_init_step",
+        "constants": {
+          "RR_AXIS_INTERVAL_ENABLED": 1,
+          "RR_ANCHOR_ENABLED": 1,
+          "RR_TIGHT_ENABLED": 1
+        }
+      },
+      {
+        "keySHA256": "42ebd1ebd9fdc6cffb2d52a6c435d798d74783c91ea409e1ba0238697a088114",
+        "sourceSHA256": "5a1d4ee4137cf8be22fbe094a53ea6253972934e2c72b8ab23b154d6228e1f2f",
+        "shaderDescriptorSHA256": "36b22496211c7b8e81602e283f3e862d4dafade7ca365c18c7d092fe87b04b01",
+        "label": null,
+        "layout": "auto",
+        "entryPoint": "rr_anchor_prepare_step",
+        "constants": {
+          "RR_AXIS_INTERVAL_ENABLED": 1,
+          "RR_ANCHOR_ENABLED": 1,
+          "RR_TIGHT_ENABLED": 1
+        }
+      },
+      {
+        "keySHA256": "9e00a862721bded54a2b33c3f1a683decec36ff73db8853e0671ba9086d6901f",
+        "sourceSHA256": "5a1d4ee4137cf8be22fbe094a53ea6253972934e2c72b8ab23b154d6228e1f2f",
+        "shaderDescriptorSHA256": "36b22496211c7b8e81602e283f3e862d4dafade7ca365c18c7d092fe87b04b01",
+        "label": null,
+        "layout": "auto",
+        "entryPoint": "rr_anchor_plane_step",
+        "constants": {
+          "RR_AXIS_INTERVAL_ENABLED": 1,
+          "RR_ANCHOR_ENABLED": 1,
+          "RR_TIGHT_ENABLED": 1
+        }
+      },
+      {
+        "keySHA256": "368d8b4248e5a5518b9c78c2a57fc1f8a5605eca26b27b94f17f19ceff664338",
+        "sourceSHA256": "5a1d4ee4137cf8be22fbe094a53ea6253972934e2c72b8ab23b154d6228e1f2f",
+        "shaderDescriptorSHA256": "36b22496211c7b8e81602e283f3e862d4dafade7ca365c18c7d092fe87b04b01",
+        "label": null,
+        "layout": "auto",
+        "entryPoint": "rr_axis_scan_step",
+        "constants": {
+          "RR_AXIS_INTERVAL_ENABLED": 1,
+          "RR_ANCHOR_ENABLED": 1,
+          "RR_TIGHT_ENABLED": 1
+        }
+      },
+      {
+        "keySHA256": "be5722c821f04efd3cd95233c4519c0ea1f83c7809d077216ba07821227500f6",
+        "sourceSHA256": "5a1d4ee4137cf8be22fbe094a53ea6253972934e2c72b8ab23b154d6228e1f2f",
+        "shaderDescriptorSHA256": "36b22496211c7b8e81602e283f3e862d4dafade7ca365c18c7d092fe87b04b01",
+        "label": null,
+        "layout": "auto",
+        "entryPoint": "rr_anchor_point_step",
+        "constants": {
+          "RR_AXIS_INTERVAL_ENABLED": 1,
+          "RR_ANCHOR_ENABLED": 1,
+          "RR_TIGHT_ENABLED": 1
+        }
+      },
+      {
+        "keySHA256": "2a84c4b72206afbb92be40547875a3d38e150e4278ada563c7cb2f0943e5be94",
+        "sourceSHA256": "5a1d4ee4137cf8be22fbe094a53ea6253972934e2c72b8ab23b154d6228e1f2f",
+        "shaderDescriptorSHA256": "36b22496211c7b8e81602e283f3e862d4dafade7ca365c18c7d092fe87b04b01",
+        "label": null,
+        "layout": "auto",
+        "entryPoint": "rr_anchor_finish_step",
+        "constants": {
+          "RR_AXIS_INTERVAL_ENABLED": 1,
+          "RR_ANCHOR_ENABLED": 1,
+          "RR_TIGHT_ENABLED": 1
+        }
+      },
+      {
+        "keySHA256": "b4edfffbbbf64a2fc0a17a40d3ed4b549b0a7f1a21247ac48e7746932d8512e3",
+        "sourceSHA256": "5a1d4ee4137cf8be22fbe094a53ea6253972934e2c72b8ab23b154d6228e1f2f",
+        "shaderDescriptorSHA256": "36b22496211c7b8e81602e283f3e862d4dafade7ca365c18c7d092fe87b04b01",
+        "label": null,
+        "layout": "auto",
+        "entryPoint": "rr_records_step",
+        "constants": {
+          "RR_AXIS_INTERVAL_ENABLED": 1,
+          "RR_ANCHOR_ENABLED": 1,
+          "RR_TIGHT_ENABLED": 1
+        }
+      },
+      {
+        "keySHA256": "7d5ff6103040d4ad85ba303d3912229b43b9f4a97dfa279c81c8388e1b7433d2",
+        "sourceSHA256": "5a1d4ee4137cf8be22fbe094a53ea6253972934e2c72b8ab23b154d6228e1f2f",
+        "shaderDescriptorSHA256": "36b22496211c7b8e81602e283f3e862d4dafade7ca365c18c7d092fe87b04b01",
+        "label": null,
+        "layout": "auto",
+        "entryPoint": "rr_operator_step",
+        "constants": {
+          "RR_AXIS_INTERVAL_ENABLED": 1,
+          "RR_ANCHOR_ENABLED": 1,
+          "RR_TIGHT_ENABLED": 1
+        }
+      },
+      {
+        "keySHA256": "b295832bf723509b2081cb322d7de7d1bcd6043f92015c596be20d3cfe81c492",
+        "sourceSHA256": "5a1d4ee4137cf8be22fbe094a53ea6253972934e2c72b8ab23b154d6228e1f2f",
+        "shaderDescriptorSHA256": "36b22496211c7b8e81602e283f3e862d4dafade7ca365c18c7d092fe87b04b01",
+        "label": null,
+        "layout": "auto",
+        "entryPoint": "rr_scatter_step",
+        "constants": {
+          "RR_AXIS_INTERVAL_ENABLED": 1,
+          "RR_ANCHOR_ENABLED": 1,
+          "RR_TIGHT_ENABLED": 1
+        }
+      }
+    ],
+    "shaderCreationWallMs": 39.68292399999996,
+    "pipelineCreationWallMs": 195.77580100000011
+  }
+}

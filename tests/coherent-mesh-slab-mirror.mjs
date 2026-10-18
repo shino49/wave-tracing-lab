@@ -1,0 +1,27 @@
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import {executeCoherentMeshTask,prepareCoherentMeshTask} from '../dist/coherent-mesh-runtime.js';
+import {compileCoherentSource,evaluateGeometricRoutes} from '../dist/coherent-mesh-core.js';
+import {prepareCoherentSpectralSample,evaluateCoherentSpectralTemplate} from '../dist/coherent-mesh-spectral-templates.js';
+import {projectCoherentSurfaceRoutes} from '../dist/coherent-mesh-camera.js';
+const scene=JSON.parse(fs.readFileSync('dist/examples/coherent-slab-mirror.json','utf8'));
+const base={scene,measurement:'detector',resolution:16,pixelQuadrature:1,backend:'cpu',spectralSamples:16};
+const p=prepareCoherentMeshTask(base),compiled=compileCoherentSource(p.scene,scene.source),b=scene.detector.center;
+const t=prepareCoherentSpectralSample(p.scene,compiled,b),r=t.routes.find(r=>r.interactionOrder==='TT-R');assert(r);assert.equal(r.kind,'transmission');assert.equal(t.templates.find(x=>x.route===r).kind,3);
+assert.equal(t.slabDiagnostics.possibleUnsupportedReflectedSlab,false);
+const near=(a,b,tol=2e-10)=>assert(Math.abs(a-b)<tol*Math.max(1,Math.abs(b)),`${a} != ${b}`);
+const projection=projectCoherentSurfaceRoutes(t,b,[0,0,-1]),index=t.routes.indexOf(r),last=r.vertices.at(-2),cos=(b[2]-last[2])/Math.hypot(...b.map((v,i)=>v-last[i]));near(projection.routes[index].amplitude,r.amplitude*Math.sqrt(cos));near(projection.templates[index].amplitudeScale,t.templates[index].amplitudeScale*Math.sqrt(cos));
+const absorbing=structuredClone(scene);absorbing.slab.absorption=[{wavelengthNm:360,value:100},{wavelengthNm:830,value:500}];const a=prepareCoherentMeshTask({...base,scene:absorbing});const at=prepareCoherentSpectralSample(a.scene,compileCoherentSource(a.scene,absorbing.source),b).templates.find(t=>t.route.interactionOrder);
+for(const [nm,alpha] of [[360,100],[830,500]])near(evaluateCoherentSpectralTemplate(at,nm).amplitude,at.amplitudeScale*Math.exp(-alpha*r.glassLength/2));
+const clear=structuredClone(scene);delete clear.slab;const air=structuredClone(scene);air.slab.index=1;
+const ca=await executeCoherentMeshTask({...base,scene:clear}),ia=await executeCoherentMeshTask({...base,scene:air});for(const k of ['coherent','incoherent','geometric','crossTerm','coherentXYZ'])assert.deepEqual(ca[k],ia[k]);
+const result=await executeCoherentMeshTask(base);assert.equal(result.diagnostics.transmittedRoutes,256);assert.equal(result.diagnostics.sourceSlabUnsupportedSamples,0);assert.equal(result.diagnostics.modelIncomplete,false);
+const abort=new AbortController();await assert.rejects(executeCoherentMeshTask(base,{signal:abort.signal,preview:()=>abort.abort()}),e=>e.name==='AbortError');
+const again=await executeCoherentMeshTask(base);assert.deepEqual(again.coherentXYZ,result.coherentXYZ);
+console.log('PASS mirror-slab spectral kind3, per-wavelength Beer, physical final-leg projection, exact n1 identity, CPU complete route counts, cancel/repeat');
+
+const glass=JSON.parse(fs.readFileSync('dist/examples/coherent-glass-mirror-imaging.json','utf8'));
+const imaging=await executeCoherentMeshTask({...base,scene:glass,measurement:'camera'});
+assert(imaging.complete);assert(imaging.diagnostics.reflectedTransmittedRoutes>0);assert.equal(imaging.diagnostics.sourceSlabUnsupportedSamples,0);
+assert(imaging.diagnostics.lightingEnvironmentRays>0);assert.equal(imaging.diagnostics.modelIncomplete,imaging.diagnostics.lightingSlabUnsupportedRays>0);
+console.log('PASS glass camera + mirror illumination',JSON.stringify({mirrorTransmission:imaging.diagnostics.reflectedTransmittedRoutes,sourceUnsupported:imaging.diagnostics.sourceSlabUnsupportedSamples,skyUnsupported:imaging.diagnostics.lightingSlabUnsupportedRays}));

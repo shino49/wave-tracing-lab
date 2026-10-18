@@ -1,0 +1,627 @@
+{
+  "slab": {
+    "center": [
+      0,
+      0.9,
+      48
+    ],
+    "u": [
+      1,
+      0,
+      0
+    ],
+    "v": [
+      0,
+      1,
+      0
+    ],
+    "width": 3.2,
+    "height": 1.6,
+    "thickness": 0.8,
+    "index": 1.5,
+    "absorption": [
+      {
+        "wavelengthNm": 360,
+        "value": 0.6
+      },
+      {
+        "wavelengthNm": 450,
+        "value": 0.4
+      },
+      {
+        "wavelengthNm": 550,
+        "value": 0.08
+      },
+      {
+        "wavelengthNm": 650,
+        "value": 0.02
+      },
+      {
+        "wavelengthNm": 830,
+        "value": 0.01
+      }
+    ],
+    "internalReflections": 1
+  },
+  "schema": "coherent-mesh-scene-v1",
+  "units": "mm",
+  "name": "Colored solids through a finite glass slab",
+  "materials": [
+    {
+      "type": "mirror",
+      "reflectance": 1,
+      "phaseRad": 3.141592653589793
+    },
+    {
+      "type": "diffuse",
+      "reflectance": [
+        {
+          "wavelengthNm": 360,
+          "value": 0.62
+        },
+        {
+          "wavelengthNm": 830,
+          "value": 0.62
+        }
+      ]
+    },
+    {
+      "type": "diffuse",
+      "reflectance": [
+        {
+          "wavelengthNm": 360,
+          "value": 0.06
+        },
+        {
+          "wavelengthNm": 480,
+          "value": 0.06
+        },
+        {
+          "wavelengthNm": 540,
+          "value": 0.1
+        },
+        {
+          "wavelengthNm": 610,
+          "value": 0.74
+        },
+        {
+          "wavelengthNm": 830,
+          "value": 0.74
+        }
+      ]
+    },
+    {
+      "type": "diffuse",
+      "reflectance": [
+        {
+          "wavelengthNm": 360,
+          "value": 0.06
+        },
+        {
+          "wavelengthNm": 440,
+          "value": 0.1
+        },
+        {
+          "wavelengthNm": 500,
+          "value": 0.7
+        },
+        {
+          "wavelengthNm": 560,
+          "value": 0.76
+        },
+        {
+          "wavelengthNm": 620,
+          "value": 0.08
+        },
+        {
+          "wavelengthNm": 830,
+          "value": 0.06
+        }
+      ]
+    },
+    {
+      "type": "diffuse",
+      "reflectance": [
+        {
+          "wavelengthNm": 360,
+          "value": 0.38
+        },
+        {
+          "wavelengthNm": 440,
+          "value": 0.8
+        },
+        {
+          "wavelengthNm": 490,
+          "value": 0.72
+        },
+        {
+          "wavelengthNm": 560,
+          "value": 0.07
+        },
+        {
+          "wavelengthNm": 830,
+          "value": 0.05
+        }
+      ]
+    }
+  ],
+  "meshes": [
+    {
+      "vertices": [
+        [
+          -10,
+          0,
+          -49
+        ],
+        [
+          10,
+          0,
+          -49
+        ],
+        [
+          10,
+          0,
+          53
+        ],
+        [
+          -10,
+          0,
+          53
+        ]
+      ],
+      "faces": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2,
+          3
+        ]
+      ],
+      "materialIndex": 0,
+      "surface": "open-plate"
+    },
+    {
+      "vertices": [
+        [
+          -1.8,
+          0.015,
+          52
+        ],
+        [
+          -1.8,
+          1.7,
+          52
+        ],
+        [
+          1.8,
+          1.7,
+          52
+        ],
+        [
+          1.8,
+          0.015,
+          52
+        ]
+      ],
+      "faces": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2,
+          3
+        ]
+      ],
+      "materialIndex": 1,
+      "surface": "open-plate"
+    },
+    {
+      "vertices": [
+        [
+          -0.95,
+          0.12,
+          50
+        ],
+        [
+          -0.44999999999999996,
+          0.12,
+          50.16
+        ],
+        [
+          -0.44999999999999996,
+          0.85,
+          50.16
+        ],
+        [
+          -0.95,
+          0.85,
+          50
+        ],
+        [
+          -0.95,
+          0.12,
+          50.7
+        ],
+        [
+          -0.44999999999999996,
+          0.12,
+          50.7
+        ],
+        [
+          -0.44999999999999996,
+          0.85,
+          50.7
+        ],
+        [
+          -0.95,
+          0.85,
+          50.7
+        ]
+      ],
+      "faces": [
+        [
+          0,
+          3,
+          2
+        ],
+        [
+          0,
+          2,
+          1
+        ],
+        [
+          4,
+          5,
+          6
+        ],
+        [
+          4,
+          6,
+          7
+        ],
+        [
+          0,
+          4,
+          7
+        ],
+        [
+          0,
+          7,
+          3
+        ],
+        [
+          1,
+          2,
+          6
+        ],
+        [
+          1,
+          6,
+          5
+        ],
+        [
+          0,
+          1,
+          5
+        ],
+        [
+          0,
+          5,
+          4
+        ],
+        [
+          3,
+          7,
+          6
+        ],
+        [
+          3,
+          6,
+          2
+        ]
+      ],
+      "materialIndex": 2,
+      "surface": "closed-solid"
+    },
+    {
+      "vertices": [
+        [
+          -0.23,
+          0.14,
+          50.25
+        ],
+        [
+          0.23,
+          0.14,
+          50.13
+        ],
+        [
+          0.23,
+          1.17,
+          50.13
+        ],
+        [
+          -0.23,
+          1.17,
+          50.25
+        ],
+        [
+          -0.23,
+          0.14,
+          50.9
+        ],
+        [
+          0.23,
+          0.14,
+          50.9
+        ],
+        [
+          0.23,
+          1.17,
+          50.9
+        ],
+        [
+          -0.23,
+          1.17,
+          50.9
+        ]
+      ],
+      "faces": [
+        [
+          0,
+          3,
+          2
+        ],
+        [
+          0,
+          2,
+          1
+        ],
+        [
+          4,
+          5,
+          6
+        ],
+        [
+          4,
+          6,
+          7
+        ],
+        [
+          0,
+          4,
+          7
+        ],
+        [
+          0,
+          7,
+          3
+        ],
+        [
+          1,
+          2,
+          6
+        ],
+        [
+          1,
+          6,
+          5
+        ],
+        [
+          0,
+          1,
+          5
+        ],
+        [
+          0,
+          5,
+          4
+        ],
+        [
+          3,
+          7,
+          6
+        ],
+        [
+          3,
+          6,
+          2
+        ]
+      ],
+      "materialIndex": 3,
+      "surface": "closed-solid"
+    },
+    {
+      "vertices": [
+        [
+          0.44,
+          0.13,
+          49.85
+        ],
+        [
+          0.9199999999999999,
+          0.13,
+          50.050000000000004
+        ],
+        [
+          0.9199999999999999,
+          0.66,
+          50.050000000000004
+        ],
+        [
+          0.44,
+          0.66,
+          49.85
+        ],
+        [
+          0.44,
+          0.13,
+          50.65
+        ],
+        [
+          0.9199999999999999,
+          0.13,
+          50.65
+        ],
+        [
+          0.9199999999999999,
+          0.66,
+          50.65
+        ],
+        [
+          0.44,
+          0.66,
+          50.65
+        ]
+      ],
+      "faces": [
+        [
+          0,
+          3,
+          2
+        ],
+        [
+          0,
+          2,
+          1
+        ],
+        [
+          4,
+          5,
+          6
+        ],
+        [
+          4,
+          6,
+          7
+        ],
+        [
+          0,
+          4,
+          7
+        ],
+        [
+          0,
+          7,
+          3
+        ],
+        [
+          1,
+          2,
+          6
+        ],
+        [
+          1,
+          6,
+          5
+        ],
+        [
+          0,
+          1,
+          5
+        ],
+        [
+          0,
+          5,
+          4
+        ],
+        [
+          3,
+          7,
+          6
+        ],
+        [
+          3,
+          6,
+          2
+        ]
+      ],
+      "materialIndex": 4,
+      "surface": "closed-solid"
+    }
+  ],
+  "source": {
+    "position": [
+      0,
+      0.08,
+      -50
+    ],
+    "power": 1,
+    "phaseRad": 0,
+    "wavelengthMm": 0.00055,
+    "spectrum": {
+      "mode": "broadband",
+      "illuminant": "D65"
+    }
+  },
+  "detector": {
+    "center": [
+      0,
+      0.65,
+      50
+    ],
+    "u": [
+      1,
+      0,
+      0
+    ],
+    "v": [
+      0,
+      1,
+      0
+    ],
+    "width": 2.8,
+    "height": 1.8
+  },
+  "camera": {
+    "position": [
+      1.45,
+      1.18,
+      45
+    ],
+    "target": [
+      0,
+      0.65,
+      50.4
+    ],
+    "up": [
+      0,
+      1,
+      0
+    ],
+    "fovDeg": 21,
+    "mirrorBounces": 2
+  },
+  "lighting": {
+    "environment": {
+      "radiance": 0.000002,
+      "spectrum": {
+        "mode": "broadband",
+        "illuminant": "D65"
+      },
+      "wavelengthNm": 550,
+      "up": [
+        0,
+        1,
+        0
+      ],
+      "upper": 1,
+      "lower": 0.2,
+      "samples": 8,
+      "seed": 7391
+    },
+    "indirectSamples": 0
+  },
+  "renderSettings": {
+    "maxReflections": 0,
+    "diffraction": false,
+    "mixedDiffraction": false
+  }
+}

@@ -1,0 +1,4081 @@
+{
+  "summary": {
+    "scope": "Geometry-first fixed Cartesian parameter grid; no BEM values accessed",
+    "count": 81,
+    "geometricPass": 81,
+    "fullPass": 81,
+    "minClippedMargins": [
+      1.0301722896162757,
+      3.459554641399549
+    ],
+    "minTransitionArgument": 99.15930174488042,
+    "minFaceAngle": 1.082462375738491,
+    "minKr": 2019.2979756713378,
+    "failures": [],
+    "contactRoutineSHA256": "0659e6f0d8a8262fc0e97bdcbf3359db2d78364c37db17eb6cbaed8adacc2270",
+    "sourceGaussianPhaseCurvatureRangeRad": [
+      3.399847055299745,
+      3.9891005691335755
+    ],
+    "oldCollimatedGaussianPhaseGuardRad": 0.25,
+    "oldCollimatedGaussianPhaseGuardPassed": false,
+    "limitations": [
+      "Finite Cartesian samples, not a proof for every point in the continuous box.",
+      "Centre-factor native approximation, not calibrated Gaussian radiance.",
+      "No exact outgoing scattering covariance or coupled-aperture certificate.",
+      "The old one-region collimated Gaussian curvature guard fails explicitly."
+    ]
+  },
+  "rows": [
+    {
+      "parameters": {
+        "k": 256,
+        "sigma": 0.0675,
+        "aim1": 0.09,
+        "aim2": 0.15,
+        "receiver": [
+          16,
+          -2.25,
+          0
+        ]
+      },
+      "geometry": {
+        "firstSourceSeparated": true,
+        "edge1InFrustum": true,
+        "edge2InFrustum": true,
+        "only1": true,
+        "only2": true,
+        "aabbDisjoint": true,
+        "receiverOutside": true,
+        "outgoingClear": true,
+        "firstLocalShadow": true,
+        "secondLocalShadow": true,
+        "passed": true
+      },
+      "checks": {
+        "clips": [
+          {
+            "chi": 0.08948482522894283,
+            "half": 0.36464316066907065,
+            "threshold": 0.35107615716577073,
+            "margin": 1.0386440469578624
+          },
+          {
+            "chi": 0.01576725196371887,
+            "half": 1.3577113068677404,
+            "threshold": 0.3762237421484704,
+            "margin": 3.608786886001316
+          }
+        ],
+        "minTransitionArgument": 103.0398725035999,
+        "minFaceAngle": 1.082462375738491,
+        "minKr": 2019.4012058465885,
+        "ballisticAnalyticPassed": true,
+        "analyticContactPassed": true,
+        "finiteMeshBoundariesClear": true,
+        "minSegmentVisibilityMargin": 0.012898974709502964
+      },
+      "passed": true
+    },
+    {
+      "parameters": {
+        "k": 256,
+        "sigma": 0.0675,
+        "aim1": 0.09,
+        "aim2": 0.15,
+        "receiver": [
+          16,
+          -2,
+          0
+        ]
+      },
+      "geometry": {
+        "firstSourceSeparated": true,
+        "edge1InFrustum": true,
+        "edge2InFrustum": true,
+        "only1": true,
+        "only2": true,
+        "aabbDisjoint": true,
+        "receiverOutside": true,
+        "outgoingClear": true,
+        "firstLocalShadow": true,
+        "secondLocalShadow": true,
+        "passed": true
+      },
+      "checks": {
+        "clips": [
+          {
+            "chi": 0.08948482522894283,
+            "half": 0.36464316066907065,
+            "threshold": 0.35107615716577073,
+            "margin": 1.0386440469578624
+          },
+          {
+            "chi": 0.01576725196371887,
+            "half": 1.3577113068677404,
+            "threshold": 0.3738371953053051,
+            "margin": 3.631825093698677
+          }
+        ],
+        "minTransitionArgument": 103.0398725035999,
+        "minFaceAngle": 1.1071487177940904,
+        "minKr": 2019.4012058465885,
+        "ballisticAnalyticPassed": true,
+        "analyticContactPassed": true,
+        "finiteMeshBoundariesClear": true,
+        "minSegmentVisibilityMargin": 0.012898974709502964
+      },
+      "passed": true
+    },
+    {
+      "parameters": {
+        "k": 256,
+        "sigma": 0.0675,
+        "aim1": 0.09,
+        "aim2": 0.15,
+        "receiver": [
+          16,
+          -1.75,
+          0
+        ]
+      },
+      "geometry": {
+        "firstSourceSeparated": true,
+        "edge1InFrustum": true,
+        "edge2InFrustum": true,
+        "only1": true,
+        "only2": true,
+        "aabbDisjoint": true,
+        "receiverOutside": true,
+        "outgoingClear": true,
+        "firstLocalShadow": true,
+        "secondLocalShadow": true,
+        "passed": true
+      },
+      "checks": {
+        "clips": [
+          {
+            "chi": 0.08948482522894283,
+            "half": 0.36464316066907065,
+            "threshold": 0.35107615716577073,
+            "margin": 1.0386440469578624
+          },
+          {
+            "chi": 0.01576725196371887,
+            "half": 1.3577113068677404,
+            "threshold": 0.37155287568561796,
+            "margin": 3.6541536769494436
+          }
+        ],
+        "minTransitionArgument": 103.0398725035999,
+        "minFaceAngle": 1.1071487177940904,
+        "minKr": 2019.4012058465885,
+        "ballisticAnalyticPassed": true,
+        "analyticContactPassed": true,
+        "finiteMeshBoundariesClear": true,
+        "minSegmentVisibilityMargin": 0.012898974709502964
+      },
+      "passed": true
+    },
+    {
+      "parameters": {
+        "k": 256,
+        "sigma": 0.0675,
+        "aim1": 0.09,
+        "aim2": 0.175,
+        "receiver": [
+          16,
+          -2.25,
+          0
+        ]
+      },
+      "geometry": {
+        "firstSourceSeparated": true,
+        "edge1InFrustum": true,
+        "edge2InFrustum": true,
+        "only1": true,
+        "only2": true,
+        "aabbDisjoint": true,
+        "receiverOutside": true,
+        "outgoingClear": true,
+        "firstLocalShadow": true,
+        "secondLocalShadow": true,
+        "passed": true
+      },
+      "checks": {
+        "clips": [
+          {
+            "chi": 0.08948482522894283,
+            "half": 0.36464316066907065,
+            "threshold": 0.35107068146784104,
+            "margin": 1.0386602468325823
+          },
+          {
+            "chi": 0.020066517777789446,
+            "half": 1.3524181069740855,
+            "threshold": 0.3762237421484704,
+            "margin": 3.594717598764345
+          }
+        ],
+        "minTransitionArgument": 101.09511886823637,
+        "minFaceAngle": 1.082462375738491,
+        "minKr": 2019.3382135610461,
+        "ballisticAnalyticPassed": true,
+        "analyticContactPassed": true,
+        "finiteMeshBoundariesClear": true,
+        "minSegmentVisibilityMargin": 0.012898974709502964
+      },
+      "passed": true
+    },
+    {
+      "parameters": {
+        "k": 256,
+        "sigma": 0.0675,
+        "aim1": 0.09,
+        "aim2": 0.175,
+        "receiver": [
+          16,
+          -2,
+          0
+        ]
+      },
+      "geometry": {
+        "firstSourceSeparated": true,
+        "edge1InFrustum": true,
+        "edge2InFrustum": true,
+        "only1": true,
+        "only2": true,
+        "aabbDisjoint": true,
+        "receiverOutside": true,
+        "outgoingClear": true,
+        "firstLocalShadow": true,
+        "secondLocalShadow": true,
+        "passed": true
+      },
+      "checks": {
+        "clips": [
+          {
+            "chi": 0.08948482522894283,
+            "half": 0.36464316066907065,
+            "threshold": 0.35107068146784104,
+            "margin": 1.0386602468325823
+          },
+          {
+            "chi": 0.020066517777789446,
+            "half": 1.3524181069740855,
+            "threshold": 0.3738371953053051,
+            "margin": 3.617665989253941
+          }
+        ],
+        "minTransitionArgument": 101.09511886823637,
+        "minFaceAngle": 1.1071487177940904,
+        "minKr": 2019.3382135610461,
+        "ballisticAnalyticPassed": true,
+        "analyticContactPassed": true,
+        "finiteMeshBoundariesClear": true,
+        "minSegmentVisibilityMargin": 0.012898974709502964
+      },
+      "passed": true
+    },
+    {
+      "parameters": {
+        "k": 256,
+        "sigma": 0.0675,
+        "aim1": 0.09,
+        "aim2": 0.175,
+        "receiver": [
+          16,
+          -1.75,
+          0
+        ]
+      },
+      "geometry": {
+        "firstSourceSeparated": true,
+        "edge1InFrustum": true,
+        "edge2InFrustum": true,
+        "only1": true,
+        "only2": true,
+        "aabbDisjoint": true,
+        "receiverOutside": true,
+        "outgoingClear": true,
+        "firstLocalShadow": true,
+        "secondLocalShadow": true,
+        "passed": true
+      },
+      "checks": {
+        "clips": [
+          {
+            "chi": 0.08948482522894283,
+            "half": 0.36464316066907065,
+            "threshold": 0.35107068146784104,
+            "margin": 1.0386602468325823
+          },
+          {
+            "chi": 0.020066517777789446,
+            "half": 1.3524181069740855,
+            "threshold": 0.37155287568561796,
+            "margin": 3.6399075218527095
+          }
+        ],
+        "minTransitionArgument": 101.09511886823637,
+        "minFaceAngle": 1.1071487177940904,
+        "minKr": 2019.3382135610461,
+        "ballisticAnalyticPassed": true,
+        "analyticContactPassed": true,
+        "finiteMeshBoundariesClear": true,
+        "minSegmentVisibilityMargin": 0.012898974709502964
+      },
+      "passed": true
+    },
+    {
+      "parameters": {
+        "k": 256,
+        "sigma": 0.0675,
+        "aim1": 0.09,
+        "aim2": 0.2,
+        "receiver": [
+          16,
+          -2.25,
+          0
+        ]
+      },
+      "geometry": {
+        "firstSourceSeparated": true,
+        "edge1InFrustum": true,
+        "edge2InFrustum": true,
+        "only1": true,
+        "only2": true,
+        "aabbDisjoint": true,
+        "receiverOutside": true,
+        "outgoingClear": true,
+        "firstLocalShadow": true,
+        "secondLocalShadow": true,
+        "passed": true
+      },
+      "checks": {
+        "clips": [
+          {
+            "chi": 0.08948482522894283,
+            "half": 0.36464316066907065,
+            "threshold": 0.35106718368484513,
+            "margin": 1.0386705953023874
+          },
+          {
+            "chi": 0.025037567285493202,
+            "half": 1.3466722739429966,
+            "threshold": 0.3762237421484704,
+            "margin": 3.57944521590441
+          }
+        ],
+        "minTransitionArgument": 99.17128288887226,
+        "minFaceAngle": 1.082462375738491,
+        "minKr": 2019.2979756713378,
+        "ballisticAnalyticPassed": true,
+        "analyticContactPassed": true,
+        "finiteMeshBoundariesClear": true,
+        "minSegmentVisibilityMargin": 0.012898974709502964
+      },
+      "passed": true
+    },
+    {
+      "parameters": {
+        "k": 256,
+        "sigma": 0.0675,
+        "aim1": 0.09,
+        "aim2": 0.2,
+        "receiver": [
+          16,
+          -2,
+          0
+        ]
+      },
+      "geometry": {
+        "firstSourceSeparated": true,
+        "edge1InFrustum": true,
+        "edge2InFrustum": true,
+        "only1": true,
+        "only2": true,
+        "aabbDisjoint": true,
+        "receiverOutside": true,
+        "outgoingClear": true,
+        "firstLocalShadow": true,
+        "secondLocalShadow": true,
+        "passed": true
+      },
+      "checks": {
+        "clips": [
+          {
+            "chi": 0.08948482522894283,
+            "half": 0.36464316066907065,
+            "threshold": 0.35106718368484513,
+            "margin": 1.0386705953023874
+          },
+          {
+            "chi": 0.025037567285493202,
+            "half": 1.3466722739429966,
+            "threshold": 0.3738371953053051,
+            "margin": 3.602296108719725
+          }
+        ],
+        "minTransitionArgument": 99.17128288887226,
+        "minFaceAngle": 1.1071487177940904,
+        "minKr": 2019.2979756713378,
+        "ballisticAnalyticPassed": true,
+        "analyticContactPassed": true,
+        "finiteMeshBoundariesClear": true,
+        "minSegmentVisibilityMargin": 0.012898974709502964
+      },
+      "passed": true
+    },
+    {
+      "parameters": {
+        "k": 256,
+        "sigma": 0.0675,
+        "aim1": 0.09,
+        "aim2": 0.2,
+        "receiver": [
+          16,
+          -1.75,
+          0
+        ]
+      },
+      "geometry": {
+        "firstSourceSeparated": true,
+        "edge1InFrustum": true,
+        "edge2InFrustum": true,
+        "only1": true,
+        "only2": true,
+        "aabbDisjoint": true,
+        "receiverOutside": true,
+        "outgoingClear": true,
+        "firstLocalShadow": true,
+        "secondLocalShadow": true,
+        "passed": true
+      },
+      "checks": {
+        "clips": [
+          {
+            "chi": 0.08948482522894283,
+            "half": 0.36464316066907065,
+            "threshold": 0.35106718368484513,
+            "margin": 1.0386705953023874
+          },
+          {
+            "chi": 0.025037567285493202,
+            "half": 1.3466722739429966,
+            "threshold": 0.37155287568561796,
+            "margin": 3.624443146774233
+          }
+        ],
+        "minTransitionArgument": 99.17128288887226,
+        "minFaceAngle": 1.1071487177940904,
+        "minKr": 2019.2979756713378,
+        "ballisticAnalyticPassed": true,
+        "analyticContactPassed": true,
+        "finiteMeshBoundariesClear": true,
+        "minSegmentVisibilityMargin": 0.012898974709502964
+      },
+      "passed": true
+    },
+    {
+      "parameters": {
+        "k": 256,
+        "sigma": 0.0675,
+        "aim1": 0.1,
+        "aim2": 0.15,
+        "receiver": [
+          16,
+          -2.25,
+          0
+        ]
+      },
+      "geometry": {
+        "firstSourceSeparated": true,
+        "edge1InFrustum": true,
+        "edge2InFrustum": true,
+        "only1": true,
+        "only2": true,
+        "aabbDisjoint": true,
+        "receiverOutside": true,
+        "outgoingClear": true,
+        "firstLocalShadow": true,
+        "secondLocalShadow": true,
+        "passed": true
+      },
+      "checks": {
+        "clips": [
+          {
+            "chi": 0.09744586151693979,
+            "half": 0.3632731422747808,
+            "threshold": 0.3510944317986218,
+            "margin": 1.0346878485476647
+          },
+          {
+            "chi": 0.01564173840352846,
+            "half": 1.3620478543825847,
+            "threshold": 0.3762237421484704,
+            "margin": 3.6203133980977613
+          }
+        ],
+        "minTransitionArgument": 103.03483709710854,
+        "minFaceAngle": 1.082462375738491,
+        "minKr": 2019.6114438553127,
+        "ballisticAnalyticPassed": true,
+        "analyticContactPassed": true,
+        "finiteMeshBoundariesClear": true,
+        "minSegmentVisibilityMargin": 0.020995673908729362
+      },
+      "passed": true
+    },
+    {
+      "parameters": {
+        "k": 256,
+        "sigma": 0.0675,
+        "aim1": 0.1,
+        "aim2": 0.15,
+        "receiver": [
+          16,
+          -2,
+          0
+        ]
+      },
+      "geometry": {
+        "firstSourceSeparated": true,
+        "edge1InFrustum": true,
+        "edge2InFrustum": true,
+        "only1": true,
+        "only2": true,
+        "aabbDisjoint": true,
+        "receiverOutside": true,
+        "outgoingClear": true,
+        "firstLocalShadow": true,
+        "secondLocalShadow": true,
+        "passed": true
+      },
+      "checks": {
+        "clips": [
+          {
+            "chi": 0.09744586151693979,
+            "half": 0.3632731422747808,
+            "threshold": 0.3510944317986218,
+            "margin": 1.0346878485476647
+          },
+          {
+            "chi": 0.01564173840352846,
+            "half": 1.3620478543825847,
+            "threshold": 0.3738371953053051,
+            "margin": 3.6434251901291637
+          }
+        ],
+        "minTransitionArgument": 103.03483709710854,
+        "minFaceAngle": 1.1071487177940904,
+        "minKr": 2019.6114438553127,
+        "ballisticAnalyticPassed": true,
+        "analyticContactPassed": true,
+        "finiteMeshBoundariesClear": true,
+        "minSegmentVisibilityMargin": 0.021194192702512993
+      },
+      "passed": true
+    },
+    {
+      "parameters": {
+        "k": 256,
+        "sigma": 0.0675,
+        "aim1": 0.1,
+        "aim2": 0.15,
+        "receiver": [
+          16,
+          -1.75,
+          0
+        ]
+      },
+      "geometry": {
+        "firstSourceSeparated": true,
+        "edge1InFrustum": true,
+        "edge2InFrustum": true,
+        "only1": true,
+        "only2": true,
+        "aabbDisjoint": true,
+        "receiverOutside": true,
+        "outgoingClear": true,
+        "firstLocalShadow": true,
+        "secondLocalShadow": true,
+        "passed": true
+      },
+      "checks": {
+        "clips": [
+          {
+            "chi": 0.09744586151693979,
+            "half": 0.3632731422747808,
+            "threshold": 0.3510944317986218,
+            "margin": 1.0346878485476647
+          },
+          {
+            "chi": 0.01564173840352846,
+            "half": 1.3620478543825847,
+            "threshold": 0.37155287568561796,
+            "margin": 3.6658250911642902
+          }
+        ],
+        "minTransitionArgument": 103.03483709710854,
+        "minFaceAngle": 1.1071487177940904,
+        "minKr": 2019.6114438553127,
+        "ballisticAnalyticPassed": true,
+        "analyticContactPassed": true,
+        "finiteMeshBoundariesClear": true,
+        "minSegmentVisibilityMargin": 0.021194192702512993
+      },
+      "passed": true
+    },
+    {
+      "parameters": {
+        "k": 256,
+        "sigma": 0.0675,
+        "aim1": 0.1,
+        "aim2": 0.175,
+        "receiver": [
+          16,
+          -2.25,
+          0
+        ]
+      },
+      "geometry": {
+        "firstSourceSeparated": true,
+        "edge1InFrustum": true,
+        "edge2InFrustum": true,
+        "only1": true,
+        "only2": true,
+        "aabbDisjoint": true,
+        "receiverOutside": true,
+        "outgoingClear": true,
+        "firstLocalShadow": true,
+        "secondLocalShadow": true,
+        "passed": true
+      },
+      "checks": {
+        "clips": [
+          {
+            "chi": 0.09744586151693979,
+            "half": 0.3632731422747808,
+            "threshold": 0.3510886336569587,
+            "margin": 1.0347049361607283
+          },
+          {
+            "chi": 0.019917129851944132,
+            "half": 1.3567599746040784,
+            "threshold": 0.3762237421484704,
+            "margin": 3.606258251688581
+          }
+        ],
+        "minTransitionArgument": 101.08953409498464,
+        "minFaceAngle": 1.082462375738491,
+        "minKr": 2019.5447387440768,
+        "ballisticAnalyticPassed": true,
+        "analyticContactPassed": true,
+        "finiteMeshBoundariesClear": true,
+        "minSegmentVisibilityMargin": 0.021194192702512993
+      },
+      "passed": true
+    },
+    {
+      "parameters": {
+        "k": 256,
+        "sigma": 0.0675,
+        "aim1": 0.1,
+        "aim2": 0.175,
+        "receiver": [
+          16,
+          -2,
+          0
+        ]
+      },
+      "geometry": {
+        "firstSourceSeparated": true,
+        "edge1InFrustum": true,
+        "edge2InFrustum": true,
+        "only1": true,
+        "only2": true,
+        "aabbDisjoint": true,
+        "receiverOutside": true,
+        "outgoingClear": true,
+        "firstLocalShadow": true,
+        "secondLocalShadow": true,
+        "passed": true
+      },
+      "checks": {
+        "clips": [
+          {
+            "chi": 0.09744586151693979,
+            "half": 0.3632731422747808,
+            "threshold": 0.3510886336569587,
+            "margin": 1.0347049361607283
+          },
+          {
+            "chi": 0.019917129851944132,
+            "half": 1.3567599746040784,
+            "threshold": 0.3738371953053051,
+            "margin": 3.629280316786136
+          }
+        ],
+        "minTransitionArgument": 101.08953409498464,
+        "minFaceAngle": 1.1071487177940904,
+        "minKr": 2019.5447387440768,
+        "ballisticAnalyticPassed": true,
+        "analyticContactPassed": true,
+        "finiteMeshBoundariesClear": true,
+        "minSegmentVisibilityMargin": 0.021194192702512993
+      },
+      "passed": true
+    },
+    {
+      "parameters": {
+        "k": 256,
+        "sigma": 0.0675,
+        "aim1": 0.1,
+        "aim2": 0.175,
+        "receiver": [
+          16,
+          -1.75,
+          0
+        ]
+      },
+      "geometry": {
+        "firstSourceSeparated": true,
+        "edge1InFrustum": true,
+        "edge2InFrustum": true,
+        "only1": true,
+        "only2": true,
+        "aabbDisjoint": true,
+        "receiverOutside": true,
+        "outgoingClear": true,
+        "firstLocalShadow": true,
+        "secondLocalShadow": true,
+        "passed": true
+      },
+      "checks": {
+        "clips": [
+          {
+            "chi": 0.09744586151693979,
+            "half": 0.3632731422747808,
+            "threshold": 0.3510886336569587,
+            "margin": 1.0347049361607283
+          },
+          {
+            "chi": 0.019917129851944132,
+            "half": 1.3567599746040784,
+            "threshold": 0.37155287568561796,
+            "margin": 3.651593254662558
+          }
+        ],
+        "minTransitionArgument": 101.08953409498464,
+        "minFaceAngle": 1.1071487177940904,
+        "minKr": 2019.5447387440768,
+        "ballisticAnalyticPassed": true,
+        "analyticContactPassed": true,
+        "finiteMeshBoundariesClear": true,
+        "minSegmentVisibilityMargin": 0.021194192702512993
+      },
+      "passed": true
+    },
+    {
+      "parameters": {
+        "k": 256,
+        "sigma": 0.0675,
+        "aim1": 0.1,
+        "aim2": 0.2,
+        "receiver": [
+          16,
+          -2.25,
+          0
+        ]
+      },
+      "geometry": {
+        "firstSourceSeparated": true,
+        "edge1InFrustum": true,
+        "edge2InFrustum": true,
+        "only1": true,
+        "only2": true,
+        "aabbDisjoint": true,
+        "receiverOutside": true,
+        "outgoingClear": true,
+        "firstLocalShadow": true,
+        "secondLocalShadow": true,
+        "passed": true
+      },
+      "checks": {
+        "clips": [
+          {
+            "chi": 0.09744586151693979,
+            "half": 0.3632731422747808,
+            "threshold": 0.3510848138753998,
+            "margin": 1.0347161936879066
+          },
+          {
+            "chi": 0.024860329508317937,
+            "half": 1.3510207599984136,
+            "threshold": 0.3762237421484704,
+            "margin": 3.591003460555809
+          }
+        ],
+        "minTransitionArgument": 99.16516532142796,
+        "minFaceAngle": 1.082462375738491,
+        "minKr": 2019.5007944118129,
+        "ballisticAnalyticPassed": true,
+        "analyticContactPassed": true,
+        "finiteMeshBoundariesClear": true,
+        "minSegmentVisibilityMargin": 0.021194192702512993
+      },
+      "passed": true
+    },
+    {
+      "parameters": {
+        "k": 256,
+        "sigma": 0.0675,
+        "aim1": 0.1,
+        "aim2": 0.2,
+        "receiver": [
+          16,
+          -2,
+          0
+        ]
+      },
+      "geometry": {
+        "firstSourceSeparated": true,
+        "edge1InFrustum": true,
+        "edge2InFrustum": true,
+        "only1": true,
+        "only2": true,
+        "aabbDisjoint": true,
+        "receiverOutside": true,
+        "outgoingClear": true,
+        "firstLocalShadow": true,
+        "secondLocalShadow": true,
+        "passed": true
+      },
+      "checks": {
+        "clips": [
+          {
+            "chi": 0.09744586151693979,
+            "half": 0.3632731422747808,
+            "threshold": 0.3510848138753998,
+            "margin": 1.0347161936879066
+          },
+          {
+            "chi": 0.024860329508317937,
+            "half": 1.3510207599984136,
+            "threshold": 0.3738371953053051,
+            "margin": 3.6139281402832664
+          }
+        ],
+        "minTransitionArgument": 99.16516532142796,
+        "minFaceAngle": 1.1071487177940904,
+        "minKr": 2019.5007944118129,
+        "ballisticAnalyticPassed": true,
+        "analyticContactPassed": true,
+        "finiteMeshBoundariesClear": true,
+        "minSegmentVisibilityMargin": 0.021194192702512993
+      },
+      "passed": true
+    },
+    {
+      "parameters": {
+        "k": 256,
+        "sigma": 0.0675,
+        "aim1": 0.1,
+        "aim2": 0.2,
+        "receiver": [
+          16,
+          -1.75,
+          0
+        ]
+      },
+      "geometry": {
+        "firstSourceSeparated": true,
+        "edge1InFrustum": true,
+        "edge2InFrustum": true,
+        "only1": true,
+        "only2": true,
+        "aabbDisjoint": true,
+        "receiverOutside": true,
+        "outgoingClear": true,
+        "firstLocalShadow": true,
+        "secondLocalShadow": true,
+        "passed": true
+      },
+      "checks": {
+        "clips": [
+          {
+            "chi": 0.09744586151693979,
+            "half": 0.3632731422747808,
+            "threshold": 0.3510848138753998,
+            "margin": 1.0347161936879066
+          },
+          {
+            "chi": 0.024860329508317937,
+            "half": 1.3510207599984136,
+            "threshold": 0.37155287568561796,
+            "margin": 3.63614669246041
+          }
+        ],
+        "minTransitionArgument": 99.16516532142796,
+        "minFaceAngle": 1.1071487177940904,
+        "minKr": 2019.5007944118129,
+        "ballisticAnalyticPassed": true,
+        "analyticContactPassed": true,
+        "finiteMeshBoundariesClear": true,
+        "minSegmentVisibilityMargin": 0.021194192702512993
+      },
+      "passed": true
+    },
+    {
+      "parameters": {
+        "k": 256,
+        "sigma": 0.0675,
+        "aim1": 0.11,
+        "aim2": 0.15,
+        "receiver": [
+          16,
+          -2.25,
+          0
+        ]
+      },
+      "geometry": {
+        "firstSourceSeparated": true,
+        "edge1InFrustum": true,
+        "edge2InFrustum": true,
+        "only1": true,
+        "only2": true,
+        "aabbDisjoint": true,
+        "receiverOutside": true,
+        "outgoingClear": true,
+        "firstLocalShadow": true,
+        "secondLocalShadow": true,
+        "passed": true
+      },
+      "checks": {
+        "clips": [
+          {
+            "chi": 0.10634470192060232,
+            "half": 0.36170675906531086,
+            "threshold": 0.35111287957477616,
+            "margin": 1.0301722896162757
+          },
+          {
+            "chi": 0.015517408526201615,
+            "half": 1.3663755837041707,
+            "threshold": 0.3762237421484704,
+            "margin": 3.631816471499966
+          }
+        ],
+        "minTransitionArgument": 103.03006568133983,
+        "minFaceAngle": 1.082462375738491,
+        "minKr": 2019.8236848667239,
+        "ballisticAnalyticPassed": true,
+        "analyticContactPassed": true,
+        "finiteMeshBoundariesClear": true,
+        "minSegmentVisibilityMargin": 0.02171136439937893
+      },
+      "passed": true
+    },
+    {
+      "parameters": {
+        "k": 256,
+        "sigma": 0.0675,
+        "aim1": 0.11,
+        "aim2": 0.15,
+        "receiver": [
+          16,
+          -2,
+          0
+        ]
+      },
+      "geometry": {
+        "firstSourceSeparated": true,
+        "edge1InFrustum": true,
+        "edge2InFrustum": true,
+        "only1": true,
+        "only2": true,
+        "aabbDisjoint": true,
+        "receiverOutside": true,
+        "outgoingClear": true,
+        "firstLocalShadow": true,
+        "secondLocalShadow": true,
+        "passed": true
+      },
+      "checks": {
+        "clips": [
+          {
+            "chi": 0.10634470192060232,
+            "half": 0.36170675906531086,
+            "threshold": 0.35111287957477616,
+            "margin": 1.0301722896162757
+          },
+          {
+            "chi": 0.015517408526201615,
+            "half": 1.3663755837041707,
+            "threshold": 0.3738371953053051,
+            "margin": 3.655001698234655
+          }
+        ],
+        "minTransitionArgument": 103.03006568133983,
+        "minFaceAngle": 1.1071487177940904,
+        "minKr": 2019.8236848667239,
+        "ballisticAnalyticPassed": true,
+        "analyticContactPassed": true,
+        "finiteMeshBoundariesClear": true,
+        "minSegmentVisibilityMargin": 0.027524568490636003
+      },
+      "passed": true
+    },
+    {
+      "parameters": {
+        "k": 256,
+        "sigma": 0.0675,
+        "aim1": 0.11,
+        "aim2": 0.15,
+        "receiver": [
+          16,
+          -1.75,
+          0
+        ]
+      },
+      "geometry": {
+        "firstSourceSeparated": true,
+        "edge1InFrustum": true,
+        "edge2InFrustum": true,
+        "only1": true,
+        "only2": true,
+        "aabbDisjoint": true,
+        "receiverOutside": true,
+        "outgoingClear": true,
+        "firstLocalShadow": true,
+        "secondLocalShadow": true,
+        "passed": true
+      },
+      "checks": {
+        "clips": [
+          {
+            "chi": 0.10634470192060232,
+            "half": 0.36170675906531086,
+            "threshold": 0.35111287957477616,
+            "margin": 1.0301722896162757
+          },
+          {
+            "chi": 0.015517408526201615,
+            "half": 1.3663755837041707,
+            "threshold": 0.37155287568561796,
+            "margin": 3.6774727720323233
+          }
+        ],
+        "minTransitionArgument": 103.03006568133983,
+        "minFaceAngle": 1.1071487177940904,
+        "minKr": 2019.8236848667239,
+        "ballisticAnalyticPassed": true,
+        "analyticContactPassed": true,
+        "finiteMeshBoundariesClear": true,
+        "minSegmentVisibilityMargin": 0.0294750706774507
+      },
+      "passed": true
+    },
+    {
+      "parameters": {
+        "k": 256,
+        "sigma": 0.0675,
+        "aim1": 0.11,
+        "aim2": 0.175,
+        "receiver": [
+          16,
+          -2.25,
+          0
+        ]
+      },
+      "geometry": {
+        "firstSourceSeparated": true,
+        "edge1InFrustum": true,
+        "edge2InFrustum": true,
+        "only1": true,
+        "only2": true,
+        "aabbDisjoint": true,
+        "receiverOutside": true,
+        "outgoingClear": true,
+        "firstLocalShadow": true,
+        "secondLocalShadow": true,
+        "passed": true
+      },
+      "checks": {
+        "clips": [
+          {
+            "chi": 0.10634470192060232,
+            "half": 0.36170675906531086,
+            "threshold": 0.3511067596065653,
+            "margin": 1.0301902460397614
+          },
+          {
+            "chi": 0.019769165599277976,
+            "half": 1.3610930177821574,
+            "threshold": 0.3762237421484704,
+            "margin": 3.6177754492831156
+          }
+        ],
+        "minTransitionArgument": 101.08420829357823,
+        "minFaceAngle": 1.082462375738491,
+        "minKr": 2019.753273613065,
+        "ballisticAnalyticPassed": true,
+        "analyticContactPassed": true,
+        "finiteMeshBoundariesClear": true,
+        "minSegmentVisibilityMargin": 0.0294750706774507
+      },
+      "passed": true
+    },
+    {
+      "parameters": {
+        "k": 256,
+        "sigma": 0.0675,
+        "aim1": 0.11,
+        "aim2": 0.175,
+        "receiver": [
+          16,
+          -2,
+          0
+        ]
+      },
+      "geometry": {
+        "firstSourceSeparated": true,
+        "edge1InFrustum": true,
+        "edge2InFrustum": true,
+        "only1": true,
+        "only2": true,
+        "aabbDisjoint": true,
+        "receiverOutside": true,
+        "outgoingClear": true,
+        "firstLocalShadow": true,
+        "secondLocalShadow": true,
+        "passed": true
+      },
+      "checks": {
+        "clips": [
+          {
+            "chi": 0.10634470192060232,
+            "half": 0.36170675906531086,
+            "threshold": 0.3511067596065653,
+            "margin": 1.0301902460397614
+          },
+          {
+            "chi": 0.019769165599277976,
+            "half": 1.3610930177821574,
+            "threshold": 0.3738371953053051,
+            "margin": 3.640871039251674
+          }
+        ],
+        "minTransitionArgument": 101.08420829357823,
+        "minFaceAngle": 1.1071487177940904,
+        "minKr": 2019.753273613065,
+        "ballisticAnalyticPassed": true,
+        "analyticContactPassed": true,
+        "finiteMeshBoundariesClear": true,
+        "minSegmentVisibilityMargin": 0.0294750706774507
+      },
+      "passed": true
+    },
+    {
+      "parameters": {
+        "k": 256,
+        "sigma": 0.0675,
+        "aim1": 0.11,
+        "aim2": 0.175,
+        "receiver": [
+          16,
+          -1.75,
+          0
+        ]
+      },
+      "geometry": {
+        "firstSourceSeparated": true,
+        "edge1InFrustum": true,
+        "edge2InFrustum": true,
+        "only1": true,
+        "only2": true,
+        "aabbDisjoint": true,
+        "receiverOutside": true,
+        "outgoingClear": true,
+        "firstLocalShadow": true,
+        "secondLocalShadow": true,
+        "passed": true
+      },
+      "checks": {
+        "clips": [
+          {
+            "chi": 0.10634470192060232,
+            "half": 0.36170675906531086,
+            "threshold": 0.3511067596065653,
+            "margin": 1.0301902460397614
+          },
+          {
+            "chi": 0.019769165599277976,
+            "half": 1.3610930177821574,
+            "threshold": 0.37155287568561796,
+            "margin": 3.6632552372810028
+          }
+        ],
+        "minTransitionArgument": 101.08420829357823,
+        "minFaceAngle": 1.1071487177940904,
+        "minKr": 2019.753273613065,
+        "ballisticAnalyticPassed": true,
+        "analyticContactPassed": true,
+        "finiteMeshBoundariesClear": true,
+        "minSegmentVisibilityMargin": 0.0294750706774507
+      },
+      "passed": true
+    },
+    {
+      "parameters": {
+        "k": 256,
+        "sigma": 0.0675,
+        "aim1": 0.11,
+        "aim2": 0.2,
+        "receiver": [
+          16,
+          -2.25,
+          0
+        ]
+      },
+      "geometry": {
+        "firstSourceSeparated": true,
+        "edge1InFrustum": true,
+        "edge2InFrustum": true,
+        "only1": true,
+        "only2": true,
+        "aabbDisjoint": true,
+        "receiverOutside": true,
+        "outgoingClear": true,
+        "firstLocalShadow": true,
+        "secondLocalShadow": true,
+        "passed": true
+      },
+      "checks": {
+        "clips": [
+          {
+            "chi": 0.10634470192060232,
+            "half": 0.36170675906531086,
+            "threshold": 0.35110261843349205,
+            "margin": 1.0302023968921994
+          },
+          {
+            "chi": 0.024684799500126607,
+            "half": 1.3553604038299965,
+            "threshold": 0.3762237421484704,
+            "margin": 3.6025382026398702
+          }
+        ],
+        "minTransitionArgument": 99.15930174488042,
+        "minFaceAngle": 1.082462375738491,
+        "minKr": 2019.7056294232773,
+        "ballisticAnalyticPassed": true,
+        "analyticContactPassed": true,
+        "finiteMeshBoundariesClear": true,
+        "minSegmentVisibilityMargin": 0.0294750706774507
+      },
+      "passed": true
+    },
+    {
+      "parameters": {
+        "k": 256,
+        "sigma": 0.0675,
+        "aim1": 0.11,
+        "aim2": 0.2,
+        "receiver": [
+          16,
+          -2,
+          0
+        ]
+      },
+      "geometry": {
+        "firstSourceSeparated": true,
+        "edge1InFrustum": true,
+        "edge2InFrustum": true,
+        "only1": true,
+        "only2": true,
+        "aabbDisjoint": true,
+        "receiverOutside": true,
+        "outgoingClear": true,
+        "firstLocalShadow": true,
+        "secondLocalShadow": true,
+        "passed": true
+      },
+      "checks": {
+        "clips": [
+          {
+            "chi": 0.10634470192060232,
+            "half": 0.36170675906531086,
+            "threshold": 0.35110261843349205,
+            "margin": 1.0302023968921994
+          },
+          {
+            "chi": 0.024684799500126607,
+            "half": 1.3553604038299965,
+            "threshold": 0.3738371953053051,
+            "margin": 3.6255365192409537
+          }
+        ],
+        "minTransitionArgument": 99.15930174488042,
+        "minFaceAngle": 1.1071487177940904,
+        "minKr": 2019.7056294232773,
+        "ballisticAnalyticPassed": true,
+        "analyticContactPassed": true,
+        "finiteMeshBoundariesClear": true,
+        "minSegmentVisibilityMargin": 0.0294750706774507
+      },
+      "passed": true
+    },
+    {
+      "parameters": {
+        "k": 256,
+        "sigma": 0.0675,
+        "aim1": 0.11,
+        "aim2": 0.2,
+        "receiver": [
+          16,
+          -1.75,
+          0
+        ]
+      },
+      "geometry": {
+        "firstSourceSeparated": true,
+        "edge1InFrustum": true,
+        "edge2InFrustum": true,
+        "only1": true,
+        "only2": true,
+        "aabbDisjoint": true,
+        "receiverOutside": true,
+        "outgoingClear": true,
+        "firstLocalShadow": true,
+        "secondLocalShadow": true,
+        "passed": true
+      },
+      "checks": {
+        "clips": [
+          {
+            "chi": 0.10634470192060232,
+            "half": 0.36170675906531086,
+            "threshold": 0.35110261843349205,
+            "margin": 1.0302023968921994
+          },
+          {
+            "chi": 0.024684799500126607,
+            "half": 1.3553604038299965,
+            "threshold": 0.37155287568561796,
+            "margin": 3.6478264401237137
+          }
+        ],
+        "minTransitionArgument": 99.15930174488042,
+        "minFaceAngle": 1.1071487177940904,
+        "minKr": 2019.7056294232773,
+        "ballisticAnalyticPassed": true,
+        "analyticContactPassed": true,
+        "finiteMeshBoundariesClear": true,
+        "minSegmentVisibilityMargin": 0.0294750706774507
+      },
+      "passed": true
+    },
+    {
+      "parameters": {
+        "k": 256,
+        "sigma": 0.07,
+        "aim1": 0.09,
+        "aim2": 0.15,
+        "receiver": [
+          16,
+          -2.25,
+          0
+        ]
+      },
+      "geometry": {
+        "firstSourceSeparated": true,
+        "edge1InFrustum": true,
+        "edge2InFrustum": true,
+        "only1": true,
+        "only2": true,
+        "aabbDisjoint": true,
+        "receiverOutside": true,
+        "outgoingClear": true,
+        "firstLocalShadow": true,
+        "secondLocalShadow": true,
+        "passed": true
+      },
+      "checks": {
+        "clips": [
+          {
+            "chi": 0.08931963203672974,
+            "half": 0.36566576565370684,
+            "threshold": 0.3511498894143194,
+            "margin": 1.0413381199225162
+          },
+          {
+            "chi": 0.016168695022466466,
+            "half": 1.3340115781167194,
+            "threshold": 0.3762237421484704,
+            "margin": 3.5457931774818032
+          }
+        ],
+        "minTransitionArgument": 103.08407207299862,
+        "minFaceAngle": 1.082462375738491,
+        "minKr": 2020.2495153879245,
+        "ballisticAnalyticPassed": true,
+        "analyticContactPassed": true,
+        "finiteMeshBoundariesClear": true,
+        "minSegmentVisibilityMargin": 0.012694453305727604
+      },
+      "passed": true
+    },
+    {
+      "parameters": {
+        "k": 256,
+        "sigma": 0.07,
+        "aim1": 0.09,
+        "aim2": 0.15,
+        "receiver": [
+          16,
+          -2,
+          0
+        ]
+      },
+      "geometry": {
+        "firstSourceSeparated": true,
+        "edge1InFrustum": true,
+        "edge2InFrustum": true,
+        "only1": true,
+        "only2": true,
+        "aabbDisjoint": true,
+        "receiverOutside": true,
+        "outgoingClear": true,
+        "firstLocalShadow": true,
+        "secondLocalShadow": true,
+        "passed": true
+      },
+      "checks": {
+        "clips": [
+          {
+            "chi": 0.08931963203672974,
+            "half": 0.36566576565370684,
+            "threshold": 0.3511498894143194,
+            "margin": 1.0413381199225162
+          },
+          {
+            "chi": 0.016168695022466466,
+            "half": 1.3340115781167194,
+            "threshold": 0.3738371953053051,
+            "margin": 3.568429238367412
+          }
+        ],
+        "minTransitionArgument": 103.08407207299862,
+        "minFaceAngle": 1.1071487177940904,
+        "minKr": 2020.2495153879245,
+        "ballisticAnalyticPassed": true,
+        "analyticContactPassed": true,
+        "finiteMeshBoundariesClear": true,
+        "minSegmentVisibilityMargin": 0.012694453305727604
+      },
+      "passed": true
+    },
+    {
+      "parameters": {
+        "k": 256,
+        "sigma": 0.07,
+        "aim1": 0.09,
+        "aim2": 0.15,
+        "receiver": [
+          16,
+          -1.75,
+          0
+        ]
+      },
+      "geometry": {
+        "firstSourceSeparated": true,
+        "edge1InFrustum": true,
+        "edge2InFrustum": true,
+        "only1": true,
+        "only2": true,
+        "aabbDisjoint": true,
+        "receiverOutside": true,
+        "outgoingClear": true,
+        "firstLocalShadow": true,
+        "secondLocalShadow": true,
+        "passed": true
+      },
+      "checks": {
+        "clips": [
+          {
+            "chi": 0.08931963203672974,
+            "half": 0.36566576565370684,
+            "threshold": 0.3511498894143194,
+            "margin": 1.0413381199225162
+          },
+          {
+            "chi": 0.016168695022466466,
+            "half": 1.3340115781167194,
+            "threshold": 0.37155287568561796,
+            "margin": 3.5903680617599814
+          }
+        ],
+        "minTransitionArgument": 103.08407207299862,
+        "minFaceAngle": 1.1071487177940904,
+        "minKr": 2020.2495153879245,
+        "ballisticAnalyticPassed": true,
+        "analyticContactPassed": true,
+        "finiteMeshBoundariesClear": true,
+        "minSegmentVisibilityMargin": 0.012694453305727604
+      },
+      "passed": true
+    },
+    {
+      "parameters": {
+        "k": 256,
+        "sigma": 0.07,
+        "aim1": 0.09,
+        "aim2": 0.175,
+        "receiver": [
+          16,
+          -2.25,
+          0
+        ]
+      },
+      "geometry": {
+        "firstSourceSeparated": true,
+        "edge1InFrustum": true,
+        "edge2InFrustum": true,
+        "only1": true,
+        "only2": true,
+        "aabbDisjoint": true,
+        "receiverOutside": true,
+        "outgoingClear": true,
+        "firstLocalShadow": true,
+        "secondLocalShadow": true,
+        "passed": true
+      },
+      "checks": {
+        "clips": [
+          {
+            "chi": 0.08931963203672974,
+            "half": 0.36566576565370684,
+            "threshold": 0.3511460019036842,
+            "margin": 1.041349648497508
+          },
+          {
+            "chi": 0.0206174893756141,
+            "half": 1.3286757071459836,
+            "threshold": 0.3762237421484704,
+            "margin": 3.531610470828936
+          }
+        ],
+        "minTransitionArgument": 101.13944306965888,
+        "minFaceAngle": 1.082462375738491,
+        "minKr": 2020.204784073805,
+        "ballisticAnalyticPassed": true,
+        "analyticContactPassed": true,
+        "finiteMeshBoundariesClear": true,
+        "minSegmentVisibilityMargin": 0.012694453305727604
+      },
+      "passed": true
+    },
+    {
+      "parameters": {
+        "k": 256,
+        "sigma": 0.07,
+        "aim1": 0.09,
+        "aim2": 0.175,
+        "receiver": [
+          16,
+          -2,
+          0
+        ]
+      },
+      "geometry": {
+        "firstSourceSeparated": true,
+        "edge1InFrustum": true,
+        "edge2InFrustum": true,
+        "only1": true,
+        "only2": true,
+        "aabbDisjoint": true,
+        "receiverOutside": true,
+        "outgoingClear": true,
+        "firstLocalShadow": true,
+        "secondLocalShadow": true,
+        "passed": true
+      },
+      "checks": {
+        "clips": [
+          {
+            "chi": 0.08931963203672974,
+            "half": 0.36566576565370684,
+            "threshold": 0.3511460019036842,
+            "margin": 1.041349648497508
+          },
+          {
+            "chi": 0.0206174893756141,
+            "half": 1.3286757071459836,
+            "threshold": 0.3738371953053051,
+            "margin": 3.554155990446273
+          }
+        ],
+        "minTransitionArgument": 101.13944306965888,
+        "minFaceAngle": 1.1071487177940904,
+        "minKr": 2020.204784073805,
+        "ballisticAnalyticPassed": true,
+        "analyticContactPassed": true,
+        "finiteMeshBoundariesClear": true,
+        "minSegmentVisibilityMargin": 0.012694453305727604
+      },
+      "passed": true
+    },
+    {
+      "parameters": {
+        "k": 256,
+        "sigma": 0.07,
+        "aim1": 0.09,
+        "aim2": 0.175,
+        "receiver": [
+          16,
+          -1.75,
+          0
+        ]
+      },
+      "geometry": {
+        "firstSourceSeparated": true,
+        "edge1InFrustum": true,
+        "edge2InFrustum": true,
+        "only1": true,
+        "only2": true,
+        "aabbDisjoint": true,
+        "receiverOutside": true,
+        "outgoingClear": true,
+        "firstLocalShadow": true,
+        "secondLocalShadow": true,
+        "passed": true
+      },
+      "checks": {
+        "clips": [
+          {
+            "chi": 0.08931963203672974,
+            "half": 0.36566576565370684,
+            "threshold": 0.3511460019036842,
+            "margin": 1.041349648497508
+          },
+          {
+            "chi": 0.0206174893756141,
+            "half": 1.3286757071459836,
+            "threshold": 0.37155287568561796,
+            "margin": 3.5760070614288986
+          }
+        ],
+        "minTransitionArgument": 101.13944306965888,
+        "minFaceAngle": 1.1071487177940904,
+        "minKr": 2020.204784073805,
+        "ballisticAnalyticPassed": true,
+        "analyticContactPassed": true,
+        "finiteMeshBoundariesClear": true,
+        "minSegmentVisibilityMargin": 0.012694453305727604
+      },
+      "passed": true
+    },
+    {
+      "parameters": {
+        "k": 256,
+        "sigma": 0.07,
+        "aim1": 0.09,
+        "aim2": 0.2,
+        "receiver": [
+          16,
+          -2.25,
+          0
+        ]
+      },
+      "geometry": {
+        "firstSourceSeparated": true,
+        "edge1InFrustum": true,
+        "edge2InFrustum": true,
+        "only1": true,
+        "only2": true,
+        "aabbDisjoint": true,
+        "receiverOutside": true,
+        "outgoingClear": true,
+        "firstLocalShadow": true,
+        "secondLocalShadow": true,
+        "passed": true
+      },
+      "checks": {
+        "clips": [
+          {
+            "chi": 0.08931963203672974,
+            "half": 0.36566576565370684,
+            "threshold": 0.3511440918015442,
+            "margin": 1.041355313078626
+          },
+          {
+            "chi": 0.02576251380788373,
+            "half": 1.3228781548099913,
+            "threshold": 0.3762237421484704,
+            "margin": 3.516200618428647
+          }
+        ],
+        "minTransitionArgument": 99.21570513079078,
+        "minFaceAngle": 1.082462375738491,
+        "minKr": 2020.1828058256397,
+        "ballisticAnalyticPassed": true,
+        "analyticContactPassed": true,
+        "finiteMeshBoundariesClear": true,
+        "minSegmentVisibilityMargin": 0.012694453305727604
+      },
+      "passed": true
+    },
+    {
+      "parameters": {
+        "k": 256,
+        "sigma": 0.07,
+        "aim1": 0.09,
+        "aim2": 0.2,
+        "receiver": [
+          16,
+          -2,
+          0
+        ]
+      },
+      "geometry": {
+        "firstSourceSeparated": true,
+        "edge1InFrustum": true,
+        "edge2InFrustum": true,
+        "only1": true,
+        "only2": true,
+        "aabbDisjoint": true,
+        "receiverOutside": true,
+        "outgoingClear": true,
+        "firstLocalShadow": true,
+        "secondLocalShadow": true,
+        "passed": true
+      },
+      "checks": {
+        "clips": [
+          {
+            "chi": 0.08931963203672974,
+            "half": 0.36566576565370684,
+            "threshold": 0.3511440918015442,
+            "margin": 1.041355313078626
+          },
+          {
+            "chi": 0.02576251380788373,
+            "half": 1.3228781548099913,
+            "threshold": 0.3738371953053051,
+            "margin": 3.5386477627771202
+          }
+        ],
+        "minTransitionArgument": 99.21570513079078,
+        "minFaceAngle": 1.1071487177940904,
+        "minKr": 2020.1828058256397,
+        "ballisticAnalyticPassed": true,
+        "analyticContactPassed": true,
+        "finiteMeshBoundariesClear": true,
+        "minSegmentVisibilityMargin": 0.012694453305727604
+      },
+      "passed": true
+    },
+    {
+      "parameters": {
+        "k": 256,
+        "sigma": 0.07,
+        "aim1": 0.09,
+        "aim2": 0.2,
+        "receiver": [
+          16,
+          -1.75,
+          0
+        ]
+      },
+      "geometry": {
+        "firstSourceSeparated": true,
+        "edge1InFrustum": true,
+        "edge2InFrustum": true,
+        "only1": true,
+        "only2": true,
+        "aabbDisjoint": true,
+        "receiverOutside": true,
+        "outgoingClear": true,
+        "firstLocalShadow": true,
+        "secondLocalShadow": true,
+        "passed": true
+      },
+      "checks": {
+        "clips": [
+          {
+            "chi": 0.08931963203672974,
+            "half": 0.36566576565370684,
+            "threshold": 0.3511440918015442,
+            "margin": 1.041355313078626
+          },
+          {
+            "chi": 0.02576251380788373,
+            "half": 1.3228781548099913,
+            "threshold": 0.37155287568561796,
+            "margin": 3.5604034886526303
+          }
+        ],
+        "minTransitionArgument": 99.21570513079078,
+        "minFaceAngle": 1.1071487177940904,
+        "minKr": 2020.1828058256397,
+        "ballisticAnalyticPassed": true,
+        "analyticContactPassed": true,
+        "finiteMeshBoundariesClear": true,
+        "minSegmentVisibilityMargin": 0.012694453305727604
+      },
+      "passed": true
+    },
+    {
+      "parameters": {
+        "k": 256,
+        "sigma": 0.07,
+        "aim1": 0.1,
+        "aim2": 0.15,
+        "receiver": [
+          16,
+          -2.25,
+          0
+        ]
+      },
+      "geometry": {
+        "firstSourceSeparated": true,
+        "edge1InFrustum": true,
+        "edge2InFrustum": true,
+        "only1": true,
+        "only2": true,
+        "aabbDisjoint": true,
+        "receiverOutside": true,
+        "outgoingClear": true,
+        "firstLocalShadow": true,
+        "secondLocalShadow": true,
+        "passed": true
+      },
+      "checks": {
+        "clips": [
+          {
+            "chi": 0.09723626233624671,
+            "half": 0.3642923729718134,
+            "threshold": 0.3511676702237753,
+            "margin": 1.0373744620046446
+          },
+          {
+            "chi": 0.01604010865460792,
+            "half": 1.338326024430156,
+            "threshold": 0.3762237421484704,
+            "margin": 3.5572609447439074
+          }
+        ],
+        "minTransitionArgument": 103.07901975504566,
+        "minFaceAngle": 1.082462375738491,
+        "minKr": 2020.454115088699,
+        "ballisticAnalyticPassed": true,
+        "analyticContactPassed": true,
+        "finiteMeshBoundariesClear": true,
+        "minSegmentVisibilityMargin": 0.020987047194677366
+      },
+      "passed": true
+    },
+    {
+      "parameters": {
+        "k": 256,
+        "sigma": 0.07,
+        "aim1": 0.1,
+        "aim2": 0.15,
+        "receiver": [
+          16,
+          -2,
+          0
+        ]
+      },
+      "geometry": {
+        "firstSourceSeparated": true,
+        "edge1InFrustum": true,
+        "edge2InFrustum": true,
+        "only1": true,
+        "only2": true,
+        "aabbDisjoint": true,
+        "receiverOutside": true,
+        "outgoingClear": true,
+        "firstLocalShadow": true,
+        "secondLocalShadow": true,
+        "passed": true
+      },
+      "checks": {
+        "clips": [
+          {
+            "chi": 0.09723626233624671,
+            "half": 0.3642923729718134,
+            "threshold": 0.3511676702237753,
+            "margin": 1.0373744620046446
+          },
+          {
+            "chi": 0.01604010865460792,
+            "half": 1.338326024430156,
+            "threshold": 0.3738371953053051,
+            "margin": 3.57997021494122
+          }
+        ],
+        "minTransitionArgument": 103.07901975504566,
+        "minFaceAngle": 1.1071487177940904,
+        "minKr": 2020.454115088699,
+        "ballisticAnalyticPassed": true,
+        "analyticContactPassed": true,
+        "finiteMeshBoundariesClear": true,
+        "minSegmentVisibilityMargin": 0.020987047194677366
+      },
+      "passed": true
+    },
+    {
+      "parameters": {
+        "k": 256,
+        "sigma": 0.07,
+        "aim1": 0.1,
+        "aim2": 0.15,
+        "receiver": [
+          16,
+          -1.75,
+          0
+        ]
+      },
+      "geometry": {
+        "firstSourceSeparated": true,
+        "edge1InFrustum": true,
+        "edge2InFrustum": true,
+        "only1": true,
+        "only2": true,
+        "aabbDisjoint": true,
+        "receiverOutside": true,
+        "outgoingClear": true,
+        "firstLocalShadow": true,
+        "secondLocalShadow": true,
+        "passed": true
+      },
+      "checks": {
+        "clips": [
+          {
+            "chi": 0.09723626233624671,
+            "half": 0.3642923729718134,
+            "threshold": 0.3511676702237753,
+            "margin": 1.0373744620046446
+          },
+          {
+            "chi": 0.01604010865460792,
+            "half": 1.338326024430156,
+            "threshold": 0.37155287568561796,
+            "margin": 3.601979992647275
+          }
+        ],
+        "minTransitionArgument": 103.07901975504566,
+        "minFaceAngle": 1.1071487177940904,
+        "minKr": 2020.454115088699,
+        "ballisticAnalyticPassed": true,
+        "analyticContactPassed": true,
+        "finiteMeshBoundariesClear": true,
+        "minSegmentVisibilityMargin": 0.020987047194677366
+      },
+      "passed": true
+    },
+    {
+      "parameters": {
+        "k": 256,
+        "sigma": 0.07,
+        "aim1": 0.1,
+        "aim2": 0.175,
+        "receiver": [
+          16,
+          -2.25,
+          0
+        ]
+      },
+      "geometry": {
+        "firstSourceSeparated": true,
+        "edge1InFrustum": true,
+        "edge2InFrustum": true,
+        "only1": true,
+        "only2": true,
+        "aabbDisjoint": true,
+        "receiverOutside": true,
+        "outgoingClear": true,
+        "firstLocalShadow": true,
+        "secondLocalShadow": true,
+        "passed": true
+      },
+      "checks": {
+        "clips": [
+          {
+            "chi": 0.09723626233624671,
+            "half": 0.3642923729718134,
+            "threshold": 0.35116346097693496,
+            "margin": 1.0373868965704856
+          },
+          {
+            "chi": 0.0204638269535967,
+            "half": 1.3329959534874902,
+            "threshold": 0.3762237421484704,
+            "margin": 3.5430936545239238
+          }
+        ],
+        "minTransitionArgument": 101.13385047229535,
+        "minFaceAngle": 1.082462375738491,
+        "minKr": 2020.4056793137042,
+        "ballisticAnalyticPassed": true,
+        "analyticContactPassed": true,
+        "finiteMeshBoundariesClear": true,
+        "minSegmentVisibilityMargin": 0.020987047194677366
+      },
+      "passed": true
+    },
+    {
+      "parameters": {
+        "k": 256,
+        "sigma": 0.07,
+        "aim1": 0.1,
+        "aim2": 0.175,
+        "receiver": [
+          16,
+          -2,
+          0
+        ]
+      },
+      "geometry": {
+        "firstSourceSeparated": true,
+        "edge1InFrustum": true,
+        "edge2InFrustum": true,
+        "only1": true,
+        "only2": true,
+        "aabbDisjoint": true,
+        "receiverOutside": true,
+        "outgoingClear": true,
+        "firstLocalShadow": true,
+        "secondLocalShadow": true,
+        "passed": true
+      },
+      "checks": {
+        "clips": [
+          {
+            "chi": 0.09723626233624671,
+            "half": 0.3642923729718134,
+            "threshold": 0.35116346097693496,
+            "margin": 1.0373868965704856
+          },
+          {
+            "chi": 0.0204638269535967,
+            "half": 1.3329959534874902,
+            "threshold": 0.3738371953053051,
+            "margin": 3.565712481870243
+          }
+        ],
+        "minTransitionArgument": 101.13385047229535,
+        "minFaceAngle": 1.1071487177940904,
+        "minKr": 2020.4056793137042,
+        "ballisticAnalyticPassed": true,
+        "analyticContactPassed": true,
+        "finiteMeshBoundariesClear": true,
+        "minSegmentVisibilityMargin": 0.020987047194677366
+      },
+      "passed": true
+    },
+    {
+      "parameters": {
+        "k": 256,
+        "sigma": 0.07,
+        "aim1": 0.1,
+        "aim2": 0.175,
+        "receiver": [
+          16,
+          -1.75,
+          0
+        ]
+      },
+      "geometry": {
+        "firstSourceSeparated": true,
+        "edge1InFrustum": true,
+        "edge2InFrustum": true,
+        "only1": true,
+        "only2": true,
+        "aabbDisjoint": true,
+        "receiverOutside": true,
+        "outgoingClear": true,
+        "firstLocalShadow": true,
+        "secondLocalShadow": true,
+        "passed": true
+      },
+      "checks": {
+        "clips": [
+          {
+            "chi": 0.09723626233624671,
+            "half": 0.3642923729718134,
+            "threshold": 0.35116346097693496,
+            "margin": 1.0373868965704856
+          },
+          {
+            "chi": 0.0204638269535967,
+            "half": 1.3329959534874902,
+            "threshold": 0.37155287568561796,
+            "margin": 3.5876346025521766
+          }
+        ],
+        "minTransitionArgument": 101.13385047229535,
+        "minFaceAngle": 1.1071487177940904,
+        "minKr": 2020.4056793137042,
+        "ballisticAnalyticPassed": true,
+        "analyticContactPassed": true,
+        "finiteMeshBoundariesClear": true,
+        "minSegmentVisibilityMargin": 0.020987047194677366
+      },
+      "passed": true
+    },
+    {
+      "parameters": {
+        "k": 256,
+        "sigma": 0.07,
+        "aim1": 0.1,
+        "aim2": 0.2,
+        "receiver": [
+          16,
+          -2.25,
+          0
+        ]
+      },
+      "geometry": {
+        "firstSourceSeparated": true,
+        "edge1InFrustum": true,
+        "edge2InFrustum": true,
+        "only1": true,
+        "only2": true,
+        "aabbDisjoint": true,
+        "receiverOutside": true,
+        "outgoingClear": true,
+        "firstLocalShadow": true,
+        "secondLocalShadow": true,
+        "passed": true
+      },
+      "checks": {
+        "clips": [
+          {
+            "chi": 0.09723626233624671,
+            "half": 0.3642923729718134,
+            "threshold": 0.35116122955429285,
+            "margin": 1.0373934885527856
+          },
+          {
+            "chi": 0.02557959373844384,
+            "half": 1.3272055496465325,
+            "threshold": 0.3762237421484704,
+            "margin": 3.527702802772009
+          }
+        ],
+        "minTransitionArgument": 99.2095886181924,
+        "minFaceAngle": 1.082462375738491,
+        "minKr": 2020.3800025838839,
+        "ballisticAnalyticPassed": true,
+        "analyticContactPassed": true,
+        "finiteMeshBoundariesClear": true,
+        "minSegmentVisibilityMargin": 0.020987047194677366
+      },
+      "passed": true
+    },
+    {
+      "parameters": {
+        "k": 256,
+        "sigma": 0.07,
+        "aim1": 0.1,
+        "aim2": 0.2,
+        "receiver": [
+          16,
+          -2,
+          0
+        ]
+      },
+      "geometry": {
+        "firstSourceSeparated": true,
+        "edge1InFrustum": true,
+        "edge2InFrustum": true,
+        "only1": true,
+        "only2": true,
+        "aabbDisjoint": true,
+        "receiverOutside": true,
+        "outgoingClear": true,
+        "firstLocalShadow": true,
+        "secondLocalShadow": true,
+        "passed": true
+      },
+      "checks": {
+        "clips": [
+          {
+            "chi": 0.09723626233624671,
+            "half": 0.3642923729718134,
+            "threshold": 0.35116122955429285,
+            "margin": 1.0373934885527856
+          },
+          {
+            "chi": 0.02557959373844384,
+            "half": 1.3272055496465325,
+            "threshold": 0.3738371953053051,
+            "margin": 3.5502233761480877
+          }
+        ],
+        "minTransitionArgument": 99.2095886181924,
+        "minFaceAngle": 1.1071487177940904,
+        "minKr": 2020.3800025838839,
+        "ballisticAnalyticPassed": true,
+        "analyticContactPassed": true,
+        "finiteMeshBoundariesClear": true,
+        "minSegmentVisibilityMargin": 0.020987047194677366
+      },
+      "passed": true
+    },
+    {
+      "parameters": {
+        "k": 256,
+        "sigma": 0.07,
+        "aim1": 0.1,
+        "aim2": 0.2,
+        "receiver": [
+          16,
+          -1.75,
+          0
+        ]
+      },
+      "geometry": {
+        "firstSourceSeparated": true,
+        "edge1InFrustum": true,
+        "edge2InFrustum": true,
+        "only1": true,
+        "only2": true,
+        "aabbDisjoint": true,
+        "receiverOutside": true,
+        "outgoingClear": true,
+        "firstLocalShadow": true,
+        "secondLocalShadow": true,
+        "passed": true
+      },
+      "checks": {
+        "clips": [
+          {
+            "chi": 0.09723626233624671,
+            "half": 0.3642923729718134,
+            "threshold": 0.35116122955429285,
+            "margin": 1.0373934885527856
+          },
+          {
+            "chi": 0.02557959373844384,
+            "half": 1.3272055496465325,
+            "threshold": 0.37155287568561796,
+            "margin": 3.572050269285282
+          }
+        ],
+        "minTransitionArgument": 99.2095886181924,
+        "minFaceAngle": 1.1071487177940904,
+        "minKr": 2020.3800025838839,
+        "ballisticAnalyticPassed": true,
+        "analyticContactPassed": true,
+        "finiteMeshBoundariesClear": true,
+        "minSegmentVisibilityMargin": 0.020987047194677366
+      },
+      "passed": true
+    },
+    {
+      "parameters": {
+        "k": 256,
+        "sigma": 0.07,
+        "aim1": 0.11,
+        "aim2": 0.15,
+        "receiver": [
+          16,
+          -2.25,
+          0
+        ]
+      },
+      "geometry": {
+        "firstSourceSeparated": true,
+        "edge1InFrustum": true,
+        "edge2InFrustum": true,
+        "only1": true,
+        "only2": true,
+        "aabbDisjoint": true,
+        "receiverOutside": true,
+        "outgoingClear": true,
+        "firstLocalShadow": true,
+        "secondLocalShadow": true,
+        "passed": true
+      },
+      "checks": {
+        "clips": [
+          {
+            "chi": 0.10608633613087841,
+            "half": 0.3627230901879705,
+            "threshold": 0.3511856255058343,
+            "margin": 1.0328528955748633
+          },
+          {
+            "chi": 0.015912753453394775,
+            "half": 1.3426312304232373,
+            "threshold": 0.3762237421484704,
+            "margin": 3.568704151300984
+          }
+        ],
+        "minTransitionArgument": 103.07422800229644,
+        "minFaceAngle": 1.082462375738491,
+        "minKr": 2020.660732918565,
+        "ballisticAnalyticPassed": true,
+        "analyticContactPassed": true,
+        "finiteMeshBoundariesClear": true,
+        "minSegmentVisibilityMargin": 0.023838678742556407
+      },
+      "passed": true
+    },
+    {
+      "parameters": {
+        "k": 256,
+        "sigma": 0.07,
+        "aim1": 0.11,
+        "aim2": 0.15,
+        "receiver": [
+          16,
+          -2,
+          0
+        ]
+      },
+      "geometry": {
+        "firstSourceSeparated": true,
+        "edge1InFrustum": true,
+        "edge2InFrustum": true,
+        "only1": true,
+        "only2": true,
+        "aabbDisjoint": true,
+        "receiverOutside": true,
+        "outgoingClear": true,
+        "firstLocalShadow": true,
+        "secondLocalShadow": true,
+        "passed": true
+      },
+      "checks": {
+        "clips": [
+          {
+            "chi": 0.10608633613087841,
+            "half": 0.3627230901879705,
+            "threshold": 0.3511856255058343,
+            "margin": 1.0328528955748633
+          },
+          {
+            "chi": 0.015912753453394775,
+            "half": 1.3426312304232373,
+            "threshold": 0.3738371953053051,
+            "margin": 3.591486474016418
+          }
+        ],
+        "minTransitionArgument": 103.07422800229644,
+        "minFaceAngle": 1.1071487177940904,
+        "minKr": 2020.660732918565,
+        "ballisticAnalyticPassed": true,
+        "analyticContactPassed": true,
+        "finiteMeshBoundariesClear": true,
+        "minSegmentVisibilityMargin": 0.029265360816302932
+      },
+      "passed": true
+    },
+    {
+      "parameters": {
+        "k": 256,
+        "sigma": 0.07,
+        "aim1": 0.11,
+        "aim2": 0.15,
+        "receiver": [
+          16,
+          -1.75,
+          0
+        ]
+      },
+      "geometry": {
+        "firstSourceSeparated": true,
+        "edge1InFrustum": true,
+        "edge2InFrustum": true,
+        "only1": true,
+        "only2": true,
+        "aabbDisjoint": true,
+        "receiverOutside": true,
+        "outgoingClear": true,
+        "firstLocalShadow": true,
+        "secondLocalShadow": true,
+        "passed": true
+      },
+      "checks": {
+        "clips": [
+          {
+            "chi": 0.10608633613087841,
+            "half": 0.3627230901879705,
+            "threshold": 0.3511856255058343,
+            "margin": 1.0328528955748633
+          },
+          {
+            "chi": 0.015912753453394775,
+            "half": 1.3426312304232373,
+            "threshold": 0.37155287568561796,
+            "margin": 3.6135670540719427
+          }
+        ],
+        "minTransitionArgument": 103.07422800229644,
+        "minFaceAngle": 1.1071487177940904,
+        "minKr": 2020.660732918565,
+        "ballisticAnalyticPassed": true,
+        "analyticContactPassed": true,
+        "finiteMeshBoundariesClear": true,
+        "minSegmentVisibilityMargin": 0.029265360816302932
+      },
+      "passed": true
+    },
+    {
+      "parameters": {
+        "k": 256,
+        "sigma": 0.07,
+        "aim1": 0.11,
+        "aim2": 0.175,
+        "receiver": [
+          16,
+          -2.25,
+          0
+        ]
+      },
+      "geometry": {
+        "firstSourceSeparated": true,
+        "edge1InFrustum": true,
+        "edge2InFrustum": true,
+        "only1": true,
+        "only2": true,
+        "aabbDisjoint": true,
+        "receiverOutside": true,
+        "outgoingClear": true,
+        "firstLocalShadow": true,
+        "secondLocalShadow": true,
+        "passed": true
+      },
+      "checks": {
+        "clips": [
+          {
+            "chi": 0.10608633613087841,
+            "half": 0.3627230901879705,
+            "threshold": 0.3511810951726277,
+            "margin": 1.0328662196627332
+          },
+          {
+            "chi": 0.02031165470595489,
+            "half": 1.3373069494305088,
+            "threshold": 0.3762237421484704,
+            "margin": 3.5545522507262794
+          }
+        ],
+        "minTransitionArgument": 101.12851346335425,
+        "minFaceAngle": 1.082462375738491,
+        "minKr": 2020.6085997632908,
+        "ballisticAnalyticPassed": true,
+        "analyticContactPassed": true,
+        "finiteMeshBoundariesClear": true,
+        "minSegmentVisibilityMargin": 0.029265360816302932
+      },
+      "passed": true
+    },
+    {
+      "parameters": {
+        "k": 256,
+        "sigma": 0.07,
+        "aim1": 0.11,
+        "aim2": 0.175,
+        "receiver": [
+          16,
+          -2,
+          0
+        ]
+      },
+      "geometry": {
+        "firstSourceSeparated": true,
+        "edge1InFrustum": true,
+        "edge2InFrustum": true,
+        "only1": true,
+        "only2": true,
+        "aabbDisjoint": true,
+        "receiverOutside": true,
+        "outgoingClear": true,
+        "firstLocalShadow": true,
+        "secondLocalShadow": true,
+        "passed": true
+      },
+      "checks": {
+        "clips": [
+          {
+            "chi": 0.10608633613087841,
+            "half": 0.3627230901879705,
+            "threshold": 0.3511810951726277,
+            "margin": 1.0328662196627332
+          },
+          {
+            "chi": 0.02031165470595489,
+            "half": 1.3373069494305088,
+            "threshold": 0.3738371953053051,
+            "margin": 3.5772442288369883
+          }
+        ],
+        "minTransitionArgument": 101.12851346335425,
+        "minFaceAngle": 1.1071487177940904,
+        "minKr": 2020.6085997632908,
+        "ballisticAnalyticPassed": true,
+        "analyticContactPassed": true,
+        "finiteMeshBoundariesClear": true,
+        "minSegmentVisibilityMargin": 0.029265360816302932
+      },
+      "passed": true
+    },
+    {
+      "parameters": {
+        "k": 256,
+        "sigma": 0.07,
+        "aim1": 0.11,
+        "aim2": 0.175,
+        "receiver": [
+          16,
+          -1.75,
+          0
+        ]
+      },
+      "geometry": {
+        "firstSourceSeparated": true,
+        "edge1InFrustum": true,
+        "edge2InFrustum": true,
+        "only1": true,
+        "only2": true,
+        "aabbDisjoint": true,
+        "receiverOutside": true,
+        "outgoingClear": true,
+        "firstLocalShadow": true,
+        "secondLocalShadow": true,
+        "passed": true
+      },
+      "checks": {
+        "clips": [
+          {
+            "chi": 0.10608633613087841,
+            "half": 0.3627230901879705,
+            "threshold": 0.3511810951726277,
+            "margin": 1.0328662196627332
+          },
+          {
+            "chi": 0.02031165470595489,
+            "half": 1.3373069494305088,
+            "threshold": 0.37155287568561796,
+            "margin": 3.599237247088472
+          }
+        ],
+        "minTransitionArgument": 101.12851346335425,
+        "minFaceAngle": 1.1071487177940904,
+        "minKr": 2020.6085997632908,
+        "ballisticAnalyticPassed": true,
+        "analyticContactPassed": true,
+        "finiteMeshBoundariesClear": true,
+        "minSegmentVisibilityMargin": 0.029265360816302932
+      },
+      "passed": true
+    },
+    {
+      "parameters": {
+        "k": 256,
+        "sigma": 0.07,
+        "aim1": 0.11,
+        "aim2": 0.2,
+        "receiver": [
+          16,
+          -2.25,
+          0
+        ]
+      },
+      "geometry": {
+        "firstSourceSeparated": true,
+        "edge1InFrustum": true,
+        "edge2InFrustum": true,
+        "only1": true,
+        "only2": true,
+        "aabbDisjoint": true,
+        "receiverOutside": true,
+        "outgoingClear": true,
+        "firstLocalShadow": true,
+        "secondLocalShadow": true,
+        "passed": true
+      },
+      "checks": {
+        "clips": [
+          {
+            "chi": 0.10608633613087841,
+            "half": 0.3627230901879705,
+            "threshold": 0.3511785430691537,
+            "margin": 1.0328737257633176
+          },
+          {
+            "chi": 0.025398470248210347,
+            "half": 1.3315236717553063,
+            "threshold": 0.3762237421484704,
+            "margin": 3.539180340271675
+          }
+        ],
+        "minTransitionArgument": 99.20372275443889,
+        "minFaceAngle": 1.082462375738491,
+        "minKr": 2020.5792315338495,
+        "ballisticAnalyticPassed": true,
+        "analyticContactPassed": true,
+        "finiteMeshBoundariesClear": true,
+        "minSegmentVisibilityMargin": 0.029265360816302932
+      },
+      "passed": true
+    },
+    {
+      "parameters": {
+        "k": 256,
+        "sigma": 0.07,
+        "aim1": 0.11,
+        "aim2": 0.2,
+        "receiver": [
+          16,
+          -2,
+          0
+        ]
+      },
+      "geometry": {
+        "firstSourceSeparated": true,
+        "edge1InFrustum": true,
+        "edge2InFrustum": true,
+        "only1": true,
+        "only2": true,
+        "aabbDisjoint": true,
+        "receiverOutside": true,
+        "outgoingClear": true,
+        "firstLocalShadow": true,
+        "secondLocalShadow": true,
+        "passed": true
+      },
+      "checks": {
+        "clips": [
+          {
+            "chi": 0.10608633613087841,
+            "half": 0.3627230901879705,
+            "threshold": 0.3511785430691537,
+            "margin": 1.0328737257633176
+          },
+          {
+            "chi": 0.025398470248210347,
+            "half": 1.3315236717553063,
+            "threshold": 0.3738371953053051,
+            "margin": 3.5617741853318754
+          }
+        ],
+        "minTransitionArgument": 99.20372275443889,
+        "minFaceAngle": 1.1071487177940904,
+        "minKr": 2020.5792315338495,
+        "ballisticAnalyticPassed": true,
+        "analyticContactPassed": true,
+        "finiteMeshBoundariesClear": true,
+        "minSegmentVisibilityMargin": 0.029265360816302932
+      },
+      "passed": true
+    },
+    {
+      "parameters": {
+        "k": 256,
+        "sigma": 0.07,
+        "aim1": 0.11,
+        "aim2": 0.2,
+        "receiver": [
+          16,
+          -1.75,
+          0
+        ]
+      },
+      "geometry": {
+        "firstSourceSeparated": true,
+        "edge1InFrustum": true,
+        "edge2InFrustum": true,
+        "only1": true,
+        "only2": true,
+        "aabbDisjoint": true,
+        "receiverOutside": true,
+        "outgoingClear": true,
+        "firstLocalShadow": true,
+        "secondLocalShadow": true,
+        "passed": true
+      },
+      "checks": {
+        "clips": [
+          {
+            "chi": 0.10608633613087841,
+            "half": 0.3627230901879705,
+            "threshold": 0.3511785430691537,
+            "margin": 1.0328737257633176
+          },
+          {
+            "chi": 0.025398470248210347,
+            "half": 1.3315236717553063,
+            "threshold": 0.37155287568561796,
+            "margin": 3.5836720932337727
+          }
+        ],
+        "minTransitionArgument": 99.20372275443889,
+        "minFaceAngle": 1.1071487177940904,
+        "minKr": 2020.5792315338495,
+        "ballisticAnalyticPassed": true,
+        "analyticContactPassed": true,
+        "finiteMeshBoundariesClear": true,
+        "minSegmentVisibilityMargin": 0.029265360816302932
+      },
+      "passed": true
+    },
+    {
+      "parameters": {
+        "k": 256,
+        "sigma": 0.0725,
+        "aim1": 0.09,
+        "aim2": 0.15,
+        "receiver": [
+          16,
+          -2.25,
+          0
+        ]
+      },
+      "geometry": {
+        "firstSourceSeparated": true,
+        "edge1InFrustum": true,
+        "edge2InFrustum": true,
+        "only1": true,
+        "only2": true,
+        "aabbDisjoint": true,
+        "receiverOutside": true,
+        "outgoingClear": true,
+        "firstLocalShadow": true,
+        "secondLocalShadow": true,
+        "passed": true
+      },
+      "checks": {
+        "clips": [
+          {
+            "chi": 0.08908907461682466,
+            "half": 0.3671091685156254,
+            "threshold": 0.35121551960558717,
+            "margin": 1.045253264798454
+          },
+          {
+            "chi": 0.01654725967318077,
+            "half": 1.3127945097329514,
+            "threshold": 0.3762237421484704,
+            "margin": 3.489398362357682
+          }
+        ],
+        "minTransitionArgument": 103.12360111475063,
+        "minFaceAngle": 1.082462375738491,
+        "minKr": 2021.0047584145013,
+        "ballisticAnalyticPassed": true,
+        "analyticContactPassed": true,
+        "finiteMeshBoundariesClear": true,
+        "minSegmentVisibilityMargin": 0.012405767674336765
+      },
+      "passed": true
+    },
+    {
+      "parameters": {
+        "k": 256,
+        "sigma": 0.0725,
+        "aim1": 0.09,
+        "aim2": 0.15,
+        "receiver": [
+          16,
+          -2,
+          0
+        ]
+      },
+      "geometry": {
+        "firstSourceSeparated": true,
+        "edge1InFrustum": true,
+        "edge2InFrustum": true,
+        "only1": true,
+        "only2": true,
+        "aabbDisjoint": true,
+        "receiverOutside": true,
+        "outgoingClear": true,
+        "firstLocalShadow": true,
+        "secondLocalShadow": true,
+        "passed": true
+      },
+      "checks": {
+        "clips": [
+          {
+            "chi": 0.08908907461682466,
+            "half": 0.3671091685156254,
+            "threshold": 0.35121551960558717,
+            "margin": 1.045253264798454
+          },
+          {
+            "chi": 0.01654725967318077,
+            "half": 1.3127945097329514,
+            "threshold": 0.3738371953053051,
+            "margin": 3.5116744032407454
+          }
+        ],
+        "minTransitionArgument": 103.12360111475063,
+        "minFaceAngle": 1.1071487177940904,
+        "minKr": 2021.0047584145013,
+        "ballisticAnalyticPassed": true,
+        "analyticContactPassed": true,
+        "finiteMeshBoundariesClear": true,
+        "minSegmentVisibilityMargin": 0.012405767674336765
+      },
+      "passed": true
+    },
+    {
+      "parameters": {
+        "k": 256,
+        "sigma": 0.0725,
+        "aim1": 0.09,
+        "aim2": 0.15,
+        "receiver": [
+          16,
+          -1.75,
+          0
+        ]
+      },
+      "geometry": {
+        "firstSourceSeparated": true,
+        "edge1InFrustum": true,
+        "edge2InFrustum": true,
+        "only1": true,
+        "only2": true,
+        "aabbDisjoint": true,
+        "receiverOutside": true,
+        "outgoingClear": true,
+        "firstLocalShadow": true,
+        "secondLocalShadow": true,
+        "passed": true
+      },
+      "checks": {
+        "clips": [
+          {
+            "chi": 0.08908907461682466,
+            "half": 0.3671091685156254,
+            "threshold": 0.35121551960558717,
+            "margin": 1.045253264798454
+          },
+          {
+            "chi": 0.01654725967318077,
+            "half": 1.3127945097329514,
+            "threshold": 0.37155287568561796,
+            "margin": 3.533264295991471
+          }
+        ],
+        "minTransitionArgument": 103.12360111475063,
+        "minFaceAngle": 1.1071487177940904,
+        "minKr": 2021.0047584145013,
+        "ballisticAnalyticPassed": true,
+        "analyticContactPassed": true,
+        "finiteMeshBoundariesClear": true,
+        "minSegmentVisibilityMargin": 0.012405767674336765
+      },
+      "passed": true
+    },
+    {
+      "parameters": {
+        "k": 256,
+        "sigma": 0.0725,
+        "aim1": 0.09,
+        "aim2": 0.175,
+        "receiver": [
+          16,
+          -2.25,
+          0
+        ]
+      },
+      "geometry": {
+        "firstSourceSeparated": true,
+        "edge1InFrustum": true,
+        "edge2InFrustum": true,
+        "only1": true,
+        "only2": true,
+        "aabbDisjoint": true,
+        "receiverOutside": true,
+        "outgoingClear": true,
+        "firstLocalShadow": true,
+        "secondLocalShadow": true,
+        "passed": true
+      },
+      "checks": {
+        "clips": [
+          {
+            "chi": 0.08908907461682466,
+            "half": 0.3671091685156254,
+            "threshold": 0.3512130666350966,
+            "margin": 1.0452605651402047
+          },
+          {
+            "chi": 0.021136876614225544,
+            "half": 1.3074155992837626,
+            "threshold": 0.3762237421484704,
+            "margin": 3.4751012570807216
+          }
+        ],
+        "minTransitionArgument": 101.17909572437456,
+        "minFaceAngle": 1.082462375738491,
+        "minKr": 2020.976528182949,
+        "ballisticAnalyticPassed": true,
+        "analyticContactPassed": true,
+        "finiteMeshBoundariesClear": true,
+        "minSegmentVisibilityMargin": 0.012405767674336765
+      },
+      "passed": true
+    },
+    {
+      "parameters": {
+        "k": 256,
+        "sigma": 0.0725,
+        "aim1": 0.09,
+        "aim2": 0.175,
+        "receiver": [
+          16,
+          -2,
+          0
+        ]
+      },
+      "geometry": {
+        "firstSourceSeparated": true,
+        "edge1InFrustum": true,
+        "edge2InFrustum": true,
+        "only1": true,
+        "only2": true,
+        "aabbDisjoint": true,
+        "receiverOutside": true,
+        "outgoingClear": true,
+        "firstLocalShadow": true,
+        "secondLocalShadow": true,
+        "passed": true
+      },
+      "checks": {
+        "clips": [
+          {
+            "chi": 0.08908907461682466,
+            "half": 0.3671091685156254,
+            "threshold": 0.3512130666350966,
+            "margin": 1.0452605651402047
+          },
+          {
+            "chi": 0.021136876614225544,
+            "half": 1.3074155992837626,
+            "threshold": 0.3738371953053051,
+            "margin": 3.49728602638382
+          }
+        ],
+        "minTransitionArgument": 101.17909572437456,
+        "minFaceAngle": 1.1071487177940904,
+        "minKr": 2020.976528182949,
+        "ballisticAnalyticPassed": true,
+        "analyticContactPassed": true,
+        "finiteMeshBoundariesClear": true,
+        "minSegmentVisibilityMargin": 0.012405767674336765
+      },
+      "passed": true
+    },
+    {
+      "parameters": {
+        "k": 256,
+        "sigma": 0.0725,
+        "aim1": 0.09,
+        "aim2": 0.175,
+        "receiver": [
+          16,
+          -1.75,
+          0
+        ]
+      },
+      "geometry": {
+        "firstSourceSeparated": true,
+        "edge1InFrustum": true,
+        "edge2InFrustum": true,
+        "only1": true,
+        "only2": true,
+        "aabbDisjoint": true,
+        "receiverOutside": true,
+        "outgoingClear": true,
+        "firstLocalShadow": true,
+        "secondLocalShadow": true,
+        "passed": true
+      },
+      "checks": {
+        "clips": [
+          {
+            "chi": 0.08908907461682466,
+            "half": 0.3671091685156254,
+            "threshold": 0.3512130666350966,
+            "margin": 1.0452605651402047
+          },
+          {
+            "chi": 0.021136876614225544,
+            "half": 1.3074155992837626,
+            "threshold": 0.37155287568561796,
+            "margin": 3.518787458908019
+          }
+        ],
+        "minTransitionArgument": 101.17909572437456,
+        "minFaceAngle": 1.1071487177940904,
+        "minKr": 2020.976528182949,
+        "ballisticAnalyticPassed": true,
+        "analyticContactPassed": true,
+        "finiteMeshBoundariesClear": true,
+        "minSegmentVisibilityMargin": 0.012405767674336765
+      },
+      "passed": true
+    },
+    {
+      "parameters": {
+        "k": 256,
+        "sigma": 0.0725,
+        "aim1": 0.09,
+        "aim2": 0.2,
+        "receiver": [
+          16,
+          -2.25,
+          0
+        ]
+      },
+      "geometry": {
+        "firstSourceSeparated": true,
+        "edge1InFrustum": true,
+        "edge2InFrustum": true,
+        "only1": true,
+        "only2": true,
+        "aabbDisjoint": true,
+        "receiverOutside": true,
+        "outgoingClear": true,
+        "firstLocalShadow": true,
+        "secondLocalShadow": true,
+        "passed": true
+      },
+      "checks": {
+        "clips": [
+          {
+            "chi": 0.08908907461682466,
+            "half": 0.3671091685156254,
+            "threshold": 0.3512125910629434,
+            "margin": 1.0452619805132017
+          },
+          {
+            "chi": 0.026445799473056017,
+            "half": 1.3015665933544478,
+            "threshold": 0.3762237421484704,
+            "margin": 3.459554641399549
+          }
+        ],
+        "minTransitionArgument": 99.25545741948704,
+        "minFaceAngle": 1.082462375738491,
+        "minKr": 2020.9710550408613,
+        "ballisticAnalyticPassed": true,
+        "analyticContactPassed": true,
+        "finiteMeshBoundariesClear": true,
+        "minSegmentVisibilityMargin": 0.012405767674336765
+      },
+      "passed": true
+    },
+    {
+      "parameters": {
+        "k": 256,
+        "sigma": 0.0725,
+        "aim1": 0.09,
+        "aim2": 0.2,
+        "receiver": [
+          16,
+          -2,
+          0
+        ]
+      },
+      "geometry": {
+        "firstSourceSeparated": true,
+        "edge1InFrustum": true,
+        "edge2InFrustum": true,
+        "only1": true,
+        "only2": true,
+        "aabbDisjoint": true,
+        "receiverOutside": true,
+        "outgoingClear": true,
+        "firstLocalShadow": true,
+        "secondLocalShadow": true,
+        "passed": true
+      },
+      "checks": {
+        "clips": [
+          {
+            "chi": 0.08908907461682466,
+            "half": 0.3671091685156254,
+            "threshold": 0.3512125910629434,
+            "margin": 1.0452619805132017
+          },
+          {
+            "chi": 0.026445799473056017,
+            "half": 1.3015665933544478,
+            "threshold": 0.3738371953053051,
+            "margin": 3.4816401623479045
+          }
+        ],
+        "minTransitionArgument": 99.25545741948704,
+        "minFaceAngle": 1.1071487177940904,
+        "minKr": 2020.9710550408613,
+        "ballisticAnalyticPassed": true,
+        "analyticContactPassed": true,
+        "finiteMeshBoundariesClear": true,
+        "minSegmentVisibilityMargin": 0.012405767674336765
+      },
+      "passed": true
+    },
+    {
+      "parameters": {
+        "k": 256,
+        "sigma": 0.0725,
+        "aim1": 0.09,
+        "aim2": 0.2,
+        "receiver": [
+          16,
+          -1.75,
+          0
+        ]
+      },
+      "geometry": {
+        "firstSourceSeparated": true,
+        "edge1InFrustum": true,
+        "edge2InFrustum": true,
+        "only1": true,
+        "only2": true,
+        "aabbDisjoint": true,
+        "receiverOutside": true,
+        "outgoingClear": true,
+        "firstLocalShadow": true,
+        "secondLocalShadow": true,
+        "passed": true
+      },
+      "checks": {
+        "clips": [
+          {
+            "chi": 0.08908907461682466,
+            "half": 0.3671091685156254,
+            "threshold": 0.3512125910629434,
+            "margin": 1.0452619805132017
+          },
+          {
+            "chi": 0.026445799473056017,
+            "half": 1.3015665933544478,
+            "threshold": 0.37155287568561796,
+            "margin": 3.50304540357196
+          }
+        ],
+        "minTransitionArgument": 99.25545741948704,
+        "minFaceAngle": 1.1071487177940904,
+        "minKr": 2020.9710550408613,
+        "ballisticAnalyticPassed": true,
+        "analyticContactPassed": true,
+        "finiteMeshBoundariesClear": true,
+        "minSegmentVisibilityMargin": 0.012405767674336765
+      },
+      "passed": true
+    },
+    {
+      "parameters": {
+        "k": 256,
+        "sigma": 0.0725,
+        "aim1": 0.1,
+        "aim2": 0.15,
+        "receiver": [
+          16,
+          -2.25,
+          0
+        ]
+      },
+      "geometry": {
+        "firstSourceSeparated": true,
+        "edge1InFrustum": true,
+        "edge2InFrustum": true,
+        "only1": true,
+        "only2": true,
+        "aabbDisjoint": true,
+        "receiverOutside": true,
+        "outgoingClear": true,
+        "firstLocalShadow": true,
+        "secondLocalShadow": true,
+        "passed": true
+      },
+      "checks": {
+        "clips": [
+          {
+            "chi": 0.09694285278811288,
+            "half": 0.36573486501032176,
+            "threshold": 0.3512328377307745,
+            "margin": 1.0412889278042483
+          },
+          {
+            "chi": 0.016415673656412808,
+            "half": 1.3170930856823397,
+            "threshold": 0.3762237421484704,
+            "margin": 3.500823946306321
+          }
+        ],
+        "minTransitionArgument": 103.11852298730754,
+        "minFaceAngle": 1.082462375738491,
+        "minKr": 2021.20407122596,
+        "ballisticAnalyticPassed": true,
+        "analyticContactPassed": true,
+        "finiteMeshBoundariesClear": true,
+        "minSegmentVisibilityMargin": 0.02069386387063532
+      },
+      "passed": true
+    },
+    {
+      "parameters": {
+        "k": 256,
+        "sigma": 0.0725,
+        "aim1": 0.1,
+        "aim2": 0.15,
+        "receiver": [
+          16,
+          -2,
+          0
+        ]
+      },
+      "geometry": {
+        "firstSourceSeparated": true,
+        "edge1InFrustum": true,
+        "edge2InFrustum": true,
+        "only1": true,
+        "only2": true,
+        "aabbDisjoint": true,
+        "receiverOutside": true,
+        "outgoingClear": true,
+        "firstLocalShadow": true,
+        "secondLocalShadow": true,
+        "passed": true
+      },
+      "checks": {
+        "clips": [
+          {
+            "chi": 0.09694285278811288,
+            "half": 0.36573486501032176,
+            "threshold": 0.3512328377307745,
+            "margin": 1.0412889278042483
+          },
+          {
+            "chi": 0.016415673656412808,
+            "half": 1.3170930856823397,
+            "threshold": 0.3738371953053051,
+            "margin": 3.5231729272061787
+          }
+        ],
+        "minTransitionArgument": 103.11852298730754,
+        "minFaceAngle": 1.1071487177940904,
+        "minKr": 2021.20407122596,
+        "ballisticAnalyticPassed": true,
+        "analyticContactPassed": true,
+        "finiteMeshBoundariesClear": true,
+        "minSegmentVisibilityMargin": 0.02069386387063532
+      },
+      "passed": true
+    },
+    {
+      "parameters": {
+        "k": 256,
+        "sigma": 0.0725,
+        "aim1": 0.1,
+        "aim2": 0.15,
+        "receiver": [
+          16,
+          -1.75,
+          0
+        ]
+      },
+      "geometry": {
+        "firstSourceSeparated": true,
+        "edge1InFrustum": true,
+        "edge2InFrustum": true,
+        "only1": true,
+        "only2": true,
+        "aabbDisjoint": true,
+        "receiverOutside": true,
+        "outgoingClear": true,
+        "firstLocalShadow": true,
+        "secondLocalShadow": true,
+        "passed": true
+      },
+      "checks": {
+        "clips": [
+          {
+            "chi": 0.09694285278811288,
+            "half": 0.36573486501032176,
+            "threshold": 0.3512328377307745,
+            "margin": 1.0412889278042483
+          },
+          {
+            "chi": 0.016415673656412808,
+            "half": 1.3170930856823397,
+            "threshold": 0.37155287568561796,
+            "margin": 3.5448335132703206
+          }
+        ],
+        "minTransitionArgument": 103.11852298730754,
+        "minFaceAngle": 1.1071487177940904,
+        "minKr": 2021.20407122596,
+        "ballisticAnalyticPassed": true,
+        "analyticContactPassed": true,
+        "finiteMeshBoundariesClear": true,
+        "minSegmentVisibilityMargin": 0.02069386387063532
+      },
+      "passed": true
+    },
+    {
+      "parameters": {
+        "k": 256,
+        "sigma": 0.0725,
+        "aim1": 0.1,
+        "aim2": 0.175,
+        "receiver": [
+          16,
+          -2.25,
+          0
+        ]
+      },
+      "geometry": {
+        "firstSourceSeparated": true,
+        "edge1InFrustum": true,
+        "edge2InFrustum": true,
+        "only1": true,
+        "only2": true,
+        "aabbDisjoint": true,
+        "receiverOutside": true,
+        "outgoingClear": true,
+        "firstLocalShadow": true,
+        "secondLocalShadow": true,
+        "passed": true
+      },
+      "checks": {
+        "clips": [
+          {
+            "chi": 0.09694285278811288,
+            "half": 0.36573486501032176,
+            "threshold": 0.3512300633235399,
+            "margin": 1.041297153066936
+          },
+          {
+            "chi": 0.020979039046253867,
+            "half": 1.311720438337181,
+            "threshold": 0.3762237421484704,
+            "margin": 3.486543488314814
+          }
+        ],
+        "minTransitionArgument": 101.17348559913216,
+        "minFaceAngle": 1.082462375738491,
+        "minKr": 2021.1721401509126,
+        "ballisticAnalyticPassed": true,
+        "analyticContactPassed": true,
+        "finiteMeshBoundariesClear": true,
+        "minSegmentVisibilityMargin": 0.02069386387063532
+      },
+      "passed": true
+    },
+    {
+      "parameters": {
+        "k": 256,
+        "sigma": 0.0725,
+        "aim1": 0.1,
+        "aim2": 0.175,
+        "receiver": [
+          16,
+          -2,
+          0
+        ]
+      },
+      "geometry": {
+        "firstSourceSeparated": true,
+        "edge1InFrustum": true,
+        "edge2InFrustum": true,
+        "only1": true,
+        "only2": true,
+        "aabbDisjoint": true,
+        "receiverOutside": true,
+        "outgoingClear": true,
+        "firstLocalShadow": true,
+        "secondLocalShadow": true,
+        "passed": true
+      },
+      "checks": {
+        "clips": [
+          {
+            "chi": 0.09694285278811288,
+            "half": 0.36573486501032176,
+            "threshold": 0.3512300633235399,
+            "margin": 1.041297153066936
+          },
+          {
+            "chi": 0.020979039046253867,
+            "half": 1.311720438337181,
+            "threshold": 0.3738371953053051,
+            "margin": 3.5088013039096495
+          }
+        ],
+        "minTransitionArgument": 101.17348559913216,
+        "minFaceAngle": 1.1071487177940904,
+        "minKr": 2021.1721401509126,
+        "ballisticAnalyticPassed": true,
+        "analyticContactPassed": true,
+        "finiteMeshBoundariesClear": true,
+        "minSegmentVisibilityMargin": 0.02069386387063532
+      },
+      "passed": true
+    },
+    {
+      "parameters": {
+        "k": 256,
+        "sigma": 0.0725,
+        "aim1": 0.1,
+        "aim2": 0.175,
+        "receiver": [
+          16,
+          -1.75,
+          0
+        ]
+      },
+      "geometry": {
+        "firstSourceSeparated": true,
+        "edge1InFrustum": true,
+        "edge2InFrustum": true,
+        "only1": true,
+        "only2": true,
+        "aabbDisjoint": true,
+        "receiverOutside": true,
+        "outgoingClear": true,
+        "firstLocalShadow": true,
+        "secondLocalShadow": true,
+        "passed": true
+      },
+      "checks": {
+        "clips": [
+          {
+            "chi": 0.09694285278811288,
+            "half": 0.36573486501032176,
+            "threshold": 0.3512300633235399,
+            "margin": 1.041297153066936
+          },
+          {
+            "chi": 0.020979039046253867,
+            "half": 1.311720438337181,
+            "threshold": 0.37155287568561796,
+            "margin": 3.53037353274872
+          }
+        ],
+        "minTransitionArgument": 101.17348559913216,
+        "minFaceAngle": 1.1071487177940904,
+        "minKr": 2021.1721401509126,
+        "ballisticAnalyticPassed": true,
+        "analyticContactPassed": true,
+        "finiteMeshBoundariesClear": true,
+        "minSegmentVisibilityMargin": 0.02069386387063532
+      },
+      "passed": true
+    },
+    {
+      "parameters": {
+        "k": 256,
+        "sigma": 0.0725,
+        "aim1": 0.1,
+        "aim2": 0.2,
+        "receiver": [
+          16,
+          -2.25,
+          0
+        ]
+      },
+      "geometry": {
+        "firstSourceSeparated": true,
+        "edge1InFrustum": true,
+        "edge2InFrustum": true,
+        "only1": true,
+        "only2": true,
+        "aabbDisjoint": true,
+        "receiverOutside": true,
+        "outgoingClear": true,
+        "firstLocalShadow": true,
+        "secondLocalShadow": true,
+        "passed": true
+      },
+      "checks": {
+        "clips": [
+          {
+            "chi": 0.09694285278811288,
+            "half": 0.36573486501032176,
+            "threshold": 0.3512292667023389,
+            "margin": 1.0412995148273796
+          },
+          {
+            "chi": 0.026257326775623376,
+            "half": 1.3058790930217947,
+            "threshold": 0.3762237421484704,
+            "margin": 3.4710172344903514
+          }
+        ],
+        "minTransitionArgument": 99.24933147622929,
+        "minFaceAngle": 1.082462375738491,
+        "minKr": 2021.162971762896,
+        "ballisticAnalyticPassed": true,
+        "analyticContactPassed": true,
+        "finiteMeshBoundariesClear": true,
+        "minSegmentVisibilityMargin": 0.02069386387063532
+      },
+      "passed": true
+    },
+    {
+      "parameters": {
+        "k": 256,
+        "sigma": 0.0725,
+        "aim1": 0.1,
+        "aim2": 0.2,
+        "receiver": [
+          16,
+          -2,
+          0
+        ]
+      },
+      "geometry": {
+        "firstSourceSeparated": true,
+        "edge1InFrustum": true,
+        "edge2InFrustum": true,
+        "only1": true,
+        "only2": true,
+        "aabbDisjoint": true,
+        "receiverOutside": true,
+        "outgoingClear": true,
+        "firstLocalShadow": true,
+        "secondLocalShadow": true,
+        "passed": true
+      },
+      "checks": {
+        "clips": [
+          {
+            "chi": 0.09694285278811288,
+            "half": 0.36573486501032176,
+            "threshold": 0.3512292667023389,
+            "margin": 1.0412995148273796
+          },
+          {
+            "chi": 0.026257326775623376,
+            "half": 1.3058790930217947,
+            "threshold": 0.3738371953053051,
+            "margin": 3.4931759317189135
+          }
+        ],
+        "minTransitionArgument": 99.24933147622929,
+        "minFaceAngle": 1.1071487177940904,
+        "minKr": 2021.162971762896,
+        "ballisticAnalyticPassed": true,
+        "analyticContactPassed": true,
+        "finiteMeshBoundariesClear": true,
+        "minSegmentVisibilityMargin": 0.02069386387063532
+      },
+      "passed": true
+    },
+    {
+      "parameters": {
+        "k": 256,
+        "sigma": 0.0725,
+        "aim1": 0.1,
+        "aim2": 0.2,
+        "receiver": [
+          16,
+          -1.75,
+          0
+        ]
+      },
+      "geometry": {
+        "firstSourceSeparated": true,
+        "edge1InFrustum": true,
+        "edge2InFrustum": true,
+        "only1": true,
+        "only2": true,
+        "aabbDisjoint": true,
+        "receiverOutside": true,
+        "outgoingClear": true,
+        "firstLocalShadow": true,
+        "secondLocalShadow": true,
+        "passed": true
+      },
+      "checks": {
+        "clips": [
+          {
+            "chi": 0.09694285278811288,
+            "half": 0.36573486501032176,
+            "threshold": 0.3512292667023389,
+            "margin": 1.0412995148273796
+          },
+          {
+            "chi": 0.026257326775623376,
+            "half": 1.3058790930217947,
+            "threshold": 0.37155287568561796,
+            "margin": 3.514652095242396
+          }
+        ],
+        "minTransitionArgument": 99.24933147622929,
+        "minFaceAngle": 1.1071487177940904,
+        "minKr": 2021.162971762896,
+        "ballisticAnalyticPassed": true,
+        "analyticContactPassed": true,
+        "finiteMeshBoundariesClear": true,
+        "minSegmentVisibilityMargin": 0.02069386387063532
+      },
+      "passed": true
+    },
+    {
+      "parameters": {
+        "k": 256,
+        "sigma": 0.0725,
+        "aim1": 0.11,
+        "aim2": 0.15,
+        "receiver": [
+          16,
+          -2.25,
+          0
+        ]
+      },
+      "geometry": {
+        "firstSourceSeparated": true,
+        "edge1InFrustum": true,
+        "edge2InFrustum": true,
+        "only1": true,
+        "only2": true,
+        "aabbDisjoint": true,
+        "receiverOutside": true,
+        "outgoingClear": true,
+        "firstLocalShadow": true,
+        "secondLocalShadow": true,
+        "passed": true
+      },
+      "checks": {
+        "clips": [
+          {
+            "chi": 0.10572357173924143,
+            "half": 0.36416541844765477,
+            "threshold": 0.35125033174219616,
+            "margin": 1.0367688953954861
+          },
+          {
+            "chi": 0.01628536691682581,
+            "half": 1.3213819982243793,
+            "threshold": 0.3762237421484704,
+            "margin": 3.512223844987747
+          }
+        ],
+        "minTransitionArgument": 103.11370232694078,
+        "minFaceAngle": 1.082462375738491,
+        "minKr": 2021.4054182748625,
+        "ballisticAnalyticPassed": true,
+        "analyticContactPassed": true,
+        "finiteMeshBoundariesClear": true,
+        "minSegmentVisibilityMargin": 0.02573062626193412
+      },
+      "passed": true
+    },
+    {
+      "parameters": {
+        "k": 256,
+        "sigma": 0.0725,
+        "aim1": 0.11,
+        "aim2": 0.15,
+        "receiver": [
+          16,
+          -2,
+          0
+        ]
+      },
+      "geometry": {
+        "firstSourceSeparated": true,
+        "edge1InFrustum": true,
+        "edge2InFrustum": true,
+        "only1": true,
+        "only2": true,
+        "aabbDisjoint": true,
+        "receiverOutside": true,
+        "outgoingClear": true,
+        "firstLocalShadow": true,
+        "secondLocalShadow": true,
+        "passed": true
+      },
+      "checks": {
+        "clips": [
+          {
+            "chi": 0.10572357173924143,
+            "half": 0.36416541844765477,
+            "threshold": 0.35125033174219616,
+            "margin": 1.0367688953954861
+          },
+          {
+            "chi": 0.01628536691682581,
+            "half": 1.3213819982243793,
+            "threshold": 0.3738371953053051,
+            "margin": 3.5346456019317016
+          }
+        ],
+        "minTransitionArgument": 103.11370232694078,
+        "minFaceAngle": 1.1071487177940904,
+        "minKr": 2021.4054182748625,
+        "ballisticAnalyticPassed": true,
+        "analyticContactPassed": true,
+        "finiteMeshBoundariesClear": true,
+        "minSegmentVisibilityMargin": 0.02896772286908922
+      },
+      "passed": true
+    },
+    {
+      "parameters": {
+        "k": 256,
+        "sigma": 0.0725,
+        "aim1": 0.11,
+        "aim2": 0.15,
+        "receiver": [
+          16,
+          -1.75,
+          0
+        ]
+      },
+      "geometry": {
+        "firstSourceSeparated": true,
+        "edge1InFrustum": true,
+        "edge2InFrustum": true,
+        "only1": true,
+        "only2": true,
+        "aabbDisjoint": true,
+        "receiverOutside": true,
+        "outgoingClear": true,
+        "firstLocalShadow": true,
+        "secondLocalShadow": true,
+        "passed": true
+      },
+      "checks": {
+        "clips": [
+          {
+            "chi": 0.10572357173924143,
+            "half": 0.36416541844765477,
+            "threshold": 0.35125033174219616,
+            "margin": 1.0367688953954861
+          },
+          {
+            "chi": 0.01628536691682581,
+            "half": 1.3213819982243793,
+            "threshold": 0.37155287568561796,
+            "margin": 3.5563767223872604
+          }
+        ],
+        "minTransitionArgument": 103.11370232694078,
+        "minFaceAngle": 1.1071487177940904,
+        "minKr": 2021.4054182748625,
+        "ballisticAnalyticPassed": true,
+        "analyticContactPassed": true,
+        "finiteMeshBoundariesClear": true,
+        "minSegmentVisibilityMargin": 0.02896772286908922
+      },
+      "passed": true
+    },
+    {
+      "parameters": {
+        "k": 256,
+        "sigma": 0.0725,
+        "aim1": 0.11,
+        "aim2": 0.175,
+        "receiver": [
+          16,
+          -2.25,
+          0
+        ]
+      },
+      "geometry": {
+        "firstSourceSeparated": true,
+        "edge1InFrustum": true,
+        "edge2InFrustum": true,
+        "only1": true,
+        "only2": true,
+        "aabbDisjoint": true,
+        "receiverOutside": true,
+        "outgoingClear": true,
+        "firstLocalShadow": true,
+        "secondLocalShadow": true,
+        "passed": true
+      },
+      "checks": {
+        "clips": [
+          {
+            "chi": 0.10572357173924143,
+            "half": 0.36416541844765477,
+            "threshold": 0.3512472365808127,
+            "margin": 1.0367780313166106
+          },
+          {
+            "chi": 0.020822759013047188,
+            "half": 1.3160156000881391,
+            "threshold": 0.3762237421484704,
+            "margin": 3.4979599973485875
+          }
+        ],
+        "minTransitionArgument": 101.1681280019068,
+        "minFaceAngle": 1.082462375738491,
+        "minKr": 2021.3697938334908,
+        "ballisticAnalyticPassed": true,
+        "analyticContactPassed": true,
+        "finiteMeshBoundariesClear": true,
+        "minSegmentVisibilityMargin": 0.02896772286908922
+      },
+      "passed": true
+    },
+    {
+      "parameters": {
+        "k": 256,
+        "sigma": 0.0725,
+        "aim1": 0.11,
+        "aim2": 0.175,
+        "receiver": [
+          16,
+          -2,
+          0
+        ]
+      },
+      "geometry": {
+        "firstSourceSeparated": true,
+        "edge1InFrustum": true,
+        "edge2InFrustum": true,
+        "only1": true,
+        "only2": true,
+        "aabbDisjoint": true,
+        "receiverOutside": true,
+        "outgoingClear": true,
+        "firstLocalShadow": true,
+        "secondLocalShadow": true,
+        "passed": true
+      },
+      "checks": {
+        "clips": [
+          {
+            "chi": 0.10572357173924143,
+            "half": 0.36416541844765477,
+            "threshold": 0.3512472365808127,
+            "margin": 1.0367780313166106
+          },
+          {
+            "chi": 0.020822759013047188,
+            "half": 1.3160156000881391,
+            "threshold": 0.3738371953053051,
+            "margin": 3.520290695026685
+          }
+        ],
+        "minTransitionArgument": 101.1681280019068,
+        "minFaceAngle": 1.1071487177940904,
+        "minKr": 2021.3697938334908,
+        "ballisticAnalyticPassed": true,
+        "analyticContactPassed": true,
+        "finiteMeshBoundariesClear": true,
+        "minSegmentVisibilityMargin": 0.02896772286908922
+      },
+      "passed": true
+    },
+    {
+      "parameters": {
+        "k": 256,
+        "sigma": 0.0725,
+        "aim1": 0.11,
+        "aim2": 0.175,
+        "receiver": [
+          16,
+          -1.75,
+          0
+        ]
+      },
+      "geometry": {
+        "firstSourceSeparated": true,
+        "edge1InFrustum": true,
+        "edge2InFrustum": true,
+        "only1": true,
+        "only2": true,
+        "aabbDisjoint": true,
+        "receiverOutside": true,
+        "outgoingClear": true,
+        "firstLocalShadow": true,
+        "secondLocalShadow": true,
+        "passed": true
+      },
+      "checks": {
+        "clips": [
+          {
+            "chi": 0.10572357173924143,
+            "half": 0.36416541844765477,
+            "threshold": 0.3512472365808127,
+            "margin": 1.0367780313166106
+          },
+          {
+            "chi": 0.020822759013047188,
+            "half": 1.3160156000881391,
+            "threshold": 0.37155287568561796,
+            "margin": 3.5419335610301115
+          }
+        ],
+        "minTransitionArgument": 101.1681280019068,
+        "minFaceAngle": 1.1071487177940904,
+        "minKr": 2021.3697938334908,
+        "ballisticAnalyticPassed": true,
+        "analyticContactPassed": true,
+        "finiteMeshBoundariesClear": true,
+        "minSegmentVisibilityMargin": 0.02896772286908922
+      },
+      "passed": true
+    },
+    {
+      "parameters": {
+        "k": 256,
+        "sigma": 0.0725,
+        "aim1": 0.11,
+        "aim2": 0.2,
+        "receiver": [
+          16,
+          -2.25,
+          0
+        ]
+      },
+      "geometry": {
+        "firstSourceSeparated": true,
+        "edge1InFrustum": true,
+        "edge2InFrustum": true,
+        "only1": true,
+        "only2": true,
+        "aabbDisjoint": true,
+        "receiverOutside": true,
+        "outgoingClear": true,
+        "firstLocalShadow": true,
+        "secondLocalShadow": true,
+        "passed": true
+      },
+      "checks": {
+        "clips": [
+          {
+            "chi": 0.10572357173924143,
+            "half": 0.36416541844765477,
+            "threshold": 0.35124611958295043,
+            "margin": 1.0367813283746563
+          },
+          {
+            "chi": 0.0260707406005587,
+            "half": 1.310181888493888,
+            "threshold": 0.3762237421484704,
+            "margin": 3.482454033899984
+          }
+        ],
+        "minTransitionArgument": 99.24345315843674,
+        "minFaceAngle": 1.082462375738491,
+        "minKr": 2021.356937577764,
+        "ballisticAnalyticPassed": true,
+        "analyticContactPassed": true,
+        "finiteMeshBoundariesClear": true,
+        "minSegmentVisibilityMargin": 0.02896772286908922
+      },
+      "passed": true
+    },
+    {
+      "parameters": {
+        "k": 256,
+        "sigma": 0.0725,
+        "aim1": 0.11,
+        "aim2": 0.2,
+        "receiver": [
+          16,
+          -2,
+          0
+        ]
+      },
+      "geometry": {
+        "firstSourceSeparated": true,
+        "edge1InFrustum": true,
+        "edge2InFrustum": true,
+        "only1": true,
+        "only2": true,
+        "aabbDisjoint": true,
+        "receiverOutside": true,
+        "outgoingClear": true,
+        "firstLocalShadow": true,
+        "secondLocalShadow": true,
+        "passed": true
+      },
+      "checks": {
+        "clips": [
+          {
+            "chi": 0.10572357173924143,
+            "half": 0.36416541844765477,
+            "threshold": 0.35124611958295043,
+            "margin": 1.0367813283746563
+          },
+          {
+            "chi": 0.0260707406005587,
+            "half": 1.310181888493888,
+            "threshold": 0.3738371953053051,
+            "margin": 3.5046857427439493
+          }
+        ],
+        "minTransitionArgument": 99.24345315843674,
+        "minFaceAngle": 1.1071487177940904,
+        "minKr": 2021.356937577764,
+        "ballisticAnalyticPassed": true,
+        "analyticContactPassed": true,
+        "finiteMeshBoundariesClear": true,
+        "minSegmentVisibilityMargin": 0.02896772286908922
+      },
+      "passed": true
+    },
+    {
+      "parameters": {
+        "k": 256,
+        "sigma": 0.0725,
+        "aim1": 0.11,
+        "aim2": 0.2,
+        "receiver": [
+          16,
+          -1.75,
+          0
+        ]
+      },
+      "geometry": {
+        "firstSourceSeparated": true,
+        "edge1InFrustum": true,
+        "edge2InFrustum": true,
+        "only1": true,
+        "only2": true,
+        "aabbDisjoint": true,
+        "receiverOutside": true,
+        "outgoingClear": true,
+        "firstLocalShadow": true,
+        "secondLocalShadow": true,
+        "passed": true
+      },
+      "checks": {
+        "clips": [
+          {
+            "chi": 0.10572357173924143,
+            "half": 0.36416541844765477,
+            "threshold": 0.35124611958295043,
+            "margin": 1.0367813283746563
+          },
+          {
+            "chi": 0.0260707406005587,
+            "half": 1.310181888493888,
+            "threshold": 0.37155287568561796,
+            "margin": 3.5262326689740715
+          }
+        ],
+        "minTransitionArgument": 99.24345315843674,
+        "minFaceAngle": 1.1071487177940904,
+        "minKr": 2021.356937577764,
+        "ballisticAnalyticPassed": true,
+        "analyticContactPassed": true,
+        "finiteMeshBoundariesClear": true,
+        "minSegmentVisibilityMargin": 0.02896772286908922
+      },
+      "passed": true
+    }
+  ]
+}

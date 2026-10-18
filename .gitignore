@@ -1,0 +1,32 @@
+# Credentials and private deployment state
+.env
+.env.*
+!.env.example
+.openai/
+*.pem
+*.key
+credentials*.json
+secrets*.json
+
+# Dependencies and local runtime state
+node_modules/
+.venv/
+venv/
+__pycache__/
+*.pyc
+.DS_Store
+.idea/
+.vscode/
+*.log
+
+# Generated research output. Tracked numerical input fixtures remain versioned.
+research/**/*.png
+research/**/*.jpg
+research/**/*.ppm
+research/**/*.f64
+research/**/*.f32
+research/**/*.bin
+research/**/*.webm
+research/**/*.mp4
+research/**/*.json
+research/**/*.md

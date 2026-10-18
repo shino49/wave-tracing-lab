@@ -1,0 +1,10 @@
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import {Worker} from 'node:worker_threads';
+const ready=worker=>new Promise((resolve,reject)=>{worker.once('error',reject);worker.once('message',m=>m.type==='ready'?resolve():reject(new Error('Missing ready message')));});
+const call=(worker,request)=>new Promise((resolve,reject)=>{const handler=m=>{if(m.type==='progress')return;worker.off('message',handler);resolve(m);};worker.on('message',handler);worker.once('error',reject);worker.postMessage(request);});
+let worker=new Worker(new URL('./helpers/coherent-node-worker.mjs',import.meta.url));await ready(worker);
+const good=await call(worker,{id:1,backend:'cpu',options:{}});assert.equal(good.type,'result');assert.equal(good.id,1);assert.equal(good.result.backend,'CPU 双精度');assert(good.result.grid.fieldsRaw instanceof Float64Array);assert.equal(good.result.grid.mask.length,15552);assert(Math.abs(good.result.measurement.detectorFlux-.0529174240145261)<1e-13);
+const bad=await call(worker,{id:2,backend:'cpu',options:{n:999}});assert.equal(bad.type,'error');assert.match(bad.error,/n must/);await worker.terminate();
+worker=new Worker(new URL('./helpers/coherent-node-worker.mjs',import.meta.url));await ready(worker);const messages=[];worker.on('message',m=>messages.push(m));worker.postMessage({id:3,backend:'cpu',options:{n:144}});await new Promise(r=>setTimeout(r,5));await worker.terminate();assert(!messages.some(m=>m.type==='result'));
+const report={passed:true,tests:3,actualModuleWorkerMessageRoundtrip:true,typedArraySerialization:true,inputErrorReturned:true,terminationSuppressesIncompleteResult:true,environment:'Node worker_threads bridge; unchanged browser worker module',browserValidated:false};fs.writeFileSync(new URL('../research/coherent-browser-worker-validation.json',import.meta.url),JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report));

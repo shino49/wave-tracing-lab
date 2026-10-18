@@ -1,0 +1,63 @@
+/** Joint-camera versus unchanged anchor, matched round-submission measurements.
+ * CPU: node tests/plt-resident-camera-submit-timing.mjs --cpu-only
+ * Native (all other native work idle): WEBGPU_EXECUTION_BACKEND=vulkan VK_ICD_FILENAMES=/usr/lib/chromium/vk_swiftshader_icd.json node tests/plt-resident-camera-submit-timing.mjs --execute --reuse-native-device
+ * Descriptive native software wall times only. Every run requires full shadow.
+ */
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import {create,globals} from 'webgpu';
+import {createPLTRandomStates} from '../dist/plt-core.js';
+import {createPLTResidentRunner,PLT_RESIDENT_BUILD_ID} from '../dist/plt-resident-gpu.js';
+import {buildResidentReferenceBatch} from '../dist/plt-resident-reference.js';
+import {fixtures,options,modes,hash,pinnedV21,readBaselines,sourceProvenance,assertEquivalent,assertLegacyCheckpoint,validateCandidate,reuseNativeDevice} from './plt-resident-camera-transport.mjs';
+Object.assign(globalThis,globals);
+const execute=process.argv.includes('--execute'),cpuOnly=process.argv.includes('--cpu-only'),reuseDevice=process.argv.includes('--reuse-native-device');assert(!(execute&&cpuOnly));
+const backend=execute?process.env.WEBGPU_EXECUTION_BACKEND:'null';if(execute)assert(['vulkan','metal','d3d11','d3d12','opengl','opengles'].includes(backend),'Native execution requires explicit backend');
+const baselines=readBaselines(),provenance=cpuOnly?null:sourceProvenance(),names=['two-mirrors-emission','four-scale-shifted-zxy','half-scale-three-mirrors-negative-permutation','eight-scale-two-mirrors'];
+const selected=process.env.PLT_CAMERA_TIMING_CASE?fixtures.filter(f=>f.name===process.env.PLT_CAMERA_TIMING_CASE):fixtures.filter(f=>names.includes(f.name));assert(selected.length&&selected.every(f=>f.mustRetain),'Timing requires a named designed mirror fixture');
+const balancedOrders=[['anchor-round','camera-round'],['camera-round','anchor-round']];
+const report={buildId:PLT_RESIDENT_BUILD_ID,executionRequested:execute,actualGPUExecuted:false,allPass:false,status:'preparing',backend,nodeVersion:process.version,vulkanICD:process.env.VK_ICD_FILENAMES??null,fullCPUShadowRequired:true,descriptiveOnly:true,noStatisticalSpeedClaim:true,physicalGPUValidated:false,browserValidated:false,hardwarePerformanceClaim:false,pinnedV21,modes,balancedOrders,warmupsPerMode:2,measuredPairsPerScenario:8,selectedFixtures:selected.map(f=>f.name),fullTimingSuite:!process.env.PLT_CAMERA_TIMING_CASE,sourceSHA256:provenance?.sourceSHA256??null,hostSHA256:provenance?.hostSHA256??null,testSHA256:hash(fs.readFileSync(new URL(import.meta.url))),transportHarnessSHA256:hash(fs.readFileSync(new URL('./plt-resident-camera-transport.mjs',import.meta.url))),comparisonScope:'Same camera-compiled runner, fixture, two-sample 128-path workload, immutable RNG prefix and whole-round scheduling. Balanced AB/BA pairs compare only the guard.',limitations:['No separately compiled historical anchor setup comparison. Shared setup is excluded from renderer pairs and reported separately.','Four unchanged representative fixture identities at the historical 128-path workload; no large-workload or physical-GPU performance claim.','Every warmup and measurement receives the unchanged raw shadow gate, analytic power, exact RNG and replay ownership checks, plus zero audit-discovered replacements.','Renderer wall time includes native dispatch/wait, readbacks and selective CPU replay; full CPU shadow construction and audit/admission are separate. These are host wall times, not GPU timestamps.','Software timings are descriptive and sensitive to compiler/cache/scheduler effects; eight pairs are not statistical evidence of general speedup.'],scenarios:[]};
+const label=process.env.PLT_CAMERA_TIMING_CASE?process.env.PLT_CAMERA_TIMING_CASE+'-':'',save=()=>fs.writeFileSync(new URL(`../research/plt-resident-camera-submit-timing-${label}${cpuOnly?'cpu-validation':execute?'validation':'compile-validation'}.json`,import.meta.url),JSON.stringify(report,null,2)+'\n');
+if(execute){
+ const bytes=fs.readFileSync(new URL('../research/plt-resident-camera-validation.json',import.meta.url)),transport=JSON.parse(bytes);
+ assert(transport.allPass&&transport.actualGPUExecuted&&transport.fullFixtureSuite&&transport.fullLegacySuite&&transport.fullAdversarialSuite,'Timing requires completed full native transport suite, including adversarial cameras');
+ assert.deepEqual(transport.sourceSHA256,provenance.sourceSHA256,'Timing shader sources differ from validated transport');assert.deepEqual(transport.hostSHA256,provenance.hostSHA256,'Timing host sources differ from validated transport');
+ report.transportEvidence={file:'plt-resident-camera-validation.json',sha256:hash(bytes),legacyPaths:transport.totals.legacy.paths,adversarialPaths:transport.totals.adversarial.paths,waveDomainPaths:transport.totals.waveDomainPaths,byMode:transport.totals.legacy.byMode};
+}
+const preparations=[];
+for(const f of selected){
+ const o={...options,samplesPerPixel:2},tile={x:0,y:0,width:8,height:8},initial=createPLTRandomStates(o),cpuRng=initial.slice(),began=performance.now(),reference=await buildResidentReferenceBatch(f.scene,f.camera,o,{tile,sampleStart:0,samplesPerPixel:2,rngStates:cpuRng}),cpuFullShadowConstructionMs=performance.now()-began;
+ for(const path of reference.audit.paths){assert.equal(path.value,f.expected);assert.equal(path.scatters.length,f.mirrors);assert.equal(path.rng.count,2);}assert.equal(reference.audit.paths.length,128);
+ const record={id:f.name+'/128-paths',name:f.name,width:8,height:8,samplesPerPixel:2,pathsPerRun:128,expectedRadiance:f.expected,expectedMirrorBounces:f.mirrors,cpuFullShadowConstructionMs,setupWallMs:null,warmups:[],measurements:[]};report.scenarios.push(record);
+ preparations.push({f,options:o,tile,initial,b:{seed:o.seed,options:o,tile,sampleStart:0,samplesPerPixel:2,start:initial,end:cpuRng,reference},record});
+}
+if(cpuOnly){report.allPass=true;report.status='cpu-planning-passed';report.summary={scenarios:preparations.length,totalReferencePaths:128*preparations.length,allGeometriesFromPinnedCorpus:true};save();console.log(JSON.stringify({allPass:true,cpuOnly:true,summary:report.summary}));process.exit(0);}
+const stats=values=>{assert(values.length&&values.every(Number.isFinite));const sorted=[...values].sort((a,b)=>a-b);return {count:values.length,min:sorted[0],median:(sorted[(sorted.length-1)>>1]+sorted[sorted.length>>1])/2,max:sorted.at(-1),mean:values.reduce((n,v)=>n+v,0)/values.length};};
+const costFields=[['rendererRunWallMs',r=>r.timings.gpuResidentTotalWallMs],['observedRunWallMs',r=>r.observedRunWallMs],['initSubmitWaitWallMs',r=>r.timings.gpuInitSubmitAndWaitMs],['roundSubmitWaitWallMs',r=>r.timings.gpuRoundSubmitAndWaitMs??0],['statusReadbackWallMs',r=>r.timings.gpuStatusReadbackWallMs],['cpuSelectiveReplayMs',r=>r.timings.cpuSelectiveReplayMs],['replayReadbackWallMs',r=>r.timings.replayReadbackWallMs],['finalReadbackDecodeMs',r=>r.timings.gpuFinalReadbackDecodeMs],['rawShadowAuditMs',r=>r.rawShadowAuditMs],['admissionAuditWallMs',r=>r.admissionAuditWallMs]];
+const costSummary=runs=>Object.fromEntries(costFields.map(([name,value])=>[name,stats(runs.map(value))]));
+let gpu=create([`backend=${backend}`]);const cache=reuseDevice?reuseNativeDevice(gpu):null;if(cache)gpu=cache.gpu;report.nativeDeviceReuse=cache?.stats??{enabled:false};report.status='compiling';save();
+try{
+ for(const p of execute?preparations:preparations.slice(0,reuseDevice?2:1)){
+  const {f,b,record}=p,setup=performance.now(),runner=await createPLTResidentRunner(f.scene,f.camera,p.options,{gpu,shaderSource:provenance.sources.join('\n'),timeoutMs:120000,recoveryMode:'selective',continuationGuard:'axis-mirror-camera',onSetupProgress:step=>console.log(JSON.stringify({setup:record.id,...step}))});
+  record.setupWallMs=performance.now()-setup;record.adapter=runner.diagnostic.adapter;
+  try{if(execute){
+   const canonical=new Map();
+   const run=async(modeId,phase,pairIndex,orderIndex)=>{
+    const mode=modes.find(m=>m.id===modeId),rng=p.initial.slice(),began=performance.now(),candidate=await runner.run({tile:p.tile,sampleStart:0,samplesPerPixel:2,wave:false,rngStates:rng,guard:mode.guard,axisSubmission:mode.axisSubmission}),observedRunWallMs=performance.now()-began;
+    report.actualGPUExecuted=true;report.status='measuring';assert.deepEqual(rng,p.initial,'Timing runs must not mutate input RNG');
+    const validation=validateCandidate(f,b,candidate,mode);if(canonical.has(modeId))assertEquivalent(canonical.get(modeId),candidate,`${record.id}/${modeId}: repeated warmed output`);else canonical.set(modeId,candidate);
+    if(modeId==='anchor-round')assertLegacyCheckpoint(baselines,f,b,validation);
+    const result={phase,pairIndex,orderIndex,modeId,observedRunWallMs,...validation,exactRepeatedAuditRngReplayParity:true};record[phase==='warmup'?'warmups':'measurements'].push(result);save();return result;
+   };
+   for(let repeat=0;repeat<2;repeat++)for(const [index,id] of balancedOrders[repeat].entries())await run(id,'warmup',-1-repeat,index);
+   for(let pair=0;pair<8;pair++)for(const [index,id] of balancedOrders[pair%2].entries())await run(id,'measured',pair,index);
+   const pairs=Array.from({length:8},(_,pairIndex)=>{const runs=record.measurements.filter(r=>r.pairIndex===pairIndex),a=runs.find(r=>r.modeId==='anchor-round'),b=runs.find(r=>r.modeId==='camera-round');assert(a&&b);return {pairIndex,anchorOrder:a.orderIndex,cameraOrder:b.orderIndex,anchorRunWallMs:a.timings.gpuResidentTotalWallMs,cameraRunWallMs:b.timings.gpuResidentTotalWallMs,cameraMinusAnchorMs:b.timings.gpuResidentTotalWallMs-a.timings.gpuResidentTotalWallMs,cameraOverAnchorRatio:b.timings.gpuResidentTotalWallMs/a.timings.gpuResidentTotalWallMs,replayReduction:a.replayPaths-b.replayPaths};});
+   record.summary={measuredPairs:8,measuredRuns:16,measuredPathRuns:16*128,warmupPathRuns:4*128,exactRepeatedAuditRngReplayParity:true,numericGeometryReplacements:0,byMode:Object.fromEntries(modes.map(({id})=>{const runs=record.measurements.filter(r=>r.modeId===id);return [id,{replayPathsPerRun:runs[0].replayPaths,retainedMirrorPathsPerRun:runs[0].retainedMirrorPaths,...costSummary(runs)}];})),pairs,pairedCameraMinusAnchorMs:stats(pairs.map(p=>p.cameraMinusAnchorMs)),pairedCameraOverAnchorRatio:stats(pairs.map(p=>p.cameraOverAnchorRatio))};save();
+   console.log(JSON.stringify({scenario:record.id,byMode:Object.fromEntries(Object.entries(record.summary.byMode).map(([id,m])=>[id,{replay:m.replayPathsPerRun,retained:m.retainedMirrorPathsPerRun,medianRendererMs:m.rendererRunWallMs.median}])),medianPairedCameraMinusAnchorMs:record.summary.pairedCameraMinusAnchorMs.median}));
+  }}finally{runner.destroy();}
+ }
+ if(execute)report.summary={scenarios:report.scenarios.length,measuredPairs:report.scenarios.reduce((n,s)=>n+s.summary.measuredPairs,0),measuredRuns:report.scenarios.reduce((n,s)=>n+s.measurements.length,0),measuredPathRuns:report.scenarios.reduce((n,s)=>n+s.summary.measuredPathRuns,0),warmupPathRuns:report.scenarios.reduce((n,s)=>n+s.summary.warmupPathRuns,0),cpuFullShadowConstructionMs:report.scenarios.reduce((n,s)=>n+s.cpuFullShadowConstructionMs,0),sharedSetupWallMs:report.scenarios.reduce((n,s)=>n+s.setupWallMs,0),exactRepeatedAuditRngReplayParity:true,numericGeometryReplacements:0,allGeometriesFromPinnedCorpus:true};
+ readBaselines();const finishedProvenance=sourceProvenance();assert.deepEqual(finishedProvenance.sourceSHA256,report.sourceSHA256,'Shader files changed during paired timing');assert.deepEqual(finishedProvenance.hostSHA256,report.hostSHA256,'Host files changed during paired timing');assert.equal(hash(fs.readFileSync(new URL(import.meta.url))),report.testSHA256,'Timing harness changed during execution');assert.equal(hash(fs.readFileSync(new URL('./plt-resident-camera-transport.mjs',import.meta.url))),report.transportHarnessSHA256,'Transport helper changed during timing');if(execute)assert.equal(hash(fs.readFileSync(new URL('../research/plt-resident-camera-validation.json',import.meta.url))),report.transportEvidence.sha256,'Validated transport report changed during timing');report.allPass=true;report.status='passed';
+}catch(error){report.allPass=false;report.status='failed';report.failure={name:error.name,message:error.message,stack:error.stack};throw error;}
+finally{try{cache?.destroy();}catch(error){report.allPass=false;report.status='failed';report.failure??={name:error.name,message:error.message,stack:error.stack};throw error;}finally{gpu=null;save();}}
+console.log(JSON.stringify({allPass:report.allPass,actualGPUExecuted:report.actualGPUExecuted,summary:report.summary}));

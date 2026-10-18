@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="dark">
+<meta name="description" content="自愿开启的 GPU 驻留实验：冻结轴对齐镜面场景、完整 CPU shadow 核验与本地 JSON 记录。">
+<title>波与光 · GPU 驻留实验测试</title>
+<link rel="stylesheet" href="style.css"><link rel="stylesheet" href="plt-style.css"><link rel="stylesheet" href="plt-resident-test-style.css">
+</head>
+<body class="resident-page"><div class="app-shell">
+<header class="masthead"><a class="brand" href="index.html"><span class="brand-symbol" aria-hidden="true"><i></i><i></i><i></i></span><span>波与光<span class="brand-en">WAVE / LIGHT</span></span></a><span class="header-note"><span class="tiny-dot"></span>自愿开启 · 本地运行</span></header>
+<nav class="experiment-nav" aria-label="选择实验"><a href="tracer.html">主线 <span>3D Wave Tracing</span></a><a href="resident-test.html" aria-current="page">GPU 驻留实验测试</a></nav>
+<main>
+<section class="intro"><div><div class="eyebrow">OPT-IN / RESIDENT RAY VALIDATION</div><h1>在你的设备上，<span>检查驻留路径。</span></h1><p class="intro-copy">一次小规模实验，记录当前浏览器的执行与核验结果。只有点击开始后才计算；记录不会自动上传。</p></div></section>
+<section class="plt-scope resident-scope" aria-labelledby="residentScopeHeading"><div><h2 id="residentScopeHeading">研究边界</h2><p>这里仅支持冻结的轴对齐镜面、ray-only 单色验证，不支持 Wave 衍射或光谱传输。每次都构建完整 CPU shadow 并严格核验；守卫不确定的路径必须由 CPU 重放。默认场景用有限镜面、自发光面板与黑色挡板形成明暗结构；没有漫反射照明。三个旧场景仍刻意输出均匀灰图。两类结果都不代表完整 Wave 场景。</p><p>WebGPU 执行记录不等于独立证明使用了物理 GPU。适配器信息可能被浏览器隐藏，也可能来自软件实现。本页单次耗时不构成性能基准或加速比。</p></div></section>
+<div class="plt-layout resident-layout">
+<section class="plt-workspace">
+<section class="panel" aria-labelledby="residentImageHeading">
+<div class="panel-top"><div class="panel-title"><span class="section-number">01</span><h2 id="residentImageHeading">已核验图像</h2></div><span id="residentBackend" class="schematic-tag">尚未运行</span></div>
+<div class="resident-comparison-grid">
+<figure><figcaption><strong>CPU 参考</strong><span>完整独立 CPU shadow · 固定曝光</span></figcaption><div class="plt-film-frame resident-film"><canvas id="residentCanvas" width="32" height="32" aria-label="完整独立 CPU 参考图像"></canvas><span id="residentEmpty" class="plt-empty">点击开始后，显示完整核验的 CPU 参考。</span></div></figure>
+<figure><figcaption><strong>GPU 辅助结果</strong><span>包含选择性 CPU 重放 · 与 CPU 同曝光</span></figcaption><div class="plt-film-frame resident-film"><canvas id="residentGpuCanvas" width="32" height="32" aria-label="通过完整核验的 GPU 辅助图像，包含选择性 CPU 重放"></canvas><span id="residentGpuEmpty" class="plt-empty">需要真实 WebGPU 执行与完整准入。</span></div></figure>
+<figure><figcaption><strong>绝对差值</strong><span>原始响应 |GPU 辅助 − CPU| · 固定色阶</span></figcaption><div class="plt-film-frame resident-film"><canvas id="residentDifferenceCanvas" width="32" height="32" aria-label="GPU 辅助结果与 CPU 参考的绝对差值图"></canvas><span id="residentDifferenceEmpty" class="plt-empty">尚无已准入 GPU 辅助结果，无法计算差值。</span></div><p class="resident-map-legend">黑 0 → 白 ≥ 10⁻⁶；不逐图归一化</p><p id="residentDifferenceMax" class="resident-map-value">最大绝对差值：—</p></figure>
+<figure><figcaption><strong>CPU 重放覆盖</strong><span>GPU 辅助中被 CPU 替换的样本数 · 共 2 spp</span></figcaption><div class="plt-film-frame resident-film"><canvas id="residentReplayCanvas" width="32" height="32" aria-label="每像素零、一或两个样本由 CPU 重放的覆盖图"></canvas><span id="residentReplayEmpty" class="plt-empty">尚无已准入 GPU 辅助结果，无法显示重放覆盖。</span></div><p class="resident-map-legend resident-mask-key"><span><i class="resident-mask-zero"></i>0 / 2</span><span><i class="resident-mask-one"></i>1 / 2</span><span><i class="resident-mask-two"></i>2 / 2</span></p><p id="residentReplayHistogram" class="resident-map-value">显式重放与数值恢复去重；完整 CPU shadow 不计入此图。</p></figure>
+</div>
+<p id="residentImageCaption" class="plt-note">CPU / GPU 辅助使用相同固定灰度映射；仅显示已核验结果。</p>
+<div class="resident-image-notes resident-scene-notes"><span class="resident-kicker">FROZEN FIXTURE / ACTUAL CAMERA</span><h3 id="residentFixtureTitle">镜面与发光面板 · 结构场景</h3><p id="residentFixtureDescription">真实相机光线经过有限镜面、自发光面板与黑色挡板，经一次 / 两次镜面反射与前景遮挡形成明暗结构。</p><p>完整 CPU shadow 与回退都计入总耗时。首次管线编译可能需要数十秒，可随时取消。</p><p id="residentMeasurement">当前没有运行结果。</p><p id="residentMirrorHistogram">路径按镜面反射次数的统计将在核验后显示。</p></div>
+<div class="plt-status" aria-live="polite" aria-atomic="true"><span id="residentStatus">准备就绪。页面不会自动运行。</span><progress id="residentProgress" max="1" value="0" hidden aria-label="测试进度"></progress></div>
+</section>
+<section class="panel plt-evidence" aria-labelledby="residentEvidenceHeading"><div class="panel-top"><div class="panel-title"><span class="section-number">02</span><h2 id="residentEvidenceHeading">本次执行记录</h2></div><span class="resident-muted">本地诊断</span></div>
+<div class="resident-facts"><div><span>图像来源 / 准入</span><strong id="residentAdmission">—</strong></div><div><span>WebGPU 是否实际执行</span><strong id="residentExecuted">—</strong></div><div class="resident-wide"><span>浏览器报告的适配器</span><strong id="residentAdapter">—</strong></div><div><span>CPU 重放路径 / 总路径</span><strong id="residentReplay">—</strong></div><div><span>保留的 GPU 路径占比</span><strong id="residentRetained">—</strong></div></div>
+<div class="resident-timings" aria-label="各阶段耗时"><div><span>设置 / 编译</span><strong id="residentSetupTime">—</strong></div><div><span>候选渲染</span><strong id="residentRenderTime">—</strong></div><div><span>完整 CPU shadow</span><strong id="residentShadowTime">—</strong></div><div><span>准入核验</span><strong id="residentAdmissionTime">—</strong></div><div><span>总耗时</span><strong id="residentTotalTime">—</strong></div></div>
+<p id="residentWarnings" class="plt-warning">执行证据只适用于本次冻结场景和参数，不能推广为物理 GPU、完整 Wave 或光谱功能已验证。</p>
+<details><summary>展开有界诊断 JSON</summary><p class="plt-note">下载内容包含当前参数、适配器、计时、核验和回退诊断，不含任何相机图像、差值或重放覆盖的像素数组。只保存到你的设备；分享前可检查适配器信息。</p><pre id="residentReport">尚无结果</pre></details>
+<button id="residentDownload" class="plt-link-button" disabled>下载本地 JSON 记录</button>
+</section>
+</section>
+<aside class="panel plt-controls" aria-labelledby="residentControlsHeading"><div class="panel-top"><div class="panel-title"><span class="section-number">03</span><h2 id="residentControlsHeading">选择一次测试</h2></div></div><div class="plt-controls-body resident-controls">
+<label for="residentPreset" class="resident-wide">冻结场景<select id="residentPreset"><option value="structured-mirror-panels" selected>镜面与发光面板 · 结构场景</option><option value="two-mirrors-emission">双镜面 → 发光面</option><option value="four-scale-shifted-zxy">4 倍尺度 · 平移 · ZXY</option><option value="half-scale-three-mirrors-negative-permutation">半尺度 · 三镜面 · 负坐标置换</option></select></label>
+<label for="residentDimension">方形分辨率<select id="residentDimension"><option value="8">8 × 8</option><option value="16">16 × 16</option><option value="32" selected>32 × 32</option></select></label>
+<label for="residentLanes">每块 lane 数<select id="residentLanes"><option value="32">32 · 原默认</option><option value="128" selected>128 · 研究选项</option></select></label>
+<p class="plt-note resident-wide">128 只在这个实验页显式启用。默认 32 × 32 更便于看清结构；8 / 16 可减少工作量。首次编译可能仍需数十秒。</p>
+<div class="resident-fixed resident-wide"><span>固定采样与守卫</span><dl><div><dt>每像素样本</dt><dd>2 spp</dd></div><div><dt>最大深度 / 随机种子</dt><dd>6 / 7391</dd></div><div><dt>守卫 / 提交方式</dt><dd>camera / round</dd></div><div><dt>完整 CPU shadow</dt><dd>始终开启</dd></div></dl></div>
+<button id="residentRun" class="primary-button">开始一次测试 <span aria-hidden="true">↗</span></button><button id="residentCancel" class="plt-cancel" hidden>取消测试</button><button id="residentReset" class="plt-link-button resident-wide">恢复默认参数</button>
+<p class="plt-note resident-wide">修改参数、取消或离开页面会停止当前工作并清除旧结果。不支持 WebGPU 时仍可得到明确标注的 CPU 回退结果。</p>
+</div></aside>
+</div>
+<noscript><p class="plt-warning">需要启用 JavaScript 才能运行本地测试。</p></noscript>
+<footer class="plt-footer">本地计算 · 无自动上传 · 非性能基准　<a href="tracer.html">返回主线 Wave Tracing ↗</a></footer>
+</main></div><script type="module" src="plt-resident-test-app.js"></script></body></html>

@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#101616">
+  <meta name="description" content="在浏览器内导入真实 OBJ 网格，探索单交互区域的三维 UTD 波束传递。包含几何可见性、物理边缘、CPU / WebGPU 校验与明确的模型边界。">
+  <title>波与光 · 三维 UTD 实验室</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="mesh-style.css">
+</head>
+<body class="mesh-page">
+  <div class="app-shell">
+    <header class="masthead">
+      <a class="brand" href="index.html" aria-label="波与光实验室首页"><span class="brand-symbol" aria-hidden="true"><i></i><i></i><i></i></span><span>波与光<span class="brand-en">WAVE / LIGHT</span></span></a>
+      <div class="header-note"><span class="tiny-dot"></span>计算光学实验室<span class="version-tag">02</span></div>
+    </header>
+    <nav class="experiment-nav" aria-label="选择实验"><a href="transport.html" style="color:#d5eebc">相干网格引擎 · 512² ↗</a><a href="tracer.html">主线 <span>3D Wave Tracing</span></a><a href="index.html">01 <span>双缝 · 标量近轴</span></a><a href="mesh.html" aria-current="page">02 <span>三维 UTD · 单交互区域</span></a><a href="coherent.html">03 <span>相干波 · 双区域耦合</span></a></nav>
+    <main id="meshMain">
+      <section class="intro mesh-intro" aria-labelledby="meshTitle">
+        <div><div class="eyebrow">EXPERIMENT 02 / 3D MESH · UTD</div><h1 id="meshTitle">让波，<span>遇见真实几何。</span></h1><p class="intro-copy">三维 UTD · 一个局部交互区域。可在它之前或之后加入一次理想镜面反射，观察有明确边界的选定路径族。</p></div>
+        <div class="experiment-mark" aria-hidden="true"><span>ƒ</span><div>GEOMETRY → FIELD<br><strong>ONE INTERACTION REGION</strong></div></div>
+      </section>
+      <div class="mesh-scope-note"><span class="mesh-scope-symbol">f</span><p>读图前：显示条件功率传递因子 <strong>f</strong> 的分布，不是经标定的辐照度。UTD 为高频渐近模型，不能视为精确 Gaussian-mode 解、完整论文复现或全波 Maxwell 求解。</p><a href="mesh-method.html">方法与边界 <span aria-hidden="true">↗</span></a></div>
+
+      <div class="lab-layout mesh-layout">
+        <section class="workspace" aria-label="几何与计算结果">
+          <section class="panel mesh-scene-panel" aria-labelledby="meshSceneTitle">
+            <div class="panel-top"><div class="panel-title"><span class="section-number">01</span><h2 id="meshSceneTitle">三维几何</h2></div><span class="schematic-tag">网格按真实坐标 · 包络为示意</span></div>
+            <div class="mesh-scene-wrap">
+              <canvas id="meshSceneCanvas" tabindex="0" aria-label="真实 OBJ 网格三维视图。拖动或方向键绕两个轴旋转，滚轮或加减键缩放，Home 键复位视角。" aria-describedby="meshSceneNotice">浏览器需要支持 Canvas 才能显示三维几何。</canvas>
+              <div class="scene-key mesh-scene-key"><span><i class="key-dot"></i>入射波束</span><span><i class="mesh-key-edge"></i>物理边缘</span><span><i class="key-square"></i>接收面</span></div>
+              <div class="mesh-view-chip"><span class="tiny-dot"></span><span id="meshName">等待载入几何</span></div>
+              <div class="drag-hint"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M4 7a5 5 0 0 1 9-2m1 0V2m0 3h-3M14 11a5 5 0 0 1-9 2m-1 0v3m0-3h3"/></svg>拖动双轴旋转 · 滚轮缩放</div>
+            </div>
+            <div class="scene-footer mesh-scene-footer"><span class="scene-disclaimer">相机视角不参与物理计算</span><button id="meshResetCamera" class="mesh-text-button" type="button" title="复位三维观察视角">复位视角 <span aria-hidden="true">↺</span></button></div>
+            <p id="meshSceneNotice" class="mesh-frame-notice">网格与接收面按真实坐标显示；包络为示意。</p>
+            <div class="mesh-geometry-stats" aria-label="几何统计"><div><span>网格三角形</span><strong id="meshTriangles">—</strong></div><div><span>物理边缘</span><strong id="meshPhysicalEdges">—</strong></div><div><span>区域内候选边缘</span><strong id="meshGatheredEdges">—</strong></div></div>
+          </section>
+
+          <section class="panel mesh-results-panel" aria-labelledby="meshResultsTitle">
+            <div class="panel-top results-top"><div class="panel-title"><span class="section-number">02</span><h2 id="meshResultsTitle">条件功率传递因子 f</h2></div><span class="mesh-formula">10 log₁₀ f <span>相对条件值 1 · dB</span></span></div>
+            <p id="meshTransportSummary" class="mesh-frame-notice" aria-live="polite">一个局部 GO + UTD 区域的条件功率传递。</p>
+            <div class="mesh-results-body">
+              <div class="heatmap-area"><div class="heatmap-caption"><span id="meshHeatmapTitle">接收面 · 二维分布</span><span id="meshHeatmapRange">横向坐标 u / v · mm</span></div><div class="heatmap-frame mesh-heatmap-frame"><canvas id="meshHeatmapCanvas" width="650" height="650" aria-label="接收面上计算所得的条件功率传递因子 f，以相对条件值 1 的分贝显示"></canvas></div><div class="intensity-key"><span>−40 dB</span><div class="intensity-gradient"></div><span>+6 dB</span><span class="intensity-note">灰色：超出适用范围</span></div></div>
+              <div class="profile-area"><div class="profile-heading"><h3>接收面中心横向剖面</h3><div class="plot-legend"><span><i class="legend-wave"></i>f</span></div></div><canvas id="meshProfileCanvas" width="960" height="260" aria-label="条件功率传递因子 f 的中心横向剖面"></canvas></div>
+              <div id="meshResultsPending" class="mesh-results-pending"><div><span class="mesh-pending-icon" aria-hidden="true">⌁</span><h3>准备好几何，再计算一次。</h3><p>选择内置模型或导入 OBJ，点击“运行计算”。<br>这里将显示由网格实际计算得到的二维分布与剖面。</p></div></div>
+            </div>
+            <div class="results-footnote" id="meshRegionNotice">尚无计算结果。调整几何或参数后，需要重新运行；结果相对入射条件值 1，非标定辐照度。灰色表示超出适用范围。</div>
+          </section>
+        </section>
+
+        <aside class="controls-column" aria-label="三维 UTD 实验控制">
+          <section class="panel controls-panel mesh-controls-panel" aria-labelledby="meshControlsTitle">
+            <div class="panel-top"><div class="panel-title"><span class="section-number">03</span><h2 id="meshControlsTitle">设置实验</h2></div><span class="live-label">手动运行</span></div>
+            <form id="meshForm" novalidate>
+              <fieldset class="mesh-control-section"><legend><span>01</span> 几何</legend>
+                <label class="mesh-field" for="meshPreset"><span>内置模型</span><select id="meshPreset" name="preset"><option value="screen">有限薄屏</option><option value="box">封闭长方体</option><option value="wedge">有限楔形体</option><option value="opaque-double-slit">不透明双缝屏</option></select></label>
+                <div class="mesh-upload"><label for="meshFile"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 13V3m-4 4 4-4 4 4M4 12v5h12v-5"/></svg><span>导入自己的 OBJ</span><small>.obj / ≤ 2 MiB</small></label><input id="meshFile" type="file" accept=".obj,text/plain" aria-describedby="meshFileHelp"></div>
+                <p class="mesh-field-help" id="meshFileHelp">仅在本浏览器内存中读取，不上传。最多 8,000 顶点、12,000 三角形；不加载材质或外部文件。</p>
+                <label class="mesh-field" for="meshFormat"><span>几何物理解释</span><select id="meshFormat" name="format"><option value="open-plate">平面薄屏 / 零厚度</option><option value="closed-solid">封闭凸体 / 外部楔角</option></select></label>
+                <div class="mesh-input-pair"><label class="mesh-field" for="meshUnit"><span>单位 <small>mm / OBJ 单位</small></span><input id="meshUnit" name="unit" type="number" min="0.000001" max="1000000" step="any" value="1" inputmode="decimal"></label><label class="mesh-field" for="meshScale"><span>统一缩放 <small>倍</small></span><input id="meshScale" name="scale" type="number" min="0.000001" max="1000000" step="any" value="1" inputmode="decimal"></label></div>
+                <details class="mesh-transform-details"><summary>旋转模型 <span>世界坐标 · Rz Ry Rx</span></summary><div class="mesh-input-triple"><label class="mesh-field" for="meshRotateX"><span>X <small>°</small></span><input id="meshRotateX" name="rotateX" type="number" min="-36000" max="36000" step="1" value="0" inputmode="decimal"></label><label class="mesh-field" for="meshRotateY"><span>Y <small>°</small></span><input id="meshRotateY" name="rotateY" type="number" min="-36000" max="36000" step="1" value="0" inputmode="decimal"></label><label class="mesh-field" for="meshRotateZ"><span>Z <small>°</small></span><input id="meshRotateZ" name="rotateZ" type="number" min="-36000" max="36000" step="1" value="0" inputmode="decimal"></label></div><p class="mesh-field-help">旋转改变实际几何与计算。视图中的拖动只改变相机。</p></details>
+              </fieldset>
+              <fieldset class="mesh-control-section"><legend><span>02</span> 波束与接收面</legend>
+                <label class="mesh-field" for="meshTransport"><span>传播路径</span><select id="meshTransport" name="transport" aria-describedby="meshTransportHelp"><option value="single" selected>原有单区域 · 局部 GO + UTD</option><option value="before">理想镜面 → 局部 GO + UTD</option><option value="after">局部 GO + UTD → 理想镜面</option></select></label>
+                <p id="meshTransportHelp" class="mesh-field-help">镜面模式只计算一个反射路径族，完整保留局部 GO + D；不合成独立直达路径族，不是通用多区域或两次衍射（DD）求解器。</p>
+                <div id="meshMirrorControls" hidden>
+                  <label class="mesh-field" for="meshMirrorDistance"><span>镜面与网格中心轴向间距 <small>mm</small></span><input id="meshMirrorDistance" name="mirrorDistance" type="number" min="0.001" max="100000" step="any" value="10" inputmode="decimal" aria-describedby="meshMirrorHelp" disabled></label>
+                  <p id="meshMirrorHelp" class="mesh-field-help">固定 45° 无限理想标量镜面。无有限孔径、无衍射边缘；图中有限片仅为示意。镜面和完整局部区域必须分离，越界将拒绝计算。<a class="mesh-method-link" href="mesh-method.html#mirrorMethod">反射路径族的方法与边界 ↗</a></p>
+                </div>
+                <p id="meshBeamFrameHelp" class="mesh-field-help">入射角使用世界坐标；接收距离沿世界 z 轴从网格中心量取。</p>
+                <div class="mesh-input-pair"><label class="mesh-field" for="meshWavelength"><span>波长 λ <small>mm</small></span><input id="meshWavelength" name="wavelength" type="number" min="0.000001" max="1000" step="any" value="0.05" inputmode="decimal"></label><label class="mesh-field" for="meshBeamRadius"><span>Gaussian σ₀ <small>mm</small></span><input id="meshBeamRadius" name="beamRadius" type="number" min="0.00001" max="10000" step="any" value="1" inputmode="decimal"></label></div>
+                <p class="mesh-field-help">默认 λ = 0.05 mm（50 μm），用较长波长观察有限网格的衍射变化。高频适用性仍需检查。</p>
+                <div class="mesh-input-pair"><label class="mesh-field" for="meshYaw"><span>入射偏航 <small>°</small></span><input id="meshYaw" name="yaw" type="number" min="-180" max="180" step="1" value="0" inputmode="decimal"></label><label class="mesh-field" for="meshPitch"><span>入射俯仰 <small>°</small></span><input id="meshPitch" name="pitch" type="number" min="-89" max="89" step="1" value="0" inputmode="decimal"></label></div>
+                <div class="mesh-input-pair"><label class="mesh-field" for="meshDistance"><span>接收面距离 <small>mm</small></span><input id="meshDistance" name="distance" type="number" min="0.001" max="100000" step="any" value="20" inputmode="decimal"></label><label class="mesh-field" for="meshSpan"><span>接收面宽度 <small>mm</small></span><input id="meshSpan" name="span" type="number" min="0.001" max="100000" step="any" value="6" inputmode="decimal"></label></div>
+                <label class="mesh-field" for="meshBoundary"><span>标量边界条件</span><select id="meshBoundary" name="boundary"><option value="soft">Soft · 软边界</option><option value="hard">Hard · 硬边界</option><option value="unpolarized">非偏振 · 两分量强度平均</option></select></label>
+              </fieldset>
+              <fieldset class="mesh-control-section mesh-numeric-section"><legend><span>03</span> 数值计算</legend><div class="mesh-input-pair"><label class="mesh-field" for="meshResolution"><span>接收面采样</span><select id="meshResolution" name="resolution"><option value="33" selected>33 × 33</option><option value="65">65 × 65</option><option value="97">97 × 97</option></select></label><label class="mesh-field" for="meshBackendSelect"><span>计算后端</span><select id="meshBackendSelect" name="backend"><option value="auto">自动选择</option><option value="cpu">CPU</option><option value="webgpu">WebGPU</option></select></label></div></fieldset>
+              <div class="mesh-control-actions"><button id="meshRun" class="mesh-run-button" type="button"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="m5 3 8 5-8 5Z"/></svg><span>运行计算</span></button><button id="meshCancel" class="button-reset" type="button" disabled>取消</button><button id="meshReset" class="button-reset" type="button" title="恢复默认几何与参数">重置</button></div>
+            </form>
+          </section>
+          <section class="panel engine-panel mesh-engine-panel" aria-labelledby="meshEngineTitle"><div class="engine-heading"><span class="engine-dot" id="meshEngineDot"></span><h2 id="meshEngineTitle">计算引擎</h2><span id="meshBackend" class="backend-badge">等待初始化</span></div><p id="meshStatus" role="status" aria-live="polite">正在准备几何与计算环境…</p><div id="meshError" class="mesh-error" role="alert" hidden></div><div class="metrics mesh-engine-metrics"><div><span>计算耗时</span><strong id="meshElapsed">—</strong></div><div><span>未归一化峰值 f</span><strong id="meshPeak">—</strong></div></div><div class="mesh-parity-row"><span>CPU / GPU 数值准入校验</span><strong id="meshParity">尚未执行</strong></div><ul id="meshWarnings" class="mesh-warnings" aria-label="模型与数值警告" hidden></ul><div id="meshDiagnostics" class="mesh-diagnostics" hidden><p>此报告包含浏览器、GPU 标识、数值参数、基础及补充对照点和选定边缘的几何和计算中间值；不包含完整 OBJ 文件，不会自动上传。</p><button id="meshCopyDiagnostics" class="button-reset" type="button">复制诊断报告</button><p id="meshCopyStatus" role="status" aria-live="polite"></p><details id="meshDiagnosticDetails"><summary>查看诊断报告</summary><label for="meshDiagnosticText">本次 GPU 数值核对详情</label><textarea id="meshDiagnosticText" readonly rows="9" spellcheck="false"></textarea></details></div><p class="quality-note">WebGPU 是否可用取决于浏览器与设备。数值校验用于比较后端，不代表物理模型已获实验验证。</p></section>
+          <section class="insight-card"><span class="insight-symbol" aria-hidden="true">∠</span><div><h2>从一条真实边开始</h2><p>先运行有限薄屏，再试着旋转模型。三角剖分中的共面内部边不作为衍射边；网格轮廓与真实折边才会参与。</p></div></section>
+        </aside>
+      </div>
+
+      <details class="method-panel" id="meshMethodDetails"><summary><div><span class="section-number">04</span><span>从网格到波，计算了什么？</span></div><span class="details-action">方法与边界 <span class="details-chevron">⌄</span></span></summary><div class="method-content"><div><h3>真实几何，受限模型</h3><p>OBJ 的顶点、三角形、相邻面与三维物理边缘直接进入计算。聚集到同一交互区域中的几何不会被替换成投影轮廓或固定双缝。</p></div><div><h3>怎样读这个结果</h3><p>结果是指定单波束与单交互区域条件下的功率传递因子 f，即合成振幅的模平方。二维图显示相对条件值 1 的 10 log₁₀ f，固定范围 −40 至 +6 dB。非偏振选项平均 soft / hard 的功率，不代表完整偏振传输。</p></div><div><h3>哪些问题留在边界之外</h3><p>高频 UTD 对近场、掠入射、角点、短边及多次散射有局限。结果不是经标定的辐照度，也不是精确 Gaussian-mode 或全波 Maxwell 解。<a class="mesh-method-link" href="mesh-method.html">阅读公式、数值验证与完整限制 ↗</a></p></div></div></details>
+      <footer class="page-footer"><span>WAVE / LIGHT<span class="footer-divider">/</span>从几何，走向波</span><span>OBJ 留在本地 · 在浏览器内计算</span></footer>
+    </main>
+  </div>
+  <script type="module" src="mesh-app.js"></script>
+</body>
+</html>

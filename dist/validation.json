@@ -1,0 +1,962 @@
+{
+  "units": "millimetres; incident peak irradiance = 1",
+  "scenes": [
+    {
+      "wavelength": 0.00055,
+      "distance": 2000.0,
+      "slit_width": 0.08,
+      "separation": 0.3,
+      "height": 0.18,
+      "detector_sigma": 0.035,
+      "source_sigma": 0.7
+    },
+    {
+      "wavelength": 0.00042,
+      "distance": 1500.0,
+      "slit_width": 0.12,
+      "separation": 0.42,
+      "height": 0.18,
+      "detector_sigma": 0.035,
+      "source_sigma": 0.7
+    },
+    {
+      "wavelength": 0.00068,
+      "distance": 4000.0,
+      "slit_width": 0.04,
+      "separation": 0.18,
+      "height": 0.18,
+      "detector_sigma": 0.035,
+      "source_sigma": 0.7
+    },
+    {
+      "wavelength": 0.00042,
+      "distance": 4000.0,
+      "slit_width": 0.04,
+      "separation": 0.42,
+      "height": 0.18,
+      "detector_sigma": 0.035,
+      "source_sigma": 0.7
+    },
+    {
+      "wavelength": 0.00068,
+      "distance": 1500.0,
+      "slit_width": 0.12,
+      "separation": 0.18,
+      "height": 0.18,
+      "detector_sigma": 0.035,
+      "source_sigma": 0.7
+    }
+  ],
+  "method": "Backward Gaussian-mode overlap, q sampled from normal centred toward aperture; tensor footprint T=5; independent Fresnel plus Gaussian detector reference",
+  "summary": {
+    "max_relative_untruncated_error": 3.0109889011090004e-13,
+    "max_relative_T5_error_1d": 4.01682420945722e-05,
+    "max_relative_T5_error_2d": 1.7015014157179395e-05,
+    "max_relative_16_vs_64_quadrature_error": 1.6400284783131936e-14,
+    "max_single_sample_coefficient_of_variation_1d": 0.48613780812358426,
+    "max_tensor_corner_ellipse_coordinate": 0.9999999999999998,
+    "minimum_uncertainty_product": 0.5
+  },
+  "one_dimensional_cases": [
+    {
+      "scene": 0,
+      "axis": "x",
+      "position": 0.0,
+      "reference": 0.022702590368706723,
+      "mode_untruncated": 0.022702590368706713,
+      "mode_t5_n16": 0.022702571334107087,
+      "relative_untruncated_error": 4.584649014417188e-16,
+      "relative_t5_error": 8.384329420972791e-07,
+      "relative_n16_error": 3.056435238894114e-16,
+      "sample_cv": 0.0015156324324071006
+    },
+    {
+      "scene": 0,
+      "axis": "x",
+      "position": 0.7,
+      "reference": 0.015352134891262569,
+      "mode_untruncated": 0.015352134891262558,
+      "mode_t5_n16": 0.015352124076997957,
+      "relative_untruncated_error": 6.779735150571527e-16,
+      "relative_t5_error": 7.044143820302926e-07,
+      "relative_n16_error": 0.0,
+      "sample_cv": 0.002186382380525485
+    },
+    {
+      "scene": 0,
+      "axis": "x",
+      "position": 2.1,
+      "reference": 0.0010865672576120047,
+      "mode_untruncated": 0.0010865672576120013,
+      "mode_t5_n16": 0.0010865720750083082,
+      "relative_untruncated_error": 3.1930346949516646e-15,
+      "relative_t5_error": 4.433592370592128e-06,
+      "relative_n16_error": 1.9956378365001034e-16,
+      "sample_cv": 0.02527878441716151
+    },
+    {
+      "scene": 0,
+      "axis": "x",
+      "position": 5.0,
+      "reference": 0.002527915717009155,
+      "mode_untruncated": 0.002527915717009126,
+      "mode_t5_n16": 0.0025279170101840283,
+      "relative_untruncated_error": 1.1494298653670773e-14,
+      "relative_t5_error": 5.11557748730797e-07,
+      "relative_n16_error": 0.0,
+      "sample_cv": 0.010382960049355683
+    },
+    {
+      "scene": 0,
+      "axis": "x",
+      "position": 8.0,
+      "reference": 0.004535563532106121,
+      "mode_untruncated": 0.00453556353210607,
+      "mode_t5_n16": 0.004535560252848057,
+      "relative_untruncated_error": 1.1091671508340002e-14,
+      "relative_t5_error": 7.230100605282319e-07,
+      "relative_n16_error": 7.64943415705924e-16,
+      "sample_cv": 0.0038775156262848536
+    },
+    {
+      "scene": 0,
+      "axis": "x",
+      "position": 12.0,
+      "reference": 0.00020814212691463774,
+      "mode_untruncated": 0.00020814212691462987,
+      "mode_t5_n16": 0.00020814202475750028,
+      "relative_untruncated_error": 3.7764895876862085e-14,
+      "relative_t5_error": 4.90804715858465e-07,
+      "relative_n16_error": 3.646267598405823e-15,
+      "sample_cv": 0.018297070193772653
+    },
+    {
+      "scene": 0,
+      "axis": "y",
+      "position": 0.0,
+      "reference": 0.029368989580312675,
+      "mode_untruncated": 0.029368989580312664,
+      "mode_t5_n16": 0.029368959888724927,
+      "relative_untruncated_error": 3.543990108137057e-16,
+      "relative_t5_error": 1.010984312766126e-06,
+      "relative_n16_error": 0.0,
+      "sample_cv": 0.0009636893725709965
+    },
+    {
+      "scene": 0,
+      "axis": "y",
+      "position": 0.7,
+      "reference": 0.028124514412039506,
+      "mode_untruncated": 0.028124514412039482,
+      "mode_t5_n16": 0.028124486105692834,
+      "relative_untruncated_error": 8.635217059349094e-16,
+      "relative_t5_error": 1.006465258676447e-06,
+      "relative_n16_error": 0.0,
+      "sample_cv": 0.0009642065354430536
+    },
+    {
+      "scene": 0,
+      "axis": "y",
+      "position": 2.1,
+      "reference": 0.019603200585825275,
+      "mode_untruncated": 0.019603200585825223,
+      "mode_t5_n16": 0.01960318174852549,
+      "relative_untruncated_error": 2.6547554850270033e-15,
+      "relative_t5_error": 9.609298085546434e-07,
+      "relative_n16_error": 1.7698386907087567e-16,
+      "sample_cv": 0.0009728106311878984
+    },
+    {
+      "scene": 0,
+      "axis": "y",
+      "position": 5.0,
+      "reference": 0.001310931745175914,
+      "mode_untruncated": 0.0013109317451758702,
+      "mode_t5_n16": 0.001310932904721953,
+      "relative_untruncated_error": 3.341269896743298e-14,
+      "relative_t5_error": 8.845205277199903e-07,
+      "relative_n16_error": 1.6540925452099533e-15,
+      "sample_cv": 0.0032276121043077616
+    },
+    {
+      "scene": 0,
+      "axis": "y",
+      "position": 7.5,
+      "reference": 0.0008398012473002969,
+      "mode_untruncated": 0.0008398012473003071,
+      "mode_t5_n16": 0.0008398021919537958,
+      "relative_untruncated_error": 1.2135610007875417e-14,
+      "relative_t5_error": 1.1248536506790841e-06,
+      "relative_n16_error": 1.6783271557699195e-15,
+      "sample_cv": 0.001907533645081813
+    },
+    {
+      "scene": 1,
+      "axis": "x",
+      "position": 0.0,
+      "reference": 0.08636756058792219,
+      "mode_untruncated": 0.08636756058792214,
+      "mode_t5_n16": 0.08636749111677769,
+      "relative_untruncated_error": 6.427314937851865e-16,
+      "relative_t5_error": 8.043661767314627e-07,
+      "relative_n16_error": 0.0,
+      "sample_cv": 0.007833418587371252
+    },
+    {
+      "scene": 1,
+      "axis": "x",
+      "position": 0.7,
+      "reference": 0.0013868191731622446,
+      "mode_untruncated": 0.0013868191731622424,
+      "mode_t5_n16": 0.0013868440592188602,
+      "relative_untruncated_error": 1.56358116972567e-15,
+      "relative_t5_error": 1.7944701874047675e-05,
+      "relative_n16_error": 0.0,
+      "sample_cv": 0.48613780812358426
+    },
+    {
+      "scene": 1,
+      "axis": "x",
+      "position": 2.1,
+      "reference": 0.005359028115059723,
+      "mode_untruncated": 0.005359028115059697,
+      "mode_t5_n16": 0.005359038221571751,
+      "relative_untruncated_error": 4.855517004385434e-15,
+      "relative_t5_error": 1.8858852410017355e-06,
+      "relative_n16_error": 4.855507847454849e-16,
+      "sample_cv": 0.12076046056943229
+    },
+    {
+      "scene": 1,
+      "axis": "x",
+      "position": 5.0,
+      "reference": 0.00021758307985986585,
+      "mode_untruncated": 0.0002175830798598632,
+      "mode_t5_n16": 0.00021758296452240603,
+      "relative_untruncated_error": 1.2208188818267808e-14,
+      "relative_t5_error": 5.300846917834396e-07,
+      "relative_n16_error": 1.4948810558749303e-15,
+      "sample_cv": 0.24093856633709093
+    },
+    {
+      "scene": 1,
+      "axis": "x",
+      "position": 8.0,
+      "reference": 0.0009625431665542805,
+      "mode_untruncated": 0.0009625431665542387,
+      "mode_t5_n16": 0.0009625432845853603,
+      "relative_untruncated_error": 4.347878132858826e-14,
+      "relative_t5_error": 1.2262419381418642e-07,
+      "relative_n16_error": 6.420441015106748e-15,
+      "sample_cv": 0.046090933084211604
+    },
+    {
+      "scene": 1,
+      "axis": "x",
+      "position": 12.0,
+      "reference": 0.0010070746122644593,
+      "mode_untruncated": 0.001007074612264474,
+      "mode_t5_n16": 0.0010070737931923432,
+      "relative_untruncated_error": 1.464156614240094e-14,
+      "relative_t5_error": 8.133182051720098e-07,
+      "relative_n16_error": 6.028885079684695e-15,
+      "sample_cv": 0.015274814848153316
+    },
+    {
+      "scene": 1,
+      "axis": "y",
+      "position": 0.0,
+      "reference": 0.05126287740739309,
+      "mode_untruncated": 0.051262877407393076,
+      "mode_t5_n16": 0.05126282867768886,
+      "relative_untruncated_error": 2.7071808118623114e-16,
+      "relative_t5_error": 9.505846471087967e-07,
+      "relative_n16_error": 0.0,
+      "sample_cv": 0.0010045916241275769
+    },
+    {
+      "scene": 1,
+      "axis": "y",
+      "position": 0.7,
+      "reference": 0.04487209067163383,
+      "mode_untruncated": 0.04487209067163378,
+      "mode_t5_n16": 0.044872048955350886,
+      "relative_untruncated_error": 1.0824603133113174e-15,
+      "relative_t5_error": 9.296710342112118e-07,
+      "relative_n16_error": 0.0,
+      "sample_cv": 0.0011160432675651108
+    },
+    {
+      "scene": 1,
+      "axis": "y",
+      "position": 2.1,
+      "reference": 0.01309069885787244,
+      "mode_untruncated": 0.013090698857872306,
+      "mode_t5_n16": 0.013090691559454401,
+      "relative_untruncated_error": 1.0203710978339865e-14,
+      "relative_t5_error": 5.575269981816046e-07,
+      "relative_n16_error": 3.9754740261769065e-16,
+      "sample_cv": 0.0026327272192703433
+    },
+    {
+      "scene": 1,
+      "axis": "y",
+      "position": 5.0,
+      "reference": 0.002406017765329983,
+      "mode_untruncated": 0.0024060177653299425,
+      "mode_t5_n16": 0.0024060176677574065,
+      "relative_untruncated_error": 1.6763101834756914e-14,
+      "relative_t5_error": 4.0553556057094975e-08,
+      "relative_n16_error": 3.604968282701159e-15,
+      "sample_cv": 0.0018652702315354252
+    },
+    {
+      "scene": 1,
+      "axis": "y",
+      "position": 7.5,
+      "reference": 0.00021154803197734372,
+      "mode_untruncated": 0.00021154803197740742,
+      "mode_t5_n16": 0.00021154796991830057,
+      "relative_untruncated_error": 3.0109889011090004e-13,
+      "relative_t5_error": 2.933567501091225e-07,
+      "relative_n16_error": 1.6400284783131936e-14,
+      "sample_cv": 0.007522718322539813
+    },
+    {
+      "scene": 2,
+      "axis": "x",
+      "position": 0.0,
+      "reference": 0.002333119687940952,
+      "mode_untruncated": 0.0023331196879409506,
+      "mode_t5_n16": 0.0023331175489899915,
+      "relative_untruncated_error": 5.576407475823988e-16,
+      "relative_t5_error": 9.167772109663947e-07,
+      "relative_n16_error": 0.0,
+      "sample_cv": 0.0008709913244037454
+    },
+    {
+      "scene": 2,
+      "axis": "x",
+      "position": 0.7,
+      "reference": 0.0022832745774489472,
+      "mode_untruncated": 0.0022832745774489464,
+      "mode_t5_n16": 0.0022832724944475496,
+      "relative_untruncated_error": 3.798762297601053e-16,
+      "relative_t5_error": 9.122868612663362e-07,
+      "relative_n16_error": 1.8993828815825734e-16,
+      "sample_cv": 0.000867228460734055
+    },
+    {
+      "scene": 2,
+      "axis": "x",
+      "position": 2.1,
+      "reference": 0.0019100769395404224,
+      "mode_untruncated": 0.0019100769395404213,
+      "mode_t5_n16": 0.001910075275369673,
+      "relative_untruncated_error": 5.676222512514972e-16,
+      "relative_t5_error": 8.71258489586744e-07,
+      "relative_n16_error": 0.0,
+      "sample_cv": 0.0008334417536536896
+    },
+    {
+      "scene": 2,
+      "axis": "x",
+      "position": 5.0,
+      "reference": 0.0005887082721132906,
+      "mode_untruncated": 0.0005887082721132901,
+      "mode_t5_n16": 0.0005887080889669456,
+      "relative_untruncated_error": 9.208314404972904e-16,
+      "relative_t5_error": 3.1109864369492984e-07,
+      "relative_n16_error": 0.0,
+      "sample_cv": 0.0005696268259908305
+    },
+    {
+      "scene": 2,
+      "axis": "x",
+      "position": 8.0,
+      "reference": 1.8997751986781765e-05,
+      "mode_untruncated": 1.8997751986781975e-05,
+      "mode_t5_n16": 1.8998198841400793e-05,
+      "relative_untruncated_error": 1.1057317258653799e-14,
+      "relative_t5_error": 2.3521447134349437e-05,
+      "relative_n16_error": 0.0,
+      "sample_cv": 0.026330565231222215
+    },
+    {
+      "scene": 2,
+      "axis": "x",
+      "position": 12.0,
+      "reference": 0.001339021499065412,
+      "mode_untruncated": 0.0013390214990654098,
+      "mode_t5_n16": 0.0013390204383075081,
+      "relative_untruncated_error": 1.619394719565351e-15,
+      "relative_t5_error": 7.921888517578309e-07,
+      "relative_n16_error": 0.0,
+      "sample_cv": 0.000769351470611819
+    },
+    {
+      "scene": 2,
+      "axis": "y",
+      "position": 0.0,
+      "reference": 0.011878708013251136,
+      "mode_untruncated": 0.011878708013251135,
+      "mode_t5_n16": 0.011878694741072567,
+      "relative_untruncated_error": 1.460363765185287e-16,
+      "relative_t5_error": 1.1173082590214103e-06,
+      "relative_n16_error": 0.0,
+      "sample_cv": 0.001053102979901241
+    },
+    {
+      "scene": 2,
+      "axis": "y",
+      "position": 0.7,
+      "reference": 0.01179517937107435,
+      "mode_untruncated": 0.011795179371074346,
+      "mode_t5_n16": 0.011795166192901368,
+      "relative_untruncated_error": 2.9414109296733854e-16,
+      "relative_t5_error": 1.1172507485549933e-06,
+      "relative_n16_error": 1.47070710798531e-16,
+      "sample_cv": 0.0010530651817129205
+    },
+    {
+      "scene": 2,
+      "axis": "y",
+      "position": 2.1,
+      "reference": 0.011143711002910162,
+      "mode_untruncated": 0.011143711002910152,
+      "mode_t5_n16": 0.011143698557919135,
+      "relative_untruncated_error": 9.340102999030323e-16,
+      "relative_t5_error": 1.1167725925446527e-06,
+      "relative_n16_error": 1.556685571635502e-16,
+      "sample_cv": 0.001052751609466134
+    },
+    {
+      "scene": 2,
+      "axis": "y",
+      "position": 5.0,
+      "reference": 0.008174944402219463,
+      "mode_untruncated": 0.008174944402219438,
+      "mode_t5_n16": 0.008174935298374248,
+      "relative_untruncated_error": 2.970800468940403e-15,
+      "relative_t5_error": 1.1136277834101765e-06,
+      "relative_n16_error": 2.122002698078591e-16,
+      "sample_cv": 0.0010507208999486057
+    },
+    {
+      "scene": 2,
+      "axis": "y",
+      "position": 7.5,
+      "reference": 0.004891050340624062,
+      "mode_untruncated": 0.004891050340624029,
+      "mode_t5_n16": 0.00489104493259253,
+      "relative_untruncated_error": 6.7387869165447835e-15,
+      "relative_t5_error": 1.1056994214975387e-06,
+      "relative_n16_error": 1.7733669388488996e-16,
+      "sample_cv": 0.0010458493089179417
+    },
+    {
+      "scene": 3,
+      "axis": "x",
+      "position": 0.0,
+      "reference": 0.0036383655406062323,
+      "mode_untruncated": 0.003638365540606231,
+      "mode_t5_n16": 0.0036383624784231666,
+      "relative_untruncated_error": 3.57589855241929e-16,
+      "relative_t5_error": 8.416370019818815e-07,
+      "relative_n16_error": 2.383934374686906e-16,
+      "sample_cv": 0.0013284918472993425
+    },
+    {
+      "scene": 3,
+      "axis": "x",
+      "position": 0.7,
+      "reference": 0.0026436585455981727,
+      "mode_untruncated": 0.002643658545598172,
+      "mode_t5_n16": 0.0026436566018806502,
+      "relative_untruncated_error": 3.280914395819405e-16,
+      "relative_t5_error": 7.352377354762649e-07,
+      "relative_n16_error": 1.6404584040366243e-16,
+      "sample_cv": 0.0016630886788513005
+    },
+    {
+      "scene": 3,
+      "axis": "x",
+      "position": 2.1,
+      "reference": 2.479428667473368e-05,
+      "mode_untruncated": 2.4794286674733702e-05,
+      "mode_t5_n16": 2.479528261764339e-05,
+      "relative_untruncated_error": 9.565478867875177e-16,
+      "relative_t5_error": 4.01682420945722e-05,
+      "relative_n16_error": 6.832210467741022e-16,
+      "sample_cv": 0.16199168106687103
+    },
+    {
+      "scene": 3,
+      "axis": "x",
+      "position": 5.0,
+      "reference": 0.0017391905394575414,
+      "mode_untruncated": 0.0017391905394575384,
+      "mode_t5_n16": 0.0017391895673029931,
+      "relative_untruncated_error": 1.7455051727145874e-15,
+      "relative_t5_error": 5.589695471616489e-07,
+      "relative_n16_error": 2.493580211999098e-16,
+      "sample_cv": 0.0023329523957372747
+    },
+    {
+      "scene": 3,
+      "axis": "x",
+      "position": 8.0,
+      "reference": 0.0032243363457736224,
+      "mode_untruncated": 0.0032243363457736185,
+      "mode_t5_n16": 0.003224333632049952,
+      "relative_untruncated_error": 1.2105212987670893e-15,
+      "relative_t5_error": 8.416378997849132e-07,
+      "relative_n16_error": 0.0,
+      "sample_cv": 0.001341661372833186
+    },
+    {
+      "scene": 3,
+      "axis": "x",
+      "position": 12.0,
+      "reference": 0.002760451322241229,
+      "mode_untruncated": 0.0027604513222412243,
+      "mode_t5_n16": 0.002760448998936977,
+      "relative_untruncated_error": 1.7281556535700934e-15,
+      "relative_t5_error": 8.416392759361654e-07,
+      "relative_n16_error": 0.0,
+      "sample_cv": 0.0013598856429986096
+    },
+    {
+      "scene": 3,
+      "axis": "y",
+      "position": 0.0,
+      "reference": 0.019231401853321305,
+      "mode_untruncated": 0.019231401853321298,
+      "mode_t5_n16": 0.019231381387300038,
+      "relative_untruncated_error": 3.6081061364275256e-16,
+      "relative_t5_error": 1.0641980976057568e-06,
+      "relative_n16_error": 1.8040549880856486e-16,
+      "sample_cv": 0.0010044783882980067
+    },
+    {
+      "scene": 3,
+      "axis": "y",
+      "position": 0.7,
+      "reference": 0.01887855062166322,
+      "mode_untruncated": 0.01887855062166321,
+      "mode_t5_n16": 0.01887853055152006,
+      "relative_untruncated_error": 3.675543765496922e-16,
+      "relative_t5_error": 1.0631188569896441e-06,
+      "relative_n16_error": 1.837773836520481e-16,
+      "sample_cv": 0.0010038109978005958
+    },
+    {
+      "scene": 3,
+      "axis": "y",
+      "position": 2.1,
+      "reference": 0.01623768578344258,
+      "mode_untruncated": 0.016237685783442556,
+      "mode_t5_n16": 0.016237668675574482,
+      "relative_untruncated_error": 1.495664406096566e-15,
+      "relative_t5_error": 1.0535902914998231e-06,
+      "relative_n16_error": 4.2733313769020665e-16,
+      "sample_cv": 0.0009979980426238625
+    },
+    {
+      "scene": 3,
+      "axis": "y",
+      "position": 5.0,
+      "reference": 0.006714816475294021,
+      "mode_untruncated": 0.0067148164752939615,
+      "mode_t5_n16": 0.0067148100336189755,
+      "relative_untruncated_error": 8.91282139153018e-15,
+      "relative_t5_error": 9.593225770961636e-07,
+      "relative_n16_error": 3.8751434529605103e-16,
+      "sample_cv": 0.0009486447682861841
+    },
+    {
+      "scene": 3,
+      "axis": "y",
+      "position": 7.5,
+      "reference": 0.0010175882126577302,
+      "mode_untruncated": 0.001017588212657698,
+      "mode_t5_n16": 0.001017588107150724,
+      "relative_untruncated_error": 3.175078517830214e-14,
+      "relative_t5_error": 1.0368340043071035e-07,
+      "relative_n16_error": 1.4916477804853915e-15,
+      "sample_cv": 0.0012151847439862199
+    },
+    {
+      "scene": 4,
+      "axis": "x",
+      "position": 0.0,
+      "reference": 0.055892496085370266,
+      "mode_untruncated": 0.055892496085370245,
+      "mode_t5_n16": 0.05589244825453876,
+      "relative_untruncated_error": 3.7244143972253916e-16,
+      "relative_t5_error": 8.557648137735671e-07,
+      "relative_n16_error": 0.0,
+      "sample_cv": 0.0010095418958181617
+    },
+    {
+      "scene": 4,
+      "axis": "x",
+      "position": 0.7,
+      "reference": 0.04685398307662167,
+      "mode_untruncated": 0.04685398307662164,
+      "mode_t5_n16": 0.04685394509543024,
+      "relative_untruncated_error": 5.923845486143498e-16,
+      "relative_t5_error": 8.106288715294193e-07,
+      "relative_n16_error": 0.0,
+      "sample_cv": 0.0011628117703222293
+    },
+    {
+      "scene": 4,
+      "axis": "x",
+      "position": 2.1,
+      "reference": 0.007193718775216299,
+      "mode_untruncated": 0.007193718775216276,
+      "mode_t5_n16": 0.007193723015731674,
+      "relative_untruncated_error": 3.2554465440557543e-15,
+      "relative_t5_error": 5.894747219221363e-07,
+      "relative_n16_error": 2.4114404630025485e-16,
+      "sample_cv": 0.005698305816341203
+    },
+    {
+      "scene": 4,
+      "axis": "x",
+      "position": 5.0,
+      "reference": 0.01313142431152867,
+      "mode_untruncated": 0.013131424311528547,
+      "mode_t5_n16": 0.013131413605888265,
+      "relative_untruncated_error": 9.37943698051253e-15,
+      "relative_t5_error": 8.152687896943451e-07,
+      "relative_n16_error": 5.28419415621465e-16,
+      "sample_cv": 0.0016050528600912875
+    },
+    {
+      "scene": 4,
+      "axis": "x",
+      "position": 8.0,
+      "reference": 2.8651223398290014e-05,
+      "mode_untruncated": 2.8651223398290413e-05,
+      "mode_t5_n16": 2.8651256926026895e-05,
+      "relative_untruncated_error": 1.3954013256128215e-14,
+      "relative_t5_error": 1.1702026267950334e-06,
+      "relative_n16_error": 4.730168449872661e-16,
+      "sample_cv": 0.11185326352924058
+    },
+    {
+      "scene": 4,
+      "axis": "x",
+      "position": 12.0,
+      "reference": 0.00227772229609089,
+      "mode_untruncated": 0.002277722296090988,
+      "mode_t5_n16": 0.0022777204339191077,
+      "relative_untruncated_error": 4.30306524025783e-14,
+      "relative_t5_error": 8.175587451646622e-07,
+      "relative_n16_error": 4.950433084734645e-15,
+      "sample_cv": 0.0012891666634776186
+    },
+    {
+      "scene": 4,
+      "axis": "y",
+      "position": 0.0,
+      "reference": 0.03167163789871676,
+      "mode_untruncated": 0.03167163789871677,
+      "mode_t5_n16": 0.031671606162707394,
+      "relative_untruncated_error": 2.190885714877528e-16,
+      "relative_t5_error": 1.0020324642051858e-06,
+      "relative_n16_error": 0.0,
+      "sample_cv": 0.0009594139942819272
+    },
+    {
+      "scene": 4,
+      "axis": "y",
+      "position": 0.7,
+      "reference": 0.03011523625003082,
+      "mode_untruncated": 0.030115236250030798,
+      "mode_t5_n16": 0.030115206243408285,
+      "relative_untruncated_error": 6.912342157601497e-16,
+      "relative_t5_error": 9.963933965123534e-07,
+      "relative_n16_error": 2.3041163483401463e-16,
+      "sample_cv": 0.0009616771737199313
+    },
+    {
+      "scene": 4,
+      "axis": "y",
+      "position": 2.1,
+      "reference": 0.019725494648583163,
+      "mode_untruncated": 0.019725494648583093,
+      "mode_t5_n16": 0.019725476159844088,
+      "relative_untruncated_error": 3.517728719875541e-15,
+      "relative_t5_error": 9.373016699370569e-07,
+      "relative_n16_error": 0.0,
+      "sample_cv": 0.0009914602780064868
+    },
+    {
+      "scene": 4,
+      "axis": "y",
+      "position": 5.0,
+      "reference": 0.0005471904761997868,
+      "mode_untruncated": 0.0005471904761997564,
+      "mode_t5_n16": 0.0005471927366798744,
+      "relative_untruncated_error": 5.547914693330687e-14,
+      "relative_t5_error": 4.131066211745165e-06,
+      "relative_n16_error": 1.7832509275572127e-15,
+      "sample_cv": 0.008627036291018747
+    },
+    {
+      "scene": 4,
+      "axis": "y",
+      "position": 7.5,
+      "reference": 0.0013151921136593703,
+      "mode_untruncated": 0.0013151921136593699,
+      "mode_t5_n16": 0.001315192510859677,
+      "relative_untruncated_error": 3.297471635436855e-16,
+      "relative_t5_error": 3.0200934341936775e-07,
+      "relative_n16_error": 2.802850043634433e-15,
+      "sample_cv": 0.0010864844334701569
+    }
+  ],
+  "two_dimensional_cases": [
+    {
+      "scene": 0,
+      "position": [
+        0.0,
+        0.0
+      ],
+      "reference": 0.0006667521399846547,
+      "mode": 0.0006667509068823073,
+      "relative_error": 1.8494164073691684e-06
+    },
+    {
+      "scene": 0,
+      "position": [
+        0.7,
+        0.7
+      ],
+      "reference": 0.0004317713390048887,
+      "mode": 0.00043177060029640145,
+      "relative_error": 1.7108789317327772e-06
+    },
+    {
+      "scene": 0,
+      "position": [
+        5.0,
+        2.1
+      ],
+      "reference": 4.955523886459079e-05,
+      "mode": 4.9555216595826665e-05,
+      "relative_error": 4.4937255139467447e-07
+    },
+    {
+      "scene": 0,
+      "position": [
+        12.0,
+        7.5
+      ],
+      "reference": 1.7479801779864948e-07,
+      "mode": 1.7479812862904996e-07,
+      "relative_error": 6.340483826629927e-07
+    },
+    {
+      "scene": 1,
+      "position": [
+        0.0,
+        0.0
+      ],
+      "reference": 0.0044274496703942505,
+      "mode": 0.004427441900441189,
+      "relative_error": 1.7549500591997854e-06
+    },
+    {
+      "scene": 1,
+      "position": [
+        0.7,
+        0.7
+      ],
+      "reference": 6.22294756832965e-05,
+      "mode": 6.223053451870624e-05,
+      "relative_error": 1.7015014157179395e-05
+    },
+    {
+      "scene": 1,
+      "position": [
+        5.0,
+        2.1
+      ],
+      "reference": 2.8483145750139137e-06,
+      "mode": 2.848311477154527e-06,
+      "relative_error": 1.087611394398451e-06
+    },
+    {
+      "scene": 1,
+      "position": [
+        12.0,
+        7.5
+      ],
+      "reference": 2.1304465227889287e-07,
+      "mode": 2.1304441650776267e-07,
+      "relative_error": 1.106674716665905e-06
+    },
+    {
+      "scene": 2,
+      "position": [
+        0.0,
+        0.0
+      ],
+      "reference": 2.7714447533018174e-05,
+      "mode": 2.771439115949153e-05,
+      "relative_error": 2.0340844456078795e-06
+    },
+    {
+      "scene": 2,
+      "position": [
+        0.7,
+        0.7
+      ],
+      "reference": 2.6931633194424326e-05,
+      "mode": 2.6931578535689312e-05,
+      "relative_error": 2.0295365906311664e-06
+    },
+    {
+      "scene": 2,
+      "position": [
+        5.0,
+        2.1
+      ],
+      "reference": 6.560394849453107e-06,
+      "mode": 6.560385482056282e-06,
+      "relative_error": 1.4278708887975035e-06
+    },
+    {
+      "scene": 2,
+      "position": [
+        12.0,
+        7.5
+      ],
+      "reference": 6.549221559106825e-06,
+      "mode": 6.549209129421766e-06,
+      "relative_error": 1.8978873973007801e-06
+    },
+    {
+      "scene": 3,
+      "position": [
+        0.0,
+        0.0
+      ],
+      "reference": 6.997086980067507e-05,
+      "mode": 6.997073644779813e-05,
+      "relative_error": 1.905834203934105e-06
+    },
+    {
+      "scene": 3,
+      "position": [
+        0.7,
+        0.7
+      ],
+      "reference": 4.990844167946766e-05,
+      "mode": 4.990835192633156e-05,
+      "relative_error": 1.7983558108098751e-06
+    },
+    {
+      "scene": 3,
+      "position": [
+        5.0,
+        2.1
+      ],
+      "reference": 2.8240429497247552e-05,
+      "mode": 2.824038395788175e-05,
+      "relative_error": 1.6125592497664425e-06
+    },
+    {
+      "scene": 3,
+      "position": [
+        12.0,
+        7.5
+      ],
+      "reference": 2.8090027271281205e-06,
+      "mode": 2.8090000717143898e-06,
+      "relative_error": 9.453225890644956e-07
+    },
+    {
+      "scene": 4,
+      "position": [
+        0.0,
+        0.0
+      ],
+      "reference": 0.0017702068972712912,
+      "mode": 0.001770203608587254,
+      "relative_error": 1.8577964203997065e-06
+    },
+    {
+      "scene": 4,
+      "position": [
+        0.7,
+        0.7
+      ],
+      "reference": 0.0014110187696074073,
+      "mode": 0.0014110162198662098,
+      "relative_error": 1.8070214602344428e-06
+    },
+    {
+      "scene": 4,
+      "position": [
+        5.0,
+        2.1
+      ],
+      "reference": 0.0002590238399853336,
+      "mode": 0.0002590233860280013,
+      "relative_error": 1.7525696953703455e-06
+    },
+    {
+      "scene": 4,
+      "position": [
+        12.0,
+        7.5
+      ],
+      "reference": 2.9956424009248514e-06,
+      "mode": 2.9956408565224645e-06,
+      "relative_error": 5.155496485266636e-07
+    }
+  ],
+  "energy_identity": "In the untruncated continuum model, integral over the entire sensor plane equals integral of source irradiance over both aperture rectangles, by unitarity of Fresnel propagation and unit-integral detector Gaussian. A finite displayed screen captures only part of this power.",
+  "limitations": [
+    "Scalar, monochromatic, paraxial, thin amplitude mask; no polarization, UTD, mirror/multibounce, evanescent fields, finite thickness, or Maxwell/BEM claim.",
+    "T=5 Gaussian-tail truncation and finite quadrature are numerical approximations.",
+    "These checks validate the mathematical CPU estimator; the actual WebGPU implementation still needs output comparison."
+  ],
+  "energy_convergence": [
+    {
+      "square_halfspan_mm": 12.0,
+      "received_power": 0.024060107373359355,
+      "transmitted_power": 0.028054386898887677,
+      "captured_fraction": 0.857623709977184
+    },
+    {
+      "square_halfspan_mm": 50.0,
+      "received_power": 0.02694512199419843,
+      "transmitted_power": 0.028054386898887677,
+      "captured_fraction": 0.9604601979473939
+    },
+    {
+      "square_halfspan_mm": 100.0,
+      "received_power": 0.027486415720919276,
+      "transmitted_power": 0.028054386898887677,
+      "captured_fraction": 0.9797546394431839
+    },
+    {
+      "square_halfspan_mm": 200.0,
+      "received_power": 0.027774085227926158,
+      "transmitted_power": 0.028054386898887677,
+      "captured_fraction": 0.9900086331605902
+    }
+  ],
+  "point_detector_power_in_default_display": {
+    "received_power": 0.023003956137280724,
+    "transmitted_power": 0.028054386898887677,
+    "captured_fraction": 0.8199771472529597,
+    "note": "Point-detector reference; Gaussian filtering preserves whole-plane power and slightly modifies finite-window boundaries."
+  }
+}

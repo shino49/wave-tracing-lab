@@ -1,0 +1,136 @@
+{
+  "buildId": "plt-resident-joint-camera-2026-10-13.1",
+  "executionRequested": false,
+  "actualGPUExecuted": false,
+  "allPass": true,
+  "status": "cpu-planning-passed",
+  "backend": "null",
+  "nodeVersion": "v24.19.0",
+  "vulkanICD": null,
+  "fullCPUShadowRequired": true,
+  "descriptiveOnly": true,
+  "noStatisticalSpeedClaim": true,
+  "physicalGPUValidated": false,
+  "browserValidated": false,
+  "hardwarePerformanceClaim": false,
+  "pinnedV21": {
+    "commit": "916bf9952bcd9f6da8203de3cede5675d347b18c",
+    "manifest": "plt-resident-tight-validation-manifest.json",
+    "manifestSHA256": "66d28e3c1b503090e05e273c4336db4be9201ada74106c163fbde0056ce31367",
+    "transport": "plt-resident-tight-validation.json",
+    "transportSHA256": "5accec3c0619d476fbc0c93e6d84a9adbd3be5b4a305b3ccfa64436b543eef6f",
+    "timing": "plt-resident-tight-submit-timing-validation.json",
+    "timingSHA256": "c04e1940014c2abcb2545ad7db28b5a3503e052f90f996f3c801c759124ef86c",
+    "paths": 4608,
+    "anchorReplay": 1596,
+    "anchorRetainedMirror": 2913,
+    "tightReplay": 1591,
+    "tightRetainedMirror": 2918
+  },
+  "modes": [
+    {
+      "id": "anchor-round",
+      "guard": "axis-mirror-anchor",
+      "axisSubmission": "round"
+    },
+    {
+      "id": "camera-round",
+      "guard": "axis-mirror-camera",
+      "axisSubmission": "round"
+    }
+  ],
+  "balancedOrders": [
+    [
+      "anchor-round",
+      "camera-round"
+    ],
+    [
+      "camera-round",
+      "anchor-round"
+    ]
+  ],
+  "warmupsPerMode": 2,
+  "measuredPairsPerScenario": 8,
+  "selectedFixtures": [
+    "two-mirrors-emission",
+    "four-scale-shifted-zxy",
+    "half-scale-three-mirrors-negative-permutation",
+    "eight-scale-two-mirrors"
+  ],
+  "fullTimingSuite": true,
+  "sourceSHA256": null,
+  "hostSHA256": null,
+  "testSHA256": "ca98df8b606fc09a373d639ea9189020e7c6b0b277c5d6ea23be89b7ff477777",
+  "transportHarnessSHA256": "c60544a4e19b83f0b603b948f75f9f5471ccbdfdb65daae1089bb2a95d395d7e",
+  "comparisonScope": "Same camera-compiled runner, fixture, two-sample 128-path workload, immutable RNG prefix and whole-round scheduling. Balanced AB/BA pairs compare only the guard.",
+  "limitations": [
+    "No separately compiled historical anchor setup comparison. Shared setup is excluded from renderer pairs and reported separately.",
+    "Four unchanged representative fixture identities at the historical 128-path workload; no large-workload or physical-GPU performance claim.",
+    "Every warmup and measurement receives the unchanged raw shadow gate, analytic power, exact RNG and replay ownership checks, plus zero audit-discovered replacements.",
+    "Renderer wall time includes native dispatch/wait, readbacks and selective CPU replay; full CPU shadow construction and audit/admission are separate. These are host wall times, not GPU timestamps.",
+    "Software timings are descriptive and sensitive to compiler/cache/scheduler effects; eight pairs are not statistical evidence of general speedup."
+  ],
+  "scenarios": [
+    {
+      "id": "two-mirrors-emission/128-paths",
+      "name": "two-mirrors-emission",
+      "width": 8,
+      "height": 8,
+      "samplesPerPixel": 2,
+      "pathsPerRun": 128,
+      "expectedRadiance": 3,
+      "expectedMirrorBounces": 2,
+      "cpuFullShadowConstructionMs": 14.307323999999994,
+      "setupWallMs": null,
+      "warmups": [],
+      "measurements": []
+    },
+    {
+      "id": "four-scale-shifted-zxy/128-paths",
+      "name": "four-scale-shifted-zxy",
+      "width": 8,
+      "height": 8,
+      "samplesPerPixel": 2,
+      "pathsPerRun": 128,
+      "expectedRadiance": 3,
+      "expectedMirrorBounces": 2,
+      "cpuFullShadowConstructionMs": 12.820935999999989,
+      "setupWallMs": null,
+      "warmups": [],
+      "measurements": []
+    },
+    {
+      "id": "half-scale-three-mirrors-negative-permutation/128-paths",
+      "name": "half-scale-three-mirrors-negative-permutation",
+      "width": 8,
+      "height": 8,
+      "samplesPerPixel": 2,
+      "pathsPerRun": 128,
+      "expectedRadiance": 0.75,
+      "expectedMirrorBounces": 3,
+      "cpuFullShadowConstructionMs": 15.85740100000001,
+      "setupWallMs": null,
+      "warmups": [],
+      "measurements": []
+    },
+    {
+      "id": "eight-scale-two-mirrors/128-paths",
+      "name": "eight-scale-two-mirrors",
+      "width": 8,
+      "height": 8,
+      "samplesPerPixel": 2,
+      "pathsPerRun": 128,
+      "expectedRadiance": 3,
+      "expectedMirrorBounces": 2,
+      "cpuFullShadowConstructionMs": 6.146200000000022,
+      "setupWallMs": null,
+      "warmups": [],
+      "measurements": []
+    }
+  ],
+  "summary": {
+    "scenarios": 4,
+    "totalReferencePaths": 512,
+    "allGeometriesFromPinnedCorpus": true
+  }
+}

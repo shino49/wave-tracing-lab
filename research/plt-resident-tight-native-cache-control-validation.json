@@ -1,0 +1,53 @@
+{
+  "allPass": true,
+  "actualGPUExecuted": false,
+  "scope": "Infrastructure-only mocked lease teardown controls; no numerical output or GPU execution mocked",
+  "checks": [
+    "late native acquisition after finalizer disposes exactly once and rejects lease",
+    "unreleased lease still asserts after scheduling disposal",
+    "simultaneous lease rejected",
+    "per-runner release is idempotent",
+    "final physical disposal is idempotent"
+  ],
+  "lateAcquisition": {
+    "enabled": true,
+    "sequentialLeases": true,
+    "realExecutionPreserved": true,
+    "scope": "Test harness only; shared shader/pipeline/device setup, genuine per-scene buffers/bind groups/dispatch/readback/error scopes",
+    "adapterRequests": 1,
+    "realAdapterRequests": 1,
+    "deviceLeases": 1,
+    "realDeviceRequests": 1,
+    "releasedLeases": 0,
+    "realDeviceDestroyCalls": 1,
+    "shaderHits": 0,
+    "shaderMisses": 0,
+    "pipelineHits": 0,
+    "pipelineMisses": 0,
+    "shaderEntries": [],
+    "pipelineEntries": [],
+    "shaderCreationWallMs": 0,
+    "pipelineCreationWallMs": 0
+  },
+  "normalLifecycle": {
+    "enabled": true,
+    "sequentialLeases": true,
+    "realExecutionPreserved": true,
+    "scope": "Test harness only; shared shader/pipeline/device setup, genuine per-scene buffers/bind groups/dispatch/readback/error scopes",
+    "adapterRequests": 1,
+    "realAdapterRequests": 1,
+    "deviceLeases": 1,
+    "realDeviceRequests": 1,
+    "releasedLeases": 1,
+    "realDeviceDestroyCalls": 1,
+    "shaderHits": 0,
+    "shaderMisses": 0,
+    "pipelineHits": 0,
+    "pipelineMisses": 0,
+    "shaderEntries": [],
+    "pipelineEntries": [],
+    "shaderCreationWallMs": 0,
+    "pipelineCreationWallMs": 0
+  },
+  "transportHarnessSHA256": "e7f80a17e065465991ac089b545e6450b3393100df95602d7000d6c150be083f"
+}

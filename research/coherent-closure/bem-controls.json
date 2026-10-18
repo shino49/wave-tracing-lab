@@ -1,0 +1,159 @@
+{
+  "plan_sha256": "69ea13e3a4967dfcdb0fd7c9443d95b9c82269a8eccdc08e54d1ac4c45db66dd",
+  "coarse_mesh_controls": {
+    "one_screen": [
+      {
+        "nodes_per_screen": 12,
+        "near_field_relative_complex_error": 2.044285940590532,
+        "far_field_relative_complex_error": 0.5064676268053198,
+        "detector_matrix_relative_error": 2.847278888140738,
+        "energy_conservation_operator_error": 3.2625424976019044e-14
+      },
+      {
+        "nodes_per_screen": 16,
+        "near_field_relative_complex_error": 0.39597901864130897,
+        "far_field_relative_complex_error": 0.08665592928066726,
+        "detector_matrix_relative_error": 0.1157943856670853,
+        "energy_conservation_operator_error": 4.666429560163977e-14
+      },
+      {
+        "nodes_per_screen": 24,
+        "near_field_relative_complex_error": 0.004508264523367767,
+        "far_field_relative_complex_error": 0.0012898383456496087,
+        "detector_matrix_relative_error": 0.0003314175066802925,
+        "energy_conservation_operator_error": 4.639086151781403e-14
+      },
+      {
+        "nodes_per_screen": 32,
+        "near_field_relative_complex_error": 2.963875038119765e-06,
+        "far_field_relative_complex_error": 1.0589945055549688e-05,
+        "detector_matrix_relative_error": 6.036129339112066e-07,
+        "energy_conservation_operator_error": 4.823232140984339e-14
+      },
+      {
+        "nodes_per_screen": 48,
+        "near_field_relative_complex_error": 1.1114735254315597e-14,
+        "far_field_relative_complex_error": 2.46474223622768e-14,
+        "detector_matrix_relative_error": 2.0604213756542972e-15,
+        "energy_conservation_operator_error": 4.774635160404694e-14
+      }
+    ],
+    "two_screens": [
+      {
+        "nodes_per_screen": 12,
+        "near_field_relative_complex_error": 0.8730868303502424,
+        "far_field_relative_complex_error": 0.5910623901212553,
+        "detector_matrix_relative_error": 0.7420288446421102,
+        "energy_conservation_operator_error": 5.435286325982908e-14
+      },
+      {
+        "nodes_per_screen": 16,
+        "near_field_relative_complex_error": 0.23373897685964717,
+        "far_field_relative_complex_error": 0.07761158456978988,
+        "detector_matrix_relative_error": 0.10036795113537962,
+        "energy_conservation_operator_error": 4.811776621033018e-14
+      },
+      {
+        "nodes_per_screen": 24,
+        "near_field_relative_complex_error": 0.0038873744193885116,
+        "far_field_relative_complex_error": 0.0012197299489632408,
+        "detector_matrix_relative_error": 0.0007471889441745711,
+        "energy_conservation_operator_error": 4.638368693475895e-14
+      },
+      {
+        "nodes_per_screen": 32,
+        "near_field_relative_complex_error": 2.492841121143753e-06,
+        "far_field_relative_complex_error": 9.57011912835152e-06,
+        "detector_matrix_relative_error": 8.299022774950263e-07,
+        "energy_conservation_operator_error": 4.8472136065480884e-14
+      },
+      {
+        "nodes_per_screen": 48,
+        "near_field_relative_complex_error": 1.300454286355797e-14,
+        "far_field_relative_complex_error": 2.6343045049699968e-14,
+        "detector_matrix_relative_error": 1.4578671845502815e-15,
+        "energy_conservation_operator_error": 4.831324207054374e-14
+      }
+    ]
+  },
+  "incident_curvature_diagnostics": [
+    {
+      "screen_x": 0.0,
+      "raw_gaussian_mode": 1,
+      "central_ray_y": -0.55,
+      "field_complex": [
+        0.05234457188166471,
+        0.26680157703389906
+      ],
+      "phase_curvature": -1.3062897275139085,
+      "equivalent_transverse_radius": 9.186323483411327,
+      "paraxial_gaussian_rayleigh_length": 3.84,
+      "paraxial_gaussian_radius": 9.3728
+    },
+    {
+      "screen_x": 0.0,
+      "raw_gaussian_mode": 2,
+      "central_ray_y": 0.5349044337502052,
+      "field_complex": [
+        -0.02692602787613808,
+        -0.2942936791939188
+      ],
+      "phase_curvature": -1.3928920646596779,
+      "equivalent_transverse_radius": 8.615168615331248,
+      "paraxial_gaussian_rayleigh_length": 3.0612244897959187,
+      "paraxial_gaussian_radius": 9.009246147438569
+    },
+    {
+      "screen_x": 0.0,
+      "raw_gaussian_mode": 3,
+      "central_ray_y": 0.37371980724307585,
+      "field_complex": [
+        0.22623732750607237,
+        0.07452055200324625
+      ],
+      "phase_curvature": -0.5185907314853776,
+      "equivalent_transverse_radius": 23.139634535366465,
+      "paraxial_gaussian_rayleigh_length": 7.4074074074074066,
+      "paraxial_gaussian_radius": 23.703724807428507
+    },
+    {
+      "screen_x": 2.3,
+      "raw_gaussian_mode": 1,
+      "central_ray_y": -0.55,
+      "field_complex": [
+        0.14390673212310112,
+        -0.18565729262564967
+      ],
+      "phase_curvature": -1.539311787316763,
+      "equivalent_transverse_radius": 7.795691619381209,
+      "paraxial_gaussian_rayleigh_length": 3.84,
+      "paraxial_gaussian_radius": 7.7292093023255815
+    },
+    {
+      "screen_x": 2.3,
+      "raw_gaussian_mode": 2,
+      "central_ray_y": 0.410137931771432,
+      "field_complex": [
+        -0.17354326090977465,
+        0.17560557221070444
+      ],
+      "phase_curvature": -1.9185097657366046,
+      "equivalent_transverse_radius": 6.254854791105348,
+      "paraxial_gaussian_rayleigh_length": 3.0612244897959187,
+      "paraxial_gaussian_radius": 6.177455821978938
+    },
+    {
+      "screen_x": 2.3,
+      "raw_gaussian_mode": 3,
+      "central_ray_y": 0.5273950213427199,
+      "field_complex": [
+        -0.1102126943957386,
+        -0.1943727909841403
+      ],
+      "phase_curvature": -0.7508711266590227,
+      "equivalent_transverse_radius": 15.981437524963333,
+      "paraxial_gaussian_rayleigh_length": 7.4074074074074066,
+      "paraxial_gaussian_radius": 16.09789479577839
+    }
+  ]
+}

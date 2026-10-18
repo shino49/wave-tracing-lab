@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#101616">
+  <meta name="description" content="单交互标量近轴 Gaussian-mode Wave Tracing：纯浏览器 WebGPU 双缝数值实验，带独立验证与明确边界。">
+  <title>波与光 · 双缝实验室</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="mesh-style.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="masthead">
+      <a class="brand" href="#main" aria-label="波与光实验室，跳转到实验"><span class="brand-symbol" aria-hidden="true"><i></i><i></i><i></i></span><span>波与光<span class="brand-en">WAVE / LIGHT</span></span></a>
+      <div class="header-note"><span class="tiny-dot"></span>计算光学实验室<span class="version-tag">01</span></div>
+    </header>
+    <nav class="experiment-nav" aria-label="选择实验"><a href="transport.html" style="color:#d5eebc">彩色相干网格引擎 · 512² ↗</a><a href="pinhole.html" style="color:#d5eebc">小孔相机 <span>彩色 512² · 有限圆孔 ↗</span></a><a href="wave-demo.html">主线 <span>三维波动演示 ↗</span></a><a href="tracer.html">进阶 <span>场景与光谱</span></a><a href="index.html" aria-current="page">01 <span>双缝 · 标量近轴</span></a><a href="mesh.html">02 <span>三维 UTD · 单交互区域</span></a><a href="coherent.html">03 <span>相干波 · 双区域耦合</span></a></nav>
+    <main id="main">
+      <a href="transport.html" style="display:flex;justify-content:space-between;align-items:center;gap:14px;margin-top:22px;padding:18px 20px;border:1px solid #607b54;border-radius:8px;background:#1c2b1e;color:#c5e6ad;text-decoration:none;font-size:13px"><span>进入彩色相干网格引擎 · 原生 512²，逐波长完整光路与一阶衍射共同叠加</span><span aria-hidden="true">↗</span></a>
+      <section class="intro" aria-labelledby="page-title">
+        <div><div class="eyebrow">EXPERIMENT 01 / DOUBLE SLIT</div><h1 id="page-title">一束光，<span>两种答案。</span></h1><p class="intro-copy">让光穿过双缝，观察振幅如何叠加，也看看几何光学会错过什么。</p></div>
+        <div class="experiment-mark" aria-hidden="true"><span>λ</span><div>Wave Tracing · 单交互子集<br><strong>WAVE OPTICS LAB</strong></div></div>
+      </section>
+
+      <div class="lab-layout">
+        <section class="workspace" aria-label="实验可视化">
+          <div class="panel scene-panel">
+            <div class="panel-top"><div class="panel-title"><span class="section-number">01</span><h2>实验装置</h2></div><span class="schematic-tag">空间示意 · 非等比例</span></div>
+            <div class="scene-wrap"><canvas id="sceneCanvas" aria-label="可拖动旋转的双缝装置三维示意图">浏览器需要支持 Canvas 才能显示实验装置。</canvas><div class="scene-key"><span><i class="key-dot source"></i>相干光源</span><span><i class="key-line"></i>传播包络（示意）</span><span><i class="key-square"></i>接收屏</span></div><div class="drag-hint"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M4 7a5 5 0 0 1 9-2m1 0V2m0 3h-3M14 11a5 5 0 0 1-9 2m-1 0v3m0-3h3"/></svg>拖动旋转观察</div></div>
+            <div class="scene-footer"><div class="orbit-control"><label for="orbit">观察角度</label><input id="orbit" type="range" min="-45" max="45" step="1" value="0"><output id="orbitValue" for="orbit">0°</output></div><span class="scene-disclaimer">转动视角不改变实验结果</span></div>
+          </div>
+
+          <div class="panel results-panel">
+            <div class="panel-top results-top"><div class="panel-title"><span class="section-number">02</span><h2>屏上光强</h2></div><div class="mode-switch" role="group" aria-label="光学计算模式"><button id="modeWave" type="button" class="mode-button active" data-mode="wave" aria-pressed="true">波动光学</button><button id="modeGeometric" type="button" class="mode-button" data-mode="geometric" aria-pressed="false">几何光学</button><button id="modeSplit" type="button" class="mode-button" data-mode="split" aria-pressed="false">并排对比</button></div></div>
+            <div class="heatmap-area"><div class="heatmap-caption"><span id="heatmapTitle">接收屏 · 归一化光强</span><span id="heatmapRange">屏幕横向位置</span></div><div class="heatmap-frame"><canvas id="heatmapCanvas" width="960" height="240" aria-label="计算所得的接收屏光强分布"></canvas></div><div class="intensity-key"><span>暗</span><div class="intensity-gradient"></div><span>亮</span><span class="intensity-note">显示强度经归一化</span></div></div>
+            <div class="profile-area"><div class="profile-heading"><h3>横向光强剖面</h3><div class="plot-legend"><span id="waveLegend"><i class="legend-wave"></i>波动</span><span id="geometricLegend"><i class="legend-geometric"></i>几何</span></div></div><canvas id="profileCanvas" width="960" height="240" aria-label="接收屏中央横截面的光强曲线"></canvas></div>
+            <div class="results-footnote" id="regionNotice">计算视野与数值采样范围将在实验启动后显示。</div>
+          </div>
+        </section>
+
+        <aside class="controls-column" aria-label="实验控制">
+          <section class="panel controls-panel" aria-labelledby="parameters-title"><div class="panel-top"><div class="panel-title"><span class="section-number">03</span><h2 id="parameters-title">改变条件</h2></div><span class="live-label"><span class="tiny-dot"></span>实时</span></div>
+            <div class="parameter-list">
+              <div class="parameter"><div class="parameter-heading"><label for="lambda">波长 <span class="symbol">λ</span></label><output id="lambdaValue" for="lambda">550 <small>nm</small></output></div><input class="spectrum-range" id="lambda" type="range" min="420" max="680" step="1" value="550"><div class="range-extents"><span>420 nm</span><span>680 nm</span></div><p>改变颜色，观察条纹间距。</p></div>
+              <div class="parameter"><div class="parameter-heading"><label for="slitWidth">单缝宽度 <span class="symbol">a</span></label><output id="slitWidthValue" for="slitWidth">0.080 <small>mm</small></output></div><input id="slitWidth" type="range" min="0.04" max="0.12" step="0.001" value="0.08"><div class="range-extents"><span>0.04 mm</span><span>0.12 mm</span></div><p>缝越窄，衍射包络越宽。</p></div>
+              <div class="parameter"><div class="parameter-heading"><label for="separation">双缝中心距 <span class="symbol">d</span></label><output id="separationValue" for="separation">0.300 <small>mm</small></output></div><input id="separation" type="range" min="0.18" max="0.42" step="0.001" value="0.30"><div class="range-extents"><span>0.18 mm</span><span>0.42 mm</span></div><p>拉开双缝，条纹变得更密。</p></div>
+              <div class="parameter"><div class="parameter-heading"><label for="screenDistance">接收屏距离 <span class="symbol">L</span></label><output id="screenDistanceValue" for="screenDistance">2.50 <small>m</small></output></div><input id="screenDistance" type="range" min="1.5" max="4" step="0.05" value="2.5"><div class="range-extents"><span>1.5 m</span><span>4.0 m</span></div><p>把屏幕移远，条纹随之展开。</p></div>
+            </div>
+            <div class="control-actions"><button id="pauseButton" class="button-secondary" type="button"><span class="pause-icon" aria-hidden="true"></span><span>暂停采样</span></button><button id="resetButton" class="button-reset" type="button" title="恢复默认实验参数"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4.3 6.7a6.2 6.2 0 1 1-.5 5M4 3v4h4"/></svg>重置</button></div>
+          </section>
+          <section class="panel engine-panel" aria-label="计算状态"><div class="engine-heading"><span class="engine-dot" id="engineDot"></span><h2>计算引擎</h2><span id="backendBadge" class="backend-badge">初始化</span></div><p id="status" role="status" aria-live="polite">正在准备计算环境…</p><div class="metrics"><div><span>模式采样 / 像素</span><strong id="spp">0</strong></div><div><span>运行时间</span><strong id="elapsed">0.0 <small>s</small></strong></div></div><p id="qualityNotice" class="quality-note">渐进采样进行中时，曲线会随样本积累逐步稳定。</p></section>
+          <section class="insight-card"><span class="insight-symbol" aria-hidden="true">≈</span><div><h2>先试试这个</h2><p>缓慢增加双缝中心距。留意条纹间距，再切换到几何光学进行比较。</p></div></section>
+        </aside>
+      </div>
+
+      <details class="method-panel" id="methodDetails"><summary><div><span class="section-number">04</span><span>这里究竟计算了什么？</span></div><span class="details-action">方法与边界 <span class="details-chevron">⌄</span></span></summary><div class="method-content" id="methodContent"><div><h3>实验模型</h3><p>采用理想相干照明与双缝模型，在有限接收屏上比较波动与几何结果。具体数值方法及采样参数由计算模块给出。</p></div><div><h3>如何读图</h3><p>上方装置为非等比例空间示意。传播包络仅帮助理解布局；光强图与剖面显示计算结果，不由示意线条生成。</p></div><div><h3>适用边界</h3><p>这是为直觉探索设计的受限光学实验。它不代表完整通用光传输求解器，也不声称复现某篇论文的全部系统。</p></div></div></details>
+      <footer class="page-footer"><span>WAVE / LIGHT<span class="footer-divider">/</span>探索可以看见的物理</span><span>在浏览器内计算</span></footer>
+    </main>
+  </div>
+  <script type="module" src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+{
+  "buildId": "plt-resident-joint-camera-2026-10-13.1",
+  "allPass": true,
+  "scope": "Full joint-camera transport plus matched warmed timing artifacts. Separate proof/lifecycle/regression reports are outside this manifest scope.",
+  "sourceAndHostHashesMatchFrozenValidation": true,
+  "pinnedV20AndV21ArtifactsUnchanged": true,
+  "pinnedV21": {
+    "commit": "916bf9952bcd9f6da8203de3cede5675d347b18c",
+    "manifest": "plt-resident-tight-validation-manifest.json",
+    "manifestSHA256": "66d28e3c1b503090e05e273c4336db4be9201ada74106c163fbde0056ce31367",
+    "transport": "plt-resident-tight-validation.json",
+    "transportSHA256": "5accec3c0619d476fbc0c93e6d84a9adbd3be5b4a305b3ccfa64436b543eef6f",
+    "timing": "plt-resident-tight-submit-timing-validation.json",
+    "timingSHA256": "c04e1940014c2abcb2545ad7db28b5a3503e052f90f996f3c801c759124ef86c",
+    "paths": 4608,
+    "anchorReplay": 1596,
+    "anchorRetainedMirror": 2913,
+    "tightReplay": 1591,
+    "tightRetainedMirror": 2918
+  },
+  "sourceSHA256": {
+    "utd-functions.wgsl": "47b811d100d8385e8191c655908d97825b8211b5cba7a0c06d160991f65939cb",
+    "plt-resident-geometry.wgsl": "8b006b17e100bfa1633a801c4f62c87ecefabf89a4488f0ad7b3235223e6d180",
+    "plt-resident-interval.wgsl": "34069064ed22208adefc9224d7ba8ac99c49506660dbbf5297c3fb5cf438f0f2",
+    "plt-resident-axis-guard.wgsl": "3eeb51b40f7a7288629e0d77b091bbec9596c2c9dd829a31cdbdef857353f54a",
+    "plt-resident-rng.wgsl": "0e693465e3e85039c5135b6d34f0e5d1762aebf528c9d57d5d1b24e3c7bab3b4",
+    "plt-resident-fsd.wgsl": "6873cbd1533da35650b2f9f79e09dd136c8ac4e07a168f64de1c4df98f759d7a",
+    "plt-resident-walker.wgsl": "8cbee8c9d9a8c77e8d799e800385e9b64ecd055c2e72245e84b3eb91cecdb099"
+  },
+  "hostSHA256": {
+    "plt-resident-gpu.js": "c1fefb77d5e059aef42e1591ab79c4bf589eadeafaea171890b1d74735f1bf21",
+    "plt-resident-geometry.js": "14a4d9b58c46dcda6e393c3ab8525fd757afa63d68a6ff137f3622753fb8e628",
+    "plt-resident-recovery.js": "badc2c28f472875f9746fbe579041d37820084edbbc625b6fb641957d16fb1d4",
+    "plt-resident-reference.js": "14449de794afc79ca5ee2f2645d48274ce71b57f2ab55aa7e7280f3eb5e1acc2",
+    "plt-core.js": "f15c8ff265ddb44fe7b27bf3c8dfd24f52c77014cdfd0c21f1d6a29f0998bef0",
+    "plt-resident-camera.js": "2ebc9b1e1e57c212198fa5ad776e76c90df58fe466ebd3ff5a9e4e1570942d10"
+  },
+  "transport": {
+    "legacyPaths": 4608,
+    "adversarialPaths": 4563,
+    "waveDomainPaths": 4,
+    "allInDomainCameraFixturesExercised": true,
+    "numericGeometryReplacements": 0
+  },
+  "timing": {
+    "scenarios": 4,
+    "measuredPairs": 32,
+    "measuredRuns": 64,
+    "measuredPathRuns": 8192,
+    "warmupPathRuns": 2048,
+    "cpuFullShadowConstructionMs": 42.05413199999997,
+    "sharedSetupWallMs": 286074.713615,
+    "exactRepeatedAuditRngReplayParity": true,
+    "numericGeometryReplacements": 0,
+    "allGeometriesFromPinnedCorpus": true,
+    "nativeDeviceReuse": false
+  },
+  "files": {
+    "tests/plt-resident-camera-transport.mjs": "c60544a4e19b83f0b603b948f75f9f5471ccbdfdb65daae1089bb2a95d395d7e",
+    "tests/plt-resident-camera-submit-timing.mjs": "ca98df8b606fc09a373d639ea9189020e7c6b0b277c5d6ea23be89b7ff477777",
+    "research/plt-resident-camera-cpu-validation.json": "4d701205b95113001e9a940d96a31117cb7e7db56dcce9025b09458a7bacc6eb",
+    "research/plt-resident-camera-validation.json": "32f0feae30e6a3ab6c0e7ebaecb843133cdbafbe7e4427b7519b8615e6e26979",
+    "research/plt-resident-camera-transport.md": "aa38e8a466c8169b9dd7ea20f805dadb4b58a9c176b23aeb671ff86d41c11433",
+    "research/plt-resident-camera-submit-timing-cpu-validation.json": "95443c0a4349fa9cec0d96c1c7525599fa1e3be9e6ce4ac4fa290abe5f20eadc",
+    "research/plt-resident-camera-submit-timing-validation.json": "2cac3f4773e1a207bc478330734a0299849ea8b0c3bcf83e3459a2ff4b319589",
+    "research/plt-resident-camera-submit-timing.md": "7a29c46681bbe4f7752e2daad627f429d24864c62a6cfad1422dea375589246e"
+  }
+}

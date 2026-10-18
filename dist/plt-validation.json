@@ -1,0 +1,1300 @@
+{
+  "release": "Phase 1: numerically equivalent CPU geometry + bounded progressive 3D PLT camera",
+  "scope": "3D backward PLT architecture; native centre-connection/local-plane UTD and angular proposal; finite-depth positive path ensemble; relative camera response, not calibrated radiance",
+  "sourceHashes": {
+    "dist/plt-core.js": "33666b3d85de8b72f8a146a94184dc1dbed0397598f4491b8344972845e315ee",
+    "dist/plt-fsd.js": "ba9938ca575a346e7a813f1efe515188d59dbf19511986737984455fb18fc011",
+    "dist/plt-geometry.js": "62b13c3ea5d83be9bacfbd6f62418beef81f47b098cb9f10fce7182ed6fc283e",
+    "dist/mesh-geometry.js": "050253efe45cb535da452de4a881df006986e9dfc623d46295801944f5d39214",
+    "dist/utd-math.js": "c623b3f360d8b05b14fba421449d848050dbd4366e4f3d8a0c14458aa2776733",
+    "research/plt-independent-reference.py": "a1c47cc91f3d1138cb5098ef88377909df8b2c0e6db0a5c764c1d72ae82e6a61",
+    "tests/plt-core.mjs": "4ebcf9d97649ae870f6d1643c9d77e8577f1cd994dbe0e754cfd2ab3c76e8663",
+    "dist/plt-app.js": "805df0c79c4323f18e3c01c74fdd2b27d7bf7873da0dfbc167097a84c9038e02",
+    "dist/plt-compute.wgsl": "13c5992e847c00442d829a9ca359d0e0fa2b6d8e72974271c440f44250f08bd0",
+    "dist/plt-gpu.js": "612ab9a0279b5c8ff396de33949ee0efbfb051ed10ed47693ec798d69406efd8",
+    "dist/plt-method.html": "8e6ca021b1ba38a76af70e639ebf690838128198f9a0da52dc9862af02a8df90",
+    "dist/plt-runtime.js": "13e4ff3a5acf6a0331544e82175aa21ec6daf8013f830822782c0efd983f5b96",
+    "dist/plt-style.css": "f81ff11ea99fd90e0df311c6a79f2ed10045d01db735a9ebf2f3bf127b02eff7",
+    "dist/plt-worker.js": "e5890193ed404c2b3e3316aa98e66d79db3d1bb825733500e2e4ab30c587cefe",
+    "dist/tracer.html": "713ad0d3606a967efc05f8fa32c2fcc0fa0daf1d28fbfba750c7f58cc5bf5423",
+    "dist/utd-scene.js": "2be14819d3bc35967ec5f000f9d14dfb18d169d8cd1df1483b7c6d15d045820a",
+    "tests/geometry-oracle.mjs": "5185e5885e17c43a47823f810bfecf2b2be36e2933fef03e087fc3579108231d",
+    "tests/plt-progressive.mjs": "4367505dc99e2c5eafadbecd3562259fba539f91350df9677e3d3538cf79f9f3",
+    "tests/plt-dom.mjs": "aac6bff77b64a7ba3b5c9a7b6f88f64591019b26f56631b20412406e46c16b54",
+    "tests/plt-gpu.mjs": "586f793db1d8fd0bc0ca3397f0b4876e5cbba8e75f9785494ab077e2b548fda0",
+    "tests/plt-runtime.mjs": "d83c98199dcd781a6264380202c2a4c8f93cd1e5e07688bdcc688eec74de0eb9"
+  },
+  "passed": {
+    "geometryGroups": 17,
+    "localFSDGroups": 16,
+    "independentTransportGroups": 13,
+    "independentSamplingMISGroups": 4,
+    "runtimeGroups": 20,
+    "domGroups": 28,
+    "gpuGroups": 33,
+    "progressiveGroups": 16,
+    "exactConeOracleCases": 13016,
+    "exactEpsilonCasesPerModule": 10507,
+    "regionOracleCases": 301
+  },
+  "independentChecks": {
+    "cameraProjectedPixelMeasure": {
+      "samples": 12000,
+      "meanProjectedX": -0.07158081587980147,
+      "meanProjectedY": -0.07211177735593806,
+      "expected": -0.07216878364870322,
+      "varianceProjectedX": 0.0016958652701208696,
+      "expectedVariance": 0.001736111111111111,
+      "interpretation": "Uniform projected-pixel area with native virtual perspective importance/PDF cancellation. No extra cos^3 or physical aperture factor is inserted."
+    },
+    "uniformEmitterCameraRadiance": {
+      "records": [
+        {
+          "wave": false,
+          "samplesPerPixel": 1,
+          "mean": 7,
+          "max": 7
+        },
+        {
+          "wave": false,
+          "samplesPerPixel": 7,
+          "mean": 7,
+          "max": 7
+        },
+        {
+          "wave": true,
+          "samplesPerPixel": 1,
+          "mean": 7,
+          "max": 7
+        },
+        {
+          "wave": true,
+          "samplesPerPixel": 7,
+          "mean": 7,
+          "max": 7
+        }
+      ],
+      "resolutionOrOffAxisNormalization": false
+    },
+    "cosineAreaMISAndSampleConvergence": {
+      "expected": 0.2579770634922848,
+      "sourceRadiance": 4,
+      "albedo": 0.63,
+      "squareHalfWidth": 0.6,
+      "distance": 2,
+      "area": 1.44,
+      "results": [
+        {
+          "nee": false,
+          "mean": 0.26397399902347196,
+          "standardError": 0.0030144817633879295,
+          "checkpoints": [
+            {
+              "samples": 1024,
+              "mean": 0.18949218750000021,
+              "absoluteError": 0.06848487599228456
+            },
+            {
+              "samples": 4096,
+              "mean": 0.2479394531249988,
+              "absoluteError": 0.010037610367285982
+            },
+            {
+              "samples": 16384,
+              "mean": 0.2562451171874994,
+              "absoluteError": 0.0017319463047853478
+            },
+            {
+              "samples": 65536,
+              "mean": 0.26397399902347196,
+              "absoluteError": 0.005996935531187186
+            }
+          ],
+          "relativeError": 0.023246002764763365
+        },
+        {
+          "nee": true,
+          "mean": 0.2579165152597284,
+          "standardError": 0.00007559658397488491,
+          "checkpoints": [
+            {
+              "samples": 1024,
+              "mean": 0.25699893591156964,
+              "absoluteError": 0.000978127580715138
+            },
+            {
+              "samples": 4096,
+              "mean": 0.2574255147990355,
+              "absoluteError": 0.0005515486932492486
+            },
+            {
+              "samples": 16384,
+              "mean": 0.2579601643404047,
+              "absoluteError": 0.000016899151880078733
+            },
+            {
+              "samples": 65536,
+              "mean": 0.2579165152597284,
+              "absoluteError": 0.00006054823255635666
+            }
+          ],
+          "relativeError": 0.0002347039373838266
+        }
+      ],
+      "normalization": "Area selection probability, distance²/light cosine Jacobian, Lambertian cosine/pi, BSDF continuation and power-heuristic MIS jointly checked against independent quadrature"
+    },
+    "twoMirrorInteractions": [
+      {
+        "wave": false,
+        "radiance": 2.8,
+        "expected": 2.8,
+        "stats": {
+          "approximationWarnings": {},
+          "diffractingEvaluations": 0,
+          "twoDiffractingPaths": 0,
+          "twoDiffractingContributions": 0,
+          "maxDiffractingPerPath": 0,
+          "traversals": 3,
+          "escaped": 0,
+          "contributions": 1,
+          "fsdEvaluations": 0,
+          "edgeCoefficients": 0,
+          "endpointExclusions": 0,
+          "invalidEdges": 0,
+          "regionInteractions": 0,
+          "surfaceInteractions": 2,
+          "samplingRejected": 0,
+          "nullRestarts": 0,
+          "twoFSDPaths": 0,
+          "twoFSDContributions": 0,
+          "twoSurfaceContributions": 1,
+          "maxFSDPerPath": 0,
+          "maxSurfacePerPath": 2,
+          "maxDepthReached": 2
+        }
+      },
+      {
+        "wave": true,
+        "radiance": 2.8,
+        "expected": 2.8,
+        "stats": {
+          "approximationWarnings": {},
+          "diffractingEvaluations": 0,
+          "twoDiffractingPaths": 0,
+          "twoDiffractingContributions": 0,
+          "maxDiffractingPerPath": 0,
+          "traversals": 3,
+          "escaped": 0,
+          "contributions": 1,
+          "fsdEvaluations": 0,
+          "edgeCoefficients": 0,
+          "endpointExclusions": 0,
+          "invalidEdges": 0,
+          "regionInteractions": 0,
+          "surfaceInteractions": 2,
+          "samplingRejected": 0,
+          "nullRestarts": 0,
+          "twoFSDPaths": 0,
+          "twoFSDContributions": 0,
+          "twoSurfaceContributions": 1,
+          "maxFSDPerPath": 0,
+          "maxSurfacePerPath": 2,
+          "maxDepthReached": 2
+        }
+      }
+    ],
+    "nativePendingSurfaceAddition": {
+      "localPowers": [
+        0.00661705414655942,
+        0.0020308085883373453
+      ],
+      "directAmplitudes": [
+        0,
+        0
+      ],
+      "expected": 2.83364323649737,
+      "actual": 2.83364323649737,
+      "positiveTerms": [
+        {
+          "weight": 2.8,
+          "eventIds": [],
+          "neeMatched": true,
+          "pixel": 0
+        },
+        {
+          "weight": 4,
+          "eventIds": [
+            0
+          ],
+          "neeMatched": true,
+          "pixel": 0
+        },
+        {
+          "weight": 3.5,
+          "eventIds": [
+            1
+          ],
+          "neeMatched": false,
+          "pixel": 0
+        },
+        {
+          "weight": 5,
+          "eventIds": [
+            0,
+            1
+          ],
+          "neeMatched": false,
+          "pixel": 0
+        }
+      ],
+      "derivation": "Native non-sampled pending FSD adds previous pre-BSDF intensity. Two surfaces therefore yield E*(rho1+F1)*(rho2+F2), four positive branches exactly once, including F1*F2."
+    },
+    "organicCameraAndRepeatedFSD": {
+      "wave": {
+        "unit": "relative native-PLT camera response",
+        "normalization": "sample arithmetic mean; fixed source radiance, no image-wise normalization",
+        "mean": 1.1358245177338355,
+        "max": 9.072467821301267,
+        "nonzero": 54
+      },
+      "ray": {
+        "unit": "relative native-PLT camera response",
+        "normalization": "sample arithmetic mean; fixed source radiance, no image-wise normalization",
+        "mean": 0.21687755303444609,
+        "max": 1.474443061698421,
+        "nonzero": 51
+      },
+      "stats": {
+        "diffractingEvaluations": 163,
+        "twoDiffractingPaths": 23,
+        "twoDiffractingContributions": 41,
+        "maxDiffractingPerPath": 4,
+        "approximationWarnings": {
+          "finite-endpoint-neighborhood-not-modeled": 32,
+          "region-truncated-stationary-neighborhood": 48,
+          "endpoint-corner-diffraction-not-modeled": 4,
+          "low-frequency-asymptotic-approximation": 1
+        },
+        "traversals": 1336,
+        "escaped": 453,
+        "contributions": 347,
+        "fsdEvaluations": 293,
+        "edgeCoefficients": 189,
+        "endpointExclusions": 519,
+        "invalidEdges": 0,
+        "regionInteractions": 244,
+        "surfaceInteractions": 534,
+        "samplingRejected": 11,
+        "nullRestarts": 50,
+        "twoFSDPaths": 56,
+        "twoFSDContributions": 71,
+        "twoSurfaceContributions": 47,
+        "maxFSDPerPath": 5,
+        "maxSurfacePerPath": 5,
+        "maxDepthReached": 6
+      },
+      "positiveTapeTerms": 593,
+      "nonemptyRepeatedCoefficientTerms": 50,
+      "exampleTerms": [
+        {
+          "pixel": 12,
+          "weight": 11.834317640507965,
+          "eventIds": [
+            62,
+            63
+          ],
+          "edgeIds": [
+            [
+              11
+            ],
+            [
+              9
+            ]
+          ],
+          "power": 1.5602614038126688
+        },
+        {
+          "pixel": 12,
+          "weight": 1.8263068775946465,
+          "eventIds": [
+            64,
+            65
+          ],
+          "edgeIds": [
+            [
+              13
+            ],
+            [
+              8
+            ]
+          ],
+          "power": 0.00002467893548186202
+        },
+        {
+          "pixel": 19,
+          "weight": 20.971957733701313,
+          "eventIds": [
+            102,
+            103
+          ],
+          "edgeIds": [
+            [
+              11,
+              23
+            ],
+            [
+              9
+            ]
+          ],
+          "power": 2.84488986214575
+        }
+      ],
+      "scene": {
+        "triangles": 18,
+        "wedges": 24,
+        "unsupportedEdges": 0,
+        "emitterArea": 25
+      },
+      "replayExact": true,
+      "zeroOperatorNegativeControlChangesImage": true
+    },
+    "nativeLocalOperatorAndSommerfeld": {
+      "operatorCount": 162,
+      "maxRelativePowerError": 6.616929226765933e-14,
+      "maxComplexAmplitudeError": 7.093348294052478e-14,
+      "sommerfeldCases": 24,
+      "maxSommerfeldComplexError": 3.0298513174676085e-14,
+      "qualification": "Tests native local-plane center-connected factors only. Exact Sommerfeld agreement is limited to the canonical plane-wave half-plane, not finite-source or arbitrary 3-D multiple scattering."
+    },
+    "sourceScalingAndArbitraryOBJ": {
+      "emissionScaleError": 0,
+      "importedOBJTriangleCount": 10,
+      "importedOBJWedgeCount": 18,
+      "modelTransformRelativeImageChange": 0.2097447056913593,
+      "waveModelTransformRelativeImageChange": 0.1873239632985012,
+      "cameraMoveRelativeImageChange": 0.6363200266492643,
+      "sameSceneGeometryUsedForRayAndWave": true
+    },
+    "rigidSceneCameraCovariance": {
+      "mirrorPowers": [
+        2.8,
+        2.8
+      ],
+      "cameraImageRelativeError": 2.6296141559302317e-15,
+      "fsdEvents": [
+        136,
+        136
+      ],
+      "note": "All geometry, source and camera are rotated/translated together. Diffuse Monte Carlo basis covariance is statistical, rather than per-seed identical."
+    },
+    "wrappedAngularPDF": {
+      "output": [
+        {
+          "sigma": 0.01,
+          "integral": 1.0000000000000002
+        },
+        {
+          "sigma": 0.2,
+          "integral": 0.9999999999999957
+        },
+        {
+          "sigma": 1,
+          "integral": 1.0000000000000013
+        },
+        {
+          "sigma": 4,
+          "integral": 1.000000000000001
+        }
+      ],
+      "nativeAuxiliaryMeasure": "angle, not solid angle; no claimed auxiliary-edge length/Jacobian cancellation"
+    },
+    "nativeKellerAuxiliaryMeasure": {
+      "samples": 131072,
+      "mean": 8.113927192373074,
+      "standardError": 0.01703997040103926,
+      "independentAnalyticNativeMeasure": 8.097362021490481,
+      "distinctSolidAngleIntegral": 9.061330507707634,
+      "directMixtureFraction": 0.49871063232421875,
+      "solidAngleDensityJacobian": "q_Omega=q_angle*r/(edgeLength*sinBeta^3), for one nonoverlapping edge chart",
+      "conclusion": "Implemented inverse-PDF weight matches the native auxiliary-edge-position/angular estimator. It cannot also be described as an unbiased dOmega estimator without a change of measure."
+    },
+    "organicTwoScreenSourceAndConvergence": {
+      "camera": {
+        "position": [
+          -2,
+          0.8,
+          0
+        ],
+        "target": [
+          8,
+          1.8,
+          0
+        ],
+        "up": [
+          0,
+          1,
+          0
+        ],
+        "fov": 18
+      },
+      "wavelengthMm": 0.025,
+      "finite3DScene": {
+        "triangles": 6,
+        "edges": 15,
+        "wedges": 12,
+        "unsupportedEdges": 0,
+        "components": 3,
+        "bvhNodes": 1
+      },
+      "runs": [
+        {
+          "samplesPerPixel": 16,
+          "rawMean": 2.3756234049596654,
+          "rawMax": 10.849489322944473,
+          "distinctScreenDDTerms": 89,
+          "pureDoubleShadowTerms": 1,
+          "pureDoubleShadowMean": 0.00013485736554849151,
+          "ddRawMean": 1.273249178629885,
+          "example": [
+            {
+              "pixel": 2,
+              "eventIds": [
+                28,
+                29
+              ],
+              "operators": [
+                {
+                  "F": 0.05471641477822764,
+                  "directAmplitude": 0,
+                  "edges": [
+                    {
+                      "edgeId": 1,
+                      "point": [
+                        0,
+                        1,
+                        0.032833801903252136
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "F": 0.11198862024380679,
+                  "directAmplitude": 0,
+                  "edges": [
+                    {
+                      "edgeId": 6,
+                      "point": [
+                        8,
+                        2,
+                        -0.1320105381874217
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "samplesPerPixel": 64,
+          "rawMean": 2.576077019616665,
+          "rawMax": 8.667073082542867,
+          "distinctScreenDDTerms": 383,
+          "pureDoubleShadowTerms": 4,
+          "pureDoubleShadowMean": 0.000038974817775889266,
+          "ddRawMean": 1.4651313933801453,
+          "example": [
+            {
+              "pixel": 1,
+              "eventIds": [
+                81,
+                82
+              ],
+              "operators": [
+                {
+                  "F": 0.013401318784043435,
+                  "directAmplitude": 0,
+                  "edges": [
+                    {
+                      "edgeId": 1,
+                      "point": [
+                        0,
+                        1,
+                        -0.25297955512767056
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "F": 0.0005544833368713996,
+                  "directAmplitude": 0,
+                  "edges": [
+                    {
+                      "edgeId": 6,
+                      "point": [
+                        8,
+                        2,
+                        -1.3656047789127659
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "samplesPerPixel": 256,
+          "rawMean": 2.5561172976081323,
+          "rawMax": 8.57912993066303,
+          "distinctScreenDDTerms": 1603,
+          "pureDoubleShadowTerms": 30,
+          "pureDoubleShadowMean": 0.00002856888021432891,
+          "ddRawMean": 1.4624787781228912,
+          "example": [
+            {
+              "pixel": 0,
+              "eventIds": [
+                87,
+                88
+              ],
+              "operators": [
+                {
+                  "F": 0.06581069293532454,
+                  "directAmplitude": 0,
+                  "edges": [
+                    {
+                      "edgeId": 1,
+                      "point": [
+                        0,
+                        1,
+                        -0.3535292631586717
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "F": 0.016528537801996295,
+                  "directAmplitude": 0,
+                  "edges": [
+                    {
+                      "edgeId": 6,
+                      "point": [
+                        8,
+                        2,
+                        -1.9011223714799952
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "rawRayMean": 2.1948285315261837,
+      "waveRayRelativeDifference": 0.32974953207492563,
+      "convergenceMeaning": "Fixed footprint/resolution and fixed estimator; prefix sample arithmetic means only. Mixed direct-plus-edge DD stabilizes here. Rare pure-double-shadow terms are coverage witnesses, not sample-convergence-certified measurements. This is not a 3D full-wave or global-energy validation."
+    },
+    "invalidInputsAndCancellation": {
+      "validation": true,
+      "cancelledBeforeWork": true
+    }
+  },
+  "nativeGPU": {
+    "execution": "Actual native Dawn/Tint WGSL compilation, dispatch and mapped readback",
+    "adapter": {
+      "vendor": "google",
+      "architecture": "swiftshader",
+      "device": "swiftshader-device-subzero-",
+      "description": "SwiftShader driver 5.0.0",
+      "isFallbackAdapter": true
+    },
+    "physicalGPUValidated": false,
+    "browserValidated": false,
+    "allEventAndPixelValidation": true,
+    "tolerance": {
+      "eventAbsolute": 0.00002,
+      "eventRelative": 0.003,
+      "pixelAbsolute": 0.00002,
+      "pixelRelative": 0.003,
+      "boundaryEpsilon": 0.000002
+    },
+    "maxEventToleranceRatio": 0.45000987812827764,
+    "maxPixelToleranceRatio": 0.3960289551870946,
+    "eventCount": 7760,
+    "pixelCount": 8928,
+    "tests": 33,
+    "negativeControls": [
+      "native cancellation, destruction, malformed shader",
+      "last-pixel shader mutation",
+      "unused-event shader mutation"
+    ]
+  },
+  "regressions": [
+    {
+      "command": "npm test",
+      "passed": true
+    },
+    {
+      "command": "npm run test:dom",
+      "passed": true
+    },
+    {
+      "command": "npm run test:utd",
+      "passed": true
+    },
+    {
+      "command": "npm run test:mesh-dom",
+      "passed": true
+    },
+    {
+      "command": "npm run test:coherent",
+      "passed": true
+    },
+    {
+      "command": "npm run test:mirror",
+      "passed": true
+    },
+    {
+      "command": "npm run test:packet",
+      "passed": true
+    },
+    {
+      "command": "npm run test:dd",
+      "passed": true
+    },
+    {
+      "command": "npm run test:dd-reference",
+      "passed": true
+    },
+    {
+      "command": "npm run test:plt",
+      "passed": true
+    },
+    {
+      "command": "npm run test:plt-gpu",
+      "passed": true
+    }
+  ],
+  "limitations": [
+    "Native auxiliary Keller-angle measure is not established as an unbiased solid-angle estimator or globally energy conserving.",
+    "Relative native-PLT camera response; no calibrated radiance, electromagnetic watts or arbitrary image-wise renormalization.",
+    "Local plane-incidence UTD, center-to-center connections, circular conservative envelope specialization, finite depth and virtual camera.",
+    "Endpoint, corner, low-frequency and grazing approximations are visibly reported; not exact Maxwell or a full paper feature reproduction.",
+    "Pure double-shadow paths are demonstrated; their rare-tail convergence is not certified.",
+    "No actual browser visual QA or physical GPU validation.",
+    "CPU geometry still runs serially in one Worker; no GPU path walker, spectral color or denoising was added.",
+    "Cloud Node benchmark timings do not predict user-device performance. Partial-preview latency, complete-pass latency and final runtime are different measurements.",
+    "Higher resolution changes the camera cone footprint. Exact sample/tile invariance applies at fixed full-frame resolution.",
+    "The 4-spp high-resolution inspection retains visible Monte Carlo noise and occasional bright contributions; the raw estimator was not clipped."
+  ],
+  "nativeCorrections": [
+    "full source-leg visibility",
+    "weighted scalar addition",
+    "consistent source-radiance NEE",
+    "MIS only for techniques that actually estimate each term",
+    "symmetric tangent exclusion",
+    "complete wrapped-normal density"
+  ],
+  "license": "New PLT adaptations: CC BY-NC 4.0; original Wave Tracing © Shlomi Steinberg; detailed attribution in method page and LICENSE-WAVE-TRACING.md",
+  "allPass": true,
+  "renderEvidence": {
+    "scope": "Actual computed CPU camera arrays, visual inspection outside a browser. Same fixed tone mapping and exposure; no noise clamping.",
+    "preset": "prism",
+    "options": {
+      "width": 256,
+      "height": 192,
+      "samplesPerPixel": 4,
+      "maxDepth": 4,
+      "wavelengthMm": 0.025,
+      "seed": 7391
+    },
+    "results": [
+      {
+        "wave": true,
+        "measurement": {
+          "unit": "relative native-PLT camera response",
+          "normalization": "sample arithmetic mean; fixed source radiance, no image-wise normalization",
+          "mean": 0.24203405726319693,
+          "max": 96.67125296779602,
+          "nonzero": 36329
+        },
+        "events": 7317,
+        "terms": 157893
+      },
+      {
+        "wave": false,
+        "measurement": {
+          "unit": "relative native-PLT camera response",
+          "normalization": "sample arithmetic mean; fixed source radiance, no image-wise normalization",
+          "mean": 0.2160931937949083,
+          "max": 5,
+          "nonzero": 36287
+        },
+        "events": 0,
+        "terms": 155968
+      }
+    ],
+    "images": [
+      {
+        "file": "prism-wave-256x192.png",
+        "sha256": "36735cc180128523669b141c266777663cd8b64efad3ffe4f6990ff5dd7d8698"
+      },
+      {
+        "file": "prism-ray-256x192.png",
+        "sha256": "2ba3c4e646afc7030ceb694b0b84c0d75a8060c165816e32393ff9e59f822fca"
+      },
+      {
+        "file": "prism-comparison-256x192.png",
+        "sha256": "431908d5c4d889cc15b839153d93173d8e3bd32a7340389b603ae3f991ddde7a"
+      }
+    ]
+  },
+  "generatedAt": "2026-10-12T12:02:28.757Z",
+  "phase1": {
+    "baselineCommit": "f230764b92f014e150ad67f1902a21428a98dc15",
+    "benchmarkScope": "Cloud Node CPU path construction/reference only. Not browser, physical-GPU or user-device timing.",
+    "matchedOptions": {
+      "width": 48,
+      "height": 36,
+      "samplesPerPixel": 16,
+      "maxDepth": 4,
+      "wavelengthMm": 0.025,
+      "seed": 7391,
+      "wave": true
+    },
+    "matchedScene": "prism",
+    "medianCPU": {
+      "baselineMedianMs": 27610.550072,
+      "optimizedMedianMs": 4609.535889999996,
+      "speedup": 5.989876363019277,
+      "allRawPixelsAndPathStatisticsExactlyEqual": true
+    },
+    "matchedRuns": [
+      {
+        "repeat": 1,
+        "label": "baseline",
+        "wallMs": 28332.485256,
+        "reportedCpuMs": 28332.224803,
+        "events": 5333,
+        "terms": 23334,
+        "mean": 0.42200491203448676,
+        "rawImageSha256": "b5d97886d92073c3cbe6b5bc170054364011a047791506412453332737f39b4e"
+      },
+      {
+        "repeat": 1,
+        "label": "optimized",
+        "wallMs": 4609.535889999996,
+        "reportedCpuMs": 4609.253204000004,
+        "events": 5333,
+        "terms": 23334,
+        "mean": 0.42200491203448676,
+        "rawImageSha256": "b5d97886d92073c3cbe6b5bc170054364011a047791506412453332737f39b4e"
+      },
+      {
+        "repeat": 2,
+        "label": "optimized",
+        "wallMs": 4925.036253999999,
+        "reportedCpuMs": 4924.759778,
+        "events": 5333,
+        "terms": 23334,
+        "mean": 0.42200491203448676,
+        "rawImageSha256": "b5d97886d92073c3cbe6b5bc170054364011a047791506412453332737f39b4e"
+      },
+      {
+        "repeat": 2,
+        "label": "baseline",
+        "wallMs": 27610.550072,
+        "reportedCpuMs": 27610.252576,
+        "events": 5333,
+        "terms": 23334,
+        "mean": 0.42200491203448676,
+        "rawImageSha256": "b5d97886d92073c3cbe6b5bc170054364011a047791506412453332737f39b4e"
+      },
+      {
+        "repeat": 3,
+        "label": "baseline",
+        "wallMs": 27421.549477000008,
+        "reportedCpuMs": 27421.340169999996,
+        "events": 5333,
+        "terms": 23334,
+        "mean": 0.42200491203448676,
+        "rawImageSha256": "b5d97886d92073c3cbe6b5bc170054364011a047791506412453332737f39b4e"
+      },
+      {
+        "repeat": 3,
+        "label": "optimized",
+        "wallMs": 4250.542616000006,
+        "reportedCpuMs": 4250.370232999994,
+        "events": 5333,
+        "terms": 23334,
+        "mean": 0.42200491203448676,
+        "rawImageSha256": "b5d97886d92073c3cbe6b5bc170054364011a047791506412453332737f39b4e"
+      }
+    ],
+    "additionalExactImageParity": [
+      {
+        "preset": "gallery",
+        "options": {
+          "width": 16,
+          "height": 12,
+          "samplesPerPixel": 4,
+          "maxDepth": 4,
+          "wavelengthMm": 0.025,
+          "seed": 7391,
+          "wave": true
+        },
+        "pixels": 192,
+        "rawPixelsAndPathStatisticsExactlyEqual": true,
+        "rawImageSha256": "a2cad370d61ffd456f0f685f21352f63f9a7189100ec39a9bf51993dd76f396d"
+      },
+      {
+        "preset": "baffles",
+        "options": {
+          "width": 16,
+          "height": 12,
+          "samplesPerPixel": 4,
+          "maxDepth": 4,
+          "wavelengthMm": 0.025,
+          "seed": 7391,
+          "wave": true
+        },
+        "pixels": 192,
+        "rawPixelsAndPathStatisticsExactlyEqual": true,
+        "rawImageSha256": "9cd26b607679fc414a056035a58b03cefc03734ba4f7e7f04b1262f3802a9c82"
+      },
+      {
+        "preset": "double-edge",
+        "options": {
+          "width": 16,
+          "height": 12,
+          "samplesPerPixel": 4,
+          "maxDepth": 4,
+          "wavelengthMm": 0.025,
+          "seed": 7391,
+          "wave": true
+        },
+        "pixels": 192,
+        "rawPixelsAndPathStatisticsExactlyEqual": true,
+        "rawImageSha256": "20858af29443f9586b83aa6d085bd6dc388227d1078119b3b84e04209656cae5"
+      }
+    ],
+    "progressiveTests": [
+      {
+        "name": "CPU progressive image and path statistics exactly match the legacy full-frame calculation in both modes",
+        "evidence": {
+          "modes": 2,
+          "bitIdentical": true,
+          "options": {
+            "width": 8,
+            "height": 8,
+            "samplesPerPixel": 5,
+            "maxDepth": 4,
+            "seed": 7391
+          }
+        }
+      },
+      {
+        "name": "Tile sizes and sample batches preserve the exact per-global-pixel v11 RNG sequence and CPU summation",
+        "evidence": [
+          {
+            "tileSize": 1,
+            "batchSamples": 1,
+            "batches": 640
+          },
+          {
+            "tileSize": 1,
+            "batchSamples": 2,
+            "batches": 384
+          },
+          {
+            "tileSize": 1,
+            "batchSamples": 4,
+            "batches": 256
+          },
+          {
+            "tileSize": 3,
+            "batchSamples": 1,
+            "batches": 90
+          },
+          {
+            "tileSize": 3,
+            "batchSamples": 2,
+            "batches": 54
+          },
+          {
+            "tileSize": 3,
+            "batchSamples": 4,
+            "batches": 36
+          },
+          {
+            "tileSize": 8,
+            "batchSamples": 1,
+            "batches": 10
+          },
+          {
+            "tileSize": 8,
+            "batchSamples": 2,
+            "batches": 6
+          },
+          {
+            "tileSize": 8,
+            "batchSamples": 4,
+            "batches": 4
+          },
+          {
+            "tileSize": 32,
+            "batchSamples": 1,
+            "batches": 10
+          },
+          {
+            "tileSize": 32,
+            "batchSamples": 2,
+            "batches": 6
+          },
+          {
+            "tileSize": 32,
+            "batchSamples": 4,
+            "batches": 4
+          }
+        ]
+      },
+      {
+        "name": "Non-divisible tiles use full-frame camera geometry, not tile-sized sensor footprints",
+        "evidence": {
+          "frame": [
+            13,
+            11
+          ],
+          "tileSize": 5,
+          "exact": true
+        }
+      },
+      {
+        "name": "Second sample batch advances persistent RNG and contributes new paths",
+        "evidence": {
+          "firstMean": 1.562629805378356,
+          "secondMean": 1.3757577137472725
+        }
+      },
+      {
+        "name": "Preview snapshots contain honest committed counts, immutable images, and only complete shared passes",
+        "evidence": {
+          "previews": 24,
+          "firstFullPassBatch": 8,
+          "finalSharedSPP": 5
+        }
+      },
+      {
+        "name": "No preview is emitted before the GPU batch admission resolves",
+        "evidence": {
+          "previewsBeforeAdmission": 0,
+          "previewsAfterAdmission": 1
+        }
+      },
+      {
+        "name": "All invalid GPU camera contracts fail closed and disable later GPU attempts",
+        "evidence": [
+          {
+            "calls": 1,
+            "warnings": 1
+          },
+          {
+            "calls": 1,
+            "warnings": 1
+          },
+          {
+            "calls": 1,
+            "warnings": 1
+          },
+          {
+            "calls": 1,
+            "warnings": 1
+          }
+        ]
+      },
+      {
+        "name": "A later GPU rejection restores exact CPU sums for previously accepted tiles",
+        "evidence": {
+          "gpuCalls": 3,
+          "finalCPUExact": true
+        }
+      },
+      {
+        "name": "Aggregated validation retains exhaustive counts and bounded summaries, not per-event error tapes",
+        "evidence": {
+          "totalEvents": 183,
+          "totalPixels": 384,
+          "retainedValidationBytes": 870
+        }
+      },
+      {
+        "name": "Cancellation at preview rejects without a later preview or finalized image",
+        "evidence": {
+          "previews": 1
+        }
+      },
+      {
+        "name": "Cancellation while awaiting GPU cannot publish the returned stale image",
+        "evidence": {
+          "previews": 0
+        }
+      },
+      {
+        "name": "Runtime cap rejects incomplete work without a final result",
+        "evidence": {
+          "capMs": 1
+        }
+      },
+      {
+        "name": "Runtime cap also interrupts a GPU promise that ignores its cancellation signal",
+        "evidence": {
+          "capMs": 100,
+          "elapsedMs": 100.27361299999939,
+          "gpuEntered": true
+        }
+      },
+      {
+        "name": "Worker replacement and cancellation suppress stale result and preview messages",
+        "evidence": {
+          "staleFinals": 0,
+          "cancelledFinals": 0
+        }
+      },
+      {
+        "name": "Legacy full-frame cap stays unchanged; progressive-only frame and work budgets remain bounded",
+        "evidence": {
+          "maxWidth": 256,
+          "maxHeight": 192,
+          "maxPixels": 49152,
+          "maxTileSize": 32,
+          "maxBatchSamples": 4,
+          "maxBatchPaths": 4096,
+          "maxEvents": 24576,
+          "maxTerms": 131072,
+          "maxEdgeRecords": 131072,
+          "maxRuntimeMs": 600000
+        }
+      },
+      {
+        "name": "Useful 256×192 frame executes both physical modes through bounded 32×32 tapes and complete sample passes",
+        "evidence": {
+          "options": {
+            "width": 256,
+            "height": 192,
+            "samplesPerPixel": 2,
+            "maxDepth": 3,
+            "wavelengthMm": 0.025,
+            "wave": true,
+            "nee": true,
+            "boundary": "unpolarized",
+            "seed": 7391
+          },
+          "totalMs": 14064.407019999999,
+          "progressive": {
+            "tileSize": 32,
+            "batchSamples": 1,
+            "maxRuntimeMs": 120000,
+            "previewIntervalMs": 5000,
+            "completedBatches": 192,
+            "totalBatches": 192,
+            "completedSamplesPerPixel": 2,
+            "firstPreviewMs": 41.73253600000044,
+            "firstFullPassMs": 7158.221151000001,
+            "peakTape": {
+              "events": 146,
+              "terms": 1568,
+              "edgeRecords": 65,
+              "tilePixels": 1024,
+              "batchPaths": 1024,
+              "retainedPaths": 10,
+              "retainedEvidence": 1
+            },
+            "persistentPixelBytes": 2162688,
+            "sampleSequence": "v11 sequential per-global-pixel RNG state; exact CPU term order",
+            "limits": {
+              "maxWidth": 256,
+              "maxHeight": 192,
+              "maxPixels": 49152,
+              "maxTileSize": 32,
+              "maxBatchSamples": 4,
+              "maxBatchPaths": 4096,
+              "maxEvents": 24576,
+              "maxTerms": 131072,
+              "maxEdgeRecords": 131072,
+              "maxRuntimeMs": 600000
+            }
+          },
+          "modes": [
+            {
+              "wave": true,
+              "events": 3539,
+              "terms": 66209,
+              "measurement": {
+                "unit": "relative native-PLT camera response",
+                "normalization": "sample arithmetic mean; fixed source radiance, no image-wise normalization",
+                "mean": 0.22299993374483937,
+                "max": 193.30656423611975,
+                "nonzero": 29918
+              }
+            },
+            {
+              "wave": false,
+              "events": 0,
+              "terms": 66057,
+              "measurement": {
+                "unit": "relative native-PLT camera response",
+                "normalization": "sample arithmetic mean; fixed source radiance, no image-wise normalization",
+                "mean": 0.19599015130594397,
+                "max": 5,
+                "nonzero": 29968
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "geometry": {
+      "coneCases": 13016,
+      "epsilonCasesPerModule": 10507,
+      "facetRegions": 301,
+      "iterations": {
+        "golden": 65,
+        "bisection": 65
+      },
+      "tolerance": "unchanged",
+      "limitations": [
+        "Equivalence preserves baseline geometry behavior; it does not prove the baseline algorithm mathematically exact.",
+        "The facet adjacency cache relies on the documented immutability of prepared scene geometry. Rebuild a scene to change its mesh or materials."
+      ]
+    },
+    "previewAndFinal": {
+      "scope": "Cloud Node CPU rendered camera arrays, not browser visual QA or physical-GPU timing",
+      "options": {
+        "width": 256,
+        "height": 192,
+        "samplesPerPixel": 4,
+        "maxDepth": 4,
+        "wavelengthMm": 0.025,
+        "seed": 7391
+      },
+      "scene": {
+        "preset": "prism",
+        "triangles": 14,
+        "wedges": 21,
+        "unsupportedEdges": 0,
+        "emitters": 2
+      },
+      "totalMs": 30528.592977,
+      "progressive": {
+        "tileSize": 32,
+        "batchSamples": 1,
+        "maxRuntimeMs": 120000,
+        "previewIntervalMs": 100,
+        "completedBatches": 384,
+        "totalBatches": 384,
+        "completedSamplesPerPixel": 4,
+        "firstPreviewMs": 79.77832000000001,
+        "firstFullPassMs": 7523.0691050000005,
+        "peakTape": {
+          "events": 158,
+          "terms": 1845,
+          "edgeRecords": 100,
+          "tilePixels": 1024,
+          "batchPaths": 1024,
+          "retainedPaths": 15,
+          "retainedEvidence": 8
+        },
+        "persistentPixelBytes": 2162688,
+        "sampleSequence": "v11 sequential per-global-pixel RNG state; exact CPU term order",
+        "limits": {
+          "maxWidth": 256,
+          "maxHeight": 192,
+          "maxPixels": 49152,
+          "maxTileSize": 32,
+          "maxBatchSamples": 4,
+          "maxBatchPaths": 4096,
+          "maxEvents": 24576,
+          "maxTerms": 131072,
+          "maxEdgeRecords": 131072,
+          "maxRuntimeMs": 600000
+        }
+      },
+      "previewCount": 163
+    },
+    "resourceAndAdmissionAudit": "Fixed late-device adoption cancellation race, bound constructor cancellation to runner lifetime, and reject absent/truncated/mismatched final sample-count arrays. Covered by GPU lifecycle and DOM negative regressions."
+  },
+  "v11RenderEvidence": {
+    "meaning": "Images are nearest-neighbor display of actual traced camera arrays at one fixed exposure. They are not screenshots or geometry projections.",
+    "sourceHashes": {
+      "dist/plt-core.js": "57bd2b9b4b740cee7393da769bb6ed01488567f02ea63db628f226a58d1377fa",
+      "dist/plt-fsd.js": "ba9938ca575a346e7a813f1efe515188d59dbf19511986737984455fb18fc011",
+      "dist/plt-geometry.js": "8e3161bf69556d687020efc71560eb2bdfc9947f5f225d9c0d71c92b4b4a5f70"
+    },
+    "records": [
+      {
+        "file": "gallery-wave-final.json",
+        "sha256": "c6750df474a92567848855e5e02b93acacb1fca595eadf99caacd6c114307345",
+        "options": {
+          "samplesPerPixel": 64,
+          "maxDepth": 6,
+          "wavelengthMm": 0.025
+        },
+        "width": 48,
+        "height": 36,
+        "mean": 0.4411498694402492,
+        "positiveMultipleEdgeTerms": 789
+      },
+      {
+        "file": "gallery-ray-final.json",
+        "sha256": "2532e4e5c29cd7c8a62e2143ec03ed55a76f01f99bd782f8c044027a35fa3425",
+        "options": {
+          "samplesPerPixel": 64,
+          "maxDepth": 6,
+          "wavelengthMm": 0.025
+        },
+        "width": 48,
+        "height": 36,
+        "mean": 0.20483391517241695,
+        "positiveMultipleEdgeTerms": 0
+      },
+      {
+        "file": "double-edge-wave-final.json",
+        "sha256": "75116fa1f706e8630efe281545f83914b00ac541c4c935c984d9675f4ba1c162",
+        "options": {
+          "samplesPerPixel": 128,
+          "maxDepth": 6,
+          "wavelengthMm": 0.025
+        },
+        "width": 32,
+        "height": 24,
+        "mean": 2.0847397272920727,
+        "positiveMultipleEdgeTerms": 2905
+      },
+      {
+        "file": "double-edge-ray-final.json",
+        "sha256": "e90feca291271f8e3b5d2e96fe6ecd2eeca3a972207a13a17931cf22aa329ee5",
+        "options": {
+          "samplesPerPixel": 128,
+          "maxDepth": 6,
+          "wavelengthMm": 0.025
+        },
+        "width": 32,
+        "height": 24,
+        "mean": 2.191217920948086,
+        "positiveMultipleEdgeTerms": 0
+      }
+    ],
+    "images": [
+      {
+        "file": "gallery-comparison.png",
+        "sha256": "06ae0044aacfd819b1862bef4e7b42c8342992979fa1e0ca2a9ffb67c508dc45"
+      },
+      {
+        "file": "double-edge-comparison.png",
+        "sha256": "c4995e9b0a25d807a7633e489ee008a1b6ff821eca9885b4da0262925f90aca4"
+      }
+    ]
+  }
+}

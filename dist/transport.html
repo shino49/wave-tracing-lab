@@ -1,0 +1,731 @@
+<!doctype html>
+<html lang="zh-CN"><head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#101616">
+  <meta name="description" content="三维网格上的可见光谱相干路径传输引擎。逐波长传播与颜色积分，比较几何光路、独立路径相位基线、彩色干涉和有符号交叉项，使用真实计算与固定共用曝光。">
+  <title>波与光 · 可见光谱相干网格引擎</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="transport-style.css">
+</head>
+<body class="transport-page">
+<a class="tr-skip-link" href="#trControlsTitle">跳到基本参数</a>
+<div class="app-shell">
+  <header class="masthead">
+<a class="brand" href="index.html" aria-label="波与光实验室首页">
+<span class="brand-symbol" aria-hidden="true">
+<i>
+</i>
+<i>
+</i>
+<i>
+</i>
+</span>
+<span>波与光<span class="brand-en">WAVE / LIGHT</span>
+</span>
+</a>
+<div class="header-note">
+<span class="tiny-dot">
+</span>计算光学实验室<span class="version-tag">ENGINE</span>
+</div>
+<details class="tr-lab-navigation">
+<summary>
+<span>其他光学实验</span>
+<small>双缝、散射、小孔相机与其他引擎</small>
+</summary>
+<div class="tr-disclosure-body">
+<nav class="tr-nav" aria-label="选择实验">
+<a href="transport.html" aria-current="page">相干网格引擎</a>
+<a href="tracer.html">3D Wave Tracing</a>
+<a href="wave-demo.html">局部散射</a>
+<a href="pinhole.html">小孔相机</a>
+<a href="mesh.html">三维 UTD</a>
+<a href="coherent.html">双区域传播</a>
+<a href="index.html">双缝</a>
+</nav>
+</div>
+</details>
+</header>
+
+  <main>
+<section class="intro tr-intro" aria-labelledby="trTitle">
+<div>
+<div class="eyebrow">WAVE / LIGHT · 相干传输实验室</div>
+<h1 id="trTitle">从一个场景，<span>看见光的干涉。</span>
+</h1>
+<p class="intro-copy">选择场景，调整光源，运行计算。颜色与条纹来自同一套三维几何的数值求解。</p>
+</div>
+<a class="tr-method-link" href="#trScope">有限阶标量模型 · 范围与限制 ↗</a>
+</section>
+<form class="tr-workflow" id="trForm" novalidate="">
+<section class="panel tr-scene-picker" id="trScenePicker">
+<div class="tr-scene-config">
+<div class="tr-section-top">
+<div>
+<div class="eyebrow">01 / CHOOSE A SCENE</div>
+<h2>先选一个想观察的现象</h2>
+</div>
+</div>
+<div class="tr-scene-fields">
+<label class="tr-field" for="trPreset">基础场景<select id="trPreset">
+<optgroup label="物体与照明">
+<option value="object-imaging">3D 物体成像</option>
+</optgroup>
+<optgroup label="干涉与衍射">
+<option value="lloyd">Lloyd 镜 · 彩色干涉</option>
+<option value="two-mirror">双镜 · 多路径干涉</option>
+<option value="double-slit">双缝 · 边缘衍射</option>
+<option value="reflected-edge">反射后绕射 · 混合路径</option>
+</optgroup>
+</select>
+</label>
+<p class="tr-scene-description" id="trPresetDescription">
+</p>
+<details class="tr-disclosure" id="trSceneExamples">
+<summary>
+<span>玻璃与镜面实验</span>
+<small>4 个配置好的拓展场景</small>
+</summary>
+<div class="tr-disclosure-body tr-scene-buttons">
+<button id="trGlassMirrorCameraPreset" class="tr-text-button" type="button">玻璃物体 + 镜面照明</button>
+<button id="trGlassMirrorPreset" class="tr-text-button" type="button">宽带镜面 + 玻璃</button>
+<button id="trGlassCameraPreset" class="tr-text-button" type="button">玻璃后的彩色物体</button>
+<button id="trGlassInterferencePreset" class="tr-text-button" type="button">单色玻璃干涉</button>
+</div>
+</details>
+<div class="tr-current-scene">
+<span>当前场景</span>
+<strong id="trCurrentScene">
+</strong>
+<p id="trCurrentSetup">
+</p>
+</div>
+</div>
+</div>
+<section class="tr-scene-preview" aria-labelledby="trGeometryTitle">
+<div class="tr-section-top">
+<div>
+<div class="eyebrow">LIVE GEOMETRY</div>
+<h2 id="trGeometryTitle">三维场景</h2>
+</div>
+<span id="trMeshCount" class="tr-chip">等待场景</span>
+</div>
+<div class="tr-rig">
+<canvas id="trSceneCanvas" tabindex="0" aria-label="实际三维网格、点源和接收面。拖动或方向键旋转，滚轮或加减键缩放，Home 复位。">
+</canvas>
+</div>
+<div class="tr-rig-footer">
+<span>拖动 / 方向键旋转 · 滚轮 / ± 缩放</span>
+<button id="trResetCamera" class="tr-text-button" type="button">复位视角 ↺</button>
+</div>
+<p id="trGeometryNote" class="tr-note tr-rig-note">运行后显示引擎返回的实际网格、源与探测器；不绘制虚构的路径或干涉条纹。</p>
+</section>
+</section>
+<div class="tr-main-workspace">
+<section class="panel tr-essentials">
+<div class="tr-section-top">
+<div>
+<div class="eyebrow">02 / ADJUST</div>
+<h2 id="trControlsTitle" tabindex="-1">调整基本参数</h2>
+</div>
+<button id="trReset" class="tr-text-button" type="button">恢复默认 ↺</button>
+</div>
+<div class="tr-essentials-body">
+<label class="tr-field" for="trMeasurementMode">测量模式<select id="trMeasurementMode">
+<option value="detector" selected="">探测器平面 · 局部场强</option>
+<option value="camera">几何针孔相机 · 3D 物体表面</option>
+</select>
+</label>
+<label class="tr-field" for="trSpectrumMode">光谱模式<select id="trSpectrumMode">
+<option value="broadband" selected="">宽带可见光 · 360–830 nm</option>
+<option value="gaussian">有限带宽 · 高斯谱</option>
+<option value="monochrome">单色 · 单一波长</option>
+<option id="trImportedLinesOption" value="lines" hidden="">导入场景的离散线光谱</option>
+</select>
+</label>
+<label id="trSpectrumSourceField" class="tr-field" for="trSpectrumSource">宽带光源<select id="trSpectrumSource">
+<option value="D65" selected="">D65 标准日光</option>
+<option value="E">等能白光</option>
+<option value="blackbody3000">暖光 · 3000 K 黑体谱</option>
+</select>
+</label>
+<label id="trWavelengthField" class="tr-slider" for="trWavelength">
+<span>
+<span id="trWavelengthLabel">中心真空波长</span> <output id="trWavelengthValue" for="trWavelength">550 nm</output>
+</span>
+<input id="trWavelength" type="range" min="360" max="830" value="550" step="any">
+</label>
+<label id="trBandwidthField" class="tr-field" for="trBandwidth">光谱半高全宽（FWHM / nm）<input id="trBandwidth" type="number" min="0.000001" max="470" step="any" value="20">
+</label>
+<p class="tr-note" id="trModeHelp">
+</p>
+<div class="tr-quality-shortcuts">
+<span>采样质量</span>
+<div>
+<button id="trCameraFast" class="tr-text-button" type="button">快速</button>
+<button id="trCameraFine" class="tr-text-button" type="button">精细</button>
+</div>
+<p class="tr-note">两档均为原生 512 × 512。更精细的采样需要更长时间。</p>
+</div>
+<div class="tr-actions">
+<button id="trRun" class="tr-primary" type="button">运行引擎 ↗</button>
+<button id="trCancel" class="tr-cancel" type="button" hidden="">取消</button>
+</div>
+<p id="trInputNotice" class="tr-note">参数改变会立即停止旧计算、清除旧结果。改变曝光或三维观察角度不会重算。</p>
+</div>
+</section>
+<section class="panel tr-camera" aria-labelledby="trCameraTitle">
+      <div class="tr-section-top">
+<div>
+<div class="eyebrow">03 / RUN &amp; OBSERVE</div>
+<h2 id="trCameraTitle">观察计算结果</h2>
+</div>
+<span class="tr-chip">原生 512 × 512 / 每幅</span>
+</div>
+      <div class="tr-status" aria-live="polite" aria-atomic="true">
+<span id="trStatus">选择几何与光源，点击“运行引擎”。图像由数值结果直接生成。</span>
+<progress id="trProgress" max="1" value="0" aria-label="本次计算进度" hidden="">
+</progress>
+</div>
+<div class="tr-visible-warnings" aria-label="当前配置与计算警告">
+<p id="trConfigurationWarning" role="status" hidden=""></p>
+<p id="trSlabPropagationWarning" class="tr-note" role="status" hidden="">
+</p>
+
+
+<p id="trCriticalWarnings" role="status"></p></div>
+      <figure class="tr-main-figure">
+<figcaption>
+<span class="tr-letter tr-wave-letter">B</span>
+<div>
+<strong id="trCoherentTitle">相干传输</strong>
+<small id="trCoherentFormula">(1 − γ) Σ |Eₚ|² + γ |Σ Eₚ|²</small>
+</div>
+</figcaption>
+<div class="tr-film">
+<canvas id="trCoherentCanvas" width="512" height="512" aria-label="完整路径的相干传输强度，原生 512 乘 512，与基线共用曝光">
+</canvas>
+<div id="trCoherentEmpty" class="tr-empty">
+<span aria-hidden="true">|ΣE|²</span>
+<strong>等待运行</strong>
+</div>
+<div id="trCoherentPartial" class="tr-partial" hidden="">
+<strong>INCOMPLETE · 未完成</strong>
+<span>
+</span>
+</div>
+</div>
+<p id="trCoherentResolution" class="tr-film-note">512 × 512 原生输出 · 尚未计算</p>
+</figure>
+<div class="tr-display">
+<p id="trDisplayNote">逐波长计算颜色；所有视图共用曝光。调整曝光不需要重新运行。</p>
+<label for="trExposure">共用曝光 <input id="trExposure" type="range" min="-8" max="4" step="0.25" value="0">
+<output id="trExposureValue" for="trExposure">+0 EV</output>
+</label>
+</div>
+<details class="tr-disclosure" id="trComparisons">
+<summary>
+<span>比较其他结果</span>
+<small>几何光路 · 独立路径基线 · 有符号交叉项</small>
+</summary>
+<div class="tr-disclosure-body">
+<div class="tr-comparison-films">
+        <figure>
+<figcaption>
+<span class="tr-letter">A</span>
+<div>
+<strong id="trGeometricTitle">几何光路强度和</strong>
+<small id="trGeometricFormula">不计 UTD 衍射 · 不合成路径间相位</small>
+</div>
+</figcaption>
+<div class="tr-film">
+<canvas id="trGeometricCanvas" width="512" height="512" aria-label="关闭衍射的几何光路强度和，原生 512 乘 512，固定共用曝光">
+</canvas>
+<div id="trGeometricEmpty" class="tr-empty">
+<span aria-hidden="true">ΣI</span>
+<strong>等待运行</strong>
+</div>
+<div id="trGeometricPartial" class="tr-partial" hidden="">
+<strong>INCOMPLETE · 未完成</strong>
+<span>
+</span>
+</div>
+</div>
+<p id="trGeometricResolution" class="tr-film-note">512 × 512 原生输出 · 尚未计算</p>
+</figure>
+
+        <figure>
+<figcaption>
+<span class="tr-letter">C</span>
+<div>
+<strong id="trBaselineTitle">独立路径相位基线</strong>
+<small id="trBaselineFormula">Σ |Eₚ|² · 去掉全部完整路径交叉项</small>
+</div>
+</figcaption>
+<div class="tr-film">
+<canvas id="trBaselineCanvas" width="512" height="512" aria-label="完整路径独立相位随机化的非相干基线，原生 512 乘 512，固定共用曝光">
+</canvas>
+<div id="trBaselineEmpty" class="tr-empty">
+<span aria-hidden="true">ΣI</span>
+<strong>等待运行</strong>
+</div>
+<div id="trBaselinePartial" class="tr-partial" hidden="">
+<strong>INCOMPLETE · 未完成</strong>
+<span>
+</span>
+</div>
+</div>
+<p id="trBaselineResolution" class="tr-film-note">512 × 512 原生输出 · 尚未计算</p>
+</figure>
+        <figure>
+<figcaption>
+<span class="tr-letter">Δ</span>
+<div>
+<strong>有符号干涉交叉项</strong>
+<small>Y相干 − Y路径基线 · γ 控制交叉项</small>
+</div>
+</figcaption>
+<div class="tr-film">
+<canvas id="trCrossCanvas" width="512" height="512" aria-label="相干 XYZ 的 Y 分量减路径基线 Y 分量，蓝色为负、橙色为正，黑色为零，共用固定增益">
+</canvas>
+<div id="trCrossEmpty" class="tr-empty">
+<span aria-hidden="true">±</span>
+<strong>等待运行</strong>
+</div>
+<div id="trCrossPartial" class="tr-partial" hidden="">
+<strong>INCOMPLETE · 未完成</strong>
+<span>
+</span>
+</div>
+</div>
+<p id="trCrossResolution" class="tr-film-note">蓝：相消 · 黑：零 · 橙：相长</p>
+</figure>
+      </div>
+</div>
+</details>
+
+    </section>
+</div>
+<section class="panel tr-settings" id="trAdvancedSettings">
+<div class="tr-section-top">
+<div>
+<div class="eyebrow">OPTIONAL / ADVANCED SETTINGS</div>
+<h2>需要更多控制时，再展开</h2>
+</div>
+<span class="tr-chip">修改参数后需重新运行</span>
+</div>
+<div class="tr-settings-grid">
+<details class="tr-disclosure" id="trCameraSettings">
+<summary>
+<span>相机与探测器</span>
+<small>位置、视场角、观察区域</small>
+</summary>
+<div class="tr-disclosure-body">
+<fieldset id="trPhysicalCamera" class="tr-spectrum-controls" hidden="">
+<label class="tr-field" for="trCameraFov">垂直视场角（度）<input id="trCameraFov" type="number" min="0.000001" max="178.999999" step="any" value="35">
+</label>
+<legend>成像相机参数 / 几何针孔模型</legend>
+<fieldset class="tr-vector">
+<legend>相机位置（mm）</legend>
+<label for="trCameraX">x<input id="trCameraX" type="number" step="any" value="0">
+</label>
+<label for="trCameraY">y<input id="trCameraY" type="number" step="any" value="0">
+</label>
+<label for="trCameraZ">z<input id="trCameraZ" type="number" step="any" value="100">
+</label>
+</fieldset>
+<fieldset class="tr-vector">
+<legend>相机目标（mm）</legend>
+<label for="trCameraTargetX">x<input id="trCameraTargetX" type="number" step="any" value="0">
+</label>
+<label for="trCameraTargetY">y<input id="trCameraTargetY" type="number" step="any" value="0">
+</label>
+<label for="trCameraTargetZ">z<input id="trCameraTargetZ" type="number" step="any" value="0">
+</label>
+</fieldset>
+<fieldset class="tr-vector">
+<legend>向上方向</legend>
+<label for="trCameraUpX">x<input id="trCameraUpX" type="number" step="any" value="0">
+</label>
+<label for="trCameraUpY">y<input id="trCameraUpY" type="number" step="any" value="1">
+</label>
+<label for="trCameraUpZ">z<input id="trCameraUpZ" type="number" step="any" value="0">
+</label>
+</fieldset>
+
+            <label class="tr-field" for="trCameraMirrorBounces">每段几何链最大镜面反射次数<select id="trCameraMirrorBounces">
+<option value="0">0</option>
+<option value="1">1</option>
+<option value="2" selected="">2</option>
+</select>
+</label>
+            <p class="tr-note">独立于光源照明路径的最大反射次数。此预算分别用于主相机链、主表面至次级表面链以及每条天空可见性链；不是整条含漫反射路径的总镜面次数上限。针孔射线经双面理想镜延续至终端被动漫反射表面，按沿途镜面反射率乘积传递终端辐亮度。在表面计算几何照明与波动照明，再作一次 Lambertian-like 终端闭合。采用投影标量平方律近似，不计算相机侧相干混合、镜头衍射或多次漫反射全局光照。下方可单独启用几何／非相干天空与一次漫反射间接光。漫反射法向量来自网格绕序，不自动翻面；只接受正面照明。次数上限、不透明终止、未命中、漫反射背面与零反射率吸收分别诊断。未命中在启用环境时显示逃逸方向天空；其余终止状态为黑色。</p>
+            <div>
+</div>
+            <p class="tr-note">两档均为原生 512 × 512，无模糊或放大；共用曝光保持当前值（物体成像预设 +2 EV）。精细档相对快速档预计几何采样量 4 倍、场求值量 8 倍，这不是耗时倍数。按钮仅设置参数，需点击“运行引擎”；单色及离散谱线不使用连续光谱样本数。</p>
+          </fieldset>
+<div id="trColorFringeControl" class="tr-color-fringe-control">
+<label class="tr-check" for="trColorFringeView">
+<input id="trColorFringeView" type="checkbox" checked="">彩色条纹观察区域 · 6 × 1 mm</label>
+<p class="tr-note">真实探测器中心 [0, 0.5, 50] mm，以原生 512 × 512 重新计算，便于观察宽带条纹。关闭恢复 Lloyd 原始 6 × 6 mm 区域。<a href="examples/coherent-lloyd-d65-color.json" download="">下载 D65 场景示例 ↓</a>
+</p>
+</div>
+<details class="tr-advanced tr-pose-editor">
+<summary>光源与探测器坐标（mm）</summary>
+<div>
+            <p class="tr-note">修改这些坐标会改变真实计算几何。u、v 必须非零且互相垂直，计算前归一化；观察相机旋转不改变它们。</p>
+            <fieldset class="tr-vector">
+<legend>光源中心位置</legend>
+<label for="trSourceX">x<input id="trSourceX" type="number" min="-10000" max="10000" step="any" value="0">
+</label>
+<label for="trSourceY">y<input id="trSourceY" type="number" min="-10000" max="10000" step="any" value="0.08">
+</label>
+<label for="trSourceZ">z<input id="trSourceZ" type="number" min="-10000" max="10000" step="any" value="-50">
+</label>
+</fieldset>
+            <fieldset class="tr-vector">
+<legend>探测器中心</legend>
+<label for="trDetectorX">x<input id="trDetectorX" type="number" min="-10000" max="10000" step="any" value="0">
+</label>
+<label for="trDetectorY">y<input id="trDetectorY" type="number" min="-10000" max="10000" step="any" value="3.05">
+</label>
+<label for="trDetectorZ">z<input id="trDetectorZ" type="number" min="-10000" max="10000" step="any" value="50">
+</label>
+</fieldset>
+            <fieldset class="tr-vector">
+<legend>探测器 u 轴</legend>
+<label for="trDetectorUX">x<input id="trDetectorUX" type="number" min="-10000" max="10000" step="any" value="1">
+</label>
+<label for="trDetectorUY">y<input id="trDetectorUY" type="number" min="-10000" max="10000" step="any" value="0">
+</label>
+<label for="trDetectorUZ">z<input id="trDetectorUZ" type="number" min="-10000" max="10000" step="any" value="0">
+</label>
+</fieldset>
+            <fieldset class="tr-vector">
+<legend>探测器 v 轴</legend>
+<label for="trDetectorVX">x<input id="trDetectorVX" type="number" min="-10000" max="10000" step="any" value="0">
+</label>
+<label for="trDetectorVY">y<input id="trDetectorVY" type="number" min="-10000" max="10000" step="any" value="1">
+</label>
+<label for="trDetectorVZ">z<input id="trDetectorVZ" type="number" min="-10000" max="10000" step="any" value="0">
+</label>
+</fieldset>
+            <div class="tr-dimensions">
+<label class="tr-field" for="trDetectorWidth">探测器宽度<input id="trDetectorWidth" type="number" min="0.0001" max="1000" step="any" value="6">
+</label>
+<label class="tr-field" for="trDetectorHeight">探测器高度<input id="trDetectorHeight" type="number" min="0.0001" max="1000" step="any" value="6">
+</label>
+</div>
+            <label class="tr-field" for="trSourcePhase">点源初始相位（rad）<input id="trSourcePhase" type="number" min="-6.283185307179586" max="6.283185307179586" step="any" value="0">
+</label>
+            <p class="tr-note">单个相干点源的共同初始相位不改变强度。场景上限：64 个网格、8,000 顶点、12,000 三角形、8 个独立镜面平面；坐标 ±10,000 mm。JSON 面必须为三角索引，或提供安全解析的内联 OBJ。</p>
+          </div>
+</details>
+</div>
+</details>
+<details class="tr-disclosure" id="trSourceSettings">
+<summary>
+<span>光源与光谱</span>
+<small>光源尺寸、强度与空间采样</small>
+</summary>
+<div class="tr-disclosure-body">
+<fieldset class="tr-spectrum-controls">
+<legend>光源空间尺寸 / 独立发光点</legend>
+            <div>
+<button id="trPointComparison" type="button" class="tr-text-button">点源对照</button>
+<button id="trDiskComparison" type="button" class="tr-text-button">有限圆盘对照</button>
+</div>
+            <p class="tr-note">对照按钮设置同一 Lloyd / D65 场景：512 × 512、1 × 1 像素积分、16 光谱样本、16 发光点，仅半径在 0 与 0.06 mm 间不同，圆盘平行 xy 平面。保留共用曝光；设置后点击运行。</p>
+            <label class="tr-field" for="trSourceRadius">均匀圆盘半径（mm）<input id="trSourceRadius" type="number" min="0" max="1000" step="any" value="0">
+</label>
+            <fieldset class="tr-vector">
+<legend>圆盘法向量（非零，自动归一化）</legend>
+<label for="trSourceNormalX">x<input id="trSourceNormalX" type="number" step="any" value="0">
+</label>
+<label for="trSourceNormalY">y<input id="trSourceNormalY" type="number" step="any" value="0">
+</label>
+<label for="trSourceNormalZ">z<input id="trSourceNormalZ" type="number" step="any" value="1">
+</label>
+</fieldset>
+            <label class="tr-field" for="trSourceSamples">圆盘独立发光点采样数<select id="trSourceSamples">
+<option value="1">1 点 · 仅作采样诊断</option>
+<option value="8">8 点</option>
+<option value="16" selected="">16 点 · 默认</option>
+<option value="32">32 点</option>
+<option value="64">64 点</option>
+<option value="128">128 点</option>
+<option value="256">256 点</option>
+</select>
+</label>
+            <p id="trSpatialNote" class="tr-note">半径 0 严格恢复点源。圆盘由彼此独立的发光点表示：每个点内部相干叠加路径，不同点只相加强度。总源强度固定，不随半径或采样数增长。固定种子可复现；增大采样数检查收敛，计算量随发光点数增长。此圆盘是标量点源分布，不包含朗伯发射角度规律。</p>
+            <p class="tr-note">原生 512 建议先用 1 × 1 像素积分、16 个光谱样本、16 个发光点；成本随三者相乘，需分别提高检查收敛。控件不会自动降低质量。</p>
+            <p class="tr-note">
+<a href="examples/coherent-lloyd-d65-disk.json" download="">下载 D65 圆盘场景 ↓</a> · <a href="examples/coherent-lloyd-d65-color.json" download="">下载同几何 D65 点源场景 ↓</a>
+</p>
+          </fieldset>
+<fieldset class="tr-spectrum-controls">
+<legend>光源光谱 / 可见颜色</legend>
+
+
+
+
+
+            <p id="trSpectrumNote" class="tr-note">同一波长的路径在复振幅上相加；不同波长只加光强。源强度是整个光谱的积分，不随积分点数增长。</p>
+          </fieldset>
+<label class="tr-field" for="trPower">积分源强度（全光谱相对量）<input id="trPower" type="number" min="0" max="1000" step="0.1" value="1">
+</label>
+</div>
+</details>
+<details class="tr-disclosure" id="trMaterialSettings">
+<summary>
+<span>材料与玻璃</span>
+<small>折射率、厚度与光谱吸收</small>
+</summary>
+<div class="tr-disclosure-body">
+<fieldset class="tr-spectrum-controls" id="trSlabControls">
+<legend>单块有限厚玻璃板</legend>
+            <div>
+</div>
+            <label class="tr-check" for="trSlabEnabled">
+<input id="trSlabEnabled" type="checkbox">启用玻璃板</label>
+            <label class="tr-field" for="trSlabIndex">无色散折射率 n<input id="trSlabIndex" type="number" min="1" max="3" step="any" value="1.5">
+</label>
+            <label class="tr-field" for="trSlabThickness">厚度（mm）<input id="trSlabThickness" type="number" min="0.000001" step="any" value="0.2">
+</label>
+            <label class="tr-field" for="trSlabAbsorption">中性功率吸收 α（每 mm；修改会替换光谱曲线）<input id="trSlabAbsorption" type="number" min="0" step="any" value="0" placeholder="保留光谱曲线">
+</label>
+            <label class="tr-field" for="trSlabInternalReflections">相机板内反射次数上限<select id="trSlabInternalReflections">
+<option>0</option>
+<option selected="">1</option>
+<option>2</option>
+</select>
+</label>
+            <p id="trSlabCurveNote" class="tr-note">
+</p>
+            <p class="tr-note">单块平行双界面、固定 s 偏振标量模型；Snell 折射、Fresnel 界面系数与 Beer–Lambert 光谱衰减，不使用透明度混色。源路径仅首次透射，光程相位参与相干叠加，不含板内相干 Fabry–Pérot。支持一次镜面反射与一次双界面透射的两种顺序（R→TT / TT→R）；穿板的绕射、两次反射、重复穿板尚不支持。相机使用有限阶 Fresnel 分支采样并报告截断尾项；侧面退出不支持，会单独报告而非解释为物理吸收。按钮只设置参数，需点击运行。<a href="examples/coherent-glass-imaging.json" download="">玻璃成像 JSON ↓</a> · <a href="examples/coherent-slab-interference.json" download="">玻璃干涉 JSON ↓</a> · <a href="examples/coherent-slab-mirror.json" download="">镜面＋玻璃 JSON ↓</a>
+</p>
+          </fieldset>
+</div>
+</details>
+<details class="tr-disclosure" id="trLightSettings">
+<summary>
+<span>环境与间接光</span>
+<small>天空照明与一次漫反射反弹</small>
+</summary>
+<div class="tr-disclosure-body">
+<fieldset class="tr-spectrum-controls" id="trLightingControls">
+<legend>天空环境与一次漫反射间接光</legend>
+            <p id="trLightingModeNote" class="tr-note">
+</p>
+            <label class="tr-check" for="trEnvironmentEnabled">
+<input id="trEnvironmentEnabled" type="checkbox">启用方向天空环境</label>
+            <label class="tr-field" for="trEnvironmentRadiance">环境辐亮度（× 10⁻⁶，全光谱积分）<input id="trEnvironmentRadiance" type="number" min="0" max="1000000" step="any" value="2">
+</label>
+            <label class="tr-field" for="trEnvironmentUpper">上半球倍率<input id="trEnvironmentUpper" type="number" min="0" max="10" step="any" value="1">
+</label>
+            <label class="tr-field" for="trEnvironmentLower">下半球倍率<input id="trEnvironmentLower" type="number" min="0" max="10" step="any" value="0.2">
+</label>
+            <label class="tr-field" for="trEnvironmentSamples">天空方向采样<select id="trEnvironmentSamples">
+<option>4</option>
+<option selected="">8</option>
+<option>16</option>
+<option>32</option>
+</select>
+</label>
+            <label class="tr-check" for="trIndirectEnabled">
+<input id="trIndirectEnabled" type="checkbox">启用一次漫反射间接反弹</label>
+            <label class="tr-field" for="trIndirectSamples">一次漫反射方向采样<select id="trIndirectSamples">
+<option>1</option>
+<option>2</option>
+<option selected="">4</option>
+<option>8</option>
+</select>
+</label>
+            <button id="trLightingPreset" class="tr-text-button" type="button">当前场景：天空 + 一次间接光</button>
+            <p class="tr-note">默认关闭，保留原点源波动计算。天空按方向与遮挡可见性积分，独立非相干光强相加；一次间接光计算实际次级漫反射表面，不是常数环境补亮。真实天空会降低条纹对比度。新建天空默认 D65、向上 [0, 1, 0]；导入的天空光谱、方向与种子保留。按钮仅设参数，不自动运行；环境与间接光会增加大量可见性射线计算。精细档（2 × 2 / 32 光谱样本）同时启用照明时，在较慢设备或软件适配器上可能达到现有 10 分钟运行上限；可先用快速档检查。原生 512 × 512 与共用曝光不变。</p>
+          </fieldset>
+</div>
+</details>
+<details class="tr-disclosure" id="trPathSettings">
+<summary>
+<span>传播路径与相位</span>
+<small>镜面次数、衍射、相干与消融对照</small>
+</summary>
+<div class="tr-disclosure-body">
+<label class="tr-field" for="trOrder">光源照明路径最大反射次数<select id="trOrder">
+<option value="0">0 · 不含镜面路径</option>
+<option value="1">1</option>
+<option value="2" selected="">2</option>
+</select>
+</label>
+<label class="tr-slider" for="trCoherence">
+<span>路径相位相关 γ（诊断） <output id="trCoherenceValue" for="trCoherence">1.00</output>
+</span>
+<input id="trCoherence" type="range" min="0" max="1" value="1" step="0.01">
+<small>0：独立随机化完整路径相位　1：每个发光点内部完整相干叠加。γ 只是路径相位诊断，不是通用部分相干模型，也不代替有限光源尺寸。</small>
+</label>
+<label class="tr-check tr-diffraction-check" for="trDiffraction">
+<input id="trDiffraction" type="checkbox">启用准入的一阶 UTD 边缘衍射</label>
+<label class="tr-check tr-mixed-check" for="trMixedDiffraction">
+<input id="trMixedDiffraction" type="checkbox">计入一次反射 + 一次衍射（R–D / D–R）</label>
+<p class="tr-note tr-mixed-note">需启用衍射、最大反射次数 2，且不忽略镜面路径。只含 R–D / D–R，不包含更高阶混合路径。</p>
+<p id="trDiffractionNote" class="tr-note">衍射默认关闭。双缝预设自动开启；R–D / D–R 需另行启用，不含角点或两次衍射。</p>
+<label class="tr-slider" for="trPhase">
+<span>
+<span id="trPhaseLabel">每次反射的附加相位</span> <output id="trPhaseValue" for="trPhase">0.00 π</output>
+</span>
+<input id="trPhase" type="range" min="-1" max="1" value="0" step="0.01">
+<small id="trPhaseNote">叠加在理想镜固有反射相位上。启用衍射时复位到 0 并锁定，以满足边缘边界条件。</small>
+</label>
+<label class="tr-check" for="trBlockReflected">
+<input id="trBlockReflected" type="checkbox">忽略光源照明镜面路径（消融对照）</label>
+<p class="tr-note">此开关不改变相机侧镜面反射，也不等于放置实体挡板；启用后 R–D / D–R 也关闭，但一次边缘衍射仍保留；缺少配套反射项的结果仅作消融诊断。</p>
+</div>
+</details>
+<details class="tr-disclosure" id="trQualitySettings">
+<summary>
+<span>计算质量与后端</span>
+<small>像素积分、光谱采样与 CPU / WebGPU</small>
+</summary>
+<div class="tr-disclosure-body">
+<label id="trSpectralQualityField" class="tr-field" for="trSpectralQuality">每个空间积分位置的光谱采样数<select id="trSpectralQuality">
+<option value="16">16 点 · 快速 / 噪声较高</option>
+<option value="32">32 点 · 较快</option>
+<option value="64" selected="">64 点 · 默认</option>
+<option value="128">128 点 · 较精细</option>
+</select>
+</label>
+<label class="tr-field" for="trQuadrature">每像素二维积分<select id="trQuadrature">
+<option value="1">1 × 1</option>
+<option value="2" selected="">2 × 2</option>
+<option value="4">4 × 4</option>
+</select>
+</label>
+<label class="tr-field" for="trBackendSelect">后端偏好<select id="trBackendSelect">
+<option value="auto">自动 · WebGPU 可用时使用</option>
+<option value="cpu">CPU 数值参考</option>
+</select>
+</label>
+<p class="tr-note">几何路径与可见性在 CPU；光谱模式可将逐波长相位、衍射系数、相干叠加与颜色积分交给 WebGPU，实际后端以记录为准。有限阶不代表全部物理路径。</p>
+</div>
+</details>
+<details class="tr-disclosure" id="trImportSettings">
+<summary>
+<span>导入与导出场景</span>
+<small>完整 JSON 场景，或添加 OBJ 网格</small>
+</summary>
+<div class="tr-disclosure-body">
+<div class="tr-upload tr-scene-upload">
+<label for="trSceneJSON">导入完整场景 JSON <span>坐标单位 mm · 自包含 · ≤ 2 MiB</span>
+</label>
+<input id="trSceneJSON" type="file" accept=".json,application/json">
+<p id="trSceneMode">当前使用验证预设。</p>
+<div>
+<button id="trExportScene" type="button" class="tr-text-button">导出当前场景 / 模板 ↓</button>
+<button id="trUsePreset" type="button" class="tr-text-button" hidden="">返回所选预设</button>
+</div>
+<p>JSON 包含网格、材料、光源尺寸、光谱、探测器、可选几何针孔相机和照明扩展。旧文件没有光谱字段时保持单色。导入后完整替换预设几何；不读取外部文件或网址。支持不透明遮挡、理想平面镜与终端被动漫反射材料，单次衍射准入仍由模型检查。</p>
+</div>
+<div class="tr-upload">
+<label for="trOBJ">添加 OBJ 网格 <span>坐标单位 mm · ≤ 2 MiB</span>
+</label>
+<input id="trOBJ" type="file" accept=".obj,text/plain">
+<div>
+<span id="trFileName">使用内置几何</span>
+<button id="trClearOBJ" type="button" class="tr-text-button" hidden="">移除 OBJ</button>
+</div>
+<p>仅在本地读取几何，不读取外部材质或纹理。此入口将 OBJ 添加到预设。要独立替换全部几何，请使用完整场景 JSON；导出模板可内联 OBJ。</p>
+</div>
+<label class="tr-field" for="trMaterial">导入网格的边界<select id="trMaterial">
+<option value="opaque">不透明吸收 · 只遮挡，不计算边缘 UTD</option>
+<option value="mirror">理想标量平面镜</option>
+</select>
+</label>
+</div>
+</details>
+</div>
+<div class="tr-run-again">
+<span>调整完高级参数？</span>
+<button id="trRunQuick" class="tr-primary" type="button">运行引擎 ↗</button>
+<button id="trCancelQuick" class="tr-cancel" type="button" hidden="">取消</button>
+</div>
+</section>
+</form>
+<details class="tr-disclosure panel" id="trDiagnostics">
+<summary>
+<span>计算记录与诊断</span>
+<small>实际后端、耗时、数值摘要与 JSON 下载</small>
+</summary>
+<div class="tr-disclosure-body">
+<section class="tr-diagnostics-content" aria-labelledby="trEvidenceTitle">
+<div class="tr-section-top">
+<div>
+<div class="eyebrow">COMPUTATION RECORD</div>
+<h2 id="trEvidenceTitle">计算记录与诊断</h2>
+</div>
+<button id="trDownload" class="tr-text-button" type="button" disabled="">下载诊断 JSON ↓</button>
+</div>
+<div class="tr-stats">
+<div>
+<span>实际后端</span>
+<strong id="trBackend">尚未计算</strong>
+</div>
+<div>
+<span>图像网格</span>
+<strong id="trNative">—</strong>
+</div>
+<div>
+<span>本次用时</span>
+<strong id="trElapsed">—</strong>
+</div>
+<div>
+<span>路径模型</span>
+<strong id="trPathSummary">有限阶 · 尚未运行</strong>
+</div>
+</div>
+<p id="trMeasurement" class="tr-note tr-evidence-note">完整路径的相位在复振幅上累计；同一像素内再按采样积分强度。</p><p id="trWarnings" class="tr-warning">
+</p><p id="trDiffractionSummary" class="tr-warning">
+</p>
+<details class="tr-report">
+<summary>参数、阶段耗时与模型诊断</summary>
+<p class="tr-note">记录仅包含有界摘要，不含 OBJ 原文或完整像素；只在本地生成，不会自动上传。</p>
+<pre id="trReport">尚无结果</pre>
+</details>
+</section>
+</div>
+</details>
+<details class="tr-disclosure panel tr-model-details" id="trScope">
+<summary>
+<span>模型范围与限制</span>
+<small>有限阶标量模型；不是完整 Maxwell 全场解</small>
+</summary>
+<div class="tr-disclosure-body">
+<aside class="tr-scope-banner">
+<span aria-hidden="true">Σ</span>
+<p>
+<strong>这是有限阶标量路径模型。</strong>支持不透明遮挡、理想光滑平面镜与明确准入的一阶 UTD 边缘衍射；每次计算只包含明确列出的路径族；连续光谱采用固定种子的随机分层采样。<strong>不是通用全局波动引擎或 Maxwell 全场解，仅支持单块有限平行玻璃板的有界折射／透射，不含通用嵌套介质或完整矢量偏振；物体成像在终端被动漫反射表面作一次辐亮度闭合。</strong>可额外启用一次反射与一次衍射的 R–D / D–R；仍不含角点、连续两次衍射或更高阶混合路径。</p>
+</aside>
+<div class="eyebrow">MODEL SCOPE / READ BEFORE INTERPRETING</div>
+<h2 id="trScopeTitle">可复用的路径骨架，明确有限的物理范围。</h2>
+<div class="tr-model-grid">
+<p>
+<strong>标量、逐波长相干、固定种子、有限阶。</strong>同一波长的完整直达／镜面／准入衍射路径保留传播相位，在接收点合成；不同波长只对光强积分，不跨波长叠加振幅。γ 是完整路径相位独立随机化的诊断混合，不是通用光源部分相干模型。输出是相对强度，不是标定辐照度。</p>
+<p>
+<strong>不透明遮挡与光滑平面理想镜。</strong>每段几何链可经至多两次双面理想镜反射（漫反射前后分别计数），按镜面反射率乘积传递一次被动漫反射表面终端辐亮度闭合结果，反射率随波长定义且在 0–1 内。投影标量平方律是近似；可选几何／非相干方向天空与一次漫反射间接光；单块有限平行玻璃板支持固定 s 通道 Snell／Fresnel 与光谱吸收；不含多次漫反射全局光照、相干相机／镜头衍射、通用折射几何、嵌套介质、完整矢量偏振或材料电磁响应。有限镜边缘不自动获得衍射；只有打开开关并通过适用性检查的边缘才计入一阶 UTD。</p>
+<p>
+<strong>有限源一阶 UTD，仅用于明确准入的边缘。</strong>是高频渐近模型；可选计入准入的 R–D / D–R；不含有限边端点／角点修正、连续两次衍射或更高阶混合路径。超范围边缘会被排除并计数，不是全局 Maxwell 精确解。路径基线移除所有完整路径交叉项，不是把左右缝各自功率相加。</p>
+</div>
+</div>
+</details>
+<footer class="tr-footer">
+<span>本地网格 · 本地数值 · 固定曝光 · 无绘制条纹</span>
+<a href="mesh-method.html">既有 UTD 方法与边界 ↗</a>
+</footer>
+</main>
+</div>
+<script type="module" src="transport-app.js">
+</script>
+
+
+</body></html>

@@ -1,0 +1,460 @@
+{
+  "feature": "Sampled visible-spectrum 3D PLT color",
+  "generatedAt": "2026-10-12T13:30:59.328145+00:00",
+  "scope": {
+    "transport": "Existing relative native-angle PLT estimator; ideal scalar PEC edges and synthetic surface reflectance; no calibrated global-energy claim",
+    "visibleBandNm": [
+      360,
+      830
+    ],
+    "observer": "CIE 1931 2 degree official 1nm tables",
+    "sources": [
+      "CIE D65 / 100",
+      "equal energy E",
+      "ideal 3000K Planck spectrum normalized at560nm"
+    ],
+    "normalization": "Fixed integral CIE ybar=106.8569149167669 nm; no per-image white balance or normalization",
+    "camera": "Visible-only Gaussian-envelope approximation:3um waist floor, quadrature angular slope,0.15 guard",
+    "microScene": "240um-wide room,52um default box; all geometry and virtual camera distance scaled0.02",
+    "display": "Raw XYZ→linear sRGB; display-only negative clipping and fixed exponential compression; standard sRGB transfer",
+    "backend": "Stable hybrid CPU path builder + real WebGPU local operators and XYZ accumulation; every event and component gated",
+    "experimentalResidentSpectral": "Explicitly rejected; internal shadow backend not selected",
+    "performanceClaim": false
+  },
+  "validation": {
+    "independentModule": {
+      "passed": true,
+      "sources": [
+        "D65",
+        "E",
+        "blackbody3000"
+      ],
+      "scope": "color module only; does not validate transport physics",
+      "exactSourceTableMatch": true,
+      "maxDenseMidpointError": 2.0588124538534203e-09,
+      "maxMatrixError": 4.440892098500626e-16,
+      "maxSpectralEstimatorAbsoluteErrorBySPP": {
+        "1": 7.961630414699453,
+        "4": 1.1855713934502154,
+        "16": 0.034749489774214215,
+        "64": 0.0013508872297411934,
+        "512": 1.2772712389752527e-05
+      },
+      "dyadicPrefixStratification": "one sample per uniform bin, 12 seed/pixel combinations, prefixes 1,4,16,64,512",
+      "negativeLinearRGBOracleCases": [
+        "E_red",
+        "E_green",
+        "E_red_red",
+        "E_red_green",
+        "E_green_blue",
+        "D65_red",
+        "D65_green",
+        "D65_red_red",
+        "D65_red_green",
+        "D65_green_blue",
+        "blackbody3000_red",
+        "blackbody3000_green",
+        "blackbody3000_red_red",
+        "blackbody3000_red_green",
+        "blackbody3000_green_blue"
+      ]
+    },
+    "CPU": {
+      "passed": 31,
+      "failed": 0,
+      "sourceHashes": {
+        "dist/plt-cie.js": "77f813d4a07d5c2deff4b246a6dc52fa65c7e8d30e4ec4703e372d83b3f96f8d",
+        "dist/plt-spectrum.js": "3db7baef00a5938cb4be14a2d87cece6dd934ad0924abb039d6a5c41fe64deea",
+        "dist/plt-core.js": "f15c8ff265ddb44fe7b27bf3c8dfd24f52c77014cdfd0c21f1d6a29f0998bef0",
+        "dist/plt-runtime.js": "fd5a497195e0c02468d4dc7f5a70feebdffafbd1594cd7013ff5e40504dd54d1"
+      },
+      "tests": [
+        "official CIE source bytes match independent published SHA-256 and metadata checksums",
+        "all official CIE and D65 knots plus fractional interpolation match separate CSV oracle",
+        "uniform nm PDF and nm-to-mm conversion have correct dimensions and CIE compensation",
+        "shifted radical-inverse sample prefixes are deterministic, stratified, and independently shifted by pixel/seed",
+        "synthetic colored reflectances are passive, neutral is unit, and source normalization is fixed",
+        "dense independent quadrature produces E and D65 controls without per-source white normalization",
+        "3000 K Planck source agrees with exact-SI independent radiance ratio and dense XYZ oracle",
+        "sampled XYZ converges to dense CSV quadrature for all three sources and black/neutral/colored controls",
+        "display conversion is independent, fixed-exposure, finite, and cannot mutate raw XYZ",
+        "invalid, out-of-range, negative and nonfinite spectral/display inputs reject",
+        "legacy monochrome reference remains bit-identical to pre-spectral baseline",
+        "micro-gallery scales every vertex, camera and sensor with explicit 52 µm box / 240 µm room dimensions",
+        "camera and local diffraction genuinely depend on visible wavelength under identical random draws",
+        "visible ray and wave sample identical wavelengths and initial camera draws but distinct actual path transport",
+        "colored material multiplies model scalar albedo only; walls stay neutral and analytic passive bounds hold in real paths",
+        "source SPD acts on every emitted contribution; doubling source power doubles unclipped raw XYZ; zero source is black",
+        "all three source colors agree with independent direct-emitter spectral quadrature through actual CPU paths",
+        "non-diffuse or dark preset model materials ignore the diffuse spectral selector",
+        "spectral CPU tapes are bit-identical across reversed tile order and sample batches with absolute-sample camera/RNG prefixes",
+        "non-divisible spectral tiles retain full-frame sensor geometry and global pixel identity",
+        "synthetic spectral replay independently reconstructs XYZ, exact Y, black and single-channel controls",
+        "invalid, negative, nonfinite and overflow spectral tapes fail instead of silently clipping",
+        "visible numeric geometry, paraxial camera, seed and option guards fail closed",
+        "CPU runtime publishes finite raw XYZ with exact Y and descriptive spectral noise, never an iid confidence claim",
+        "runtime XYZ and Y stay exactly invariant across schedules and repeated fresh renders",
+        "runtime noise summary matches independent two-pass per-path sample variance, including zero-response samples",
+        "previews expose committed XYZ/counts, exact Y, zero unrendered pixels and immutable snapshots",
+        "malformed or nonfinite runtime XYZ candidates fail closed to canonical CPU with one attempt",
+        "later XYZ admission loss restores all earlier components to exact CPU canonical sums",
+        "cancellation before work, during preview and pending candidate prevents stale XYZ publication",
+        "worker replacement and explicit cancel suppress stale spectral preview/result arrays"
+      ]
+    },
+    "spectralDOM": {
+      "generatedAt": "2026-10-12T13:29:10.855Z",
+      "scope": "Mocked DOM/Canvas control flow with actual CPU spectral runtime; not browser visual QA",
+      "passed": 9,
+      "failed": 0,
+      "tests": [
+        "Spectral controls preserve explicit infrared monochrome default and label units",
+        "Visible micro preset is explicit, bounded and does not silently auto-run",
+        "Real visible CPU runtime produces colored native canvas pixels exactly from XYZ",
+        "Exposure changes only visible display, leaving XYZ, noise and report untouched",
+        "All spectral controls invalidate result and update next request",
+        "Invalid X or Z and inconsistent Y never paint a completed spectral result",
+        "Spectral preview respects cancellation, sample counts and stale generations",
+        "Reset returns to scalar research and rejects a mismatched visible completion",
+        "Negative source input is rejected by actual visible runtime and never finalized"
+      ],
+      "failures": [],
+      "actualCpuFixturesComputed": 2,
+      "networkRequests": 0
+    },
+    "nativeSpectralGPU": {
+      "passed": true,
+      "testCount": 27,
+      "nativeCases": 27,
+      "failureCount": 0,
+      "adapter": {
+        "vendor": "google",
+        "architecture": "swiftshader",
+        "device": "swiftshader-device-subzero-",
+        "description": "SwiftShader driver 5.0.0",
+        "isFallbackAdapter": true
+      },
+      "sourceHashes": {
+        "utd-functions.wgsl": "4dc0ea1c883dd46281fe221151d578a384aa852cf857a65e63feae6681e74281",
+        "plt-compute.wgsl": "13c5992e847c00442d829a9ca359d0e0fa2b6d8e72974271c440f44250f08bd0",
+        "plt-gpu.js": "bdc973409a73942ea11da0a43166d5d49f6d045426f8a65c4fbdc327b2e4f6e9",
+        "utd-math.js": "c623b3f360d8b05b14fba421449d848050dbd4366e4f3d8a0c14458aa2776733"
+      },
+      "sceneReferenceHashes": {
+        "plt-core.js": "f15c8ff265ddb44fe7b27bf3c8dfd24f52c77014cdfd0c21f1d6a29f0998bef0",
+        "plt-spectrum.js": "3db7baef00a5938cb4be14a2d87cece6dd934ad0924abb039d6a5c41fe64deea",
+        "plt-cie.js": "77f813d4a07d5c2deff4b246a6dc52fa65c7e8d30e4ec4703e372d83b3f96f8d",
+        "plt-fsd.js": "ba9938ca575a346e7a813f1efe515188d59dbf19511986737984455fb18fc011",
+        "plt-geometry.js": "62b13c3ea5d83be9bacfbd6f62418beef81f47b098cb9f10fce7182ed6fc283e",
+        "mesh-geometry.js": "050253efe45cb535da452de4a881df006986e9dfc623d46295801944f5d39214"
+      },
+      "tolerance": {
+        "eventAbsolute": 2e-05,
+        "eventRelative": 0.003,
+        "pixelAbsolute": 2e-05,
+        "pixelRelative": 0.003,
+        "boundaryEpsilon": 2e-06
+      },
+      "phaseReductionSweep": {
+        "samples": 7175,
+        "maxAbsolutePhasorComponentError": 2.127720251567794e-07,
+        "absoluteLimit": 5e-07,
+        "rawPhaseRange": [
+          -99999999,
+          99999999
+        ],
+        "wavelengthRangeNm": [
+          360,
+          830
+        ]
+      }
+    },
+    "nativeMonochromeRegression": {
+      "passed": true,
+      "testCount": 33,
+      "failureCount": 0,
+      "sourceHashes": {
+        "utd-functions.wgsl": "4dc0ea1c883dd46281fe221151d578a384aa852cf857a65e63feae6681e74281",
+        "plt-compute.wgsl": "13c5992e847c00442d829a9ca359d0e0fa2b6d8e72974271c440f44250f08bd0",
+        "plt-gpu.js": "bdc973409a73942ea11da0a43166d5d49f6d045426f8a65c4fbdc327b2e4f6e9",
+        "utd-math.js": "c623b3f360d8b05b14fba421449d848050dbd4366e4f3d8a0c14458aa2776733"
+      },
+      "sceneReferenceHashes": {
+        "plt-core.js": "f15c8ff265ddb44fe7b27bf3c8dfd24f52c77014cdfd0c21f1d6a29f0998bef0",
+        "plt-fsd.js": "ba9938ca575a346e7a813f1efe515188d59dbf19511986737984455fb18fc011",
+        "plt-geometry.js": "62b13c3ea5d83be9bacfbd6f62418beef81f47b098cb9f10fce7182ed6fc283e",
+        "mesh-geometry.js": "050253efe45cb535da452de4a881df006986e9dfc623d46295801944f5d39214"
+      }
+    },
+    "existingMonochromeDOM": {
+      "passed": 28,
+      "failed": 0
+    },
+    "testPLT": "Full existing suite passed after final source edits",
+    "testPLTResident": "Existing internal checkpoint reference/lifecycle/native compilation suite passed; actual resident execution was not repeated"
+  },
+  "verificationLimits": {
+    "browserVisualQA": false,
+    "physicalGPU": false,
+    "nativeGPU": "Vulkan SwiftShader software fallback",
+    "renderInspection": "Actual numeric camera arrays inspected at64x48,64spp,depth4; fixed exposure0EV; visible chromatic noise retained",
+    "modelLimitations": [
+      "Relative unverified native global-energy normalization",
+      "Scalar PEC edge boundary differs from colored surface material",
+      "No dielectric refraction, dispersion or polarization transport",
+      "Approximate wavelength-dependent Gaussian camera envelope",
+      "Finite depth and incomplete endpoint/corner/high-order UTD",
+      "No denoising, hidden sample clipping or per-image normalization"
+    ]
+  },
+  "renderMeasurements": [
+    {
+      "file": "gallery-neutral-blackbody3000-report.json",
+      "totalCPUWallMs": 52354.141556,
+      "options": {
+        "width": 64,
+        "height": 48,
+        "samplesPerPixel": 64,
+        "maxDepth": 4,
+        "wavelengthMm": 0.025,
+        "spectralMode": "visible",
+        "spectralSource": "blackbody3000",
+        "spectralMaterial": "neutral",
+        "wave": true,
+        "nee": true,
+        "boundary": "unpolarized",
+        "seed": 7391
+      },
+      "results": [
+        {
+          "wave": true,
+          "meanY": 0.25383388197804585,
+          "events": 30602,
+          "descriptiveSampleNoise": {
+            "kind": "descriptive per-path sample variance; correlated wavelength sampling, not confidence interval",
+            "meanVarianceXYZ": [
+              29.399119215774626,
+              8.618643414469627,
+              1.2115082643631523
+            ],
+            "maxVarianceXYZ": [
+              63835.621500500936,
+              12254.662010911945,
+              668.2528846537884
+            ],
+            "samplesPerPixel": 64,
+            "reference": "CPU canonical samples",
+            "available": true
+          }
+        },
+        {
+          "wave": false,
+          "meanY": 0.20250451116519777,
+          "events": 0,
+          "descriptiveSampleNoise": {
+            "kind": "descriptive per-path sample variance; correlated wavelength sampling, not confidence interval",
+            "meanVarianceXYZ": [
+              1.225077623427068,
+              0.9045238839639749,
+              0.2494714294345188
+            ],
+            "maxVarianceXYZ": [
+              80.59345746754883,
+              54.63656935009541,
+              17.28747175012146
+            ],
+            "samplesPerPixel": 64,
+            "reference": "CPU canonical samples",
+            "available": true
+          }
+        }
+      ]
+    },
+    {
+      "file": "micro-gallery-blue-D65-report.json",
+      "totalCPUWallMs": 41502.076726,
+      "options": {
+        "width": 64,
+        "height": 48,
+        "samplesPerPixel": 64,
+        "maxDepth": 4,
+        "wavelengthMm": 0.025,
+        "spectralMode": "visible",
+        "spectralSource": "D65",
+        "spectralMaterial": "blue",
+        "wave": true,
+        "nee": true,
+        "boundary": "unpolarized",
+        "seed": 7391
+      },
+      "results": [
+        {
+          "wave": true,
+          "meanY": 0.5385680641999792,
+          "events": 76775,
+          "descriptiveSampleNoise": {
+            "kind": "descriptive per-path sample variance; correlated wavelength sampling, not confidence interval",
+            "meanVarianceXYZ": [
+              255.2796710759304,
+              233.6078469093666,
+              142.91639233671165
+            ],
+            "maxVarianceXYZ": [
+              492971.89209785894,
+              200302.13451522475,
+              177782.46037910794
+            ],
+            "samplesPerPixel": 64,
+            "reference": "CPU canonical samples",
+            "available": true
+          }
+        },
+        {
+          "wave": false,
+          "meanY": 0.1742327807802665,
+          "events": 0,
+          "descriptiveSampleNoise": {
+            "kind": "descriptive per-path sample variance; correlated wavelength sampling, not confidence interval",
+            "meanVarianceXYZ": [
+              0.5782714869342116,
+              0.7288746124258086,
+              1.9409708611672778
+            ],
+            "maxVarianceXYZ": [
+              43.09549438955914,
+              55.318818287550506,
+              141.22455310329616
+            ],
+            "samplesPerPixel": 64,
+            "reference": "CPU canonical samples",
+            "available": true
+          }
+        }
+      ]
+    },
+    {
+      "file": "micro-gallery-green-D65-report.json",
+      "totalCPUWallMs": 41598.258988,
+      "options": {
+        "width": 64,
+        "height": 48,
+        "samplesPerPixel": 64,
+        "maxDepth": 4,
+        "wavelengthMm": 0.025,
+        "spectralMode": "visible",
+        "spectralSource": "D65",
+        "spectralMaterial": "green",
+        "wave": true,
+        "nee": true,
+        "boundary": "unpolarized",
+        "seed": 7391
+      },
+      "results": [
+        {
+          "wave": true,
+          "meanY": 0.5538362512746602,
+          "events": 76775,
+          "descriptiveSampleNoise": {
+            "kind": "descriptive per-path sample variance; correlated wavelength sampling, not confidence interval",
+            "meanVarianceXYZ": [
+              255.33970339611292,
+              233.9543850874271,
+              142.18544672038047
+            ],
+            "maxVarianceXYZ": [
+              492971.89209785894,
+              200302.13451577618,
+              177782.46037910794
+            ],
+            "samplesPerPixel": 64,
+            "reference": "CPU canonical samples",
+            "available": true
+          }
+        },
+        {
+          "wave": false,
+          "meanY": 0.18756835885882042,
+          "events": 0,
+          "descriptiveSampleNoise": {
+            "kind": "descriptive per-path sample variance; correlated wavelength sampling, not confidence interval",
+            "meanVarianceXYZ": [
+              0.5873936095931539,
+              0.8121020675553939,
+              1.693443149005566
+            ],
+            "maxVarianceXYZ": [
+              43.09549438955914,
+              55.318818287550506,
+              141.22455310329616
+            ],
+            "samplesPerPixel": 64,
+            "reference": "CPU canonical samples",
+            "available": true
+          }
+        }
+      ]
+    },
+    {
+      "file": "micro-gallery-red-D65-report.json",
+      "totalCPUWallMs": 42472.093462,
+      "options": {
+        "width": 64,
+        "height": 48,
+        "samplesPerPixel": 64,
+        "maxDepth": 4,
+        "wavelengthMm": 0.025,
+        "spectralMode": "visible",
+        "spectralSource": "D65",
+        "spectralMaterial": "red",
+        "wave": true,
+        "nee": true,
+        "boundary": "unpolarized",
+        "seed": 7391
+      },
+      "results": [
+        {
+          "wave": true,
+          "meanY": 0.549529823439859,
+          "events": 76775,
+          "descriptiveSampleNoise": {
+            "kind": "descriptive per-path sample variance; correlated wavelength sampling, not confidence interval",
+            "meanVarianceXYZ": [
+              256.57735661624264,
+              233.87820575266144,
+              142.15412063053057
+            ],
+            "maxVarianceXYZ": [
+              492971.89209785894,
+              200302.13451577647,
+              177782.46037910794
+            ],
+            "samplesPerPixel": 64,
+            "reference": "CPU canonical samples",
+            "available": true
+          }
+        },
+        {
+          "wave": false,
+          "meanY": 0.18323661532802904,
+          "events": 0,
+          "descriptiveSampleNoise": {
+            "kind": "descriptive per-path sample variance; correlated wavelength sampling, not confidence interval",
+            "meanVarianceXYZ": [
+              0.6374783795774557,
+              0.7603199406179895,
+              1.6880138867680534
+            ],
+            "maxVarianceXYZ": [
+              43.09549438955914,
+              55.318818287550506,
+              141.22455310329616
+            ],
+            "samplesPerPixel": 64,
+            "reference": "CPU canonical samples",
+            "available": true
+          }
+        }
+      ]
+    }
+  ]
+}

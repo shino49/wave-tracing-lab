@@ -1,0 +1,163 @@
+{
+  "baselineCommit": "f230764b92f014e150ad67f1902a21428a98dc15",
+  "scope": "Cloud Node CPU path construction/reference only. Not browser, physical-GPU or user-device timing.",
+  "node": "v24.19.0",
+  "baselineHashes": {
+    "plt-core.js": "57bd2b9b4b740cee7393da769bb6ed01488567f02ea63db628f226a58d1377fa",
+    "plt-geometry.js": "8e3161bf69556d687020efc71560eb2bdfc9947f5f225d9c0d71c92b4b4a5f70",
+    "utd-scene.js": "bc0e4bded437c52e4a5836b8895b80ee27933014075aa1f101e2697d201a2d64",
+    "plt-fsd.js": "ba9938ca575a346e7a813f1efe515188d59dbf19511986737984455fb18fc011",
+    "mesh-geometry.js": "050253efe45cb535da452de4a881df006986e9dfc623d46295801944f5d39214"
+  },
+  "optimizedHashes": {
+    "plt-core.js": "33666b3d85de8b72f8a146a94184dc1dbed0397598f4491b8344972845e315ee",
+    "plt-geometry.js": "62b13c3ea5d83be9bacfbd6f62418beef81f47b098cb9f10fce7182ed6fc283e",
+    "utd-scene.js": "2be14819d3bc35967ec5f000f9d14dfb18d169d8cd1df1483b7c6d15d045820a",
+    "plt-fsd.js": "ba9938ca575a346e7a813f1efe515188d59dbf19511986737984455fb18fc011",
+    "mesh-geometry.js": "050253efe45cb535da452de4a881df006986e9dfc623d46295801944f5d39214"
+  },
+  "options": {
+    "width": 48,
+    "height": 36,
+    "samplesPerPixel": 16,
+    "maxDepth": 4,
+    "wavelengthMm": 0.025,
+    "seed": 7391,
+    "wave": true
+  },
+  "scene": "prism",
+  "runs": [
+    {
+      "repeat": 1,
+      "label": "baseline",
+      "wallMs": 28332.485256,
+      "reportedCpuMs": 28332.224803,
+      "events": 5333,
+      "terms": 23334,
+      "mean": 0.42200491203448676,
+      "rawImageSha256": "b5d97886d92073c3cbe6b5bc170054364011a047791506412453332737f39b4e"
+    },
+    {
+      "repeat": 1,
+      "label": "optimized",
+      "wallMs": 4609.535889999996,
+      "reportedCpuMs": 4609.253204000004,
+      "events": 5333,
+      "terms": 23334,
+      "mean": 0.42200491203448676,
+      "rawImageSha256": "b5d97886d92073c3cbe6b5bc170054364011a047791506412453332737f39b4e"
+    },
+    {
+      "repeat": 2,
+      "label": "optimized",
+      "wallMs": 4925.036253999999,
+      "reportedCpuMs": 4924.759778,
+      "events": 5333,
+      "terms": 23334,
+      "mean": 0.42200491203448676,
+      "rawImageSha256": "b5d97886d92073c3cbe6b5bc170054364011a047791506412453332737f39b4e"
+    },
+    {
+      "repeat": 2,
+      "label": "baseline",
+      "wallMs": 27610.550072,
+      "reportedCpuMs": 27610.252576,
+      "events": 5333,
+      "terms": 23334,
+      "mean": 0.42200491203448676,
+      "rawImageSha256": "b5d97886d92073c3cbe6b5bc170054364011a047791506412453332737f39b4e"
+    },
+    {
+      "repeat": 3,
+      "label": "baseline",
+      "wallMs": 27421.549477000008,
+      "reportedCpuMs": 27421.340169999996,
+      "events": 5333,
+      "terms": 23334,
+      "mean": 0.42200491203448676,
+      "rawImageSha256": "b5d97886d92073c3cbe6b5bc170054364011a047791506412453332737f39b4e"
+    },
+    {
+      "repeat": 3,
+      "label": "optimized",
+      "wallMs": 4250.542616000006,
+      "reportedCpuMs": 4250.370232999994,
+      "events": 5333,
+      "terms": 23334,
+      "mean": 0.42200491203448676,
+      "rawImageSha256": "b5d97886d92073c3cbe6b5bc170054364011a047791506412453332737f39b4e"
+    }
+  ],
+  "parity": [
+    {
+      "preset": "gallery",
+      "options": {
+        "width": 16,
+        "height": 12,
+        "samplesPerPixel": 4,
+        "maxDepth": 4,
+        "wavelengthMm": 0.025,
+        "seed": 7391,
+        "wave": true
+      },
+      "pixels": 192,
+      "rawPixelsAndPathStatisticsExactlyEqual": true,
+      "rawImageSha256": "a2cad370d61ffd456f0f685f21352f63f9a7189100ec39a9bf51993dd76f396d"
+    },
+    {
+      "preset": "baffles",
+      "options": {
+        "width": 16,
+        "height": 12,
+        "samplesPerPixel": 4,
+        "maxDepth": 4,
+        "wavelengthMm": 0.025,
+        "seed": 7391,
+        "wave": true
+      },
+      "pixels": 192,
+      "rawPixelsAndPathStatisticsExactlyEqual": true,
+      "rawImageSha256": "9cd26b607679fc414a056035a58b03cefc03734ba4f7e7f04b1262f3802a9c82"
+    },
+    {
+      "preset": "double-edge",
+      "options": {
+        "width": 16,
+        "height": 12,
+        "samplesPerPixel": 4,
+        "maxDepth": 4,
+        "wavelengthMm": 0.025,
+        "seed": 7391,
+        "wave": true
+      },
+      "pixels": 192,
+      "rawPixelsAndPathStatisticsExactlyEqual": true,
+      "rawImageSha256": "20858af29443f9586b83aa6d085bd6dc388227d1078119b3b84e04209656cae5"
+    }
+  ],
+  "camera": {
+    "position": [
+      6,
+      3.5999999999999996,
+      10
+    ],
+    "target": [
+      0,
+      0,
+      -0.8
+    ],
+    "up": [
+      0,
+      1,
+      0
+    ],
+    "fov": 42
+  },
+  "summary": {
+    "baselineMedianMs": 27610.550072,
+    "optimizedMedianMs": 4609.535889999996,
+    "speedup": 5.989876363019277,
+    "allRawPixelsAndPathStatisticsExactlyEqual": true
+  },
+  "completedAt": "2026-10-12T11:55:53.081Z"
+}

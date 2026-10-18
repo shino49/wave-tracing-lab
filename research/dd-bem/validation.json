@@ -1,0 +1,1001 @@
+{
+  "scope": "Independent full scalar 2D Dirichlet Helmholtz reference. Selected edge-anchored DD asymptotes and region-centre factor prototype powers are separate comparison targets.",
+  "convention": "exp(+i omega t), G=-i H_0^(2)(kr)/4, (Delta+k\u00b2)u=-delta",
+  "exact_series_controls": [
+    {
+      "k": 64,
+      "terms": [
+        426,
+        586
+      ],
+      "relative_change": 3.0583395338659994e-15,
+      "field": [
+        0.00046966703737292187,
+        -0.0005238151722567456
+      ]
+    },
+    {
+      "k": 128,
+      "terms": [
+        712,
+        872
+      ],
+      "relative_change": 3.978867620380227e-15,
+      "field": [
+        0.00034534825094131687,
+        -8.491205845113947e-05
+      ]
+    },
+    {
+      "k": 256,
+      "terms": [
+        1284,
+        1444
+      ],
+      "relative_change": 7.874601948232867e-11,
+      "field": [
+        9.348003766915971e-05,
+        0.00015191648315592847
+      ]
+    },
+    {
+      "k": 512,
+      "terms": [
+        2429,
+        2589,
+        2749
+      ],
+      "relative_changes": [
+        2.8169909777433693e-08,
+        9.13149504113233e-15
+      ],
+      "field": [
+        -8.104815846211265e-05,
+        -3.7396268769646586e-05
+      ]
+    }
+  ],
+  "boundary": "soft Dirichlet only",
+  "reference_method": "square-root weighted SLP Nystr\u00f6m with logarithmic product integration and complex-contour infinite-screen tails",
+  "uncertainty_is_empirical_not_rigorous": true,
+  "cases": [
+    {
+      "fixture": "compact",
+      "k": 128,
+      "source": [
+        -1.0,
+        -3.0
+      ],
+      "screens": [
+        [
+          0.0,
+          1.0
+        ],
+        [
+          2.0,
+          2.0
+        ]
+      ],
+      "receivers": [
+        [
+          4.0,
+          0.0
+        ]
+      ],
+      "reference_complex": [
+        [
+          -5.695888754412085e-07,
+          1.4396445469815403e-07
+        ]
+      ],
+      "reference_file": "dd128-p20-tail1.json",
+      "status": "empirically converged at central receiver",
+      "empirical_complex_relative_uncertainty_budget": 0.0001,
+      "controls": {
+        "single_halfplane_relative_error": 2.910185190141155e-07,
+        "order12_to16_relative_change": [
+          3.082534760346491e-05
+        ],
+        "order16_to20_relative_change": [
+          3.210857540307077e-07
+        ],
+        "tail_variation_relative_change": [
+          7.410207695813105e-08
+        ],
+        "domain_variation_relative_change": [
+          8.022766759882185e-08
+        ],
+        "max_off_collocation_boundary_relative_residual": 5.734487846991182e-11
+      },
+      "edge_anchored_asymptotes": {
+        "planar_L": {
+          "complex_field": [
+            -5.752148206694209e-07,
+            1.5124122273315681e-07
+          ],
+          "complex_relative_error": 0.01565609279779771,
+          "signed_relative_power_error": 0.024883574364232164,
+          "phase_error_degrees": -0.5468253695460892,
+          "minimum_transition_arguments": [
+            99.94934109206933,
+            247.55199151952314
+          ]
+        },
+        "cylindrical_L": {
+          "complex_field": [
+            -5.766393992237038e-07,
+            1.4504516079919712e-07
+          ],
+          "complex_relative_error": 0.012141034947101342,
+          "signed_relative_power_error": 0.024318898517111442,
+          "phase_error_degrees": 0.06551920936961679,
+          "minimum_transition_arguments": [
+            64.80428374080954,
+            109.2987691423815
+          ]
+        }
+      }
+    },
+    {
+      "fixture": "long_gap",
+      "k": 64,
+      "source": [
+        -2.0,
+        0.0
+      ],
+      "screens": [
+        [
+          0.0,
+          1.0
+        ],
+        [
+          8.0,
+          2.0
+        ]
+      ],
+      "receivers": [
+        [
+          16.0,
+          -2.0
+        ],
+        [
+          16.0,
+          -2.25
+        ],
+        [
+          16.0,
+          -1.75
+        ]
+      ],
+      "reference_complex": [
+        [
+          -1.0974829486557966e-05,
+          -1.2027801398174776e-05
+        ],
+        [
+          -1.4905342865732286e-05,
+          3.309873488101245e-06
+        ],
+        [
+          -8.291051430452459e-07,
+          -1.7390826649222972e-05
+        ]
+      ],
+      "reference_conditional_power": [
+        9.535459031071136e-07,
+        8.384852356309376e-07,
+        1.090269650196856e-06
+      ],
+      "normalization": "|u(P)/G(E1,S)|\u00b2",
+      "reference_file": "long-dd64-p20.json",
+      "status": "empirically converged",
+      "empirical_complex_relative_uncertainty_budget": 0.0001,
+      "edge_anchored_asymptotes": [
+        {
+          "cylindrical_L": {
+            "field": [
+              -9.223656538620893e-06,
+              -1.0905274184247065e-05
+            ],
+            "reduced_distances": [
+              1.7505521632665597,
+              4.240196380929244
+            ],
+            "min_transition_arguments": [
+              6.387097271908966,
+              45.57694298411569
+            ],
+            "conditional_power": 7.337353661538036e-07,
+            "complex_relative_error": 0.1277497414372803,
+            "signed_relative_power_error": -0.23051909324665,
+            "phase_error_degrees": 2.1545825701641226
+          },
+          "edge_anchored_plane_L": {
+            "field": [
+              -1.0181635003082373e-05,
+              -1.0316461632194143e-05
+            ],
+            "reduced_distances": [
+              8.06225774829855,
+              8.94427190999916
+            ],
+            "min_transition_arguments": [
+              29.4161039871529,
+              96.14002141738578
+            ],
+            "conditional_power": 7.556546374032169e-07,
+            "complex_relative_error": 0.11584471513704223,
+            "signed_relative_power_error": -0.207531976236352,
+            "phase_error_degrees": -2.2440919290706716
+          }
+        },
+        {
+          "cylindrical_L": {
+            "field": [
+              -1.317487587117782e-05,
+              2.413382238856578e-06
+            ],
+            "reduced_distances": [
+              1.7505521632665597,
+              4.265771204686474
+            ],
+            "min_transition_arguments": [
+              6.387097271908966,
+              49.6591333649717
+            ],
+            "conditional_power": 6.452591997134174e-07,
+            "complex_relative_error": 0.12764260742113218,
+            "signed_relative_power_error": -0.23044655732324593,
+            "phase_error_degrees": 2.139531113838801
+          },
+          "edge_anchored_plane_L": {
+            "field": [
+              -1.3144155255770705e-05,
+              3.4606863754309623e-06
+            ],
+            "reduced_distances": [
+              8.06225774829855,
+              9.058835465996719
+            ],
+            "min_transition_arguments": [
+              29.4161039871529,
+              105.45664475465698
+            ],
+            "conditional_power": 6.644779495550411e-07,
+            "complex_relative_error": 0.1157705581966936,
+            "signed_relative_power_error": -0.2075257603611358,
+            "phase_error_degrees": -2.230560786614
+          }
+        },
+        {
+          "cylindrical_L": {
+            "field": [
+              -1.4873288932741805e-07,
+              -1.527102291961404e-05
+            ],
+            "reduced_distances": [
+              1.7505521632665597,
+              4.215547670561228
+            ],
+            "min_transition_arguments": [
+              6.387097271908966,
+              41.59637307353235
+            ],
+            "conditional_power": 8.388512171127757e-07,
+            "complex_relative_error": 0.12787133789616523,
+            "signed_relative_power_error": -0.23060206531355365,
+            "phase_error_degrees": 2.1714838342688014
+          },
+          "edge_anchored_plane_L": {
+            "field": [
+              -1.348085689071557e-06,
+              -1.5440281797220464e-05
+            ],
+            "reduced_distances": [
+              8.06225774829855,
+              8.835298523536146
+            ],
+            "min_transition_arguments": [
+              29.4161039871529,
+              87.18116893032563
+            ],
+            "conditional_power": 8.64004476717593e-07,
+            "complex_relative_error": 0.11592990588651908,
+            "signed_relative_power_error": -0.20753138770615986,
+            "phase_error_degrees": -2.2603200706698185
+          }
+        }
+      ],
+      "controls": {
+        "max_off_collocation_boundary_relative_residual": 4.318621889868896e-11,
+        "independent_refinement_relative_change": [
+          1.1412237868064874e-08,
+          1.1320942317982121e-08,
+          1.1547624972021128e-08
+        ],
+        "order16_to20_relative_change": [
+          8.690855619479647e-09,
+          9.412019161946988e-09,
+          7.922252581826838e-09
+        ],
+        "single_halfplane_relative_error": 7.519315492549932e-09
+      },
+      "centre_factor_prototype_power_comparison": {
+        "source_file": "research/dd-frustum-check.json",
+        "region_geometry_proof_passed": true,
+        "conditional_power": 7.382506298227446e-07,
+        "reference_conditional_power": 9.535459031071136e-07,
+        "signed_relative_power_error": -0.22578385852514582,
+        "full_native_traversal_status": "Not established here: historical centre-factor snapshots do not validate full native traversal or stationary-neighbourhood support.",
+        "complex_phase_comparison": "Not defined here: centre-factor prototype supplies a radiometric product; edge-anchored complex fields are retained separately."
+      }
+    },
+    {
+      "fixture": "long_gap",
+      "k": 128,
+      "source": [
+        -2.0,
+        0.0
+      ],
+      "screens": [
+        [
+          0.0,
+          1.0
+        ],
+        [
+          8.0,
+          2.0
+        ]
+      ],
+      "receivers": [
+        [
+          16.0,
+          -2.0
+        ],
+        [
+          16.0,
+          -2.25
+        ],
+        [
+          16.0,
+          -1.75
+        ]
+      ],
+      "reference_complex": [
+        [
+          -3.91972117364317e-06,
+          -3.897022706189461e-06
+        ],
+        [
+          -1.3082587928849032e-06,
+          5.015232756372043e-06
+        ],
+        [
+          3.30957444203122e-06,
+          -4.8968607834565595e-06
+        ]
+      ],
+      "reference_conditional_power": [
+        2.1976621330573153e-07,
+        1.9324479290598884e-07,
+        2.512843933432968e-07
+      ],
+      "normalization": "|u(P)/G(E1,S)|\u00b2",
+      "reference_file": "long-dd128-control.json",
+      "status": "empirically converged",
+      "empirical_complex_relative_uncertainty_budget": 0.0001,
+      "edge_anchored_asymptotes": [
+        {
+          "edge_anchored_plane_L": {
+            "field": [
+              -3.7318239287074826e-06,
+              -3.517350797114584e-06
+            ],
+            "reduced_distances": [
+              8.06225774829855,
+              8.94427190999916
+            ],
+            "min_transition_arguments": [
+              58.8322079743058,
+              192.28004283477156
+            ],
+            "conditional_power": 1.891745091063763e-07,
+            "complex_relative_error": 0.07664193083143032,
+            "signed_relative_power_error": -0.1392011253194645,
+            "phase_error_degrees": -1.5282745377515146
+          },
+          "cylindrical_L": {
+            "field": [
+              -3.5727097586585352e-06,
+              -3.6494336091171718e-06
+            ],
+            "reduced_distances": [
+              1.7505521632665597,
+              4.240196380929244
+            ],
+            "min_transition_arguments": [
+              12.774194543817933,
+              91.15388596823138
+            ],
+            "conditional_power": 1.8762327818308825e-07,
+            "complex_relative_error": 0.0771232641051806,
+            "signed_relative_power_error": -0.14625967585803146,
+            "phase_error_degrees": 0.7750306708930655
+          }
+        },
+        {
+          "edge_anchored_plane_L": {
+            "field": [
+              -1.0896675798935623e-06,
+              4.6837250067652045e-06
+            ],
+            "reduced_distances": [
+              8.06225774829855,
+              9.058835465996719
+            ],
+            "min_transition_arguments": [
+              58.8322079743058,
+              210.91328950931396
+            ],
+            "conditional_power": 1.6634538761013906e-07,
+            "complex_relative_error": 0.07661282431628665,
+            "signed_relative_power_error": -0.13919860344664514,
+            "phase_error_degrees": -1.5233282665246992
+          },
+          "cylindrical_L": {
+            "field": [
+              -1.2706320524412611e-06,
+              4.61746972798363e-06
+            ],
+            "reduced_distances": [
+              1.7505521632665597,
+              4.265771204686474
+            ],
+            "min_transition_arguments": [
+              12.774194543817933,
+              99.3182667299434
+            ],
+            "conditional_power": 1.6498494712086603e-07,
+            "complex_relative_error": 0.07708550711824495,
+            "signed_relative_power_error": -0.14623858868409878,
+            "phase_error_degrees": 0.7655989600058566
+          }
+        },
+        {
+          "edge_anchored_plane_L": {
+            "field": [
+              2.9478425528897536e-06,
+              -4.623859167791307e-06
+            ],
+            "reduced_distances": [
+              8.06225774829855,
+              8.835298523536146
+            ],
+            "min_transition_arguments": [
+              58.8322079743058,
+              174.36233786065125
+            ],
+            "conditional_power": 2.1630509340441606e-07,
+            "complex_relative_error": 0.07667678524336129,
+            "signed_relative_power_error": -0.13920203906612383,
+            "phase_error_degrees": -1.5343672915687292
+          },
+          "cylindrical_L": {
+            "field": [
+              3.1196890278048834e-06,
+              -4.482186972317383e-06
+            ],
+            "reduced_distances": [
+              1.7505521632665597,
+              4.215547670561228
+            ],
+            "min_transition_arguments": [
+              12.774194543817933,
+              83.1927461470647
+            ],
+            "conditional_power": 2.1452551554306627e-07,
+            "complex_relative_error": 0.07716635257817497,
+            "signed_relative_power_error": -0.14628396658924925,
+            "phase_error_degrees": 0.7856212599874495
+          }
+        }
+      ],
+      "controls": {
+        "max_off_collocation_boundary_relative_residual": 3.379876259551072e-13,
+        "independent_refinement_relative_change": [
+          9.670624500863675e-09,
+          1.0331525817214802e-08,
+          8.863247922137085e-09
+        ],
+        "single_halfplane_relative_error": 7.953404216515435e-09
+      },
+      "centre_factor_prototype_power_comparison": {
+        "source_file": "research/dd-frustum-k128.json",
+        "region_geometry_proof_passed": true,
+        "conditional_power": 1.857715290431654e-07,
+        "reference_conditional_power": 2.1976621330573153e-07,
+        "signed_relative_power_error": -0.15468567142881895,
+        "full_native_traversal_status": "Not established here: historical centre-factor snapshots do not validate full native traversal or stationary-neighbourhood support.",
+        "complex_phase_comparison": "Not defined here: centre-factor prototype supplies a radiometric product; edge-anchored complex fields are retained separately."
+      }
+    },
+    {
+      "fixture": "long_gap",
+      "k": 256,
+      "source": [
+        -2.0,
+        0.0
+      ],
+      "screens": [
+        [
+          0.0,
+          1.0
+        ],
+        [
+          8.0,
+          2.0
+        ]
+      ],
+      "receivers": [
+        [
+          16.0,
+          -2.0
+        ],
+        [
+          16.0,
+          -2.25
+        ],
+        [
+          16.0,
+          -1.75
+        ]
+      ],
+      "reference_complex": [
+        [
+          -1.4032359440308874e-06,
+          -1.2689854526058719e-06
+        ],
+        [
+          1.6846561184002311e-06,
+          -5.562229709998173e-07
+        ],
+        [
+          1.8946099146935173e-06,
+          7.093513879625601e-07
+        ]
+      ],
+      "reference_conditional_power": [
+        5.1496136039810704e-08,
+        4.5281818993481056e-08,
+        5.88813387951428e-08
+      ],
+      "normalization": "|u(P)/G(E1,S)|\u00b2",
+      "reference_file": "long-dd256-control.json",
+      "status": "empirically converged",
+      "empirical_complex_relative_uncertainty_budget": 0.0001,
+      "edge_anchored_asymptotes": [
+        {
+          "edge_anchored_plane_L": {
+            "field": [
+              -1.3813114817464718e-06,
+              -1.1749083195523324e-06
+            ],
+            "reduced_distances": [
+              8.06225774829855,
+              8.94427190999916
+            ],
+            "min_transition_arguments": [
+              117.6644159486116,
+              384.5600856695431
+            ],
+            "conditional_power": 4.731008435177609e-08,
+            "complex_relative_error": 0.05105798459310263,
+            "signed_relative_power_error": -0.08128865600320845,
+            "phase_error_degrees": -1.7402783697129625
+          },
+          "cylindrical_L": {
+            "field": [
+              -1.3556245651129197e-06,
+              -1.2015401843380468e-06
+            ],
+            "reduced_distances": [
+              1.7505521632665597,
+              4.240196380929244
+            ],
+            "min_transition_arguments": [
+              25.548389087635865,
+              182.30777193646276
+            ],
+            "conditional_power": 4.720917237943724e-08,
+            "complex_relative_error": 0.04363657445750809,
+            "signed_relative_power_error": -0.0832482588025496,
+            "phase_error_degrees": -0.5721612802389715
+          }
+        },
+        {
+          "edge_anchored_plane_L": {
+            "field": [
+              1.597809588353717e-06,
+              -5.818766836746502e-07
+            ],
+            "reduced_distances": [
+              8.06225774829855,
+              9.058835465996719
+            ],
+            "min_transition_arguments": [
+              117.6644159486116,
+              421.8265790186279
+            ],
+            "conditional_power": 4.160060030520065e-08,
+            "complex_relative_error": 0.05104332419817919,
+            "signed_relative_power_error": -0.08129573347772079,
+            "phase_error_degrees": -1.738506008707329
+          },
+          "cylindrical_L": {
+            "field": [
+              1.6075578804549818e-06,
+              -5.488001875765014e-07
+            ],
+            "reduced_distances": [
+              1.7505521632665597,
+              4.265771204686474
+            ],
+            "min_transition_arguments": [
+              25.548389087635865,
+              198.6365334598868
+            ],
+            "conditional_power": 4.151209297222073e-08,
+            "complex_relative_error": 0.04365847261146183,
+            "signed_relative_power_error": -0.08325032220554218,
+            "phase_error_degrees": -0.5775888862332055
+          }
+        },
+        {
+          "edge_anchored_plane_L": {
+            "field": [
+              1.8358163825881079e-06,
+              6.243769279752547e-07
+            ],
+            "reduced_distances": [
+              8.06225774829855,
+              8.835298523536146
+            ],
+            "min_transition_arguments": [
+              117.6644159486116,
+              348.7246757213025
+            ],
+            "conditional_power": 5.4095449153328935e-08,
+            "complex_relative_error": 0.051076973908679525,
+            "signed_relative_power_error": -0.08128024497650599,
+            "phase_error_degrees": -1.7425401341722069
+          },
+          "cylindrical_L": {
+            "field": [
+              1.820658654956829e-06,
+              6.61229504660087e-07
+            ],
+            "reduced_distances": [
+              1.7505521632665597,
+              4.215547670561228
+            ],
+            "min_transition_arguments": [
+              25.548389087635865,
+              166.3854922941294
+            ],
+            "conditional_power": 5.3979693569993625e-08,
+            "complex_relative_error": 0.043612315434073366,
+            "signed_relative_power_error": -0.08324615787359657,
+            "phase_error_degrees": -0.5660663142853228
+          }
+        }
+      ],
+      "controls": {
+        "max_off_collocation_boundary_relative_residual": 8.217335615728858e-13,
+        "independent_refinement_relative_change": [
+          1.0149230725334867e-08,
+          1.1234735900624273e-08,
+          9.251634843116323e-09
+        ],
+        "single_halfplane_relative_error": 8.128150959331996e-09
+      },
+      "centre_factor_prototype_power_comparison": {
+        "source_file": "research/dd-frustum-k256.json",
+        "region_geometry_proof_passed": true,
+        "conditional_power": 4.6662864356640736e-08,
+        "reference_conditional_power": 5.1496136039810704e-08,
+        "signed_relative_power_error": -0.09385697752999289,
+        "full_native_traversal_status": "Not established here: historical centre-factor snapshots do not validate full native traversal or stationary-neighbourhood support.",
+        "complex_phase_comparison": "Not defined here: centre-factor prototype supplies a radiometric product; edge-anchored complex fields are retained separately."
+      }
+    },
+    {
+      "fixture": "long_gap",
+      "k": 512,
+      "source": [
+        -2.0,
+        0.0
+      ],
+      "screens": [
+        [
+          0.0,
+          1.0
+        ],
+        [
+          8.0,
+          2.0
+        ]
+      ],
+      "receivers": [
+        [
+          16.0,
+          -2.0
+        ],
+        [
+          16.0,
+          -2.25
+        ],
+        [
+          16.0,
+          -1.75
+        ]
+      ],
+      "reference_complex": [
+        [
+          -5.220245816038756e-07,
+          -3.8972375235497587e-07
+        ],
+        [
+          -6.350402314344184e-08,
+          6.075741439991785e-07
+        ],
+        [
+          -6.921707164657571e-07,
+          7.848295014551386e-08
+        ]
+      ],
+      "reference_conditional_power": [
+        1.2211369502907156e-08,
+        1.0737722568378277e-08,
+        1.3962694810545278e-08
+      ],
+      "normalization": "|u(P)/G(E1,S)|\u00b2",
+      "reference_file": "long-dd512-control.json",
+      "status": "empirically converged",
+      "empirical_complex_relative_uncertainty_budget": 0.0001,
+      "edge_anchored_asymptotes": [
+        {
+          "edge_anchored_plane_L": {
+            "field": [
+              -5.242234670030656e-07,
+              -3.6916064002732454e-07
+            ],
+            "reduced_distances": [
+              8.06225774829855,
+              8.94427190999916
+            ],
+            "min_transition_arguments": [
+              235.3288318972232,
+              769.1201713390863
+            ],
+            "conditional_power": 1.1828552127583958e-08,
+            "complex_relative_error": 0.03174483204289309,
+            "signed_relative_power_error": -0.031349258183700046,
+            "phase_error_degrees": -1.5902355864159938
+          },
+          "cylindrical_L": {
+            "field": [
+              -5.202782807733582e-07,
+              -3.7440448031130866e-07
+            ],
+            "reduced_distances": [
+              1.7505521632665597,
+              4.240196380929244
+            ],
+            "min_transition_arguments": [
+              51.09677817527173,
+              364.6155438729255
+            ],
+            "conditional_power": 1.1822175393755883e-08,
+            "complex_relative_error": 0.023667747791614964,
+            "signed_relative_power_error": -0.03187145463566743,
+            "phase_error_degrees": -1.0039450347986625
+          }
+        },
+        {
+          "edge_anchored_plane_L": {
+            "field": [
+              -4.588842625986247e-08,
+              5.99476759804892e-07
+            ],
+            "reduced_distances": [
+              8.06225774829855,
+              9.058835465996719
+            ],
+            "min_transition_arguments": [
+              235.3288318972232,
+              843.6531580372558
+            ],
+            "conditional_power": 1.0401043076284522e-08,
+            "complex_relative_error": 0.03173687430802711,
+            "signed_relative_power_error": -0.031354832456301884,
+            "phase_error_degrees": -1.5896140208977292
+          },
+          "cylindrical_L": {
+            "field": [
+              -5.196855558582606e-08,
+              5.988180220344488e-07
+            ],
+            "reduced_distances": [
+              1.7505521632665597,
+              4.265771204686474
+            ],
+            "min_transition_arguments": [
+              51.09677817527173,
+              397.2730669197736
+            ],
+            "conditional_power": 1.0395450086236253e-08,
+            "complex_relative_error": 0.023707105971254586,
+            "signed_relative_power_error": -0.03187570548246288,
+            "phase_error_degrees": -1.0069248292704494
+          }
+        },
+        {
+          "edge_anchored_plane_L": {
+            "field": [
+              -6.788296767863334e-07,
+              9.61285493512345e-08
+            ],
+            "reduced_distances": [
+              8.06225774829855,
+              8.835298523536146
+            ],
+            "min_transition_arguments": [
+              235.3288318972232,
+              697.449351442605
+            ],
+            "conditional_power": 1.3525063624525962e-08,
+            "complex_relative_error": 0.03175578350366283,
+            "signed_relative_power_error": -0.031342888457949525,
+            "phase_error_degrees": -1.5910694084536652
+          },
+          "cylindrical_L": {
+            "field": [
+              -6.796004367490121e-07,
+              8.910367685790696e-08
+            ],
+            "reduced_distances": [
+              1.7505521632665597,
+              4.215547670561228
+            ],
+            "min_transition_arguments": [
+              51.09677817527173,
+              332.7709845882588
+            ],
+            "conditional_power": 1.3517749098751914e-08,
+            "complex_relative_error": 0.023623626936356997,
+            "signed_relative_power_error": -0.031866750496997054,
+            "phase_error_degrees": -1.0005986019052031
+          }
+        }
+      ],
+      "controls": {
+        "max_off_collocation_boundary_relative_residual": 5.542000506398064e-11,
+        "independent_refinement_relative_change": [
+          5.648406959315777e-08,
+          5.897610073889068e-08,
+          5.21246981787843e-08
+        ],
+        "single_halfplane_relative_error": 4.2302626408296865e-08,
+        "single_halfplane_series_terms": 2749
+      },
+      "numerical_parameters": {
+        "unknowns": 13260,
+        "order": 20,
+        "ppw": 14.5,
+        "pml_start": -2.6,
+        "pml_length": 1.5,
+        "pml_imag": 1.0
+      },
+      "resource_measurements": {
+        "long-dd512-baseline-resources.json": {
+          "command": [
+            "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+            "research/dd-bem/long_gap.py",
+            "--k",
+            "512",
+            "--order",
+            "16",
+            "--ppw",
+            "14",
+            "--pml-start",
+            "-2.5",
+            "--pml-length",
+            "1.25",
+            "--pml-imag",
+            ".75",
+            "--output",
+            "research/dd-bem/long-dd512-p16.json"
+          ],
+          "return_code": 0,
+          "elapsed_seconds": 202.17596745491028,
+          "maximum_rss_kib": 6874912,
+          "user_seconds": 200.690687,
+          "system_seconds": 1.454181
+        },
+        "long-dd512-control-resources.json": {
+          "command": [
+            "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+            "research/dd-bem/long_gap.py",
+            "--k",
+            "512",
+            "--order",
+            "20",
+            "--ppw",
+            "14.5",
+            "--pml-start",
+            "-2.6",
+            "--pml-length",
+            "1.5",
+            "--pml-imag",
+            "1",
+            "--output",
+            "research/dd-bem/long-dd512-control.json"
+          ],
+          "return_code": 0,
+          "elapsed_seconds": 299.59889006614685,
+          "maximum_rss_kib": 5608444,
+          "user_seconds": 295.05219,
+          "system_seconds": 4.370363
+        },
+        "long-single512-resources.json": {
+          "command": [
+            "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+            "research/dd-bem/long_gap.py",
+            "--k",
+            "512",
+            "--single",
+            "--order",
+            "16",
+            "--ppw",
+            "14",
+            "--pml-start",
+            "-2.5",
+            "--pml-length",
+            "1.25",
+            "--pml-imag",
+            ".75",
+            "--output",
+            "research/dd-bem/long-single512-p16.json"
+          ],
+          "return_code": 0,
+          "elapsed_seconds": 63.16595101356506,
+          "maximum_rss_kib": 1023980,
+          "user_seconds": 62.922182,
+          "system_seconds": 0.221293
+        }
+      }
+    }
+  ],
+  "independent_low_frequency_crosscheck": {
+    "k": 8,
+    "bem_complex": [
+      3.46726598346829e-05,
+      -1.2634724450509213e-05
+    ],
+    "fdfd_complex": [
+      3.494603403986029e-05,
+      -1.2667785396309272e-05
+    ],
+    "relative_difference": 0.007408049520225248,
+    "fdfd_empirical_relative_budget": 0.04
+  },
+  "not_claimed": [
+    "Hard/Neumann boundary validation",
+    "Only the DD family in the full Helmholtz field",
+    "A rigorous global error bound",
+    "3D Gaussian source or detector flux normalization",
+    "Actual native cone discovery from this BEM",
+    "Actual native complex field phase",
+    "GPU validation"
+  ]
+}

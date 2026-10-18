@@ -1,0 +1,99 @@
+{
+  "schema": "coherent-mesh-scene-v1",
+  "units": "mm",
+  "name": "Lloyd D65 · independent disk radius 0.06 mm",
+  "materials": [
+    {
+      "type": "opaque"
+    },
+    {
+      "type": "mirror",
+      "reflectance": 1,
+      "phaseRad": 3.141592653589793
+    }
+  ],
+  "meshes": [
+    {
+      "vertices": [
+        [
+          -10,
+          0,
+          -49
+        ],
+        [
+          10,
+          0,
+          -49
+        ],
+        [
+          10,
+          0,
+          49
+        ],
+        [
+          -10,
+          0,
+          49
+        ]
+      ],
+      "faces": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2,
+          3
+        ]
+      ],
+      "materialIndex": 1,
+      "surface": "open-plate"
+    }
+  ],
+  "source": {
+    "position": [
+      0,
+      0.08,
+      -50
+    ],
+    "power": 1,
+    "phaseRad": 0,
+    "wavelengthMm": 0.00055,
+    "spectrum": {
+      "mode": "broadband",
+      "illuminant": "D65"
+    },
+    "spatial": {
+      "type": "disk",
+      "radiusMm": 0.06,
+      "normal": [
+        0,
+        0,
+        1
+      ],
+      "samples": 16,
+      "seed": 7391
+    }
+  },
+  "detector": {
+    "center": [
+      0,
+      0.5,
+      50
+    ],
+    "u": [
+      1,
+      0,
+      0
+    ],
+    "v": [
+      0,
+      1,
+      0
+    ],
+    "width": 6,
+    "height": 1
+  }
+}

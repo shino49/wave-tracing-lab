@@ -1,0 +1,525 @@
+{
+  "release": "3D single-region conditional UTD extension",
+  "physicalGPUExecuted": false,
+  "browserVisualQA": false,
+  "geometryTests": 49,
+  "sceneTests": 13,
+  "sommerfeldKernelCases": 3640,
+  "sommerfeldActualSceneCases": 21,
+  "maximumActualSceneComplexFieldError": 7.65e-13,
+  "actualWGSLCPUInterpreter": {
+    "sceneVariants": 26,
+    "points": 650,
+    "validMaskMismatches": 0,
+    "edgeCountMismatches": 0,
+    "maximumPowerError": 1.4465646297701085e-05
+  },
+  "mockGPULifecycleTests": 25,
+  "runtimeGate": "25 fixed baseline GPU/CPU points; if all are invalid and masks agree, refine to at most81 fixed-grid checks. Unchanged absolute2e-5 and relative0.005 tolerance; no valid check still rejects.",
+  "limits": [
+    "Conditional transfer f, not calibrated irradiance",
+    "One finite interaction region",
+    "Locally collimated incidence",
+    "Planar open screens or admitted outward convex solids",
+    "Endpoint/corner, grazing, missing first-order paths masked",
+    "No multiple scattering or full-paper parity"
+  ],
+  "mockDOMInteractionTests": 21,
+  "geometryAdmissionTests": 13,
+  "nativeShaderValidation": {
+    "compiler": "Dawn/Tint via webgpu 0.6.2",
+    "backend": "null",
+    "validatedModules": [
+      "kernel.wgsl",
+      "utd-functions.wgsl",
+      "utd-functions.wgsl + utd-compute.wgsl"
+    ],
+    "computePipelinesPassed": [
+      "Gaussian kernel main",
+      "UTD main"
+    ],
+    "reservedKeywordNegativeControlPassed": true,
+    "shaderExecution": false,
+    "scope": "Native compiler and compute-pipeline validation; not physical GPU execution or browser visual QA",
+    "sourceSHA256": {
+      "kernel.wgsl": "ad34f1a6c2e1582fca7f074a0e973e00e0efd7ba34f00bd5750d20befe70b5fa",
+      "utd-functions.wgsl": "4dc0ea1c883dd46281fe221151d578a384aa852cf857a65e63feae6681e74281",
+      "utd-compute.wgsl": "ce709ccb7d66f127e83ad0abb947f549382b5c466a0cdf61d4bf9294772e45ef"
+    }
+  },
+  "softwareWGSLExecuted": true,
+  "nativeExecutionValidation": {
+    "execution": "Native Dawn WGSL dispatch and buffer readback; software adapters are not physical GPU evidence",
+    "requestedBackend": "vulkan",
+    "adapter": {
+      "vendor": "google",
+      "architecture": "swiftshader",
+      "device": "swiftshader-device-subzero-",
+      "description": "SwiftShader driver 5.0.0",
+      "isFallbackAdapter": true
+    },
+    "sourceHashes": {
+      "utd-functions.wgsl": "4dc0ea1c883dd46281fe221151d578a384aa852cf857a65e63feae6681e74281",
+      "utd-compute.wgsl": "ce709ccb7d66f127e83ad0abb947f549382b5c466a0cdf61d4bf9294772e45ef"
+    },
+    "nodeVersion": "v24.19.0",
+    "webgpuVersion": "0.6.2",
+    "tolerance": {
+      "absolute": 2e-05,
+      "relative": 0.005
+    },
+    "passed": true,
+    "scenes": [
+      {
+        "label": "Exact UI defaults 33x33",
+        "preset": "screen",
+        "width": 33,
+        "height": 33,
+        "valid": 825,
+        "total": 1089,
+        "cpuPeak": 1.4793729782104492,
+        "gpuPeak": 1.479360818862915,
+        "maskMismatches": 0,
+        "edgeMismatches": 0,
+        "numericalFailures": 0,
+        "maxToleranceRatio": 0.06988880498838036,
+        "maxAbsolutePowerError": 6.768029382975271e-05,
+        "runtimeGatePassed": true,
+        "runtimeGatePoints": 25,
+        "runtimeGateValidPoints": 15,
+        "actualEnginePassed": true
+      },
+      {
+        "label": "Exact UI defaults 65x65",
+        "preset": "screen",
+        "width": 65,
+        "height": 65,
+        "valid": 3185,
+        "total": 4225,
+        "cpuPeak": 1.4479020833969116,
+        "gpuPeak": 1.447910189628601,
+        "maskMismatches": 0,
+        "edgeMismatches": 0,
+        "numericalFailures": 0,
+        "maxToleranceRatio": 0.077061569609336,
+        "maxAbsolutePowerError": 8.727525798657432e-05,
+        "runtimeGatePassed": true,
+        "runtimeGatePoints": 25,
+        "runtimeGateValidPoints": 15,
+        "actualEnginePassed": true
+      },
+      {
+        "label": "Exact UI defaults 97x97",
+        "preset": "screen",
+        "width": 97,
+        "height": 97,
+        "valid": 7081,
+        "total": 9409,
+        "cpuPeak": 1.4818823337554932,
+        "gpuPeak": 1.481862187385559,
+        "maskMismatches": 0,
+        "edgeMismatches": 0,
+        "numericalFailures": 0,
+        "maxToleranceRatio": 0.0739466293478823,
+        "maxAbsolutePowerError": 7.82993353101169e-05,
+        "runtimeGatePassed": true,
+        "runtimeGatePoints": 25,
+        "runtimeGateValidPoints": 15,
+        "actualEnginePassed": true
+      },
+      {
+        "label": "Exact opaque-slit UI defaults 33x33",
+        "preset": "opaque-double-slit",
+        "width": 33,
+        "height": 33,
+        "valid": 84,
+        "total": 1089,
+        "cpuPeak": 1,
+        "gpuPeak": 1,
+        "maskMismatches": 0,
+        "edgeMismatches": 0,
+        "numericalFailures": 0,
+        "maxToleranceRatio": 0,
+        "maxAbsolutePowerError": 0,
+        "runtimeGatePassed": true,
+        "runtimeGatePoints": 81,
+        "runtimeGateValidPoints": 4,
+        "actualEnginePassed": true
+      },
+      {
+        "label": "Exact opaque-slit UI defaults 65x65",
+        "preset": "opaque-double-slit",
+        "width": 65,
+        "height": 65,
+        "valid": 248,
+        "total": 4225,
+        "cpuPeak": 1,
+        "gpuPeak": 1,
+        "maskMismatches": 0,
+        "edgeMismatches": 0,
+        "numericalFailures": 0,
+        "maxToleranceRatio": 0,
+        "maxAbsolutePowerError": 0,
+        "runtimeGatePassed": true,
+        "runtimeGatePoints": 81,
+        "runtimeGateValidPoints": 4,
+        "actualEnginePassed": true
+      },
+      {
+        "label": "Exact opaque-slit UI defaults 97x97",
+        "preset": "opaque-double-slit",
+        "width": 97,
+        "height": 97,
+        "valid": 512,
+        "total": 9409,
+        "cpuPeak": 1,
+        "gpuPeak": 1,
+        "maskMismatches": 0,
+        "edgeMismatches": 0,
+        "numericalFailures": 0,
+        "maxToleranceRatio": 0,
+        "maxAbsolutePowerError": 0,
+        "runtimeGatePassed": true,
+        "runtimeGatePoints": 81,
+        "runtimeGateValidPoints": 4,
+        "actualEnginePassed": true
+      },
+      {
+        "label": "Exact box UI defaults 33x33",
+        "preset": "box",
+        "width": 33,
+        "height": 33,
+        "valid": 550,
+        "total": 1089,
+        "cpuPeak": 1.7691298723220825,
+        "gpuPeak": 1.7690869569778442,
+        "maskMismatches": 0,
+        "edgeMismatches": 0,
+        "numericalFailures": 0,
+        "maxToleranceRatio": 0.059682116341042264,
+        "maxAbsolutePowerError": 0.0001349742371736795,
+        "runtimeGatePassed": true,
+        "runtimeGatePoints": 25,
+        "runtimeGateValidPoints": 12,
+        "actualEnginePassed": true
+      },
+      {
+        "label": "Exact wedge UI defaults 33x33",
+        "preset": "wedge",
+        "width": 33,
+        "height": 33,
+        "valid": 825,
+        "total": 1089,
+        "cpuPeak": 1.8876574039459229,
+        "gpuPeak": 1.8875936269760132,
+        "maskMismatches": 0,
+        "edgeMismatches": 0,
+        "numericalFailures": 0,
+        "maxToleranceRatio": 0.07091898646827967,
+        "maxAbsolutePowerError": 0.00012145920967920887,
+        "runtimeGatePassed": true,
+        "runtimeGatePoints": 25,
+        "runtimeGateValidPoints": 15,
+        "actualEnginePassed": true
+      },
+      {
+        "label": "Plate transmission",
+        "preset": "screen",
+        "width": 5,
+        "height": 5,
+        "valid": 15,
+        "total": 25,
+        "cpuPeak": 0.8859418630599976,
+        "gpuPeak": 0.8859626054763794,
+        "maskMismatches": 0,
+        "edgeMismatches": 0,
+        "numericalFailures": 0,
+        "maxToleranceRatio": 0.0358514140801852,
+        "maxAbsolutePowerError": 6.429571580357507e-05,
+        "runtimeGatePassed": true,
+        "runtimeGatePoints": 25,
+        "runtimeGateValidPoints": 15,
+        "actualEnginePassed": null
+      },
+      {
+        "label": "Convex box",
+        "preset": "box",
+        "width": 5,
+        "height": 5,
+        "valid": 12,
+        "total": 25,
+        "cpuPeak": 0.8084795475006104,
+        "gpuPeak": 0.8084886074066162,
+        "maskMismatches": 0,
+        "edgeMismatches": 0,
+        "numericalFailures": 0,
+        "maxToleranceRatio": 0.010959470487640122,
+        "maxAbsolutePowerError": 3.1889005711716045e-05,
+        "runtimeGatePassed": true,
+        "runtimeGatePoints": 25,
+        "runtimeGateValidPoints": 12,
+        "actualEnginePassed": null
+      },
+      {
+        "label": "Convex prism",
+        "preset": "wedge",
+        "width": 5,
+        "height": 5,
+        "valid": 15,
+        "total": 25,
+        "cpuPeak": 0.7934079170227051,
+        "gpuPeak": 0.7934181690216064,
+        "maskMismatches": 0,
+        "edgeMismatches": 0,
+        "numericalFailures": 0,
+        "maxToleranceRatio": 0.06322419421310975,
+        "maxAbsolutePowerError": 7.882715188228806e-05,
+        "runtimeGatePassed": true,
+        "runtimeGatePoints": 25,
+        "runtimeGateValidPoints": 15,
+        "actualEnginePassed": null
+      },
+      {
+        "label": "Plate reflection",
+        "preset": "screen",
+        "width": 5,
+        "height": 5,
+        "valid": 15,
+        "total": 25,
+        "cpuPeak": 1.5799616575241089,
+        "gpuPeak": 1.5799503326416016,
+        "maskMismatches": 0,
+        "edgeMismatches": 0,
+        "numericalFailures": 0,
+        "maxToleranceRatio": 0.062038710284463436,
+        "maxAbsolutePowerError": 6.121971306516372e-05,
+        "runtimeGatePassed": true,
+        "runtimeGatePoints": 25,
+        "runtimeGateValidPoints": 15,
+        "actualEnginePassed": null
+      },
+      {
+        "label": "Hard boundary",
+        "preset": "screen",
+        "width": 5,
+        "height": 5,
+        "valid": 15,
+        "total": 25,
+        "cpuPeak": 0.89683997631073,
+        "gpuPeak": 0.8968591690063477,
+        "maskMismatches": 0,
+        "edgeMismatches": 0,
+        "numericalFailures": 0,
+        "maxToleranceRatio": 0.0358132583365857,
+        "maxAbsolutePowerError": 6.381483376849406e-05,
+        "runtimeGatePassed": true,
+        "runtimeGatePoints": 25,
+        "runtimeGateValidPoints": 15,
+        "actualEnginePassed": null
+      },
+      {
+        "label": "Horizontal yaw",
+        "preset": "screen",
+        "width": 5,
+        "height": 5,
+        "valid": 15,
+        "total": 25,
+        "cpuPeak": 1.1720778942108154,
+        "gpuPeak": 1.1720638275146484,
+        "maskMismatches": 0,
+        "edgeMismatches": 0,
+        "numericalFailures": 0,
+        "maxToleranceRatio": 0.06979331263036738,
+        "maxAbsolutePowerError": 4.6648732472232e-05,
+        "runtimeGatePassed": true,
+        "runtimeGatePoints": 25,
+        "runtimeGateValidPoints": 15,
+        "actualEnginePassed": null
+      },
+      {
+        "label": "Higher frequency",
+        "preset": "screen",
+        "width": 5,
+        "height": 5,
+        "valid": 25,
+        "total": 25,
+        "cpuPeak": 0.9187942743301392,
+        "gpuPeak": 0.9187873601913452,
+        "maskMismatches": 0,
+        "edgeMismatches": 0,
+        "numericalFailures": 0,
+        "maxToleranceRatio": 0.00760957221327786,
+        "maxAbsolutePowerError": 1.1162223793048653e-05,
+        "runtimeGatePassed": true,
+        "runtimeGatePoints": 25,
+        "runtimeGateValidPoints": 25,
+        "actualEnginePassed": null
+      }
+    ]
+  },
+  "syntheticBuiltinErrorStress": {
+    "type": "Synthetic sin-error stress; not the user’s actual adapter failure",
+    "adapter": {
+      "vendor": "google",
+      "architecture": "swiftshader",
+      "device": "swiftshader-device-subzero-",
+      "description": "SwiftShader driver 5.0.0",
+      "isFallbackAdapter": true
+    },
+    "requestedBackend": "vulkan",
+    "perturbation": "sin(x) ± sign(x)*0.0001 only where 0.000001 < abs(x) < 0.1",
+    "defaultScene": {
+      "width": 33,
+      "height": 33,
+      "valid": 825,
+      "peak": 1.4793729782104492
+    },
+    "passed": true,
+    "cases": [
+      {
+        "label": "hardened",
+        "amplitude": 0.0001,
+        "expected": "pass",
+        "passed": true,
+        "observedGatePassed": true
+      },
+      {
+        "label": "vulnerable negative control",
+        "amplitude": 0.0001,
+        "expected": "reject",
+        "passed": true,
+        "observedGatePassed": false
+      },
+      {
+        "label": "hardened",
+        "amplitude": -0.0001,
+        "expected": "pass",
+        "passed": true,
+        "observedGatePassed": true
+      },
+      {
+        "label": "vulnerable negative control",
+        "amplitude": -0.0001,
+        "expected": "reject",
+        "passed": true,
+        "observedGatePassed": false
+      }
+    ],
+    "shaderSHA256": "4dc0ea1c883dd46281fe221151d578a384aa852cf857a65e63feae6681e74281"
+  },
+  "optionalIntermediateTraceValidation": {
+    "type": "Native optional-trace regression with synthetic negative control",
+    "adapter": {
+      "vendor": "google",
+      "architecture": "swiftshader",
+      "device": "swiftshader-device-subzero-",
+      "description": "SwiftShader driver 5.0.0",
+      "isFallbackAdapter": true
+    },
+    "mainShaderFingerprint": "0e782d73",
+    "baseline": {
+      "passed": true,
+      "pixels": [
+        [
+          8,
+          8
+        ],
+        [
+          16,
+          8
+        ],
+        [
+          0,
+          8
+        ]
+      ],
+      "records": 6,
+      "allSixBindings": true,
+      "finiteScalars": 816,
+      "maximumTraceToMainRatio": 0,
+      "mainOutputUnchanged": true
+    },
+    "syntheticFailure": {
+      "passed": true,
+      "originalFailurePreserved": true,
+      "originalSamples": 25,
+      "traceAvailable": true,
+      "selectedPixels": [
+        [
+          16,
+          8
+        ],
+        [
+          0,
+          8
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "records": 6,
+      "traceToMainRatios": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "note": "Synthetic vulnerable-source stress, not a reproduction of the user adapter. No reconstruction-agreement claim is made for this altered path."
+    },
+    "passed": true
+  },
+  "runtimeCoverageRegression": {
+    "groups": 14,
+    "maximumChecks": 81,
+    "selectionIndependentOfGPUValues": true,
+    "allInvalidRejects": true,
+    "note": "Representative sampling only; direct-only passing points do not establish diffraction accuracy."
+  },
+  "axisRegression": {
+    "execution": "Native Dawn WGSL; adapter provenance is required",
+    "adapter": {
+      "vendor": "google",
+      "architecture": "swiftshader",
+      "device": "swiftshader-device-subzero-",
+      "description": "SwiftShader driver 5.0.0",
+      "isFallbackAdapter": true
+    },
+    "exactAxisCases": 12,
+    "ordinaryCases": 1072,
+    "syntheticAxisFailures": 4,
+    "nativeAxisMaxError": 2.847202211775368e-07,
+    "injectedAxisMaxError": 2.847202211775368e-07,
+    "passed": true,
+    "fields": [
+      {
+        "label": "Guarded native",
+        "numericalFailures": 0,
+        "maskMismatches": 0,
+        "edgeMismatches": 0,
+        "maxToleranceRatio": 0.06988880498838036,
+        "gatePassed": true
+      },
+      {
+        "label": "Guarded synthetic axis fault",
+        "numericalFailures": 0,
+        "maskMismatches": 0,
+        "edgeMismatches": 0,
+        "maxToleranceRatio": 0.06988880498838036,
+        "gatePassed": true
+      },
+      {
+        "label": "Unguarded synthetic axis fault",
+        "numericalFailures": 538,
+        "maskMismatches": 0,
+        "edgeMismatches": 0,
+        "maxToleranceRatio": 1242.7858051462117,
+        "gatePassed": false,
+        "gateError": "GPU / CPU 数值核对未通过，已拒绝这次 GPU 图像（首个差异像素 0, 8）"
+      }
+    ],
+    "note": "Native software execution and injected-error negative control; not physical Apple or NVIDIA validation."
+  }
+}

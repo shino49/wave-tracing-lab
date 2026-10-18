@@ -1,0 +1,240 @@
+{
+  "scope": "Independent 2D Helmholtz DD field benchmark; not native PLT recursion or GPU parity validation.",
+  "geometry": {
+    "source": [
+      -1.0,
+      -3.0
+    ],
+    "edge1": [
+      0.0,
+      1.0
+    ],
+    "edge2": [
+      2.0,
+      2.0
+    ],
+    "receiver": [
+      4.0,
+      0.0
+    ],
+    "screens": "x=0,y<=1 and x=2,y<=2, both z-invariant"
+  },
+  "convention": "exp(+i omega t); outgoing -i H_0^(2)(kr)/4; (Delta+k^2)u=-delta",
+  "source_normalization": "conditional power = |u(P)/G(k |E1-S|)|^2",
+  "reference": "5-point conservative cell-centred full Helmholtz, complex-coordinate PML; h+h^2 extrapolation",
+  "cases": [
+    {
+      "boundary": "soft",
+      "k": 8.0,
+      "reference_complex": [
+        3.494603403986029e-05,
+        -1.2667785396309272e-05
+      ],
+      "reference_conditional_power": 1.1455585310309225e-06,
+      "finest_grid_h": 0.01,
+      "extrapolation_fit_max_spread_relative": 0.0009074133030931916,
+      "numerical_reference_uncertainty_budget_complex_relative": 0.04,
+      "uncertainty_is_empirical_not_rigorous_bound": true,
+      "comparisons": {
+        "native_local_plane_both_regions": {
+          "complex_relative_error": 0.11279152794821788,
+          "signed_relative_power_error": -0.02211897045948308,
+          "phase_error_degrees": 6.470486807298448,
+          "complex_field": [
+            3.5748932724300137e-05,
+            -8.55278621132562e-06
+          ],
+          "conditional_power": 1.1202199557234415e-06,
+          "reduced_distances": [
+            2.23606797749979,
+            2.8284271247461903
+          ]
+        },
+        "sequential_curvature_corrected": {
+          "complex_relative_error": 0.25499687503159424,
+          "signed_relative_power_error": -0.1139405791169853,
+          "phase_error_degrees": 14.694765944715448,
+          "complex_field": [
+            3.484382009459322e-05,
+            -3.1897967888350323e-06
+          ],
+          "conditional_power": 1.0150329285928566e-06,
+          "reduced_distances": [
+            1.44980229078401,
+            1.2488027320891224
+          ]
+        }
+      }
+    },
+    {
+      "boundary": "hard",
+      "k": 8.0,
+      "reference_complex": [
+        0.0006742625470716968,
+        -0.00031220535554745874
+      ],
+      "reference_conditional_power": 0.000457744969755291,
+      "finest_grid_h": 0.01,
+      "extrapolation_fit_max_spread_relative": 0.0051495353577589295,
+      "numerical_reference_uncertainty_budget_complex_relative": 0.04,
+      "uncertainty_is_empirical_not_rigorous_bound": true,
+      "comparisons": {
+        "native_local_plane_both_regions": {
+          "complex_relative_error": 0.06214704785568135,
+          "signed_relative_power_error": -0.013075114584962022,
+          "phase_error_degrees": 3.5531156542742246,
+          "complex_field": [
+            0.0006877740821042556,
+            -0.00026804883755256106
+          ],
+          "conditional_power": 0.00045175990182505065,
+          "reduced_distances": [
+            2.23606797749979,
+            2.8284271247461903
+          ]
+        },
+        "sequential_curvature_corrected": {
+          "complex_relative_error": 0.11914327535560984,
+          "signed_relative_power_error": -0.04560612191536084,
+          "phase_error_degrees": 6.7797879695696635,
+          "complex_field": [
+            0.0006901084085222909,
+            -0.0002251073348241883
+          ],
+          "conditional_power": 0.00043686899685848804,
+          "reduced_distances": [
+            1.44980229078401,
+            1.2488027320891224
+          ]
+        }
+      }
+    }
+  ],
+  "exact_halfplane_controls": [
+    {
+      "boundary": "soft",
+      "exact_complex": [
+        -0.0003030059281803149,
+        2.4979819103744957e-05
+      ],
+      "extrapolated_complex": [
+        -0.0003030468554185094,
+        2.5049707686587103e-05
+      ],
+      "complex_relative_error": 0.000266386286292051,
+      "signed_relative_power_error": 0.0003061618914728115,
+      "phase_error_degrees": -0.012490504882754811
+    },
+    {
+      "boundary": "hard",
+      "exact_complex": [
+        -0.0034116252988147192,
+        0.00046606933376243604
+      ],
+      "extrapolated_complex": [
+        -0.003405880855523549,
+        0.00046419280222824135
+      ],
+      "complex_relative_error": 0.0017550472619567972,
+      "signed_relative_power_error": -0.0034503236058032183,
+      "phase_error_degrees": 0.018030713775342603
+    }
+  ],
+  "pml_controls": [
+    {
+      "boundary": "hard",
+      "h": 0.025,
+      "bounds": [
+        -4.0,
+        7.0,
+        -6.0,
+        5.0
+      ],
+      "strength": 12.0,
+      "relative_field_change_at_same_grid": 0.010934220504000475
+    },
+    {
+      "boundary": "hard",
+      "h": 0.025,
+      "bounds": [
+        -4.0,
+        7.0,
+        -6.0,
+        5.0
+      ],
+      "strength": 24.0,
+      "relative_field_change_at_same_grid": 0.00723750330755231
+    },
+    {
+      "boundary": "hard",
+      "h": 0.025,
+      "bounds": [
+        -5,
+        8,
+        -7,
+        6
+      ],
+      "strength": 16,
+      "relative_field_change_at_same_grid": 0.01818588010898228
+    },
+    {
+      "boundary": "hard",
+      "h": 0.01,
+      "bounds": [
+        -4.0,
+        7.0,
+        -6.0,
+        5.0
+      ],
+      "strength": 24.0,
+      "relative_field_change_at_same_grid": 0.007978932615774504
+    },
+    {
+      "boundary": "hard",
+      "h": 0.01,
+      "bounds": [
+        -5,
+        8,
+        -7,
+        6
+      ],
+      "strength": 16,
+      "relative_field_change_at_same_grid": 0.020806276971661562
+    },
+    {
+      "boundary": "soft",
+      "h": 0.01,
+      "bounds": [
+        -4.0,
+        7.0,
+        -6.0,
+        5.0
+      ],
+      "strength": 24.0,
+      "relative_field_change_at_same_grid": 0.005487466309983864
+    },
+    {
+      "boundary": "soft",
+      "h": 0.01,
+      "bounds": [
+        -5,
+        8,
+        -7,
+        6
+      ],
+      "strength": 16.0,
+      "relative_field_change_at_same_grid": 0.014253046804079685
+    }
+  ],
+  "native_bundle_integration_status": "Not validated. At k8 this fixture cannot support two disjoint 3-sigma minimum-uncertainty native interaction regions from the stated source. Conditional field validation only.",
+  "high_frequency_k16_status": "Exploratory only. Mesh extrapolants disagree materially; not certified and not used for any accuracy claim.",
+  "not_claimed": [
+    "3D Gaussian/bundle normalization",
+    "finite-edge endpoints",
+    "grazing or overlapping transitions",
+    "unrestricted multiple diffraction",
+    "absolute irradiance",
+    "global error bounds",
+    "hardware GPU validation"
+  ]
+}

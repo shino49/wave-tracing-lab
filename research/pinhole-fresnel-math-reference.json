@@ -1,0 +1,2232 @@
+{
+  "method": "SciPy 1.17 roots_legendre(1536), direct complex circular-pupil integral; no Zernike expansion",
+  "bessel": [
+    {
+      "x": 0,
+      "j0": 1.0,
+      "j1": 0.0
+    },
+    {
+      "x": 1e-08,
+      "j0": 1.0,
+      "j1": 5.000000000000001e-09
+    },
+    {
+      "x": 0.01,
+      "j0": 0.9999750001562495,
+      "j1": 0.004999937500260416
+    },
+    {
+      "x": 0.5,
+      "j0": 0.938469807240813,
+      "j1": 0.24226845767487387
+    },
+    {
+      "x": 1,
+      "j0": 0.7651976865579665,
+      "j1": 0.44005058574493355
+    },
+    {
+      "x": 4,
+      "j0": -0.3971498098638473,
+      "j1": -0.06604332802354912
+    },
+    {
+      "x": 10,
+      "j0": -0.24593576445134832,
+      "j1": 0.04347274616886141
+    },
+    {
+      "x": 20,
+      "j0": 0.16702466434058322,
+      "j1": 0.0668331241758502
+    },
+    {
+      "x": 40,
+      "j0": 0.007366890584236951,
+      "j1": 0.126038318037585
+    },
+    {
+      "x": 60,
+      "j0": -0.09147180408906201,
+      "j1": 0.046598383758166224
+    },
+    {
+      "x": 100,
+      "j0": 0.01998585030422333,
+      "j1": -0.0771453520141123
+    },
+    {
+      "x": 500,
+      "j0": -0.03410055688073173,
+      "j1": 0.01047261347037299
+    },
+    {
+      "x": 1000,
+      "j0": 0.02478668615242003,
+      "j1": 0.00472831190708902
+    }
+  ],
+  "rows": [
+    {
+      "diameterMm": 0.04,
+      "depthMm": 200,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 360,
+      "radiusMm": 0,
+      "density": 3.8760486953966127
+    },
+    {
+      "diameterMm": 0.04,
+      "depthMm": 200,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 360,
+      "radiusMm": 0.0078125,
+      "density": 3.873166991030646
+    },
+    {
+      "diameterMm": 0.04,
+      "depthMm": 200,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 360,
+      "radiusMm": 0.03125,
+      "density": 3.830155193210626
+    },
+    {
+      "diameterMm": 0.04,
+      "depthMm": 200,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 360,
+      "radiusMm": 0.1,
+      "density": 3.4270745055460203
+    },
+    {
+      "diameterMm": 0.04,
+      "depthMm": 200,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 360,
+      "radiusMm": 0.3,
+      "density": 1.1439347733658511
+    },
+    {
+      "diameterMm": 0.04,
+      "depthMm": 200,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 360,
+      "radiusMm": 0.8,
+      "density": 0.05610018346887417
+    },
+    {
+      "diameterMm": 0.04,
+      "depthMm": 200,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 360,
+      "radiusMm": 2,
+      "density": 0.001289204151203039
+    },
+    {
+      "diameterMm": 0.04,
+      "depthMm": 200,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 360,
+      "radiusMm": 4,
+      "density": 0.00036802512271709827
+    },
+    {
+      "diameterMm": 0.04,
+      "depthMm": 200,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 360,
+      "radiusMm": 8,
+      "density": 5.620075513622865e-05
+    },
+    {
+      "diameterMm": 0.04,
+      "depthMm": 200,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 360,
+      "radiusMm": 11.32,
+      "density": 1.6579901364958262e-06
+    },
+    {
+      "diameterMm": 0.04,
+      "depthMm": 200,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 550,
+      "radiusMm": 0,
+      "density": 1.6612170996778985
+    },
+    {
+      "diameterMm": 0.04,
+      "depthMm": 200,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 550,
+      "radiusMm": 0.0078125,
+      "density": 1.6606878712748847
+    },
+    {
+      "diameterMm": 0.04,
+      "depthMm": 200,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 550,
+      "radiusMm": 0.03125,
+      "density": 1.6527662892311128
+    },
+    {
+      "diameterMm": 0.04,
+      "depthMm": 200,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 550,
+      "radiusMm": 0.1,
+      "density": 1.5763603585959303
+    },
+    {
+      "diameterMm": 0.04,
+      "depthMm": 200,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 550,
+      "radiusMm": 0.3,
+      "density": 1.0179025021726507
+    },
+    {
+      "diameterMm": 0.04,
+      "depthMm": 200,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 550,
+      "radiusMm": 0.8,
+      "density": 0.002658867203184877
+    },
+    {
+      "diameterMm": 0.04,
+      "depthMm": 200,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 550,
+      "radiusMm": 2,
+      "density": 0.0040942418501501935
+    },
+    {
+      "diameterMm": 0.04,
+      "depthMm": 200,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 550,
+      "radiusMm": 4,
+      "density": 0.0006562191892750602
+    },
+    {
+      "diameterMm": 0.04,
+      "depthMm": 200,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 550,
+      "radiusMm": 8,
+      "density": 7.663319962484669e-05
+    },
+    {
+      "diameterMm": 0.04,
+      "depthMm": 200,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 550,
+      "radiusMm": 11.32,
+      "density": 1.2212458919207087e-05
+    },
+    {
+      "diameterMm": 0.04,
+      "depthMm": 200,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 830,
+      "radiusMm": 0,
+      "density": 0.7295613532583237
+    },
+    {
+      "diameterMm": 0.04,
+      "depthMm": 200,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 830,
+      "radiusMm": 0.0078125,
+      "density": 0.7294592874906093
+    },
+    {
+      "diameterMm": 0.04,
+      "depthMm": 200,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 830,
+      "radiusMm": 0.03125,
+      "density": 0.7279297282783388
+    },
+    {
+      "diameterMm": 0.04,
+      "depthMm": 200,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 830,
+      "radiusMm": 0.1,
+      "density": 0.7129968013830388
+    },
+    {
+      "diameterMm": 0.04,
+      "depthMm": 200,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 830,
+      "radiusMm": 0.3,
+      "density": 0.5913846398651301
+    },
+    {
+      "diameterMm": 0.04,
+      "depthMm": 200,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 830,
+      "radiusMm": 0.8,
+      "density": 0.1320532392634107
+    },
+    {
+      "diameterMm": 0.04,
+      "depthMm": 200,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 830,
+      "radiusMm": 2,
+      "density": 0.005601770566731284
+    },
+    {
+      "diameterMm": 0.04,
+      "depthMm": 200,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 830,
+      "radiusMm": 4,
+      "density": 0.0009168593646952105
+    },
+    {
+      "diameterMm": 0.04,
+      "depthMm": 200,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 830,
+      "radiusMm": 8,
+      "density": 0.00012928594542570163
+    },
+    {
+      "diameterMm": 0.04,
+      "depthMm": 200,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 830,
+      "radiusMm": 11.32,
+      "density": 3.4905387560849094e-05
+    },
+    {
+      "diameterMm": 0.04,
+      "depthMm": 250,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 360,
+      "radiusMm": 0,
+      "density": 3.876241573336143
+    },
+    {
+      "diameterMm": 0.04,
+      "depthMm": 250,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 360,
+      "radiusMm": 0.0078125,
+      "density": 3.8733597255651726
+    },
+    {
+      "diameterMm": 0.04,
+      "depthMm": 250,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 360,
+      "radiusMm": 0.03125,
+      "density": 3.830345785609835
+    },
+    {
+      "diameterMm": 0.04,
+      "depthMm": 250,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 360,
+      "radiusMm": 0.1,
+      "density": 3.4272448612734903
+    },
+    {
+      "diameterMm": 0.04,
+      "depthMm": 250,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 360,
+      "radiusMm": 0.3,
+      "density": 1.1439824450542677
+    },
+    {
+      "diameterMm": 0.04,
+      "depthMm": 250,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 360,
+      "radiusMm": 0.8,
+      "density": 0.0560934426982631
+    },
+    {
+      "diameterMm": 0.04,
+      "depthMm": 250,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 360,
+      "radiusMm": 2,
+      "density": 0.0012891370966930365
+    },
+    {
+      "diameterMm": 0.04,
+      "depthMm": 250,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 360,
+      "radiusMm": 4,
+      "density": 0.000368022717542799
+    },
+    {
+      "diameterMm": 0.04,
+      "depthMm": 250,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 360,
+      "radiusMm": 8,
+      "density": 5.6200669193451396e-05
+    },
+    {
+      "diameterMm": 0.04,
+      "depthMm": 250,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 360,
+      "radiusMm": 11.32,
+      "density": 1.657981985529955e-06
+    },
+    {
+      "diameterMm": 0.04,
+      "depthMm": 250,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 550,
+      "radiusMm": 0,
+      "density": 1.6612525126923212
+    },
+    {
+      "diameterMm": 0.04,
+      "depthMm": 250,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 550,
+      "radiusMm": 0.0078125,
+      "density": 1.6607232730072354
+    },
+    {
+      "diameterMm": 0.04,
+      "depthMm": 250,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 550,
+      "radiusMm": 0.03125,
+      "density": 1.652801522034064
+    },
+    {
+      "diameterMm": 0.04,
+      "depthMm": 250,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 550,
+      "radiusMm": 0.1,
+      "density": 1.5763939563932354
+    },
+    {
+      "diameterMm": 0.04,
+      "depthMm": 250,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 550,
+      "radiusMm": 0.3,
+      "density": 1.0179237819299038
+    },
+    {
+      "diameterMm": 0.04,
+      "depthMm": 250,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 550,
+      "radiusMm": 0.8,
+      "density": 0.0026538583327798326
+    },
+    {
+      "diameterMm": 0.04,
+      "depthMm": 250,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 550,
+      "radiusMm": 2,
+      "density": 0.004094145871911683
+    },
+    {
+      "diameterMm": 0.04,
+      "depthMm": 250,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 550,
+      "radiusMm": 4,
+      "density": 0.0006562152451337024
+    },
+    {
+      "diameterMm": 0.04,
+      "depthMm": 250,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 550,
+      "radiusMm": 8,
+      "density": 7.663307215236593e-05
+    },
+    {
+      "diameterMm": 0.04,
+      "depthMm": 250,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 550,
+      "radiusMm": 11.32,
+      "density": 1.221244202300865e-05
+    },
+    {
+      "diameterMm": 0.04,
+      "depthMm": 250,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 830,
+      "radiusMm": 0,
+      "density": 0.7295681821809762
+    },
+    {
+      "diameterMm": 0.04,
+      "depthMm": 250,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 830,
+      "radiusMm": 0.0078125,
+      "density": 0.7294661154578851
+    },
+    {
+      "diameterMm": 0.04,
+      "depthMm": 250,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 830,
+      "radiusMm": 0.03125,
+      "density": 0.7279365419261914
+    },
+    {
+      "diameterMm": 0.04,
+      "depthMm": 250,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 830,
+      "radiusMm": 0.1,
+      "density": 0.7130034750195677
+    },
+    {
+      "diameterMm": 0.04,
+      "depthMm": 250,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 830,
+      "radiusMm": 0.3,
+      "density": 0.5913901577877305
+    },
+    {
+      "diameterMm": 0.04,
+      "depthMm": 250,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 830,
+      "radiusMm": 0.8,
+      "density": 0.13205398538381474
+    },
+    {
+      "diameterMm": 0.04,
+      "depthMm": 250,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 830,
+      "radiusMm": 2,
+      "density": 0.005601657322299464
+    },
+    {
+      "diameterMm": 0.04,
+      "depthMm": 250,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 830,
+      "radiusMm": 4,
+      "density": 0.0009168539724493419
+    },
+    {
+      "diameterMm": 0.04,
+      "depthMm": 250,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 830,
+      "radiusMm": 8,
+      "density": 0.00012928574574430225
+    },
+    {
+      "diameterMm": 0.04,
+      "depthMm": 250,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 830,
+      "radiusMm": 11.32,
+      "density": 3.490535778428132e-05
+    },
+    {
+      "diameterMm": 0.04,
+      "depthMm": 300,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 360,
+      "radiusMm": 0,
+      "density": 3.876365789044153
+    },
+    {
+      "diameterMm": 0.04,
+      "depthMm": 300,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 360,
+      "radiusMm": 0.0078125,
+      "density": 3.8734838489186436
+    },
+    {
+      "diameterMm": 0.04,
+      "depthMm": 300,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 360,
+      "radiusMm": 0.03125,
+      "density": 3.8304685294024354
+    },
+    {
+      "diameterMm": 0.04,
+      "depthMm": 300,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 360,
+      "radiusMm": 0.1,
+      "density": 3.4273545724049845
+    },
+    {
+      "diameterMm": 0.04,
+      "depthMm": 300,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 360,
+      "radiusMm": 0.3,
+      "density": 1.1440131461071368
+    },
+    {
+      "diameterMm": 0.04,
+      "depthMm": 300,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 360,
+      "radiusMm": 0.8,
+      "density": 0.05608910153423944
+    },
+    {
+      "diameterMm": 0.04,
+      "depthMm": 300,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 360,
+      "radiusMm": 2,
+      "density": 0.0012890939156155834
+    },
+    {
+      "diameterMm": 0.04,
+      "depthMm": 300,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 360,
+      "radiusMm": 4,
+      "density": 0.00036802116864357003
+    },
+    {
+      "diameterMm": 0.04,
+      "depthMm": 300,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 360,
+      "radiusMm": 8,
+      "density": 5.620061384718573e-05
+    },
+    {
+      "diameterMm": 0.04,
+      "depthMm": 300,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 360,
+      "radiusMm": 11.32,
+      "density": 1.65797673638815e-06
+    },
+    {
+      "diameterMm": 0.04,
+      "depthMm": 300,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 550,
+      "radiusMm": 0,
+      "density": 1.6612753186720945
+    },
+    {
+      "diameterMm": 0.04,
+      "depthMm": 300,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 550,
+      "radiusMm": 0.0078125,
+      "density": 1.6607460717213551
+    },
+    {
+      "diameterMm": 0.04,
+      "depthMm": 300,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 550,
+      "radiusMm": 0.03125,
+      "density": 1.6528242119576566
+    },
+    {
+      "diameterMm": 0.04,
+      "depthMm": 300,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 550,
+      "radiusMm": 0.1,
+      "density": 1.5764155933732382
+    },
+    {
+      "diameterMm": 0.04,
+      "depthMm": 300,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 550,
+      "radiusMm": 0.3,
+      "density": 1.017937486091016
+    },
+    {
+      "diameterMm": 0.04,
+      "depthMm": 300,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 550,
+      "radiusMm": 0.8,
+      "density": 0.0026506325991045828
+    },
+    {
+      "diameterMm": 0.04,
+      "depthMm": 300,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 550,
+      "radiusMm": 2,
+      "density": 0.004094084063775367
+    },
+    {
+      "diameterMm": 0.04,
+      "depthMm": 300,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 550,
+      "radiusMm": 4,
+      "density": 0.0006562127051592399
+    },
+    {
+      "diameterMm": 0.04,
+      "depthMm": 300,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 550,
+      "radiusMm": 8,
+      "density": 7.663299006140154e-05
+    },
+    {
+      "diameterMm": 0.04,
+      "depthMm": 300,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 550,
+      "radiusMm": 11.32,
+      "density": 1.2212431142021994e-05
+    },
+    {
+      "diameterMm": 0.04,
+      "depthMm": 300,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 830,
+      "radiusMm": 0,
+      "density": 0.7295725799722933
+    },
+    {
+      "diameterMm": 0.04,
+      "depthMm": 300,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 830,
+      "radiusMm": 0.0078125,
+      "density": 0.7294705126339448
+    },
+    {
+      "diameterMm": 0.04,
+      "depthMm": 300,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 830,
+      "radiusMm": 0.03125,
+      "density": 0.7279409298806155
+    },
+    {
+      "diameterMm": 0.04,
+      "depthMm": 300,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 830,
+      "radiusMm": 0.1,
+      "density": 0.713007772807414
+    },
+    {
+      "diameterMm": 0.04,
+      "depthMm": 300,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 830,
+      "radiusMm": 0.3,
+      "density": 0.5913937113016786
+    },
+    {
+      "diameterMm": 0.04,
+      "depthMm": 300,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 830,
+      "radiusMm": 0.8,
+      "density": 0.13205446588067218
+    },
+    {
+      "diameterMm": 0.04,
+      "depthMm": 300,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 830,
+      "radiusMm": 2,
+      "density": 0.005601584393830856
+    },
+    {
+      "diameterMm": 0.04,
+      "depthMm": 300,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 830,
+      "radiusMm": 4,
+      "density": 0.0009168504999107944
+    },
+    {
+      "diameterMm": 0.04,
+      "depthMm": 300,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 830,
+      "radiusMm": 8,
+      "density": 0.00012928561715152303
+    },
+    {
+      "diameterMm": 0.04,
+      "depthMm": 300,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 830,
+      "radiusMm": 11.32,
+      "density": 3.490533860845953e-05
+    },
+    {
+      "diameterMm": 0.16,
+      "depthMm": 200,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 360,
+      "radiusMm": 0,
+      "density": 52.607190902923165
+    },
+    {
+      "diameterMm": 0.16,
+      "depthMm": 200,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 360,
+      "radiusMm": 0.0078125,
+      "density": 51.98439292256231
+    },
+    {
+      "diameterMm": 0.16,
+      "depthMm": 200,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 360,
+      "radiusMm": 0.03125,
+      "density": 43.37205994600405
+    },
+    {
+      "diameterMm": 0.16,
+      "depthMm": 200,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 360,
+      "radiusMm": 0.1,
+      "density": 5.49982973467979
+    },
+    {
+      "diameterMm": 0.16,
+      "depthMm": 200,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 360,
+      "radiusMm": 0.3,
+      "density": 0.32096043160118404
+    },
+    {
+      "diameterMm": 0.16,
+      "depthMm": 200,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 360,
+      "radiusMm": 0.8,
+      "density": 0.002599147363228285
+    },
+    {
+      "diameterMm": 0.16,
+      "depthMm": 200,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 360,
+      "radiusMm": 2,
+      "density": 0.0009037011522121832
+    },
+    {
+      "diameterMm": 0.16,
+      "depthMm": 200,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 360,
+      "radiusMm": 4,
+      "density": 7.656175962245179e-05
+    },
+    {
+      "diameterMm": 0.16,
+      "depthMm": 200,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 360,
+      "radiusMm": 8,
+      "density": 2.515801299376578e-06
+    },
+    {
+      "diameterMm": 0.16,
+      "depthMm": 200,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 360,
+      "radiusMm": 11.32,
+      "density": 4.2438315968982045e-06
+    },
+    {
+      "diameterMm": 0.16,
+      "depthMm": 200,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 550,
+      "radiusMm": 0,
+      "density": 24.78692582373258
+    },
+    {
+      "diameterMm": 0.16,
+      "depthMm": 200,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 550,
+      "radiusMm": 0.0078125,
+      "density": 24.660834823951493
+    },
+    {
+      "diameterMm": 0.16,
+      "depthMm": 200,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 550,
+      "radiusMm": 0.03125,
+      "density": 22.833312171103767
+    },
+    {
+      "diameterMm": 0.16,
+      "depthMm": 200,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 550,
+      "radiusMm": 0.1,
+      "density": 10.102135165959139
+    },
+    {
+      "diameterMm": 0.16,
+      "depthMm": 200,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 550,
+      "radiusMm": 0.3,
+      "density": 0.48677393685649856
+    },
+    {
+      "diameterMm": 0.16,
+      "depthMm": 200,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 550,
+      "radiusMm": 0.8,
+      "density": 0.020782452681887918
+    },
+    {
+      "diameterMm": 0.16,
+      "depthMm": 200,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 550,
+      "radiusMm": 2,
+      "density": 0.001232790171416798
+    },
+    {
+      "diameterMm": 0.16,
+      "depthMm": 200,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 550,
+      "radiusMm": 4,
+      "density": 1.1221989026689047e-06
+    },
+    {
+      "diameterMm": 0.16,
+      "depthMm": 200,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 550,
+      "radiusMm": 8,
+      "density": 1.3935938183219944e-05
+    },
+    {
+      "diameterMm": 0.16,
+      "depthMm": 200,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 550,
+      "radiusMm": 11.32,
+      "density": 6.730047099453487e-06
+    },
+    {
+      "diameterMm": 0.16,
+      "depthMm": 200,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 830,
+      "radiusMm": 0,
+      "density": 11.321899935179353
+    },
+    {
+      "diameterMm": 0.16,
+      "depthMm": 200,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 830,
+      "radiusMm": 0.0078125,
+      "density": 11.296579227559869
+    },
+    {
+      "diameterMm": 0.16,
+      "depthMm": 200,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 830,
+      "radiusMm": 0.03125,
+      "density": 10.922419571784019
+    },
+    {
+      "diameterMm": 0.16,
+      "depthMm": 200,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 830,
+      "radiusMm": 0.1,
+      "density": 7.755254283421535
+    },
+    {
+      "diameterMm": 0.16,
+      "depthMm": 200,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 830,
+      "radiusMm": 0.3,
+      "density": 0.07271742861459542
+    },
+    {
+      "diameterMm": 0.16,
+      "depthMm": 200,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 830,
+      "radiusMm": 0.8,
+      "density": 0.00755700548453149
+    },
+    {
+      "diameterMm": 0.16,
+      "depthMm": 200,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 830,
+      "radiusMm": 2,
+      "density": 0.002079003731486162
+    },
+    {
+      "diameterMm": 0.16,
+      "depthMm": 200,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 830,
+      "radiusMm": 4,
+      "density": 7.097256007922826e-05
+    },
+    {
+      "diameterMm": 0.16,
+      "depthMm": 200,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 830,
+      "radiusMm": 8,
+      "density": 2.9885128070629317e-05
+    },
+    {
+      "diameterMm": 0.16,
+      "depthMm": 200,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 830,
+      "radiusMm": 11.32,
+      "density": 1.0308649308365069e-05
+    },
+    {
+      "diameterMm": 0.16,
+      "depthMm": 250,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 360,
+      "radiusMm": 0,
+      "density": 53.30372107398122
+    },
+    {
+      "diameterMm": 0.16,
+      "depthMm": 250,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 360,
+      "radiusMm": 0.0078125,
+      "density": 52.67266980548385
+    },
+    {
+      "diameterMm": 0.16,
+      "depthMm": 250,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 360,
+      "radiusMm": 0.03125,
+      "density": 43.944591108141346
+    },
+    {
+      "diameterMm": 0.16,
+      "depthMm": 250,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 360,
+      "radiusMm": 0.1,
+      "density": 5.495113538528245
+    },
+    {
+      "diameterMm": 0.16,
+      "depthMm": 250,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 360,
+      "radiusMm": 0.3,
+      "density": 0.3156671722977332
+    },
+    {
+      "diameterMm": 0.16,
+      "depthMm": 250,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 360,
+      "radiusMm": 0.8,
+      "density": 0.0025794224548535403
+    },
+    {
+      "diameterMm": 0.16,
+      "depthMm": 250,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 360,
+      "radiusMm": 2,
+      "density": 0.0009033466265843644
+    },
+    {
+      "diameterMm": 0.16,
+      "depthMm": 250,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 360,
+      "radiusMm": 4,
+      "density": 7.655232625905194e-05
+    },
+    {
+      "diameterMm": 0.16,
+      "depthMm": 250,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 360,
+      "radiusMm": 8,
+      "density": 2.515598271576338e-06
+    },
+    {
+      "diameterMm": 0.16,
+      "depthMm": 250,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 360,
+      "radiusMm": 11.32,
+      "density": 4.243774845611912e-06
+    },
+    {
+      "diameterMm": 0.16,
+      "depthMm": 250,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 550,
+      "radiusMm": 0,
+      "density": 24.92441088752343
+    },
+    {
+      "diameterMm": 0.16,
+      "depthMm": 250,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 550,
+      "radiusMm": 0.0078125,
+      "density": 24.797620252594896
+    },
+    {
+      "diameterMm": 0.16,
+      "depthMm": 250,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 550,
+      "radiusMm": 0.03125,
+      "density": 22.95989959645361
+    },
+    {
+      "diameterMm": 0.16,
+      "depthMm": 250,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 550,
+      "radiusMm": 0.1,
+      "density": 10.153629949902344
+    },
+    {
+      "diameterMm": 0.16,
+      "depthMm": 250,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 550,
+      "radiusMm": 0.3,
+      "density": 0.481289297900876
+    },
+    {
+      "diameterMm": 0.16,
+      "depthMm": 250,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 550,
+      "radiusMm": 0.8,
+      "density": 0.020727899090640756
+    },
+    {
+      "diameterMm": 0.16,
+      "depthMm": 250,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 550,
+      "radiusMm": 2,
+      "density": 0.0012322642278038165
+    },
+    {
+      "diameterMm": 0.16,
+      "depthMm": 250,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 550,
+      "radiusMm": 4,
+      "density": 1.1135970805767346e-06
+    },
+    {
+      "diameterMm": 0.16,
+      "depthMm": 250,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 550,
+      "radiusMm": 8,
+      "density": 1.3935497802403302e-05
+    },
+    {
+      "diameterMm": 0.16,
+      "depthMm": 250,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 550,
+      "radiusMm": 11.32,
+      "density": 6.7299595259617496e-06
+    },
+    {
+      "diameterMm": 0.16,
+      "depthMm": 250,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 830,
+      "radiusMm": 0,
+      "density": 11.349222774096836
+    },
+    {
+      "diameterMm": 0.16,
+      "depthMm": 250,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 830,
+      "radiusMm": 0.0078125,
+      "density": 11.323840951381396
+    },
+    {
+      "diameterMm": 0.16,
+      "depthMm": 250,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 830,
+      "radiusMm": 0.03125,
+      "density": 10.948776008974846
+    },
+    {
+      "diameterMm": 0.16,
+      "depthMm": 250,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 830,
+      "radiusMm": 0.1,
+      "density": 7.773758701514083
+    },
+    {
+      "diameterMm": 0.16,
+      "depthMm": 250,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 830,
+      "radiusMm": 0.3,
+      "density": 0.06891836781620572
+    },
+    {
+      "diameterMm": 0.16,
+      "depthMm": 250,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 830,
+      "radiusMm": 0.8,
+      "density": 0.007516331884382715
+    },
+    {
+      "diameterMm": 0.16,
+      "depthMm": 250,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 830,
+      "radiusMm": 2,
+      "density": 0.0020781802320798044
+    },
+    {
+      "diameterMm": 0.16,
+      "depthMm": 250,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 830,
+      "radiusMm": 4,
+      "density": 7.09556751827681e-05
+    },
+    {
+      "diameterMm": 0.16,
+      "depthMm": 250,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 830,
+      "radiusMm": 8,
+      "density": 2.9884367613189876e-05
+    },
+    {
+      "diameterMm": 0.16,
+      "depthMm": 250,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 830,
+      "radiusMm": 11.32,
+      "density": 1.0308514890328396e-05
+    },
+    {
+      "diameterMm": 0.16,
+      "depthMm": 300,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 360,
+      "radiusMm": 0,
+      "density": 53.756145496522024
+    },
+    {
+      "diameterMm": 0.16,
+      "depthMm": 300,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 360,
+      "radiusMm": 0.0078125,
+      "density": 53.11973336796944
+    },
+    {
+      "diameterMm": 0.16,
+      "depthMm": 300,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 360,
+      "radiusMm": 0.03125,
+      "density": 44.31646920764101
+    },
+    {
+      "diameterMm": 0.16,
+      "depthMm": 300,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 360,
+      "radiusMm": 0.1,
+      "density": 5.491861506444426
+    },
+    {
+      "diameterMm": 0.16,
+      "depthMm": 300,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 360,
+      "radiusMm": 0.3,
+      "density": 0.31228535317135897
+    },
+    {
+      "diameterMm": 0.16,
+      "depthMm": 300,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 360,
+      "radiusMm": 0.8,
+      "density": 0.002566763644150025
+    },
+    {
+      "diameterMm": 0.16,
+      "depthMm": 300,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 360,
+      "radiusMm": 2,
+      "density": 0.0009031184243504788
+    },
+    {
+      "diameterMm": 0.16,
+      "depthMm": 300,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 360,
+      "radiusMm": 4,
+      "density": 7.65462520460035e-05
+    },
+    {
+      "diameterMm": 0.16,
+      "depthMm": 300,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 360,
+      "radiusMm": 8,
+      "density": 2.515467528364245e-06
+    },
+    {
+      "diameterMm": 0.16,
+      "depthMm": 300,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 360,
+      "radiusMm": 11.32,
+      "density": 4.243738298866059e-06
+    },
+    {
+      "diameterMm": 0.16,
+      "depthMm": 300,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 550,
+      "radiusMm": 0,
+      "density": 25.013271570859413
+    },
+    {
+      "diameterMm": 0.16,
+      "depthMm": 300,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 550,
+      "radiusMm": 0.0078125,
+      "density": 24.886028740693458
+    },
+    {
+      "diameterMm": 0.16,
+      "depthMm": 300,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 550,
+      "radiusMm": 0.03125,
+      "density": 23.04171675126362
+    },
+    {
+      "diameterMm": 0.16,
+      "depthMm": 300,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 550,
+      "radiusMm": 0.1,
+      "density": 10.186907956301827
+    },
+    {
+      "diameterMm": 0.16,
+      "depthMm": 300,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 550,
+      "radiusMm": 0.3,
+      "density": 0.477740509345897
+    },
+    {
+      "diameterMm": 0.16,
+      "depthMm": 300,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 550,
+      "radiusMm": 0.8,
+      "density": 0.02069286032038155
+    },
+    {
+      "diameterMm": 0.16,
+      "depthMm": 300,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 550,
+      "radiusMm": 2,
+      "density": 0.001231925691086425
+    },
+    {
+      "diameterMm": 0.16,
+      "depthMm": 300,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 550,
+      "radiusMm": 4,
+      "density": 1.1080584743797985e-06
+    },
+    {
+      "diameterMm": 0.16,
+      "depthMm": 300,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 550,
+      "radiusMm": 8,
+      "density": 1.3935214210394019e-05
+    },
+    {
+      "diameterMm": 0.16,
+      "depthMm": 300,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 550,
+      "radiusMm": 11.32,
+      "density": 6.729903130292651e-06
+    },
+    {
+      "diameterMm": 0.16,
+      "depthMm": 300,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 830,
+      "radiusMm": 0,
+      "density": 11.366846305609643
+    },
+    {
+      "diameterMm": 0.16,
+      "depthMm": 300,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 830,
+      "radiusMm": 0.0078125,
+      "density": 11.341425062981319
+    },
+    {
+      "diameterMm": 0.16,
+      "depthMm": 300,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 830,
+      "radiusMm": 0.03125,
+      "density": 10.965776199728808
+    },
+    {
+      "diameterMm": 0.16,
+      "depthMm": 300,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 830,
+      "radiusMm": 0.1,
+      "density": 7.785694161835881
+    },
+    {
+      "diameterMm": 0.16,
+      "depthMm": 300,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 830,
+      "radiusMm": 0.3,
+      "density": 0.06646605239523484
+    },
+    {
+      "diameterMm": 0.16,
+      "depthMm": 300,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 830,
+      "radiusMm": 0.8,
+      "density": 0.007490202305992046
+    },
+    {
+      "diameterMm": 0.16,
+      "depthMm": 300,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 830,
+      "radiusMm": 2,
+      "density": 0.0020776501498647277
+    },
+    {
+      "diameterMm": 0.16,
+      "depthMm": 300,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 830,
+      "radiusMm": 4,
+      "density": 7.094480304394966e-05
+    },
+    {
+      "diameterMm": 0.16,
+      "depthMm": 300,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 830,
+      "radiusMm": 8,
+      "density": 2.9883877900362207e-05
+    },
+    {
+      "diameterMm": 0.16,
+      "depthMm": 300,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 830,
+      "radiusMm": 11.32,
+      "density": 1.0308428327666694e-05
+    },
+    {
+      "diameterMm": 0.5,
+      "depthMm": 200,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 360,
+      "radiusMm": 0,
+      "density": 3.383427192689425
+    },
+    {
+      "diameterMm": 0.5,
+      "depthMm": 200,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 360,
+      "radiusMm": 0.0078125,
+      "density": 3.0403473441843847
+    },
+    {
+      "diameterMm": 0.5,
+      "depthMm": 200,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 360,
+      "radiusMm": 0.03125,
+      "density": 3.456162164607114
+    },
+    {
+      "diameterMm": 0.5,
+      "depthMm": 200,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 360,
+      "radiusMm": 0.1,
+      "density": 2.753417298679096
+    },
+    {
+      "diameterMm": 0.5,
+      "depthMm": 200,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 360,
+      "radiusMm": 0.3,
+      "density": 0.9417085465719447
+    },
+    {
+      "diameterMm": 0.5,
+      "depthMm": 200,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 360,
+      "radiusMm": 0.8,
+      "density": 0.0009907289558602915
+    },
+    {
+      "diameterMm": 0.5,
+      "depthMm": 200,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 360,
+      "radiusMm": 2,
+      "density": 0.0002077923663015944
+    },
+    {
+      "diameterMm": 0.5,
+      "depthMm": 200,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 360,
+      "radiusMm": 4,
+      "density": 6.713108730163927e-06
+    },
+    {
+      "diameterMm": 0.5,
+      "depthMm": 200,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 360,
+      "radiusMm": 8,
+      "density": 4.101882390438868e-08
+    },
+    {
+      "diameterMm": 0.5,
+      "depthMm": 200,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 360,
+      "radiusMm": 11.32,
+      "density": 5.288531494098833e-07
+    },
+    {
+      "diameterMm": 0.5,
+      "depthMm": 200,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 550,
+      "radiusMm": 0,
+      "density": 12.24056392619686
+    },
+    {
+      "diameterMm": 0.5,
+      "depthMm": 200,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 550,
+      "radiusMm": 0.0078125,
+      "density": 11.646172240786122
+    },
+    {
+      "diameterMm": 0.5,
+      "depthMm": 200,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 550,
+      "radiusMm": 0.03125,
+      "density": 5.575266374842919
+    },
+    {
+      "diameterMm": 0.5,
+      "depthMm": 200,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 550,
+      "radiusMm": 0.1,
+      "density": 3.548451069623148
+    },
+    {
+      "diameterMm": 0.5,
+      "depthMm": 200,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 550,
+      "radiusMm": 0.3,
+      "density": 0.9951427402656593
+    },
+    {
+      "diameterMm": 0.5,
+      "depthMm": 200,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 550,
+      "radiusMm": 0.8,
+      "density": 0.006845002775394628
+    },
+    {
+      "diameterMm": 0.5,
+      "depthMm": 200,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 550,
+      "radiusMm": 2,
+      "density": 6.803569432960615e-05
+    },
+    {
+      "diameterMm": 0.5,
+      "depthMm": 200,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 550,
+      "radiusMm": 4,
+      "density": 5.5845127302958436e-05
+    },
+    {
+      "diameterMm": 0.5,
+      "depthMm": 200,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 550,
+      "radiusMm": 8,
+      "density": 2.5083858699430063e-06
+    },
+    {
+      "diameterMm": 0.5,
+      "depthMm": 200,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 550,
+      "radiusMm": 11.32,
+      "density": 2.338253034773825e-06
+    },
+    {
+      "diameterMm": 0.5,
+      "depthMm": 200,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 830,
+      "radiusMm": 0,
+      "density": 0.4389027514317964
+    },
+    {
+      "diameterMm": 0.5,
+      "depthMm": 200,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 830,
+      "radiusMm": 0.0078125,
+      "density": 0.43099542471661406
+    },
+    {
+      "diameterMm": 0.5,
+      "depthMm": 200,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 830,
+      "radiusMm": 0.03125,
+      "density": 0.6543833913810854
+    },
+    {
+      "diameterMm": 0.5,
+      "depthMm": 200,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 830,
+      "radiusMm": 0.1,
+      "density": 6.708436806301328
+    },
+    {
+      "diameterMm": 0.5,
+      "depthMm": 200,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 830,
+      "radiusMm": 0.3,
+      "density": 1.0381196697254749
+    },
+    {
+      "diameterMm": 0.5,
+      "depthMm": 200,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 830,
+      "radiusMm": 0.8,
+      "density": 0.013258677335654582
+    },
+    {
+      "diameterMm": 0.5,
+      "depthMm": 200,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 830,
+      "radiusMm": 2,
+      "density": 0.00016164512641104347
+    },
+    {
+      "diameterMm": 0.5,
+      "depthMm": 200,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 830,
+      "radiusMm": 4,
+      "density": 3.132471960471196e-06
+    },
+    {
+      "diameterMm": 0.5,
+      "depthMm": 200,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 830,
+      "radiusMm": 8,
+      "density": 1.8127405884187255e-06
+    },
+    {
+      "diameterMm": 0.5,
+      "depthMm": 200,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 830,
+      "radiusMm": 11.32,
+      "density": 6.354807128481487e-07
+    },
+    {
+      "diameterMm": 0.5,
+      "depthMm": 250,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 360,
+      "radiusMm": 0,
+      "density": 0.9476764105044562
+    },
+    {
+      "diameterMm": 0.5,
+      "depthMm": 250,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 360,
+      "radiusMm": 0.0078125,
+      "density": 0.8840160008516599
+    },
+    {
+      "diameterMm": 0.5,
+      "depthMm": 250,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 360,
+      "radiusMm": 0.03125,
+      "density": 4.324748974410515
+    },
+    {
+      "diameterMm": 0.5,
+      "depthMm": 250,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 360,
+      "radiusMm": 0.1,
+      "density": 2.8484924376356786
+    },
+    {
+      "diameterMm": 0.5,
+      "depthMm": 250,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 360,
+      "radiusMm": 0.3,
+      "density": 0.770962953961096
+    },
+    {
+      "diameterMm": 0.5,
+      "depthMm": 250,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 360,
+      "radiusMm": 0.8,
+      "density": 0.000891384690015941
+    },
+    {
+      "diameterMm": 0.5,
+      "depthMm": 250,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 360,
+      "radiusMm": 2,
+      "density": 0.00020678137002394574
+    },
+    {
+      "diameterMm": 0.5,
+      "depthMm": 250,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 360,
+      "radiusMm": 4,
+      "density": 6.692309477242338e-06
+    },
+    {
+      "diameterMm": 0.5,
+      "depthMm": 250,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 360,
+      "radiusMm": 8,
+      "density": 4.046932587589879e-08
+    },
+    {
+      "diameterMm": 0.5,
+      "depthMm": 250,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 360,
+      "radiusMm": 11.32,
+      "density": 5.287254477958887e-07
+    },
+    {
+      "diameterMm": 0.5,
+      "depthMm": 250,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 550,
+      "radiusMm": 0,
+      "density": 11.705745152712245
+    },
+    {
+      "diameterMm": 0.5,
+      "depthMm": 250,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 550,
+      "radiusMm": 0.0078125,
+      "density": 11.137986257170146
+    },
+    {
+      "diameterMm": 0.5,
+      "depthMm": 250,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 550,
+      "radiusMm": 0.03125,
+      "density": 5.440635885463304
+    },
+    {
+      "diameterMm": 0.5,
+      "depthMm": 250,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 550,
+      "radiusMm": 0.1,
+      "density": 4.152456878375533
+    },
+    {
+      "diameterMm": 0.5,
+      "depthMm": 250,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 550,
+      "radiusMm": 0.3,
+      "density": 0.8664307450711108
+    },
+    {
+      "diameterMm": 0.5,
+      "depthMm": 250,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 550,
+      "radiusMm": 0.8,
+      "density": 0.006612138863542448
+    },
+    {
+      "diameterMm": 0.5,
+      "depthMm": 250,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 550,
+      "radiusMm": 2,
+      "density": 6.697851989918346e-05
+    },
+    {
+      "diameterMm": 0.5,
+      "depthMm": 250,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 550,
+      "radiusMm": 4,
+      "density": 5.5791226453471895e-05
+    },
+    {
+      "diameterMm": 0.5,
+      "depthMm": 250,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 550,
+      "radiusMm": 8,
+      "density": 2.5072484843285713e-06
+    },
+    {
+      "diameterMm": 0.5,
+      "depthMm": 250,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 550,
+      "radiusMm": 11.32,
+      "density": 2.337967027028161e-06
+    },
+    {
+      "diameterMm": 0.5,
+      "depthMm": 250,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 830,
+      "radiusMm": 0,
+      "density": 1.2579888816889924
+    },
+    {
+      "diameterMm": 0.5,
+      "depthMm": 250,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 830,
+      "radiusMm": 0.0078125,
+      "density": 1.2324784303662213
+    },
+    {
+      "diameterMm": 0.5,
+      "depthMm": 250,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 830,
+      "radiusMm": 0.03125,
+      "density": 1.2566080970608051
+    },
+    {
+      "diameterMm": 0.5,
+      "depthMm": 250,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 830,
+      "radiusMm": 0.1,
+      "density": 7.386872627860031
+    },
+    {
+      "diameterMm": 0.5,
+      "depthMm": 250,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 830,
+      "radiusMm": 0.3,
+      "density": 0.9553549895163218
+    },
+    {
+      "diameterMm": 0.5,
+      "depthMm": 250,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 830,
+      "radiusMm": 0.8,
+      "density": 0.012875373792068039
+    },
+    {
+      "diameterMm": 0.5,
+      "depthMm": 250,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 830,
+      "radiusMm": 2,
+      "density": 0.00015999409195319376
+    },
+    {
+      "diameterMm": 0.5,
+      "depthMm": 250,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 830,
+      "radiusMm": 4,
+      "density": 3.0904704429289555e-06
+    },
+    {
+      "diameterMm": 0.5,
+      "depthMm": 250,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 830,
+      "radiusMm": 8,
+      "density": 1.8112592672141889e-06
+    },
+    {
+      "diameterMm": 0.5,
+      "depthMm": 250,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 830,
+      "radiusMm": 11.32,
+      "density": 6.352207514113383e-07
+    },
+    {
+      "diameterMm": 0.5,
+      "depthMm": 300,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 360,
+      "radiusMm": 0,
+      "density": 0.09557132003296316
+    },
+    {
+      "diameterMm": 0.5,
+      "depthMm": 300,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 360,
+      "radiusMm": 0.0078125,
+      "density": 0.13184430278193388
+    },
+    {
+      "diameterMm": 0.5,
+      "depthMm": 300,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 360,
+      "radiusMm": 0.03125,
+      "density": 4.880762035224969
+    },
+    {
+      "diameterMm": 0.5,
+      "depthMm": 300,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 360,
+      "radiusMm": 0.1,
+      "density": 3.008310797779156
+    },
+    {
+      "diameterMm": 0.5,
+      "depthMm": 300,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 360,
+      "radiusMm": 0.3,
+      "density": 0.6702000297404185
+    },
+    {
+      "diameterMm": 0.5,
+      "depthMm": 300,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 360,
+      "radiusMm": 0.8,
+      "density": 0.0008300511036878441
+    },
+    {
+      "diameterMm": 0.5,
+      "depthMm": 300,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 360,
+      "radiusMm": 2,
+      "density": 0.00020613364963756146
+    },
+    {
+      "diameterMm": 0.5,
+      "depthMm": 300,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 360,
+      "radiusMm": 4,
+      "density": 6.678934442723548e-06
+    },
+    {
+      "diameterMm": 0.5,
+      "depthMm": 300,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 360,
+      "radiusMm": 8,
+      "density": 4.011559283854063e-08
+    },
+    {
+      "diameterMm": 0.5,
+      "depthMm": 300,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 360,
+      "radiusMm": 11.32,
+      "density": 5.286432232909303e-07
+    },
+    {
+      "diameterMm": 0.5,
+      "depthMm": 300,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 550,
+      "radiusMm": 0,
+      "density": 10.912682484114047
+    },
+    {
+      "diameterMm": 0.5,
+      "depthMm": 300,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 550,
+      "radiusMm": 0.0078125,
+      "density": 10.38419988415994
+    },
+    {
+      "diameterMm": 0.5,
+      "depthMm": 300,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 550,
+      "radiusMm": 0.03125,
+      "density": 5.208743578554971
+    },
+    {
+      "diameterMm": 0.5,
+      "depthMm": 300,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 550,
+      "radiusMm": 0.1,
+      "density": 4.590037547382783
+    },
+    {
+      "diameterMm": 0.5,
+      "depthMm": 300,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 550,
+      "radiusMm": 0.3,
+      "density": 0.7864990665414728
+    },
+    {
+      "diameterMm": 0.5,
+      "depthMm": 300,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 550,
+      "radiusMm": 0.8,
+      "density": 0.006467422376377861
+    },
+    {
+      "diameterMm": 0.5,
+      "depthMm": 300,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 550,
+      "radiusMm": 2,
+      "density": 6.630182296409051e-05
+    },
+    {
+      "diameterMm": 0.5,
+      "depthMm": 300,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 550,
+      "radiusMm": 4,
+      "density": 5.575655599788164e-05
+    },
+    {
+      "diameterMm": 0.5,
+      "depthMm": 300,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 550,
+      "radiusMm": 8,
+      "density": 2.5065162690961184e-06
+    },
+    {
+      "diameterMm": 0.5,
+      "depthMm": 300,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 550,
+      "radiusMm": 11.32,
+      "density": 2.3377828679777273e-06
+    },
+    {
+      "diameterMm": 0.5,
+      "depthMm": 300,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 830,
+      "radiusMm": 0,
+      "density": 2.07633767071053
+    },
+    {
+      "diameterMm": 0.5,
+      "depthMm": 300,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 830,
+      "radiusMm": 0.0078125,
+      "density": 2.0331861294886893
+    },
+    {
+      "diameterMm": 0.5,
+      "depthMm": 300,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 830,
+      "radiusMm": 0.03125,
+      "density": 1.8463912528335202
+    },
+    {
+      "diameterMm": 0.5,
+      "depthMm": 300,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 830,
+      "radiusMm": 0.1,
+      "density": 7.809092921825769
+    },
+    {
+      "diameterMm": 0.5,
+      "depthMm": 300,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 830,
+      "radiusMm": 0.3,
+      "density": 0.9015518891956252
+    },
+    {
+      "diameterMm": 0.5,
+      "depthMm": 300,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 830,
+      "radiusMm": 0.8,
+      "density": 0.012636292997904369
+    },
+    {
+      "diameterMm": 0.5,
+      "depthMm": 300,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 830,
+      "radiusMm": 2,
+      "density": 0.00015893692742766926
+    },
+    {
+      "diameterMm": 0.5,
+      "depthMm": 300,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 830,
+      "radiusMm": 4,
+      "density": 3.063463728135416e-06
+    },
+    {
+      "diameterMm": 0.5,
+      "depthMm": 300,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 830,
+      "radiusMm": 8,
+      "density": 1.8103056586841591e-06
+    },
+    {
+      "diameterMm": 0.5,
+      "depthMm": 300,
+      "detectorDistanceMm": 50,
+      "wavelengthNm": 830,
+      "radiusMm": 11.32,
+      "density": 6.350533691542979e-07
+    }
+  ]
+}

@@ -1,0 +1,209 @@
+{
+  "buildId": "plt-resident-tight-interval-2026-10-13.5",
+  "executionRequested": false,
+  "actualGPUExecuted": false,
+  "allPass": true,
+  "status": "cpu-planning-passed",
+  "backend": "null",
+  "vulkanICD": null,
+  "nodeVersion": "v24.19.0",
+  "descriptiveOnly": true,
+  "noStatisticalSpeedClaim": true,
+  "physicalGPUValidated": false,
+  "browserValidated": false,
+  "hardwarePerformanceClaim": false,
+  "fullCPUShadowRequired": true,
+  "baseline": {
+    "file": "plt-resident-anchor-validation.json",
+    "commit": "72fe8da5df129ab22aaa2940586d9811cb6face3",
+    "buildId": "plt-resident-anchor-interval-2026-10-13.4",
+    "sha256": "e8410d3a98149bb53eed8d57e17d266fb9285abdabc52fa663cbb05c77a0adff",
+    "mode": "anchor-batched",
+    "fixtureDefinitionSHA256": "e95b5afeb6615d15b813e271898e50bf2ca8bbd5a8eeac4fee3c774929af40f4",
+    "paths": 4608,
+    "replayPaths": 1596,
+    "retainedMirrorPaths": 2913
+  },
+  "preservedTimingBaseline": {
+    "file": "plt-resident-anchor-submit-timing-validation.json",
+    "sha256": "8696fef8cd2a072578be22e405712050e27d510cdc27303343c4ac06dcd72f06"
+  },
+  "comparisonScope": "Same shared tight-compiled runner per fixture and workload; v20 anchor mode keeps its exact guard and historical first-batch retention counts",
+  "limitations": [
+    "Shared tight-compiled aliases are used for anchor and tight modes; this is not a separately compiled historical v20 runner setup comparison.",
+    "This bounded checkpoint measures four pre-existing mirror fixtures at 128 paths per run. No larger-path-load measurements or performance claim are included.",
+    "CPU shadow is constructed independently per fixture/workload and audited on every measured or warmup run. Renderer time excludes CPU shadow construction and subsequent audits; it includes selective replay and readbacks, all separately reported.",
+    "Renderer dispatch/submit/wait counters are host wall times, not GPU timestamp queries.",
+    "Descriptive native software-adapter timing only; no physical-GPU, browser or statistical speed claim."
+  ],
+  "modes": [
+    {
+      "id": "anchor-batched",
+      "guard": "axis-mirror-anchor",
+      "axisSubmission": "batched"
+    },
+    {
+      "id": "anchor-round",
+      "guard": "axis-mirror-anchor",
+      "axisSubmission": "round"
+    },
+    {
+      "id": "tight-batched",
+      "guard": "axis-mirror-tight",
+      "axisSubmission": "batched"
+    },
+    {
+      "id": "tight-round",
+      "guard": "axis-mirror-tight",
+      "axisSubmission": "round"
+    }
+  ],
+  "comparisons": [
+    {
+      "id": "anchor-scheduling-only",
+      "a": "anchor-batched",
+      "b": "anchor-round"
+    },
+    {
+      "id": "tight-scheduling-only",
+      "a": "tight-batched",
+      "b": "tight-round"
+    },
+    {
+      "id": "tightening-only-batched",
+      "a": "anchor-batched",
+      "b": "tight-batched"
+    },
+    {
+      "id": "combined-versus-v20-mode",
+      "a": "anchor-batched",
+      "b": "tight-round"
+    }
+  ],
+  "balancedOrders": [
+    [
+      "anchor-batched",
+      "anchor-round",
+      "tight-round",
+      "tight-batched"
+    ],
+    [
+      "anchor-round",
+      "tight-batched",
+      "anchor-batched",
+      "tight-round"
+    ],
+    [
+      "tight-batched",
+      "tight-round",
+      "anchor-round",
+      "anchor-batched"
+    ],
+    [
+      "tight-round",
+      "anchor-batched",
+      "tight-batched",
+      "anchor-round"
+    ]
+  ],
+  "measuredQuartetsPerScenario": 8,
+  "warmupsPerMode": 2,
+  "selectedFixtures": [
+    "two-mirrors-emission",
+    "four-scale-shifted-zxy",
+    "half-scale-three-mirrors-negative-permutation",
+    "eight-scale-two-mirrors"
+  ],
+  "fullTimingSuite": true,
+  "sourceSHA256": {
+    "utd-functions.wgsl": "47b811d100d8385e8191c655908d97825b8211b5cba7a0c06d160991f65939cb",
+    "plt-resident-geometry.wgsl": "8b006b17e100bfa1633a801c4f62c87ecefabf89a4488f0ad7b3235223e6d180",
+    "plt-resident-interval.wgsl": "34069064ed22208adefc9224d7ba8ac99c49506660dbbf5297c3fb5cf438f0f2",
+    "plt-resident-axis-guard.wgsl": "794469d7223bcbad443fa088aaa7610f9e4c87443496fa8be1a49801bd06893f",
+    "plt-resident-rng.wgsl": "0e693465e3e85039c5135b6d34f0e5d1762aebf528c9d57d5d1b24e3c7bab3b4",
+    "plt-resident-fsd.wgsl": "6873cbd1533da35650b2f9f79e09dd136c8ac4e07a168f64de1c4df98f759d7a",
+    "plt-resident-walker.wgsl": "2fa2f1e966cdfc33b8462d8872f45261372ea9333ec56bd7581b3d74ab214c06"
+  },
+  "hostSHA256": {
+    "plt-resident-gpu.js": "f7580b2cf3b8f7de8089d0a7103890330370b155719203324c484660f7170a72",
+    "plt-resident-geometry.js": "14a4d9b58c46dcda6e393c3ab8525fd757afa63d68a6ff137f3622753fb8e628",
+    "plt-resident-recovery.js": "badc2c28f472875f9746fbe579041d37820084edbbc625b6fb641957d16fb1d4",
+    "plt-resident-reference.js": "14449de794afc79ca5ee2f2645d48274ce71b57f2ab55aa7e7280f3eb5e1acc2",
+    "plt-core.js": "f15c8ff265ddb44fe7b27bf3c8dfd24f52c77014cdfd0c21f1d6a29f0998bef0"
+  },
+  "testSHA256": "c9c69f4fcf27fcd5bf135c77b021f348d9621124e9d61a3a7f1b1506aeee99e3",
+  "transportHarnessSHA256": "e7f80a17e065465991ac089b545e6450b3393100df95602d7000d6c150be083f",
+  "scenarios": [
+    {
+      "id": "two-mirrors-emission/1x",
+      "name": "two-mirrors-emission",
+      "pathMultiplier": 1,
+      "width": 8,
+      "height": 8,
+      "samplesPerPixel": 2,
+      "pathsPerRun": 128,
+      "expectedRadiance": 3,
+      "expectedMirrorBounces": 2,
+      "cpuFullShadowConstructionMs": 13.785662000000002,
+      "setupWallMs": null,
+      "warmups": [],
+      "measurements": []
+    },
+    {
+      "id": "four-scale-shifted-zxy/1x",
+      "name": "four-scale-shifted-zxy",
+      "pathMultiplier": 1,
+      "width": 8,
+      "height": 8,
+      "samplesPerPixel": 2,
+      "pathsPerRun": 128,
+      "expectedRadiance": 3,
+      "expectedMirrorBounces": 2,
+      "cpuFullShadowConstructionMs": 5.658797000000007,
+      "setupWallMs": null,
+      "warmups": [],
+      "measurements": []
+    },
+    {
+      "id": "half-scale-three-mirrors-negative-permutation/1x",
+      "name": "half-scale-three-mirrors-negative-permutation",
+      "pathMultiplier": 1,
+      "width": 8,
+      "height": 8,
+      "samplesPerPixel": 2,
+      "pathsPerRun": 128,
+      "expectedRadiance": 0.75,
+      "expectedMirrorBounces": 3,
+      "cpuFullShadowConstructionMs": 9.232894000000016,
+      "setupWallMs": null,
+      "warmups": [],
+      "measurements": []
+    },
+    {
+      "id": "eight-scale-two-mirrors/1x",
+      "name": "eight-scale-two-mirrors",
+      "pathMultiplier": 1,
+      "width": 8,
+      "height": 8,
+      "samplesPerPixel": 2,
+      "pathsPerRun": 128,
+      "expectedRadiance": 3,
+      "expectedMirrorBounces": 2,
+      "cpuFullShadowConstructionMs": 13.800252999999998,
+      "setupWallMs": null,
+      "warmups": [],
+      "measurements": []
+    }
+  ],
+  "largeWorkloadSelection": {
+    "executed": false,
+    "skipped": true,
+    "reason": "Checkpoint bounded to four representative fixture identities at the same 128-path workload; no larger-workload performance claim"
+  },
+  "summary": {
+    "scenarios": 4,
+    "totalReferencePaths": 512,
+    "baseFixtureCount": 4,
+    "allGeometriesFromPinnedCorpus": true
+  }
+}

@@ -60,8 +60,9 @@ is separate. Some historical timing suites consume retained numerical baselines;
 regenerate their prerequisite tests before comparing a new environment.
 
 `research/` contains independent reference scripts, fixtures and selected
-numerical baselines required by the tests. Generated render arrays, screenshots,
-logs and machine-specific deployment state are excluded. Test scripts may write
+numerical baselines required by the tests. Large standalone render dumps, screenshots, logs and machine-specific
+deployment state are excluded. Small numerical image fixtures consumed by
+regression tests are retained. Test scripts may write
 local reports to this directory; review deliberate fixture updates explicitly.
 
 ## Repository workflow
@@ -88,3 +89,4 @@ This is a mixed-license source distribution, not a blanket MIT release:
 No additional license grant is asserted for components whose existing terms
 are unspecified. Public availability does not grant commercial rights to the
 CC BY-NC material. Preserve relevant notices when redistributing.
+

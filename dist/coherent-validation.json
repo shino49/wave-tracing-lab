@@ -1,0 +1,202 @@
+{
+  "title": "相干波实验室 · 可复核验证摘要",
+  "generatedUtc": "2026-10-12T08:44:56.884Z",
+  "scope": {
+    "model": "Bounded 2D single-frequency scalar Helmholtz, one/two finite lossless Dirichlet screens",
+    "coupling": "Full simultaneous complex boundary solve; both cross-screen blocks retained",
+    "source": "Three finite-curvature propagating angular spectra; flux Gram / inverse-adjoint Cholesky orthonormalization",
+    "coherence": "Fixed populations [0.2,0.5,0.3], PSD mixture (1-gamma)diag(p)+gamma vv†, exactly declared input scalar flux",
+    "image": "Mean |u|² intensity proxy; -45..0 dB peak-relative display; distance<12/N boundary mask is unavailable, not zero prediction",
+    "detector": "Positive far-field scalar angular flux k integral E|f|² dtheta; no electromagnetic watt calibration",
+    "backend": "CPU Float64 BEM solve; optional WebGPU complex field application; exhaustive per-run CPU parity before display",
+    "notClaimed": [
+      "Native positive Gaussian-packet Wave Tracing completion",
+      "Arbitrary 3D geometry or vector Maxwell",
+      "Physical-GPU testing",
+      "Real-browser visual QA",
+      "A rigorous bound over every continuous parameter"
+    ]
+  },
+  "numerical": {
+    "passed": true,
+    "independentSciPyFixtureErrors": {
+      "one_screen": {
+        "nearComplex401": 3.038159416577837e-14,
+        "farComplex800": 3.062412757765525e-14,
+        "boundaryDensity144": 2.3898726979918754e-14,
+        "visibleGrid64to96": 1.6105620816528928e-9,
+        "visibleGrid96to144": 4.86858644582126e-10
+      },
+      "two_screens": {
+        "nearComplex401": 2.990560871613171e-14,
+        "farComplex800": 3.060525927618968e-14,
+        "boundaryDensity144": 2.4648702293067633e-14,
+        "visibleGrid64to96": 1.6087799880799538e-9,
+        "visibleGrid96to144": 4.869160160723712e-10
+      }
+    },
+    "runtimeReferenceGate": 2e-7,
+    "algebraicResidualGate": 1e-10,
+    "fluxOperatorGate": 0.0005,
+    "discreteGeometryCases": 9,
+    "checks": {
+      "coherence": {
+        "partialInterpolationError": 6.938893903907228e-18,
+        "gammaZeroPhaseInvariant": true,
+        "populationsFixed": true,
+        "sourceGramPowerCorrect": true,
+        "powerScaling": true,
+        "nonnegativePSDMeasurements": true,
+        "phasePeakToPeak": 0.03157190657453036,
+        "phaseFlux": [
+          0.05291742401452582,
+          0.05320069598110545,
+          0.0510806996597219,
+          0.04688018527249119,
+          0.041238643057111606,
+          0.03501494667516703,
+          0.02915659748286036,
+          0.02455547603865265,
+          0.02191206137315474,
+          0.021628789406575095,
+          0.023748785727958674,
+          0.027949300115189344,
+          0.033590842330568964,
+          0.039814538712513566,
+          0.0456728879048202,
+          0.05027400934902794,
+          0.05291742401452582
+        ]
+      },
+      "sourceBasis": {
+        "invertibleIntensityError": 5.523192470406844e-16,
+        "redundantRefinementIntensityError": 3.375011377687086e-16
+      },
+      "coarseNegativeControl": {
+        "nodes": 12,
+        "farComplexRelativeError": 0.5931096990468272,
+        "energyOperatorError": 6.42026978932618e-15,
+        "conservationDoesNotCertifyAccuracy": true
+      },
+      "twoWayCoupling": {
+        "onePassFarComplexError": 0.03604591157001438
+      },
+      "detectorPartition": {
+        "error": 1.3322676295501878e-15,
+        "fullApertureError": 0
+      },
+      "sourceQuadratureError": 2.234197747937245e-14,
+      "phaseCurvature": [
+        -1.3062897275139087,
+        -1.3928920646596776,
+        -0.518590731485377,
+        -1.539311787316764,
+        -1.9185097657366026,
+        -0.7508711266590213
+      ],
+      "maskedSingularPointsZero": true
+    },
+    "independentGoldGeometryGrid": {
+      "cases": 9,
+      "maxOffCollocationBoundaryResidual": 6.1095300711658625e-12,
+      "maximumConditionNumber": 53.77023482528891
+    },
+    "independentMaskedMapRefinement": {
+      "referenceNodes": 288,
+      "testedGeometries": 5,
+      "maxComplexRelativeL2": 1.6200482188266449e-9,
+      "maxIntensityRelativeL2": 4.968436612921331e-9
+    }
+  },
+  "gpu": {
+    "passed": true,
+    "nativeCompilePassed": true,
+    "execution": "Native Dawn + software Vulkan SwiftShader dispatch and readback",
+    "checks": 20,
+    "nativeCases": 9,
+    "allValidPixelsCompared": true,
+    "tolerance": {
+      "fieldAbsolute": 0.00002,
+      "fieldRelative": 0.003,
+      "intensityAbsolute": 0.00002,
+      "intensityRelative": 0.002
+    },
+    "maxAbsoluteComplexFieldError": 0.0000011996019741839134,
+    "maxAbsoluteIntensityError": 0.000002554369787577393,
+    "runtimeIntegrationPassed": true,
+    "browserValidated": false,
+    "physicalGPUValidated": false
+  },
+  "controlFlow": {
+    "runtime": {
+      "passed": 14,
+      "failed": 0
+    },
+    "dom": {
+      "passed": 35,
+      "failed": 0,
+      "canvas": "Happy-dom + Canvas call/image-data spies, not browser rasterization"
+    },
+    "moduleWorker": {
+      "passed": 3,
+      "environment": "Node worker_threads bridge for unchanged browser worker module"
+    },
+    "coverage": [
+      "Cancel and reset",
+      "Repeated and overlapping runs",
+      "Stale and duplicate result/progress/error suppression",
+      "GPU failure and truthful CPU fallback",
+      "Partial-coherence phase exclusion",
+      "Diagnostic invalidation and delayed clipboard completion",
+      "Node refinement and backend timing"
+    ],
+    "browserVisualQA": "NOT RUN: no supported preview/control route available"
+  },
+  "example": {
+    "geometry": "two-screen default, k=12, N=64 per screen, phase=0, gamma=1, incident scalar flux=1",
+    "detectorFlux": 0.05291742401452582,
+    "nativeSoftwareAdapterTimingsMs": {
+      "solveMs": 65.719555,
+      "cpuFieldMs": 449.14546800000005,
+      "gpuMs": 87.79528600000003,
+      "gpuDetails": {
+        "cpuReferenceMs": null,
+        "cpuReferenceProvided": true,
+        "gpuSetupWallMs": 112.09829000000002,
+        "gpuDispatchReadbackWallMs": 87.79528600000003,
+        "parityGateMs": 17.139079000000038
+      },
+      "totalMs": 741.601146
+    },
+    "timingCaveat": "One execution on this software-adapter test environment; not a browser or hardware performance promise"
+  },
+  "priorModeRegressions": {
+    "passed": [
+      "npm test",
+      "npm run test:dom",
+      "npm run test:mesh-dom",
+      "npm run test:utd",
+      "npm run test:packet",
+      "npm run test:dd-reference"
+    ],
+    "previousRuntimeFilesChanged": false,
+    "navigationLinksAdded": true
+  },
+  "reproduction": [
+    "npm run test:coherent",
+    "WEBGPU_EXECUTION_BACKEND=vulkan npm run test:coherent-gpu (with an available executable Vulkan driver selected externally)",
+    "OPENBLAS_NUM_THREADS=1 python research/coherent-browser-review/review.py",
+    "OPENBLAS_NUM_THREADS=1 python research/coherent-browser-review/map-review.py"
+  ],
+  "sourceSha256": {
+    "coherent-app.js": "32be586e1a966ccbab6551c3e924e6ad2d6d991809dabf0b920ba858e74c7491",
+    "coherent-core.js": "86796c557c617f79d4dd0bae1b0b73d2bc0fdfefa5b2645f1cabb5511011427d",
+    "coherent-gpu.js": "1d42f40c39a68536fe4bc24f831d1ad7a4e13d83b791670166f87ac9757ca82f",
+    "coherent-field.wgsl": "039e1a3d06bb78b666c35f220df005a80fafe1e9d7514871dab3e49c3ed7e62c",
+    "coherent-runtime.js": "f5911215f2d05edb6a872c2b49fc1b8561462691cc6b00c06db2474a7e1a63ab",
+    "coherent-worker.js": "bc04a98ff5f910b2039ec50371d6af19d0a4145e8c4c4b3de71b1d26c43bd892",
+    "coherent.html": "36393a556a9f149e794ade36c3a2032e195d7f29232ef2cf1ed01cafd90ebc7e",
+    "coherent-style.css": "95d72d731f7812ce85a97053f6df84d7c285b4055e2e891d9687f4ef8dcd44c1",
+    "coherent-method.html": "fcd6fa8b5535a2e8ec17730947424a005b6ba51d7c09a446a872aac6f6267308"
+  }
+}

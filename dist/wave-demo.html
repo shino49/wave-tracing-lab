@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#101616">
+  <meta name="description" content="同一真实三维场景，两台数值相机：原生 Wave Tracing 与几何光线追踪。在浏览器内逐样本计算局部 UTD 衍射。">
+  <title>波与光 · 三维波动演示</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="plt-demo-style.css">
+</head>
+<body class="demo-page">
+<div class="app-shell">
+  <header class="masthead">
+    <a class="brand" href="wave-demo.html"><span class="brand-symbol" aria-hidden="true"><i></i><i></i><i></i></span><span>波与光<span class="brand-en">WAVE / LIGHT</span></span></a>
+    <span class="header-note"><span class="tiny-dot"></span>本地计算 · 原生三维传输</span>
+  </header>
+  <nav class="demo-nav" aria-label="选择实验"><a href="transport.html" style="color:#d5eebc">相干网格引擎 · 512² ↗</a>
+    <a href="pinhole.html" style="color:#d5eebc">小孔相机 · 彩色 512² ↗</a>
+    <a href="wave-demo.html" aria-current="page">三维波动演示</a>
+    <a href="tracer.html">进阶场景与光谱</a>
+    <a href="index.html">双缝参考</a>
+    <a href="mesh.html">单区域 UTD</a>
+    <a href="coherent.html">二维全波参考</a>
+  </nav>
+  <main id="main">
+    <section class="intro demo-intro" aria-labelledby="demoTitle">
+      <div><div class="eyebrow">NATIVE 3D WAVE TRACING</div><h1 id="demoTitle">光的边界，<span>不止于光线。</span></h1><p class="intro-copy">同一三维场景，同一相机与曝光。让有限孔径、遮挡物和表面共同参与光传输，再比较开启局部衍射后的真实计算结果。</p></div>
+      <a class="demo-method-link" href="plt-method.html">方法与物理边界 ↗</a>
+    </section>
+
+    <section class="panel demo-camera-panel" aria-labelledby="demoCameraTitle">
+      <div class="demo-camera-heading">
+        <div><div class="eyebrow">ONE SCENE / TWO TRANSPORT MODELS</div><h2 id="demoCameraTitle">同一视角，看见差别</h2></div>
+        <span id="demoBackend" class="demo-chip">尚未计算</span>
+      </div>
+      <div class="demo-films">
+        <figure><figcaption><div><span class="demo-film-number">A</span><strong>Wave Tracing</strong></div><span>原生局部 GO + UTD 衍射</span><span id="demoWaveSamples" class="demo-samples">尚未采样</span></figcaption><div class="demo-film-frame"><canvas id="demoWaveCanvas" width="640" height="480" aria-label="原生三维 Wave Tracing 计算所得的灰度相机图像"></canvas><div id="demoWaveEmpty" class="demo-empty"><span class="demo-empty-symbol" aria-hidden="true">A</span><strong>从场景到相机，逐样本计算</strong><span>点击「开始计算」生成图像</span></div></div></figure>
+        <figure><figcaption><div><span class="demo-film-number">B</span><strong id="demoReferenceTitle">Geometric Tracing</strong></div><span id="demoReferenceCaption">同一场景 · 几何采样</span><span id="demoRaySamples" class="demo-samples">尚未采样</span></figcaption><div class="demo-film-frame"><canvas id="demoRayCanvas" width="640" height="480" aria-label="右侧对照：几何光线追踪或同一波动路径关闭局部 UTD 的计算图像"></canvas><div id="demoRayEmpty" class="demo-empty"><span class="demo-empty-symbol" aria-hidden="true">B</span><strong>光线模型的对照结果</strong><span>与左图一同计算，不逐图归一化</span></div></div></figure>
+      </div>
+      <div class="demo-reference-control"><label for="demoReference">右侧对照<select id="demoReference"><option value="geometric">Geometric · 几何光线</option><option value="utd-off">同一路径关闭 UTD · 局部衍射对照</option></select></label><p id="demoReferenceNote">Wave 与几何图还存在光束足迹和采样策略差异；选择「同一路径关闭 UTD」可更直接检查局部衍射算子的影响。</p></div>
+      <div class="demo-display-bar"><span>固定 HDR 灰度 · 0 EV 白点为相对响应 8 · 不逐图归一化</span><label for="demoExposure">共用曝光 <input id="demoExposure" type="range" min="-6" max="6" step=".25" value="0"><output id="demoExposureValue" for="demoExposure">0 EV</output></label></div>
+      <div class="demo-run-status" role="status" aria-live="polite"><span id="demoStatus">选择参数，点击开始。首轮完整采样后继续渐进收敛。</span><progress id="demoProgress" value="0" max="1" hidden></progress></div>
+    </section>
+
+    <div class="demo-under-film">
+      <section class="panel demo-controls" aria-labelledby="demoControlsTitle">
+        <div class="demo-section-heading"><span class="section-number">01 / EXPLORE</span><h2 id="demoControlsTitle">改变波长，重新看场景</h2></div>
+        <div class="demo-scene-description"><strong id="demoSceneTitle">三维光学台</strong><p id="demoSceneDescription">几何、材料与光源共同参与实际传输。</p><p id="demoScaleNote">波长和场景坐标采用 mm；单色相机显示相对响应。</p></div>
+        <div class="demo-control-grid">
+          <label class="demo-slider-label" for="demoWavelength"><span>波长 λ <output id="demoWavelengthValue" for="demoWavelength">—</output></span><input id="demoWavelength" type="range" min=".025" max=".2" step=".005" value=".05"><small>单色红外演示 · 灰度不是可见光颜色</small></label>
+          <label class="demo-slider-label" for="demoYaw"><span>相机方位 <output id="demoYawValue" for="demoYaw">0°</output></span><input id="demoYaw" type="range" min="-35" max="35" step="5" value="0"><small>改变实际采样、可见性和光束足迹</small></label>
+          <label for="demoResolution">相机分辨率<select id="demoResolution"><option value="32">32 × 24 · 快速探索</option><option value="48">48 × 36</option><option value="64">64 × 48</option><option value="96">96 × 72</option><option value="128">128 × 96</option></select></label>
+          <label for="demoSamples">每像素样本<select id="demoSamples"><option value="4">4 spp · 流程预览</option><option value="16">16 spp</option><option value="32">32 spp</option><option value="64">64 spp</option><option value="128">128 spp</option><option value="256">256 spp</option></select></label>
+        </div>
+        <div class="demo-actions"><button id="demoRun" class="demo-primary">开始计算 <span aria-hidden="true">↗</span></button><button id="demoCancel" class="demo-cancel" hidden>取消</button><button id="demoReset" class="demo-text-button">恢复推荐参数</button></div>
+        <p id="demoRunNote" class="demo-note">低样本有噪声；分辨率会改变像素光束足迹。计算有时限，可随时取消。</p>
+        <details class="demo-advanced"><summary>计算后端与调试</summary><div><label for="demoCompute">计算后端<select id="demoCompute"><option value="auto">自动 · CPU 遍历 + WebGPU 算子 / 相机</option><option value="cpu">CPU 双精度</option></select></label><label class="demo-checkbox" for="demoDebug"><input id="demoDebug" type="checkbox">调试：开启完整 CPU 参考与逐事件 / 逐像素核验</label><p class="demo-note">普通模式不重复计算完整 CPU 参考；保留有限值、容量、形状和取消检查。WebGPU 不可用或发生计算错误时按需使用 CPU，混合结果会明确标出。此页面不宣称整条路径驻留 GPU，也不预先认定物理 GPU。</p></div></details>
+      </section>
+
+      <section class="panel demo-reading" aria-labelledby="demoReadingTitle">
+        <div class="demo-section-heading"><span class="section-number">02 / OBSERVE</span><h2 id="demoReadingTitle">读图，也读计算证据</h2></div>
+        <p class="demo-reading-lead">先看孔径和遮挡边缘附近的亮度衰减，再切换「同一路径关闭 UTD」对照。提高样本数，有助于分辨稳定结构与随机噪声。</p>
+        <div class="demo-stats"><div><span>三角形 / UTD 边</span><strong id="demoGeometry">—</strong></div><div><span>局部散射算子</span><strong id="demoEvents">—</strong></div><div><span>本次计算</span><strong id="demoTime">—</strong></div><div><span>核验模式</span><strong id="demoValidation">—</strong></div></div>
+        <p id="demoMeasurement" class="demo-note">图像显示相机的相对响应；当前尚无计算结果。</p>
+        <details class="demo-difference" open><summary>查看计算差值</summary><div class="demo-difference-body"><label for="demoDifferenceMode">差值显示<select id="demoDifferenceMode"><option value="absolute-utd">|Wave − 同路径关闭 UTD| · 灰度</option><option value="signed-utd">Wave − 同路径关闭 UTD · 蓝 / 橙</option><option value="absolute-ray">|Wave − Geometric| · 灰度</option><option value="signed-ray">Wave − Geometric · 蓝 / 橙</option></select></label><div class="demo-difference-frame"><canvas id="demoDifferenceCanvas" width="640" height="480" aria-label="波动与几何相机数组的逐像素差值"></canvas><span id="demoDifferenceEmpty" class="demo-difference-empty">两幅图完成后可查看差值</span></div><p id="demoDifferenceNote" class="demo-note">差值采用同一曝光，未做独立最大值归一化。同路径对照仅关闭局部 UTD 系数；仍是同一随机路径上的模型对照，不是精确场解。</p></div></details>
+        <p class="demo-boundary">本页是增强可辨识波动效应的单色尺度演示，不预设大范围阴影填充或全局条纹。仅局部散射区域保留复振幅干涉，跨路径累加非负功率；不是全局相干场、精确 Maxwell 解或玻璃折射。棱柱为不透明物体。</p>
+      </section>
+    </div>
+
+    <section class="panel demo-evidence" aria-label="本地运行记录与模型限制">
+      <details><summary><span>本次运行记录与模型限制</span><span class="demo-detail-hint">样本 · 后端 · 回退 · 耗时</span></summary><div class="demo-evidence-body"><p id="demoWarnings" class="demo-warning">UTD 是高频渐近模型；有限端点、角点和高阶项未完整建模。低样本下的明暗差异可能含明显蒙特卡洛噪声。</p><pre id="demoReport">尚无结果</pre><button id="demoDownload" class="demo-text-button" disabled>下载本地 JSON 运行记录</button><p class="demo-note">记录有大小上限，不导出整幅像素或原始事件缓冲区。仅在本机生成，不上传。</p></div></details>
+    </section>
+    <footer class="demo-footer"><span>WAVE / LIGHT · 在浏览器中探索真实三维波动传输</span><a href="tracer.html">OBJ、更多场景与可见光谱 ↗</a><a href="resident-test.html">GPU 驻留实验测试 ↗</a></footer>
+  </main>
+</div>
+<script type="module" src="plt-demo-app.js"></script>
+</body>
+</html>

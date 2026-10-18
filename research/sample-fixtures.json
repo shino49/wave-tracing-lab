@@ -1,0 +1,197 @@
+[
+  {
+    "state": {
+      "screenDistance": 2.0,
+      "slitWidth": 0.08,
+      "separation": 0.3,
+      "lambda": 550.0
+    },
+    "X": 0,
+    "Y": 0,
+    "xi": 0,
+    "eta": 0,
+    "expected": 0.0006660676167906969
+  },
+  {
+    "state": {
+      "screenDistance": 2.0,
+      "slitWidth": 0.08,
+      "separation": 0.3,
+      "lambda": 550.0
+    },
+    "X": 0.075,
+    "Y": 0.078125,
+    "xi": -0.8,
+    "eta": 0.3,
+    "expected": 0.0006633410935146208
+  },
+  {
+    "state": {
+      "screenDistance": 2.0,
+      "slitWidth": 0.08,
+      "separation": 0.3,
+      "lambda": 550.0
+    },
+    "X": 12,
+    "Y": 7.5,
+    "xi": 2.3,
+    "eta": -2.1,
+    "expected": 1.6998155785404786e-07
+  },
+  {
+    "state": {
+      "screenDistance": 2.0,
+      "slitWidth": 0.08,
+      "separation": 0.3,
+      "lambda": 550.0
+    },
+    "X": 3,
+    "Y": 2,
+    "xi": 4.99,
+    "eta": -4.95,
+    "expected": 0.00013144710382412668
+  },
+  {
+    "state": {
+      "screenDistance": 2.0,
+      "slitWidth": 0.08,
+      "separation": 0.3,
+      "lambda": 550.0
+    },
+    "X": -5,
+    "Y": -3,
+    "xi": -5.2,
+    "eta": 0,
+    "expected": 0.0
+  },
+  {
+    "state": {
+      "screenDistance": 1.5,
+      "slitWidth": 0.12,
+      "separation": 0.42,
+      "lambda": 420.0
+    },
+    "X": 0,
+    "Y": 0,
+    "xi": 0,
+    "eta": 0,
+    "expected": 0.004401697682657573
+  },
+  {
+    "state": {
+      "screenDistance": 1.5,
+      "slitWidth": 0.12,
+      "separation": 0.42,
+      "lambda": 420.0
+    },
+    "X": 0.075,
+    "Y": 0.078125,
+    "xi": -0.8,
+    "eta": 0.3,
+    "expected": 0.004303843476774543
+  },
+  {
+    "state": {
+      "screenDistance": 1.5,
+      "slitWidth": 0.12,
+      "separation": 0.42,
+      "lambda": 420.0
+    },
+    "X": 12,
+    "Y": 7.5,
+    "xi": 2.3,
+    "eta": -2.1,
+    "expected": 2.294281398141564e-07
+  },
+  {
+    "state": {
+      "screenDistance": 1.5,
+      "slitWidth": 0.12,
+      "separation": 0.42,
+      "lambda": 420.0
+    },
+    "X": 3,
+    "Y": 2,
+    "xi": 4.99,
+    "eta": -4.95,
+    "expected": 0.00018152224265627733
+  },
+  {
+    "state": {
+      "screenDistance": 1.5,
+      "slitWidth": 0.12,
+      "separation": 0.42,
+      "lambda": 420.0
+    },
+    "X": -5,
+    "Y": -3,
+    "xi": -5.2,
+    "eta": 0,
+    "expected": 0.0
+  },
+  {
+    "state": {
+      "screenDistance": 4.0,
+      "slitWidth": 0.04,
+      "separation": 0.18,
+      "lambda": 680.0
+    },
+    "X": 0,
+    "Y": 0,
+    "xi": 0,
+    "eta": 0,
+    "expected": 2.7712467968394817e-05
+  },
+  {
+    "state": {
+      "screenDistance": 4.0,
+      "slitWidth": 0.04,
+      "separation": 0.18,
+      "lambda": 680.0
+    },
+    "X": 0.075,
+    "Y": 0.078125,
+    "xi": -0.8,
+    "eta": 0.3,
+    "expected": 2.77042131730167e-05
+  },
+  {
+    "state": {
+      "screenDistance": 4.0,
+      "slitWidth": 0.04,
+      "separation": 0.18,
+      "lambda": 680.0
+    },
+    "X": 12,
+    "Y": 7.5,
+    "xi": 2.3,
+    "eta": -2.1,
+    "expected": 6.554103286058669e-06
+  },
+  {
+    "state": {
+      "screenDistance": 4.0,
+      "slitWidth": 0.04,
+      "separation": 0.18,
+      "lambda": 680.0
+    },
+    "X": 3,
+    "Y": 2,
+    "xi": 4.99,
+    "eta": -4.95,
+    "expected": 6.987004425776716e-06
+  },
+  {
+    "state": {
+      "screenDistance": 4.0,
+      "slitWidth": 0.04,
+      "separation": 0.18,
+      "lambda": 680.0
+    },
+    "X": -5,
+    "Y": -3,
+    "xi": -5.2,
+    "eta": 0,
+    "expected": 0.0
+  }
+]

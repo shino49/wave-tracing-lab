@@ -1,0 +1,125 @@
+{
+  "slab": {
+    "center": [
+      0,
+      0.125,
+      -25
+    ],
+    "u": [
+      1,
+      0,
+      0
+    ],
+    "v": [
+      0,
+      1,
+      0
+    ],
+    "width": 0.1,
+    "height": 0.04,
+    "thickness": 0.0002,
+    "index": 1.5,
+    "absorption": [
+      {
+        "wavelengthNm": 360,
+        "value": 0
+      },
+      {
+        "wavelengthNm": 830,
+        "value": 0
+      }
+    ],
+    "internalReflections": 1
+  },
+  "schema": "coherent-mesh-scene-v1",
+  "units": "mm",
+  "name": "Broadband one-mirror glass transmission",
+  "materials": [
+    {
+      "type": "opaque"
+    },
+    {
+      "type": "mirror",
+      "reflectance": 1,
+      "phaseRad": 3.141592653589793
+    }
+  ],
+  "meshes": [
+    {
+      "vertices": [
+        [
+          -10,
+          0,
+          -49
+        ],
+        [
+          10,
+          0,
+          -49
+        ],
+        [
+          10,
+          0,
+          49
+        ],
+        [
+          -10,
+          0,
+          49
+        ]
+      ],
+      "faces": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2,
+          3
+        ]
+      ],
+      "materialIndex": 1,
+      "surface": "open-plate"
+    }
+  ],
+  "source": {
+    "position": [
+      0,
+      0.2,
+      -50
+    ],
+    "power": 1,
+    "phaseRad": 0,
+    "wavelengthMm": 0.00055,
+    "spectrum": {
+      "mode": "broadband",
+      "illuminant": "D65"
+    }
+  },
+  "detector": {
+    "center": [
+      0,
+      0.1,
+      50
+    ],
+    "u": [
+      1,
+      0,
+      0
+    ],
+    "v": [
+      0,
+      1,
+      0
+    ],
+    "width": 0.02,
+    "height": 0.12
+  },
+  "renderSettings": {
+    "maxReflections": 1,
+    "diffraction": false,
+    "mixedDiffraction": false
+  }
+}

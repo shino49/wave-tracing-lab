@@ -1,0 +1,1320 @@
+{
+  "buildId": "plt-resident-joint-camera-2026-10-13.1",
+  "executionRequested": false,
+  "actualGPUExecuted": false,
+  "allPass": true,
+  "status": "cpu-fixtures-passed",
+  "backend": "null",
+  "nodeVersion": "v24.19.0",
+  "vulkanICD": null,
+  "fullCPUShadowRequired": true,
+  "physicalGPUValidated": false,
+  "browserValidated": false,
+  "hardwarePerformanceClaim": false,
+  "modes": [
+    {
+      "id": "anchor-round",
+      "guard": "axis-mirror-anchor",
+      "axisSubmission": "round"
+    },
+    {
+      "id": "camera-round",
+      "guard": "axis-mirror-camera",
+      "axisSubmission": "round"
+    }
+  ],
+  "pinnedV21": {
+    "commit": "916bf9952bcd9f6da8203de3cede5675d347b18c",
+    "manifest": "plt-resident-tight-validation-manifest.json",
+    "manifestSHA256": "66d28e3c1b503090e05e273c4336db4be9201ada74106c163fbde0056ce31367",
+    "transport": "plt-resident-tight-validation.json",
+    "transportSHA256": "5accec3c0619d476fbc0c93e6d84a9adbd3be5b4a305b3ccfa64436b543eef6f",
+    "timing": "plt-resident-tight-submit-timing-validation.json",
+    "timingSHA256": "c04e1940014c2abcb2545ad7db28b5a3503e052f90f996f3c801c759124ef86c",
+    "paths": 4608,
+    "anchorReplay": 1596,
+    "anchorRetainedMirror": 2913,
+    "tightReplay": 1591,
+    "tightRetainedMirror": 2918
+  },
+  "sourceSHA256": null,
+  "hostSHA256": null,
+  "testSHA256": "c60544a4e19b83f0b603b948f75f9f5471ccbdfdb65daae1089bb2a95d395d7e",
+  "legacyCPUFixtures": [
+    {
+      "name": "one-mirror-emission",
+      "seeds": [
+        7391,
+        1,
+        3735928559
+      ],
+      "paths": 576,
+      "mirrorPaths": 576,
+      "contributions": 576,
+      "escapes": 0,
+      "expectedRadiance": 4,
+      "mirrors": 1,
+      "eligibility": {
+        "eligible": true,
+        "globalKappa": 1.0000001192092896,
+        "domain": "at most64 exact-f32 axis triangles on 2^-16 source/rebase grid; abs world/local <=256; min feature >=2^-12; area cancellation <=16",
+        "assumption": "normal binary64 basic arithmetic; Math.hypot relative error <=16*2^-53; full shadow still required"
+      },
+      "sourceNormals": [
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      "scale": 1,
+      "translation": [
+        0,
+        0,
+        0
+      ],
+      "permutation": [
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "name": "eighth-scale-one-mirror-emission",
+      "seeds": [
+        7391
+      ],
+      "paths": 192,
+      "mirrorPaths": 192,
+      "contributions": 192,
+      "escapes": 0,
+      "expectedRadiance": 4,
+      "mirrors": 1,
+      "eligibility": {
+        "eligible": true,
+        "globalKappa": 1.0000001192092896,
+        "domain": "at most64 exact-f32 axis triangles on 2^-16 source/rebase grid; abs world/local <=256; min feature >=2^-12; area cancellation <=16",
+        "assumption": "normal binary64 basic arithmetic; Math.hypot relative error <=16*2^-53; full shadow still required"
+      },
+      "sourceNormals": [
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      "scale": 0.125,
+      "translation": [
+        0,
+        0,
+        0
+      ],
+      "permutation": [
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "name": "two-mirrors-emission",
+      "seeds": [
+        7391,
+        1,
+        3735928559
+      ],
+      "paths": 576,
+      "mirrorPaths": 576,
+      "contributions": 576,
+      "escapes": 0,
+      "expectedRadiance": 3,
+      "mirrors": 2,
+      "eligibility": {
+        "eligible": true,
+        "globalKappa": 1.0000001192092896,
+        "domain": "at most64 exact-f32 axis triangles on 2^-16 source/rebase grid; abs world/local <=256; min feature >=2^-12; area cancellation <=16",
+        "assumption": "normal binary64 basic arithmetic; Math.hypot relative error <=16*2^-53; full shadow still required"
+      },
+      "sourceNormals": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      "scale": 1,
+      "translation": [
+        0,
+        0,
+        0
+      ],
+      "permutation": [
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "name": "quarter-scale-shifted-yzx",
+      "seeds": [
+        7391,
+        1,
+        3735928559
+      ],
+      "paths": 576,
+      "mirrorPaths": 576,
+      "contributions": 576,
+      "escapes": 0,
+      "expectedRadiance": 3,
+      "mirrors": 2,
+      "eligibility": {
+        "eligible": true,
+        "globalKappa": 1.0000001192092896,
+        "domain": "at most64 exact-f32 axis triangles on 2^-16 source/rebase grid; abs world/local <=256; min feature >=2^-12; area cancellation <=16",
+        "assumption": "normal binary64 basic arithmetic; Math.hypot relative error <=16*2^-53; full shadow still required"
+      },
+      "sourceNormals": [
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ]
+      ],
+      "scale": 0.25,
+      "translation": [
+        16,
+        -8,
+        32
+      ],
+      "permutation": [
+        1,
+        2,
+        0
+      ]
+    },
+    {
+      "name": "four-scale-shifted-zxy",
+      "seeds": [
+        7391
+      ],
+      "paths": 192,
+      "mirrorPaths": 192,
+      "contributions": 192,
+      "escapes": 0,
+      "expectedRadiance": 3,
+      "mirrors": 2,
+      "eligibility": {
+        "eligible": true,
+        "globalKappa": 1.0000001192092896,
+        "domain": "at most64 exact-f32 axis triangles on 2^-16 source/rebase grid; abs world/local <=256; min feature >=2^-12; area cancellation <=16",
+        "assumption": "normal binary64 basic arithmetic; Math.hypot relative error <=16*2^-53; full shadow still required"
+      },
+      "sourceNormals": [
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0
+        ]
+      ],
+      "scale": 4,
+      "translation": [
+        -32,
+        16,
+        -8
+      ],
+      "permutation": [
+        2,
+        0,
+        1
+      ]
+    },
+    {
+      "name": "one-mirror-escape",
+      "seeds": [
+        7391
+      ],
+      "paths": 192,
+      "mirrorPaths": 192,
+      "contributions": 0,
+      "escapes": 192,
+      "expectedRadiance": 0,
+      "mirrors": 1,
+      "eligibility": {
+        "eligible": true,
+        "globalKappa": 1.0000001192092896,
+        "domain": "at most64 exact-f32 axis triangles on 2^-16 source/rebase grid; abs world/local <=256; min feature >=2^-12; area cancellation <=16",
+        "assumption": "normal binary64 basic arithmetic; Math.hypot relative error <=16*2^-53; full shadow still required"
+      },
+      "sourceNormals": [
+        [
+          0,
+          0,
+          -1
+        ],
+        [
+          0,
+          0,
+          -1
+        ]
+      ],
+      "scale": 1,
+      "translation": [
+        0,
+        0,
+        0
+      ],
+      "permutation": [
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "name": "seam-after-mirror",
+      "seeds": [
+        7391
+      ],
+      "paths": 192,
+      "mirrorPaths": 192,
+      "contributions": 192,
+      "escapes": 0,
+      "expectedRadiance": 4,
+      "mirrors": 1,
+      "eligibility": {
+        "eligible": true,
+        "globalKappa": 1.0000001192092896,
+        "domain": "at most64 exact-f32 axis triangles on 2^-16 source/rebase grid; abs world/local <=256; min feature >=2^-12; area cancellation <=16",
+        "assumption": "normal binary64 basic arithmetic; Math.hypot relative error <=16*2^-53; full shadow still required"
+      },
+      "sourceNormals": [
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      "scale": 1,
+      "translation": [
+        0,
+        0,
+        0
+      ],
+      "permutation": [
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "name": "grazing-mirror-escape",
+      "seeds": [
+        7391
+      ],
+      "paths": 192,
+      "mirrorPaths": 92,
+      "contributions": 0,
+      "escapes": 192,
+      "expectedRadiance": 0,
+      "mirrors": 1,
+      "eligibility": {
+        "eligible": true,
+        "globalKappa": 1.0000001192092896,
+        "domain": "at most64 exact-f32 axis triangles on 2^-16 source/rebase grid; abs world/local <=256; min feature >=2^-12; area cancellation <=16",
+        "assumption": "normal binary64 basic arithmetic; Math.hypot relative error <=16*2^-53; full shadow still required"
+      },
+      "sourceNormals": [
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      "scale": 1,
+      "translation": [
+        0,
+        0,
+        0
+      ],
+      "permutation": [
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "name": "near-threshold-mirror",
+      "seeds": [
+        7391
+      ],
+      "paths": 192,
+      "mirrorPaths": 192,
+      "contributions": 0,
+      "escapes": 192,
+      "expectedRadiance": 0,
+      "mirrors": 1,
+      "eligibility": {
+        "eligible": true,
+        "globalKappa": 1.0000001192092896,
+        "domain": "at most64 exact-f32 axis triangles on 2^-16 source/rebase grid; abs world/local <=256; min feature >=2^-12; area cancellation <=16",
+        "assumption": "normal binary64 basic arithmetic; Math.hypot relative error <=16*2^-53; full shadow still required"
+      },
+      "sourceNormals": [
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      "scale": 1,
+      "translation": [
+        0,
+        0,
+        0
+      ],
+      "permutation": [
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "name": "below-near-mirror",
+      "seeds": [
+        7391
+      ],
+      "paths": 192,
+      "mirrorPaths": 0,
+      "contributions": 0,
+      "escapes": 192,
+      "expectedRadiance": 0,
+      "mirrors": 1,
+      "eligibility": {
+        "eligible": true,
+        "globalKappa": 1.0000001192092896,
+        "domain": "at most64 exact-f32 axis triangles on 2^-16 source/rebase grid; abs world/local <=256; min feature >=2^-12; area cancellation <=16",
+        "assumption": "normal binary64 basic arithmetic; Math.hypot relative error <=16*2^-53; full shadow still required"
+      },
+      "sourceNormals": [
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      "scale": 1,
+      "translation": [
+        0,
+        0,
+        0
+      ],
+      "permutation": [
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "name": "long-distance-mirror",
+      "seeds": [
+        7391
+      ],
+      "paths": 192,
+      "mirrorPaths": 96,
+      "contributions": 0,
+      "escapes": 192,
+      "expectedRadiance": 0,
+      "mirrors": 1,
+      "eligibility": {
+        "eligible": true,
+        "globalKappa": 1.0000001192092896,
+        "domain": "at most64 exact-f32 axis triangles on 2^-16 source/rebase grid; abs world/local <=256; min feature >=2^-12; area cancellation <=16",
+        "assumption": "normal binary64 basic arithmetic; Math.hypot relative error <=16*2^-53; full shadow still required"
+      },
+      "sourceNormals": [
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      "scale": 1,
+      "translation": [
+        0,
+        0,
+        0
+      ],
+      "permutation": [
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "name": "unsupported-tilted-mirror",
+      "seeds": [
+        7391
+      ],
+      "paths": 192,
+      "mirrorPaths": 192,
+      "contributions": 192,
+      "escapes": 0,
+      "mirrors": 1,
+      "eligibility": {
+        "eligible": false,
+        "globalKappa": 1.0000001192092896,
+        "domain": "at most64 exact-f32 axis triangles on 2^-16 source/rebase grid; abs world/local <=256; min feature >=2^-12; area cancellation <=16",
+        "assumption": "normal binary64 basic arithmetic; Math.hypot relative error <=16*2^-53; full shadow still required"
+      },
+      "sourceNormals": [
+        [
+          0,
+          -0.0039062201980186685,
+          0.9999923706927791
+        ],
+        [
+          0,
+          -0.0039062201980186685,
+          0.9999923706927791
+        ],
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      "scale": 1,
+      "translation": [
+        0,
+        0,
+        0
+      ],
+      "permutation": [
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "name": "unsupported-decimal-world",
+      "seeds": [
+        7391
+      ],
+      "paths": 192,
+      "mirrorPaths": 192,
+      "contributions": 192,
+      "escapes": 0,
+      "expectedRadiance": 4,
+      "mirrors": 1,
+      "eligibility": {
+        "eligible": false,
+        "globalKappa": 1.0000001192092896,
+        "domain": "at most64 exact-f32 axis triangles on 2^-16 source/rebase grid; abs world/local <=256; min feature >=2^-12; area cancellation <=16",
+        "assumption": "normal binary64 basic arithmetic; Math.hypot relative error <=16*2^-53; full shadow still required"
+      },
+      "sourceNormals": [
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      "scale": 1,
+      "translation": [
+        0.1,
+        0.1,
+        0.1
+      ],
+      "permutation": [
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "name": "half-scale-three-mirrors-negative-permutation",
+      "seeds": [
+        7391,
+        1,
+        3735928559
+      ],
+      "paths": 576,
+      "mirrorPaths": 576,
+      "contributions": 576,
+      "escapes": 0,
+      "expectedRadiance": 0.75,
+      "mirrors": 3,
+      "eligibility": {
+        "eligible": true,
+        "globalKappa": 1.0000001192092896,
+        "domain": "at most64 exact-f32 axis triangles on 2^-16 source/rebase grid; abs world/local <=256; min feature >=2^-12; area cancellation <=16",
+        "assumption": "normal binary64 basic arithmetic; Math.hypot relative error <=16*2^-53; full shadow still required"
+      },
+      "sourceNormals": [
+        [
+          0,
+          0,
+          -1
+        ],
+        [
+          0,
+          0,
+          -1
+        ],
+        [
+          -1,
+          0,
+          0
+        ],
+        [
+          -1,
+          0,
+          0
+        ],
+        [
+          0,
+          -1,
+          0
+        ],
+        [
+          0,
+          -1,
+          0
+        ],
+        [
+          -1,
+          0,
+          0
+        ],
+        [
+          -1,
+          0,
+          0
+        ]
+      ],
+      "scale": 0.5,
+      "translation": [
+        -16,
+        8,
+        -32
+      ],
+      "permutation": [
+        2,
+        1,
+        0
+      ]
+    },
+    {
+      "name": "small-grid-two-mirrors",
+      "seeds": [
+        7391
+      ],
+      "paths": 192,
+      "mirrorPaths": 192,
+      "contributions": 192,
+      "escapes": 0,
+      "expectedRadiance": 3,
+      "mirrors": 2,
+      "eligibility": {
+        "eligible": true,
+        "globalKappa": 1.0000001192092896,
+        "domain": "at most64 exact-f32 axis triangles on 2^-16 source/rebase grid; abs world/local <=256; min feature >=2^-12; area cancellation <=16",
+        "assumption": "normal binary64 basic arithmetic; Math.hypot relative error <=16*2^-53; full shadow still required"
+      },
+      "sourceNormals": [
+        [
+          -1,
+          0,
+          0
+        ],
+        [
+          -1,
+          0,
+          0
+        ],
+        [
+          0,
+          -1,
+          0
+        ],
+        [
+          0,
+          -1,
+          0
+        ],
+        [
+          0,
+          -1,
+          0
+        ],
+        [
+          0,
+          -1,
+          0
+        ]
+      ],
+      "scale": 0.015625,
+      "translation": [
+        1,
+        -2,
+        3
+      ],
+      "permutation": [
+        0,
+        2,
+        1
+      ]
+    },
+    {
+      "name": "eight-scale-two-mirrors",
+      "seeds": [
+        7391
+      ],
+      "paths": 192,
+      "mirrorPaths": 192,
+      "contributions": 192,
+      "escapes": 0,
+      "expectedRadiance": 3,
+      "mirrors": 2,
+      "eligibility": {
+        "eligible": true,
+        "globalKappa": 1.0000001192092896,
+        "domain": "at most64 exact-f32 axis triangles on 2^-16 source/rebase grid; abs world/local <=256; min feature >=2^-12; area cancellation <=16",
+        "assumption": "normal binary64 basic arithmetic; Math.hypot relative error <=16*2^-53; full shadow still required"
+      },
+      "sourceNormals": [
+        [
+          0,
+          -1,
+          0
+        ],
+        [
+          0,
+          -1,
+          0
+        ],
+        [
+          0,
+          0,
+          -1
+        ],
+        [
+          0,
+          0,
+          -1
+        ],
+        [
+          0,
+          0,
+          -1
+        ],
+        [
+          0,
+          0,
+          -1
+        ]
+      ],
+      "scale": 8,
+      "translation": [
+        16,
+        -16,
+        0
+      ],
+      "permutation": [
+        1,
+        0,
+        2
+      ]
+    }
+  ],
+  "adversarialCPUFixtures": [
+    {
+      "name": "distinct-frame-square",
+      "width": 8,
+      "height": 8,
+      "aspect": 1,
+      "tile": {
+        "x": 0,
+        "y": 0,
+        "width": 8,
+        "height": 8
+      },
+      "paths": 192,
+      "frame": {
+        "forward": [
+          0.24153867145566735,
+          0.09057700179587526,
+          0.9661546858226694
+        ],
+        "right": [
+          -0.9321806278695784,
+          0.29829780091826513,
+          0.20507973813130725
+        ],
+        "up": [
+          0.26962631031876255,
+          0.9501653691400234,
+          -0.15648458093656784
+        ]
+      },
+      "nonzeroDistinctFrameComponents": true,
+      "halfFov": 0.17632698070846498,
+      "expectedCameraDomain": true,
+      "analyticPowerHistogram": {
+        "4": 192
+      },
+      "initialRngSHA256": "905d65d9e7d223411406e412ed8dc7cb8c545b5e14228a0932857adc6a6ecd44",
+      "jitterExtremes": null,
+      "sourceEligibility": {
+        "eligible": true,
+        "globalKappa": 1.0000001192092896,
+        "domain": "at most64 exact-f32 axis triangles on 2^-16 source/rebase grid; abs world/local <=256; min feature >=2^-12; area cancellation <=16",
+        "assumption": "normal binary64 basic arithmetic; Math.hypot relative error <=16*2^-53; full shadow still required"
+      }
+    },
+    {
+      "name": "distinct-frame-wide-17x9",
+      "width": 17,
+      "height": 9,
+      "aspect": 1.8888888888888888,
+      "tile": {
+        "x": 0,
+        "y": 0,
+        "width": 17,
+        "height": 9
+      },
+      "paths": 459,
+      "frame": {
+        "forward": [
+          0.24153867145566735,
+          0.09057700179587526,
+          0.9661546858226694
+        ],
+        "right": [
+          -0.9321806278695784,
+          0.29829780091826513,
+          0.20507973813130725
+        ],
+        "up": [
+          0.26962631031876255,
+          0.9501653691400234,
+          -0.15648458093656784
+        ]
+      },
+      "nonzeroDistinctFrameComponents": true,
+      "halfFov": 0.17632698070846498,
+      "expectedCameraDomain": true,
+      "analyticPowerHistogram": {
+        "4": 459
+      },
+      "initialRngSHA256": "c3a224b253db00d0c1a121de8bb5bf7d4bebc0f497b9aef5f96d9a838c562be3",
+      "jitterExtremes": null,
+      "sourceEligibility": {
+        "eligible": true,
+        "globalKappa": 1.0000001192092896,
+        "domain": "at most64 exact-f32 axis triangles on 2^-16 source/rebase grid; abs world/local <=256; min feature >=2^-12; area cancellation <=16",
+        "assumption": "normal binary64 basic arithmetic; Math.hypot relative error <=16*2^-53; full shadow still required"
+      }
+    },
+    {
+      "name": "distinct-frame-tall-9x17",
+      "width": 9,
+      "height": 17,
+      "aspect": 0.5294117647058824,
+      "tile": {
+        "x": 0,
+        "y": 0,
+        "width": 9,
+        "height": 17
+      },
+      "paths": 459,
+      "frame": {
+        "forward": [
+          0.24153867145566735,
+          0.09057700179587526,
+          0.9661546858226694
+        ],
+        "right": [
+          -0.9321806278695784,
+          0.29829780091826513,
+          0.20507973813130725
+        ],
+        "up": [
+          0.26962631031876255,
+          0.9501653691400234,
+          -0.15648458093656784
+        ]
+      },
+      "nonzeroDistinctFrameComponents": true,
+      "halfFov": 0.17632698070846498,
+      "expectedCameraDomain": true,
+      "analyticPowerHistogram": {
+        "4": 459
+      },
+      "initialRngSHA256": "c3a224b253db00d0c1a121de8bb5bf7d4bebc0f497b9aef5f96d9a838c562be3",
+      "jitterExtremes": null,
+      "sourceEligibility": {
+        "eligible": true,
+        "globalKappa": 1.0000001192092896,
+        "domain": "at most64 exact-f32 axis triangles on 2^-16 source/rebase grid; abs world/local <=256; min feature >=2^-12; area cancellation <=16",
+        "assumption": "normal binary64 basic arithmetic; Math.hypot relative error <=16*2^-53; full shadow still required"
+      }
+    },
+    {
+      "name": "minimum-fov-wide-31x8",
+      "width": 31,
+      "height": 8,
+      "aspect": 3.875,
+      "tile": {
+        "x": 0,
+        "y": 0,
+        "width": 31,
+        "height": 8
+      },
+      "paths": 744,
+      "frame": {
+        "forward": [
+          0.24153867145566735,
+          0.09057700179587526,
+          0.9661546858226694
+        ],
+        "right": [
+          -0.9321806278695784,
+          0.29829780091826513,
+          0.20507973813130725
+        ],
+        "up": [
+          0.26962631031876255,
+          0.9501653691400234,
+          -0.15648458093656784
+        ]
+      },
+      "nonzeroDistinctFrameComponents": true,
+      "halfFov": 0.04366094290851206,
+      "expectedCameraDomain": true,
+      "analyticPowerHistogram": {
+        "4": 744
+      },
+      "initialRngSHA256": "32fca488615e3fd9932a0985bb2b5f627c073762dcf4d40dae3e858ede8c81e7",
+      "jitterExtremes": null,
+      "sourceEligibility": {
+        "eligible": true,
+        "globalKappa": 1.0000001192092896,
+        "domain": "at most64 exact-f32 axis triangles on 2^-16 source/rebase grid; abs world/local <=256; min feature >=2^-12; area cancellation <=16",
+        "assumption": "normal binary64 basic arithmetic; Math.hypot relative error <=16*2^-53; full shadow still required"
+      }
+    },
+    {
+      "name": "maximum-fov-tall-8x31",
+      "width": 8,
+      "height": 31,
+      "aspect": 0.25806451612903225,
+      "tile": {
+        "x": 0,
+        "y": 0,
+        "width": 8,
+        "height": 31
+      },
+      "paths": 744,
+      "frame": {
+        "forward": [
+          0.24153867145566735,
+          0.09057700179587526,
+          0.9661546858226694
+        ],
+        "right": [
+          -0.9321806278695784,
+          0.29829780091826513,
+          0.20507973813130725
+        ],
+        "up": [
+          0.26962631031876255,
+          0.9501653691400234,
+          -0.15648458093656784
+        ]
+      },
+      "nonzeroDistinctFrameComponents": true,
+      "halfFov": 1.7320508075688767,
+      "expectedCameraDomain": true,
+      "analyticPowerHistogram": {
+        "4": 744
+      },
+      "initialRngSHA256": "32fca488615e3fd9932a0985bb2b5f627c073762dcf4d40dae3e858ede8c81e7",
+      "jitterExtremes": null,
+      "sourceEligibility": {
+        "eligible": true,
+        "globalKappa": 1.0000001192092896,
+        "domain": "at most64 exact-f32 axis triangles on 2^-16 source/rebase grid; abs world/local <=256; min feature >=2^-12; area cancellation <=16",
+        "assumption": "normal binary64 basic arithmetic; Math.hypot relative error <=16*2^-53; full shadow still required"
+      }
+    },
+    {
+      "name": "extreme-jitter-13x11",
+      "width": 13,
+      "height": 11,
+      "aspect": 1.1818181818181819,
+      "tile": {
+        "x": 0,
+        "y": 0,
+        "width": 13,
+        "height": 11
+      },
+      "paths": 429,
+      "frame": {
+        "forward": [
+          0.24153867145566735,
+          0.09057700179587526,
+          0.9661546858226694
+        ],
+        "right": [
+          -0.9321806278695784,
+          0.29829780091826513,
+          0.20507973813130725
+        ],
+        "up": [
+          0.26962631031876255,
+          0.9501653691400234,
+          -0.15648458093656784
+        ]
+      },
+      "nonzeroDistinctFrameComponents": true,
+      "halfFov": 0.17632698070846498,
+      "expectedCameraDomain": true,
+      "analyticPowerHistogram": {
+        "4": 429
+      },
+      "initialRngSHA256": "4ac0809e257a38d6fb8571e9e1ca209908af1e3d8e96520d1a364a39e965ed58",
+      "jitterExtremes": [
+        {
+          "state": 14150146,
+          "x": 1.4435499906539917e-8,
+          "y": 0.3747717391233891,
+          "xWord": 62,
+          "yWord": 1609632363,
+          "xGPU": 1.4435499906539917e-8,
+          "yGPU": 0.37477174401283264
+        },
+        {
+          "state": 52078625,
+          "x": 0.9999999951105565,
+          "y": 0.41079816152341664,
+          "xWord": 4294967275,
+          "yWord": 1764364669,
+          "xGPU": 0.9999999403953552,
+          "yGPU": 0.41079816222190857
+        },
+        {
+          "state": 2477551629,
+          "x": 0.8619761376176029,
+          "y": 1.4435499906539917e-8,
+          "xWord": 3702159321,
+          "yWord": 62,
+          "xGPU": 0.861976146697998,
+          "yGPU": 1.4435499906539917e-8
+        },
+        {
+          "state": 2515480108,
+          "x": 0.462806481635198,
+          "y": 0.9999999951105565,
+          "xWord": 1987738703,
+          "yWord": 4294967275,
+          "xGPU": 0.46280649304389954,
+          "yGPU": 0.9999999403953552
+        }
+      ],
+      "sourceEligibility": {
+        "eligible": true,
+        "globalKappa": 1.0000001192092896,
+        "domain": "at most64 exact-f32 axis triangles on 2^-16 source/rebase grid; abs world/local <=256; min feature >=2^-12; area cancellation <=16",
+        "assumption": "normal binary64 basic arithmetic; Math.hypot relative error <=16*2^-53; full shadow still required"
+      }
+    },
+    {
+      "name": "outside-camera-wide-aspect",
+      "width": 41,
+      "height": 8,
+      "aspect": 5.125,
+      "tile": {
+        "x": 0,
+        "y": 0,
+        "width": 32,
+        "height": 8
+      },
+      "paths": 768,
+      "frame": {
+        "forward": [
+          0.24153867145566735,
+          0.09057700179587526,
+          0.9661546858226694
+        ],
+        "right": [
+          -0.9321806278695784,
+          0.29829780091826513,
+          0.20507973813130725
+        ],
+        "up": [
+          0.26962631031876255,
+          0.9501653691400234,
+          -0.15648458093656784
+        ]
+      },
+      "nonzeroDistinctFrameComponents": true,
+      "halfFov": 0.04366094290851206,
+      "expectedCameraDomain": false,
+      "analyticPowerHistogram": {
+        "4": 768
+      },
+      "initialRngSHA256": "5e2fe8adb8e139f27db066ff38d3c0bcaefa4c8e4558f5e60750d23699370de4",
+      "jitterExtremes": null,
+      "sourceEligibility": {
+        "eligible": true,
+        "globalKappa": 1.0000001192092896,
+        "domain": "at most64 exact-f32 axis triangles on 2^-16 source/rebase grid; abs world/local <=256; min feature >=2^-12; area cancellation <=16",
+        "assumption": "normal binary64 basic arithmetic; Math.hypot relative error <=16*2^-53; full shadow still required"
+      }
+    },
+    {
+      "name": "outside-camera-tall-aspect",
+      "width": 8,
+      "height": 41,
+      "aspect": 0.1951219512195122,
+      "tile": {
+        "x": 0,
+        "y": 0,
+        "width": 8,
+        "height": 32
+      },
+      "paths": 768,
+      "frame": {
+        "forward": [
+          0.24153867145566735,
+          0.09057700179587526,
+          0.9661546858226694
+        ],
+        "right": [
+          -0.9321806278695784,
+          0.29829780091826513,
+          0.20507973813130725
+        ],
+        "up": [
+          0.26962631031876255,
+          0.9501653691400234,
+          -0.15648458093656784
+        ]
+      },
+      "nonzeroDistinctFrameComponents": true,
+      "halfFov": 0.04366094290851206,
+      "expectedCameraDomain": false,
+      "analyticPowerHistogram": {
+        "4": 768
+      },
+      "initialRngSHA256": "5e2fe8adb8e139f27db066ff38d3c0bcaefa4c8e4558f5e60750d23699370de4",
+      "jitterExtremes": null,
+      "sourceEligibility": {
+        "eligible": true,
+        "globalKappa": 1.0000001192092896,
+        "domain": "at most64 exact-f32 axis triangles on 2^-16 source/rebase grid; abs world/local <=256; min feature >=2^-12; area cancellation <=16",
+        "assumption": "normal binary64 basic arithmetic; Math.hypot relative error <=16*2^-53; full shadow still required"
+      }
+    }
+  ],
+  "selectedFixtures": [
+    "one-mirror-emission",
+    "eighth-scale-one-mirror-emission",
+    "two-mirrors-emission",
+    "quarter-scale-shifted-yzx",
+    "four-scale-shifted-zxy",
+    "one-mirror-escape",
+    "seam-after-mirror",
+    "grazing-mirror-escape",
+    "near-threshold-mirror",
+    "below-near-mirror",
+    "long-distance-mirror",
+    "unsupported-tilted-mirror",
+    "unsupported-decimal-world",
+    "half-scale-three-mirrors-negative-permutation",
+    "small-grid-two-mirrors",
+    "eight-scale-two-mirrors",
+    "distinct-frame-square",
+    "distinct-frame-wide-17x9",
+    "distinct-frame-tall-9x17",
+    "minimum-fov-wide-31x8",
+    "maximum-fov-tall-8x31",
+    "extreme-jitter-13x11",
+    "outside-camera-wide-aspect",
+    "outside-camera-tall-aspect"
+  ],
+  "fullLegacySuite": true,
+  "fullAdversarialSuite": true,
+  "fullFixtureSuite": true,
+  "cases": [],
+  "limitations": [
+    "Mandatory complete independent CPU shadow with unchanged raw geometry and power tolerance; zero numerical replacements required.",
+    "Both round modes share a camera-compiled runner per fixture. Historical anchor compilation cost is not measured.",
+    "Six in-domain and two explicitly out-of-domain camera fixtures are additional evidence; they do not enlarge the declared production domain.",
+    "Native software execution is not browser/physical-GPU validation or a hardware performance claim."
+  ],
+  "totals": {
+    "legacyPaths": 4608,
+    "adversarialPaths": 4563,
+    "fixtures": 24
+  }
+}

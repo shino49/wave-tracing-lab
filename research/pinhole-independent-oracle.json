@@ -1,0 +1,1447 @@
+{
+  "method": "Independent 1024-node Gauss-Legendre Hankel integral using scipy.special.j0; no Zernike expansion or implementation import",
+  "normalization": "Analytic aperture-area normalization; no finite-crop rescaling",
+  "max512To1024ErrorScaled": 5.3973620283364085e-15,
+  "cases": [
+    {
+      "diameterMm": 0.04,
+      "depthMm": 200,
+      "wavelengthNm": 360,
+      "radiusMm": 0,
+      "density": 3.876048695396612,
+      "quadratureErrorScaled": 0.0
+    },
+    {
+      "diameterMm": 0.04,
+      "depthMm": 200,
+      "wavelengthNm": 360,
+      "radiusMm": 0.003,
+      "density": 3.8756236585170987,
+      "quadratureErrorScaled": 2.2899993706537317e-16
+    },
+    {
+      "diameterMm": 0.04,
+      "depthMm": 200,
+      "wavelengthNm": 360,
+      "radiusMm": 0.018,
+      "density": 3.8607718186959787,
+      "quadratureErrorScaled": 4.579998741307463e-16
+    },
+    {
+      "diameterMm": 0.04,
+      "depthMm": 200,
+      "wavelengthNm": 360,
+      "radiusMm": 0.036,
+      "density": 3.815241881168088,
+      "quadratureErrorScaled": 0.0
+    },
+    {
+      "diameterMm": 0.04,
+      "depthMm": 200,
+      "wavelengthNm": 360,
+      "radiusMm": 0.1,
+      "density": 3.4270745055459866,
+      "quadratureErrorScaled": 1.2594996538595524e-15
+    },
+    {
+      "diameterMm": 0.04,
+      "depthMm": 200,
+      "wavelengthNm": 360,
+      "radiusMm": 0.5,
+      "density": 0.025745196557484258,
+      "quadratureErrorScaled": 9.651989534903815e-16
+    },
+    {
+      "diameterMm": 0.04,
+      "depthMm": 200,
+      "wavelengthNm": 360,
+      "radiusMm": 1,
+      "density": 5.14195582967174e-05,
+      "quadratureErrorScaled": 2.1573571951928923e-17
+    },
+    {
+      "diameterMm": 0.04,
+      "depthMm": 200,
+      "wavelengthNm": 360,
+      "radiusMm": 4,
+      "density": 0.0003680251227166581,
+      "quadratureErrorScaled": 1.920446249559465e-17
+    },
+    {
+      "diameterMm": 0.04,
+      "depthMm": 200,
+      "wavelengthNm": 360,
+      "radiusMm": 8,
+      "density": 5.620075513620442e-05,
+      "quadratureErrorScaled": 1.2439571776622444e-18
+    },
+    {
+      "diameterMm": 0.04,
+      "depthMm": 200,
+      "wavelengthNm": 360,
+      "radiusMm": 11.313708498984761,
+      "density": 2.177728669457778e-06,
+      "quadratureErrorScaled": 9.900772234781926e-19
+    },
+    {
+      "diameterMm": 0.04,
+      "depthMm": 200,
+      "wavelengthNm": 550,
+      "radiusMm": 0,
+      "density": 1.6612170996778983,
+      "quadratureErrorScaled": 2.6725494198408714e-16
+    },
+    {
+      "diameterMm": 0.04,
+      "depthMm": 200,
+      "wavelengthNm": 550,
+      "radiusMm": 0.003,
+      "density": 1.6611390529411607,
+      "quadratureErrorScaled": 1.3362747099204357e-16
+    },
+    {
+      "diameterMm": 0.04,
+      "depthMm": 200,
+      "wavelengthNm": 550,
+      "radiusMm": 0.018,
+      "density": 1.6584093415855117,
+      "quadratureErrorScaled": 5.345098839681743e-16
+    },
+    {
+      "diameterMm": 0.04,
+      "depthMm": 200,
+      "wavelengthNm": 550,
+      "radiusMm": 0.036,
+      "density": 1.6500097830692153,
+      "quadratureErrorScaled": 2.6725494198408714e-16
+    },
+    {
+      "diameterMm": 0.04,
+      "depthMm": 200,
+      "wavelengthNm": 550,
+      "radiusMm": 0.1,
+      "density": 1.5763603585959234,
+      "quadratureErrorScaled": 4.008824129761307e-16
+    },
+    {
+      "diameterMm": 0.04,
+      "depthMm": 200,
+      "wavelengthNm": 550,
+      "radiusMm": 0.5,
+      "density": 0.3747247836247632,
+      "quadratureErrorScaled": 5.211471368689699e-15
+    },
+    {
+      "diameterMm": 0.04,
+      "depthMm": 200,
+      "wavelengthNm": 550,
+      "radiusMm": 1,
+      "density": 0.019801585377345374,
+      "quadratureErrorScaled": 5.491253886079291e-16
+    },
+    {
+      "diameterMm": 0.04,
+      "depthMm": 200,
+      "wavelengthNm": 550,
+      "radiusMm": 4,
+      "density": 0.0006562191892747441,
+      "quadratureErrorScaled": 3.790896515936392e-17
+    },
+    {
+      "diameterMm": 0.04,
+      "depthMm": 200,
+      "wavelengthNm": 550,
+      "radiusMm": 8,
+      "density": 7.663319962492648e-05,
+      "quadratureErrorScaled": 1.3840687150482052e-17
+    },
+    {
+      "diameterMm": 0.04,
+      "depthMm": 200,
+      "wavelengthNm": 550,
+      "radiusMm": 11.313708498984761,
+      "density": 1.1376027255421108e-05,
+      "quadratureErrorScaled": 7.119145431041261e-18
+    },
+    {
+      "diameterMm": 0.04,
+      "depthMm": 200,
+      "wavelengthNm": 830,
+      "radiusMm": 0,
+      "density": 0.7295613532583236,
+      "quadratureErrorScaled": 0.0
+    },
+    {
+      "diameterMm": 0.04,
+      "depthMm": 200,
+      "wavelengthNm": 830,
+      "radiusMm": 0.003,
+      "density": 0.7295463023004665,
+      "quadratureErrorScaled": 0.0
+    },
+    {
+      "diameterMm": 0.04,
+      "depthMm": 200,
+      "wavelengthNm": 830,
+      "radiusMm": 0.018,
+      "density": 0.7290196817666794,
+      "quadratureErrorScaled": 3.0431723889725236e-16
+    },
+    {
+      "diameterMm": 0.04,
+      "depthMm": 200,
+      "wavelengthNm": 830,
+      "radiusMm": 0.036,
+      "density": 0.7273966776845893,
+      "quadratureErrorScaled": 3.0431723889725236e-16
+    },
+    {
+      "diameterMm": 0.04,
+      "depthMm": 200,
+      "wavelengthNm": 830,
+      "radiusMm": 0.1,
+      "density": 0.7129968013830377,
+      "quadratureErrorScaled": 1.5215861944862618e-16
+    },
+    {
+      "diameterMm": 0.04,
+      "depthMm": 200,
+      "wavelengthNm": 830,
+      "radiusMm": 0.5,
+      "density": 0.39903912253372775,
+      "quadratureErrorScaled": 4.4886792737344726e-15
+    },
+    {
+      "diameterMm": 0.04,
+      "depthMm": 200,
+      "wavelengthNm": 830,
+      "radiusMm": 1,
+      "density": 0.034361666604105924,
+      "quadratureErrorScaled": 2.75787497750635e-15
+    },
+    {
+      "diameterMm": 0.04,
+      "depthMm": 200,
+      "wavelengthNm": 830,
+      "radiusMm": 4,
+      "density": 0.0009168593646947779,
+      "quadratureErrorScaled": 1.2853242756158366e-16
+    },
+    {
+      "diameterMm": 0.04,
+      "depthMm": 200,
+      "wavelengthNm": 830,
+      "radiusMm": 8,
+      "density": 0.0001292859454257111,
+      "quadratureErrorScaled": 5.646511268601363e-18
+    },
+    {
+      "diameterMm": 0.04,
+      "depthMm": 200,
+      "wavelengthNm": 830,
+      "radiusMm": 11.313708498984761,
+      "density": 3.5710761115278166e-05,
+      "quadratureErrorScaled": 1.0819384256448334e-17
+    },
+    {
+      "diameterMm": 0.04,
+      "depthMm": 300,
+      "wavelengthNm": 360,
+      "radiusMm": 0,
+      "density": 3.876365789044153,
+      "quadratureErrorScaled": 2.2899993706537317e-16
+    },
+    {
+      "diameterMm": 0.04,
+      "depthMm": 300,
+      "wavelengthNm": 360,
+      "radiusMm": 0.003,
+      "density": 3.875940717392765,
+      "quadratureErrorScaled": 2.2899993706537317e-16
+    },
+    {
+      "diameterMm": 0.04,
+      "depthMm": 300,
+      "wavelengthNm": 360,
+      "radiusMm": 0.018,
+      "density": 3.861087662236458,
+      "quadratureErrorScaled": 0.0
+    },
+    {
+      "diameterMm": 0.04,
+      "depthMm": 300,
+      "wavelengthNm": 360,
+      "radiusMm": 0.036,
+      "density": 3.815553995066911,
+      "quadratureErrorScaled": 2.2899993706537317e-16
+    },
+    {
+      "diameterMm": 0.04,
+      "depthMm": 300,
+      "wavelengthNm": 360,
+      "radiusMm": 0.1,
+      "density": 3.42735457240495,
+      "quadratureErrorScaled": 1.3739996223922391e-15
+    },
+    {
+      "diameterMm": 0.04,
+      "depthMm": 300,
+      "wavelengthNm": 360,
+      "radiusMm": 0.5,
+      "density": 0.025703198767857004,
+      "quadratureErrorScaled": 9.61620829473735e-16
+    },
+    {
+      "diameterMm": 0.04,
+      "depthMm": 300,
+      "wavelengthNm": 360,
+      "radiusMm": 1,
+      "density": 4.914985612086928e-05,
+      "quadratureErrorScaled": 2.1634721532291536e-17
+    },
+    {
+      "diameterMm": 0.04,
+      "depthMm": 300,
+      "wavelengthNm": 360,
+      "radiusMm": 4,
+      "density": 0.0003680211686431296,
+      "quadratureErrorScaled": 1.9190485448654624e-17
+    },
+    {
+      "diameterMm": 0.04,
+      "depthMm": 300,
+      "wavelengthNm": 360,
+      "radiusMm": 8,
+      "density": 5.620061384716148e-05,
+      "quadratureErrorScaled": 1.2422100467947412e-18
+    },
+    {
+      "diameterMm": 0.04,
+      "depthMm": 300,
+      "wavelengthNm": 360,
+      "radiusMm": 11.313708498984761,
+      "density": 2.177714935666166e-06,
+      "quadratureErrorScaled": 9.884392882899084e-19
+    },
+    {
+      "diameterMm": 0.04,
+      "depthMm": 300,
+      "wavelengthNm": 550,
+      "radiusMm": 0,
+      "density": 1.6612753186720948,
+      "quadratureErrorScaled": 1.3362747099204357e-16
+    },
+    {
+      "diameterMm": 0.04,
+      "depthMm": 300,
+      "wavelengthNm": 550,
+      "radiusMm": 0.003,
+      "density": 1.6611972692001238,
+      "quadratureErrorScaled": 2.6725494198408714e-16
+    },
+    {
+      "diameterMm": 0.04,
+      "depthMm": 300,
+      "wavelengthNm": 550,
+      "radiusMm": 0.018,
+      "density": 1.6584674621679552,
+      "quadratureErrorScaled": 2.6725494198408714e-16
+    },
+    {
+      "diameterMm": 0.04,
+      "depthMm": 300,
+      "wavelengthNm": 550,
+      "radiusMm": 0.036,
+      "density": 1.6500676091147952,
+      "quadratureErrorScaled": 0.0
+    },
+    {
+      "diameterMm": 0.04,
+      "depthMm": 300,
+      "wavelengthNm": 550,
+      "radiusMm": 0.1,
+      "density": 1.5764155933732316,
+      "quadratureErrorScaled": 6.681373549602179e-16
+    },
+    {
+      "diameterMm": 0.04,
+      "depthMm": 300,
+      "wavelengthNm": 550,
+      "radiusMm": 0.5,
+      "density": 0.37473433973730347,
+      "quadratureErrorScaled": 5.1112507654456664e-15
+    },
+    {
+      "diameterMm": 0.04,
+      "depthMm": 300,
+      "wavelengthNm": 550,
+      "radiusMm": 1,
+      "density": 0.01979525358289031,
+      "quadratureErrorScaled": 5.42861600905177e-16
+    },
+    {
+      "diameterMm": 0.04,
+      "depthMm": 300,
+      "wavelengthNm": 550,
+      "radiusMm": 4,
+      "density": 0.0006562127051589217,
+      "quadratureErrorScaled": 3.8822434199348595e-17
+    },
+    {
+      "diameterMm": 0.04,
+      "depthMm": 300,
+      "wavelengthNm": 550,
+      "radiusMm": 8,
+      "density": 7.663299006148117e-05,
+      "quadratureErrorScaled": 1.378359533548301e-17
+    },
+    {
+      "diameterMm": 0.04,
+      "depthMm": 300,
+      "wavelengthNm": 550,
+      "radiusMm": 11.313708498984761,
+      "density": 1.1375999950136342e-05,
+      "quadratureErrorScaled": 7.123223417826907e-18
+    },
+    {
+      "diameterMm": 0.04,
+      "depthMm": 300,
+      "wavelengthNm": 830,
+      "radiusMm": 0,
+      "density": 0.729572579972293,
+      "quadratureErrorScaled": 3.0431723889725236e-16
+    },
+    {
+      "diameterMm": 0.04,
+      "depthMm": 300,
+      "wavelengthNm": 830,
+      "radiusMm": 0.003,
+      "density": 0.7295575287828269,
+      "quadratureErrorScaled": 3.0431723889725236e-16
+    },
+    {
+      "diameterMm": 0.04,
+      "depthMm": 300,
+      "wavelengthNm": 830,
+      "radiusMm": 0.018,
+      "density": 0.7290309001448291,
+      "quadratureErrorScaled": 0.0
+    },
+    {
+      "diameterMm": 0.04,
+      "depthMm": 300,
+      "wavelengthNm": 830,
+      "radiusMm": 0.036,
+      "density": 0.7274078710812703,
+      "quadratureErrorScaled": 3.0431723889725236e-16
+    },
+    {
+      "diameterMm": 0.04,
+      "depthMm": 300,
+      "wavelengthNm": 830,
+      "radiusMm": 0.1,
+      "density": 0.7130077728074128,
+      "quadratureErrorScaled": 3.0431723889725236e-16
+    },
+    {
+      "diameterMm": 0.04,
+      "depthMm": 300,
+      "wavelengthNm": 830,
+      "radiusMm": 0.5,
+      "density": 0.39904507461375766,
+      "quadratureErrorScaled": 4.564758583458786e-15
+    },
+    {
+      "diameterMm": 0.04,
+      "depthMm": 300,
+      "wavelengthNm": 830,
+      "radiusMm": 1,
+      "density": 0.034360890553939594,
+      "quadratureErrorScaled": 2.767384891221889e-15
+    },
+    {
+      "diameterMm": 0.04,
+      "depthMm": 300,
+      "wavelengthNm": 830,
+      "radiusMm": 4,
+      "density": 0.0009168504999103636,
+      "quadratureErrorScaled": 1.2689791114172537e-16
+    },
+    {
+      "diameterMm": 0.04,
+      "depthMm": 300,
+      "wavelengthNm": 830,
+      "radiusMm": 8,
+      "density": 0.0001292856171515325,
+      "quadratureErrorScaled": 5.757955569955337e-18
+    },
+    {
+      "diameterMm": 0.04,
+      "depthMm": 300,
+      "wavelengthNm": 830,
+      "radiusMm": 11.313708498984761,
+      "density": 3.571071151850279e-05,
+      "quadratureErrorScaled": 1.0754375080658516e-17
+    },
+    {
+      "diameterMm": 0.15,
+      "depthMm": 200,
+      "wavelengthNm": 360,
+      "radiusMm": 0,
+      "density": 48.031178591354895,
+      "quadratureErrorScaled": 2.9963369543131493e-15
+    },
+    {
+      "diameterMm": 0.15,
+      "depthMm": 200,
+      "wavelengthNm": 360,
+      "radiusMm": 0.003,
+      "density": 47.95715706291575,
+      "quadratureErrorScaled": 3.3871635135713865e-15
+    },
+    {
+      "diameterMm": 0.15,
+      "depthMm": 200,
+      "wavelengthNm": 360,
+      "radiusMm": 0.018,
+      "density": 45.4268195167941,
+      "quadratureErrorScaled": 3.647714553076877e-15
+    },
+    {
+      "diameterMm": 0.15,
+      "depthMm": 200,
+      "wavelengthNm": 360,
+      "radiusMm": 0.036,
+      "density": 38.321418067277726,
+      "quadratureErrorScaled": 4.4293676715933516e-15
+    },
+    {
+      "diameterMm": 0.15,
+      "depthMm": 200,
+      "wavelengthNm": 360,
+      "radiusMm": 0.1,
+      "density": 6.632896833325403,
+      "quadratureErrorScaled": 3.745421192891437e-15
+    },
+    {
+      "diameterMm": 0.15,
+      "depthMm": 200,
+      "wavelengthNm": 360,
+      "radiusMm": 0.5,
+      "density": 0.005538820264560808,
+      "quadratureErrorScaled": 5.432387395939686e-17
+    },
+    {
+      "diameterMm": 0.15,
+      "depthMm": 200,
+      "wavelengthNm": 360,
+      "radiusMm": 1,
+      "density": 0.0006532836545603798,
+      "quadratureErrorScaled": 1.635600244942613e-17
+    },
+    {
+      "diameterMm": 0.15,
+      "depthMm": 200,
+      "wavelengthNm": 360,
+      "radiusMm": 4,
+      "density": 8.391706680473145e-06,
+      "quadratureErrorScaled": 8.197693330846346e-19
+    },
+    {
+      "diameterMm": 0.15,
+      "depthMm": 200,
+      "wavelengthNm": 360,
+      "radiusMm": 8,
+      "density": 1.412283964560013e-05,
+      "quadratureErrorScaled": 7.688618221186316e-19
+    },
+    {
+      "diameterMm": 0.15,
+      "depthMm": 200,
+      "wavelengthNm": 360,
+      "radiusMm": 11.313708498984761,
+      "density": 5.19100557368671e-08,
+      "quadratureErrorScaled": 2.1221573613540027e-21
+    },
+    {
+      "diameterMm": 0.15,
+      "depthMm": 200,
+      "wavelengthNm": 550,
+      "radiusMm": 0,
+      "density": 22.137537984741588,
+      "quadratureErrorScaled": 1.5203836699539179e-15
+    },
+    {
+      "diameterMm": 0.15,
+      "depthMm": 200,
+      "wavelengthNm": 550,
+      "radiusMm": 0.003,
+      "density": 22.12291594007251,
+      "quadratureErrorScaled": 9.122302019723507e-16
+    },
+    {
+      "diameterMm": 0.15,
+      "depthMm": 200,
+      "wavelengthNm": 550,
+      "radiusMm": 0.018,
+      "density": 21.616232978829032,
+      "quadratureErrorScaled": 1.5203836699539179e-15
+    },
+    {
+      "diameterMm": 0.15,
+      "depthMm": 200,
+      "wavelengthNm": 550,
+      "radiusMm": 0.036,
+      "density": 20.113746620395048,
+      "quadratureErrorScaled": 2.2805755049308766e-15
+    },
+    {
+      "diameterMm": 0.15,
+      "depthMm": 200,
+      "wavelengthNm": 550,
+      "radiusMm": 0.1,
+      "density": 10.123751606472283,
+      "quadratureErrorScaled": 5.3973620283364085e-15
+    },
+    {
+      "diameterMm": 0.15,
+      "depthMm": 200,
+      "wavelengthNm": 550,
+      "radiusMm": 0.5,
+      "density": 0.10146799911327649,
+      "quadratureErrorScaled": 1.5322616673754328e-16
+    },
+    {
+      "diameterMm": 0.15,
+      "depthMm": 200,
+      "wavelengthNm": 550,
+      "radiusMm": 1,
+      "density": 0.004661335237933945,
+      "quadratureErrorScaled": 6.12088054627444e-17
+    },
+    {
+      "diameterMm": 0.15,
+      "depthMm": 200,
+      "wavelengthNm": 550,
+      "radiusMm": 4,
+      "density": 0.00017621127188013484,
+      "quadratureErrorScaled": 1.458070581918392e-18
+    },
+    {
+      "diameterMm": 0.15,
+      "depthMm": 200,
+      "wavelengthNm": 550,
+      "radiusMm": 8,
+      "density": 2.0323747932335015e-05,
+      "quadratureErrorScaled": 2.0674849271653092e-18
+    },
+    {
+      "diameterMm": 0.15,
+      "depthMm": 200,
+      "wavelengthNm": 550,
+      "radiusMm": 11.313708498984761,
+      "density": 8.049817445266777e-06,
+      "quadratureErrorScaled": 9.21081281984545e-19
+    },
+    {
+      "diameterMm": 0.15,
+      "depthMm": 200,
+      "wavelengthNm": 830,
+      "radiusMm": 0,
+      "density": 10.020707811670674,
+      "quadratureErrorScaled": 5.193680877179773e-16
+    },
+    {
+      "diameterMm": 0.15,
+      "depthMm": 200,
+      "wavelengthNm": 830,
+      "radiusMm": 0.003,
+      "density": 10.017801017441471,
+      "quadratureErrorScaled": 3.462453918119849e-16
+    },
+    {
+      "diameterMm": 0.15,
+      "depthMm": 200,
+      "wavelengthNm": 830,
+      "radiusMm": 0.018,
+      "density": 9.916506580574138,
+      "quadratureErrorScaled": 5.193680877179773e-16
+    },
+    {
+      "diameterMm": 0.15,
+      "depthMm": 200,
+      "wavelengthNm": 830,
+      "radiusMm": 0.036,
+      "density": 9.609322348701014,
+      "quadratureErrorScaled": 1.2118588713419472e-15
+    },
+    {
+      "diameterMm": 0.15,
+      "depthMm": 200,
+      "wavelengthNm": 830,
+      "radiusMm": 0.1,
+      "density": 7.19471499139833,
+      "quadratureErrorScaled": 3.5490152660728452e-15
+    },
+    {
+      "diameterMm": 0.15,
+      "depthMm": 200,
+      "wavelengthNm": 830,
+      "radiusMm": 0.5,
+      "density": 0.14317397996134282,
+      "quadratureErrorScaled": 5.301882562121019e-16
+    },
+    {
+      "diameterMm": 0.15,
+      "depthMm": 200,
+      "wavelengthNm": 830,
+      "radiusMm": 1,
+      "density": 0.015582758169144503,
+      "quadratureErrorScaled": 5.460803786878473e-17
+    },
+    {
+      "diameterMm": 0.15,
+      "depthMm": 200,
+      "wavelengthNm": 830,
+      "radiusMm": 4,
+      "density": 0.00010537573589933072,
+      "quadratureErrorScaled": 1.2608560601185638e-17
+    },
+    {
+      "diameterMm": 0.15,
+      "depthMm": 200,
+      "wavelengthNm": 830,
+      "radiusMm": 8,
+      "density": 2.6121416387423052e-05,
+      "quadratureErrorScaled": 1.334359768211585e-18
+    },
+    {
+      "diameterMm": 0.15,
+      "depthMm": 200,
+      "wavelengthNm": 830,
+      "radiusMm": 11.313708498984761,
+      "density": 9.974841466827227e-06,
+      "quadratureErrorScaled": 1.8347859569580977e-18
+    },
+    {
+      "diameterMm": 0.15,
+      "depthMm": 300,
+      "wavelengthNm": 360,
+      "radiusMm": 0,
+      "density": 48.83360875089089,
+      "quadratureErrorScaled": 2.735785914807658e-15
+    },
+    {
+      "diameterMm": 0.15,
+      "depthMm": 300,
+      "wavelengthNm": 360,
+      "radiusMm": 0.003,
+      "density": 48.758350447303606,
+      "quadratureErrorScaled": 2.9963369543131493e-15
+    },
+    {
+      "diameterMm": 0.15,
+      "depthMm": 300,
+      "wavelengthNm": 360,
+      "radiusMm": 0.018,
+      "density": 46.185564775084906,
+      "quadratureErrorScaled": 2.9963369543131493e-15
+    },
+    {
+      "diameterMm": 0.15,
+      "depthMm": 300,
+      "wavelengthNm": 360,
+      "radiusMm": 0.036,
+      "density": 38.9590353460653,
+      "quadratureErrorScaled": 4.2990921518406056e-15
+    },
+    {
+      "diameterMm": 0.15,
+      "depthMm": 300,
+      "wavelengthNm": 360,
+      "radiusMm": 0.1,
+      "density": 6.667965184450271,
+      "quadratureErrorScaled": 3.843127832705996e-15
+    },
+    {
+      "diameterMm": 0.15,
+      "depthMm": 300,
+      "wavelengthNm": 360,
+      "radiusMm": 0.5,
+      "density": 0.005237390066493244,
+      "quadratureErrorScaled": 5.4276165639174904e-17
+    },
+    {
+      "diameterMm": 0.15,
+      "depthMm": 300,
+      "wavelengthNm": 360,
+      "radiusMm": 1,
+      "density": 0.0006431216853079675,
+      "quadratureErrorScaled": 1.639774722962034e-17
+    },
+    {
+      "diameterMm": 0.15,
+      "depthMm": 300,
+      "wavelengthNm": 360,
+      "radiusMm": 4,
+      "density": 8.382433558847558e-06,
+      "quadratureErrorScaled": 8.128739899275555e-19
+    },
+    {
+      "diameterMm": 0.15,
+      "depthMm": 300,
+      "wavelengthNm": 360,
+      "radiusMm": 8,
+      "density": 1.4122320413647085e-05,
+      "quadratureErrorScaled": 7.7575716527571075e-19
+    },
+    {
+      "diameterMm": 0.15,
+      "depthMm": 300,
+      "wavelengthNm": 360,
+      "radiusMm": 11.313708498984761,
+      "density": 5.1862205928943555e-08,
+      "quadratureErrorScaled": 1.9763204653304757e-21
+    },
+    {
+      "diameterMm": 0.15,
+      "depthMm": 300,
+      "wavelengthNm": 550,
+      "radiusMm": 0,
+      "density": 22.29306099711633,
+      "quadratureErrorScaled": 9.122302019723507e-16
+    },
+    {
+      "diameterMm": 0.15,
+      "depthMm": 300,
+      "wavelengthNm": 550,
+      "radiusMm": 0.003,
+      "density": 22.278336223392397,
+      "quadratureErrorScaled": 1.368345302958526e-15
+    },
+    {
+      "diameterMm": 0.15,
+      "depthMm": 300,
+      "wavelengthNm": 550,
+      "radiusMm": 0.018,
+      "density": 21.76808764369372,
+      "quadratureErrorScaled": 1.5203836699539179e-15
+    },
+    {
+      "diameterMm": 0.15,
+      "depthMm": 300,
+      "wavelengthNm": 550,
+      "radiusMm": 0.036,
+      "density": 20.254958673707435,
+      "quadratureErrorScaled": 2.2805755049308766e-15
+    },
+    {
+      "diameterMm": 0.15,
+      "depthMm": 300,
+      "wavelengthNm": 550,
+      "radiusMm": 0.1,
+      "density": 10.190755792926076,
+      "quadratureErrorScaled": 5.321342844838713e-15
+    },
+    {
+      "diameterMm": 0.15,
+      "depthMm": 300,
+      "wavelengthNm": 550,
+      "radiusMm": 0.5,
+      "density": 0.10061699512211877,
+      "quadratureErrorScaled": 1.5560176622184628e-16
+    },
+    {
+      "diameterMm": 0.15,
+      "depthMm": 300,
+      "wavelengthNm": 550,
+      "radiusMm": 1,
+      "density": 0.004640552075911729,
+      "quadratureErrorScaled": 6.094897426914875e-17
+    },
+    {
+      "diameterMm": 0.15,
+      "depthMm": 300,
+      "wavelengthNm": 550,
+      "radiusMm": 4,
+      "density": 0.00017618591676568182,
+      "quadratureErrorScaled": 1.4023924690050404e-18
+    },
+    {
+      "diameterMm": 0.15,
+      "depthMm": 300,
+      "wavelengthNm": 550,
+      "radiusMm": 8,
+      "density": 2.0322974509924602e-05,
+      "quadratureErrorScaled": 2.0593652023654455e-18
+    },
+    {
+      "diameterMm": 0.15,
+      "depthMm": 300,
+      "wavelengthNm": 550,
+      "radiusMm": 11.313708498984761,
+      "density": 8.049673712184099e-06,
+      "quadratureErrorScaled": 9.206462967274095e-19
+    },
+    {
+      "diameterMm": 0.15,
+      "depthMm": 300,
+      "wavelengthNm": 830,
+      "radiusMm": 0,
+      "density": 10.051383309677691,
+      "quadratureErrorScaled": 5.193680877179773e-16
+    },
+    {
+      "diameterMm": 0.15,
+      "depthMm": 300,
+      "wavelengthNm": 830,
+      "radiusMm": 0.003,
+      "density": 10.04846761696399,
+      "quadratureErrorScaled": 3.462453918119849e-16
+    },
+    {
+      "diameterMm": 0.15,
+      "depthMm": 300,
+      "wavelengthNm": 830,
+      "radiusMm": 0.018,
+      "density": 9.946862871050087,
+      "quadratureErrorScaled": 8.656134795299622e-16
+    },
+    {
+      "diameterMm": 0.15,
+      "depthMm": 300,
+      "wavelengthNm": 830,
+      "radiusMm": 0.036,
+      "density": 9.638734950960826,
+      "quadratureErrorScaled": 8.656134795299622e-16
+    },
+    {
+      "diameterMm": 0.15,
+      "depthMm": 300,
+      "wavelengthNm": 830,
+      "radiusMm": 0.1,
+      "density": 7.216553437575901,
+      "quadratureErrorScaled": 3.2027698742608604e-15
+    },
+    {
+      "diameterMm": 0.15,
+      "depthMm": 300,
+      "wavelengthNm": 830,
+      "radiusMm": 0.5,
+      "density": 0.14224347639737955,
+      "quadratureErrorScaled": 5.383033825826953e-16
+    },
+    {
+      "diameterMm": 0.15,
+      "depthMm": 300,
+      "wavelengthNm": 830,
+      "radiusMm": 1,
+      "density": 0.015542559817618113,
+      "quadratureErrorScaled": 5.359364707246055e-17
+    },
+    {
+      "diameterMm": 0.15,
+      "depthMm": 300,
+      "wavelengthNm": 830,
+      "radiusMm": 4,
+      "density": 0.00010534748077134636,
+      "quadratureErrorScaled": 1.261252306523378e-17
+    },
+    {
+      "diameterMm": 0.15,
+      "depthMm": 300,
+      "wavelengthNm": 830,
+      "radiusMm": 8,
+      "density": 2.6120352064822978e-05,
+      "quadratureErrorScaled": 1.3330389468622046e-18
+    },
+    {
+      "diameterMm": 0.15,
+      "depthMm": 300,
+      "wavelengthNm": 830,
+      "radiusMm": 11.313708498984761,
+      "density": 9.974645820175868e-06,
+      "quadratureErrorScaled": 1.8374275996568582e-18
+    },
+    {
+      "diameterMm": 0.5,
+      "depthMm": 200,
+      "wavelengthNm": 360,
+      "radiusMm": 0,
+      "density": 3.383427192695237,
+      "quadratureErrorScaled": 2.036450640334951e-15
+    },
+    {
+      "diameterMm": 0.5,
+      "depthMm": 200,
+      "wavelengthNm": 360,
+      "radiusMm": 0.003,
+      "density": 3.3265886038958374,
+      "quadratureErrorScaled": 1.9932154522170085e-15
+    },
+    {
+      "diameterMm": 0.5,
+      "depthMm": 200,
+      "wavelengthNm": 360,
+      "radiusMm": 0.018,
+      "density": 2.4415266619212455,
+      "quadratureErrorScaled": 8.71298960546332e-16
+    },
+    {
+      "diameterMm": 0.5,
+      "depthMm": 200,
+      "wavelengthNm": 360,
+      "radiusMm": 0.036,
+      "density": 4.016408707899417,
+      "quadratureErrorScaled": 7.972861808868033e-16
+    },
+    {
+      "diameterMm": 0.5,
+      "depthMm": 200,
+      "wavelengthNm": 360,
+      "radiusMm": 0.1,
+      "density": 2.7534172986785674,
+      "quadratureErrorScaled": 1.3703356233991932e-16
+    },
+    {
+      "diameterMm": 0.5,
+      "depthMm": 200,
+      "wavelengthNm": 360,
+      "radiusMm": 0.5,
+      "density": 0.04136173660331176,
+      "quadratureErrorScaled": 1.4335396060292362e-17
+    },
+    {
+      "diameterMm": 0.5,
+      "depthMm": 200,
+      "wavelengthNm": 360,
+      "radiusMm": 1,
+      "density": 0.0028281053460176373,
+      "quadratureErrorScaled": 2.717943003044648e-18
+    },
+    {
+      "diameterMm": 0.5,
+      "depthMm": 200,
+      "wavelengthNm": 360,
+      "radiusMm": 4,
+      "density": 6.71310872981542e-06,
+      "quadratureErrorScaled": 1.4161543959633552e-20
+    },
+    {
+      "diameterMm": 0.5,
+      "depthMm": 200,
+      "wavelengthNm": 360,
+      "radiusMm": 8,
+      "density": 4.1018823888543734e-08,
+      "quadratureErrorScaled": 5.55014338550103e-21
+    },
+    {
+      "diameterMm": 0.5,
+      "depthMm": 200,
+      "wavelengthNm": 360,
+      "radiusMm": 11.313708498984761,
+      "density": 7.427627985029112e-09,
+      "quadratureErrorScaled": 8.171972591927655e-22
+    },
+    {
+      "diameterMm": 0.5,
+      "depthMm": 200,
+      "wavelengthNm": 550,
+      "radiusMm": 0,
+      "density": 12.240563926197003,
+      "quadratureErrorScaled": 2.5314388104732733e-16
+    },
+    {
+      "diameterMm": 0.5,
+      "depthMm": 200,
+      "wavelengthNm": 550,
+      "radiusMm": 0.003,
+      "density": 12.151035995091574,
+      "quadratureErrorScaled": 2.5314388104732733e-16
+    },
+    {
+      "diameterMm": 0.5,
+      "depthMm": 200,
+      "wavelengthNm": 550,
+      "radiusMm": 0.018,
+      "density": 9.401824966676275,
+      "quadratureErrorScaled": 6.157553863313367e-17
+    },
+    {
+      "diameterMm": 0.5,
+      "depthMm": 200,
+      "wavelengthNm": 550,
+      "radiusMm": 0.036,
+      "density": 4.357258827684373,
+      "quadratureErrorScaled": 2.8051078710649784e-16
+    },
+    {
+      "diameterMm": 0.5,
+      "depthMm": 200,
+      "wavelengthNm": 550,
+      "radiusMm": 0.1,
+      "density": 3.548451069622534,
+      "quadratureErrorScaled": 3.36955030853537e-16
+    },
+    {
+      "diameterMm": 0.5,
+      "depthMm": 200,
+      "wavelengthNm": 550,
+      "radiusMm": 0.5,
+      "density": 0.03358928914024573,
+      "quadratureErrorScaled": 3.6533750569224707e-17
+    },
+    {
+      "diameterMm": 0.5,
+      "depthMm": 200,
+      "wavelengthNm": 550,
+      "radiusMm": 1,
+      "density": 0.0005836127429103447,
+      "quadratureErrorScaled": 3.4505118525226746e-18
+    },
+    {
+      "diameterMm": 0.5,
+      "depthMm": 200,
+      "wavelengthNm": 550,
+      "radiusMm": 4,
+      "density": 5.584512730314616e-05,
+      "quadratureErrorScaled": 5.625664330534178e-19
+    },
+    {
+      "diameterMm": 0.5,
+      "depthMm": 200,
+      "wavelengthNm": 550,
+      "radiusMm": 8,
+      "density": 2.5083858700514104e-06,
+      "quadratureErrorScaled": 2.0753690349508914e-20
+    },
+    {
+      "diameterMm": 0.5,
+      "depthMm": 200,
+      "wavelengthNm": 550,
+      "radiusMm": 11.313708498984761,
+      "density": 2.4026336013605484e-06,
+      "quadratureErrorScaled": 8.580736674884593e-20
+    },
+    {
+      "diameterMm": 0.5,
+      "depthMm": 200,
+      "wavelengthNm": 830,
+      "radiusMm": 0,
+      "density": 0.4389027514306474,
+      "quadratureErrorScaled": 1.8385630305216397e-15
+    },
+    {
+      "diameterMm": 0.5,
+      "depthMm": 200,
+      "wavelengthNm": 830,
+      "radiusMm": 0.003,
+      "density": 0.43752497141962154,
+      "quadratureErrorScaled": 1.833207047117048e-15
+    },
+    {
+      "diameterMm": 0.5,
+      "depthMm": 200,
+      "wavelengthNm": 830,
+      "radiusMm": 0.018,
+      "density": 0.4334215930267974,
+      "quadratureErrorScaled": 1.5780674740255918e-15
+    },
+    {
+      "diameterMm": 0.5,
+      "depthMm": 200,
+      "wavelengthNm": 830,
+      "radiusMm": 0.036,
+      "density": 0.850091740449372,
+      "quadratureErrorScaled": 9.874485767738044e-16
+    },
+    {
+      "diameterMm": 0.5,
+      "depthMm": 200,
+      "wavelengthNm": 830,
+      "radiusMm": 0.1,
+      "density": 6.708436806299987,
+      "quadratureErrorScaled": 2.1423933618366566e-15
+    },
+    {
+      "diameterMm": 0.5,
+      "depthMm": 200,
+      "wavelengthNm": 830,
+      "radiusMm": 0.5,
+      "density": 0.05630059265902256,
+      "quadratureErrorScaled": 9.074740063916065e-17
+    },
+    {
+      "diameterMm": 0.5,
+      "depthMm": 200,
+      "wavelengthNm": 830,
+      "radiusMm": 1,
+      "density": 0.0026200328853729763,
+      "quadratureErrorScaled": 1.397957316184253e-17
+    },
+    {
+      "diameterMm": 0.5,
+      "depthMm": 200,
+      "wavelengthNm": 830,
+      "radiusMm": 4,
+      "density": 3.1324719603221897e-06,
+      "quadratureErrorScaled": 1.5427606117435168e-20
+    },
+    {
+      "diameterMm": 0.5,
+      "depthMm": 200,
+      "wavelengthNm": 830,
+      "radiusMm": 8,
+      "density": 1.8127405884790722e-06,
+      "quadratureErrorScaled": 8.947119993701566e-21
+    },
+    {
+      "diameterMm": 0.5,
+      "depthMm": 200,
+      "wavelengthNm": 830,
+      "radiusMm": 11.313708498984761,
+      "density": 1.3282097159051248e-07,
+      "quadratureErrorScaled": 1.1775947843069946e-21
+    },
+    {
+      "diameterMm": 0.5,
+      "depthMm": 300,
+      "wavelengthNm": 360,
+      "radiusMm": 0,
+      "density": 0.09557132003417496,
+      "quadratureErrorScaled": 4.0029188999027236e-16
+    },
+    {
+      "diameterMm": 0.5,
+      "depthMm": 300,
+      "wavelengthNm": 360,
+      "radiusMm": 0.003,
+      "density": 0.09501626415682989,
+      "quadratureErrorScaled": 3.904219927027548e-16
+    },
+    {
+      "diameterMm": 0.5,
+      "depthMm": 300,
+      "wavelengthNm": 360,
+      "radiusMm": 0.018,
+      "density": 1.073638165582609,
+      "quadratureErrorScaled": 1.2201116646843085e-16
+    },
+    {
+      "diameterMm": 0.5,
+      "depthMm": 300,
+      "wavelengthNm": 360,
+      "radiusMm": 0.036,
+      "density": 6.207452325372234,
+      "quadratureErrorScaled": 4.528702755404821e-16
+    },
+    {
+      "diameterMm": 0.5,
+      "depthMm": 300,
+      "wavelengthNm": 360,
+      "radiusMm": 0.1,
+      "density": 3.00831079777857,
+      "quadratureErrorScaled": 1.143167685830343e-16
+    },
+    {
+      "diameterMm": 0.5,
+      "depthMm": 300,
+      "wavelengthNm": 360,
+      "radiusMm": 0.5,
+      "density": 0.03564527483151931,
+      "quadratureErrorScaled": 1.375144622077566e-17
+    },
+    {
+      "diameterMm": 0.5,
+      "depthMm": 300,
+      "wavelengthNm": 360,
+      "radiusMm": 1,
+      "density": 0.002750932057914243,
+      "quadratureErrorScaled": 2.5669461695421676e-18
+    },
+    {
+      "diameterMm": 0.5,
+      "depthMm": 300,
+      "wavelengthNm": 360,
+      "radiusMm": 4,
+      "density": 6.678934442376619e-06,
+      "quadratureErrorScaled": 1.5443239164033866e-20
+    },
+    {
+      "diameterMm": 0.5,
+      "depthMm": 300,
+      "wavelengthNm": 360,
+      "radiusMm": 8,
+      "density": 4.0115592822897275e-08,
+      "quadratureErrorScaled": 5.946763931560089e-21
+    },
+    {
+      "diameterMm": 0.5,
+      "depthMm": 300,
+      "wavelengthNm": 360,
+      "radiusMm": 11.313708498984761,
+      "density": 7.268838263196554e-09,
+      "quadratureErrorScaled": 1.165246202189247e-21
+    },
+    {
+      "diameterMm": 0.5,
+      "depthMm": 300,
+      "wavelengthNm": 550,
+      "radiusMm": 0,
+      "density": 10.912682484116562,
+      "quadratureErrorScaled": 1.9019999711123512e-15
+    },
+    {
+      "diameterMm": 0.5,
+      "depthMm": 300,
+      "wavelengthNm": 550,
+      "radiusMm": 0.003,
+      "density": 10.832898532936388,
+      "quadratureErrorScaled": 1.881474791567973e-15
+    },
+    {
+      "diameterMm": 0.5,
+      "depthMm": 300,
+      "wavelengthNm": 550,
+      "radiusMm": 0.018,
+      "density": 8.417536215252866,
+      "quadratureErrorScaled": 1.3272949438697702e-15
+    },
+    {
+      "diameterMm": 0.5,
+      "depthMm": 300,
+      "wavelengthNm": 550,
+      "radiusMm": 0.036,
+      "density": 4.244924696846527,
+      "quadratureErrorScaled": 9.578417120709683e-17
+    },
+    {
+      "diameterMm": 0.5,
+      "depthMm": 300,
+      "wavelengthNm": 550,
+      "radiusMm": 0.1,
+      "density": 4.5900375473821695,
+      "quadratureErrorScaled": 3.5576977876921675e-16
+    },
+    {
+      "diameterMm": 0.5,
+      "depthMm": 300,
+      "wavelengthNm": 550,
+      "radiusMm": 0.5,
+      "density": 0.02761005035277968,
+      "quadratureErrorScaled": 3.423535806816156e-17
+    },
+    {
+      "diameterMm": 0.5,
+      "depthMm": 300,
+      "wavelengthNm": 550,
+      "radiusMm": 1,
+      "density": 0.0005179070808249025,
+      "quadratureErrorScaled": 3.2667740799086147e-18
+    },
+    {
+      "diameterMm": 0.5,
+      "depthMm": 300,
+      "wavelengthNm": 550,
+      "radiusMm": 4,
+      "density": 5.575655599808223e-05,
+      "quadratureErrorScaled": 5.678645534853288e-19
+    },
+    {
+      "diameterMm": 0.5,
+      "depthMm": 300,
+      "wavelengthNm": 550,
+      "radiusMm": 8,
+      "density": 2.5065162692055623e-06,
+      "quadratureErrorScaled": 2.0867873979506998e-20
+    },
+    {
+      "diameterMm": 0.5,
+      "depthMm": 300,
+      "wavelengthNm": 550,
+      "radiusMm": 11.313708498984761,
+      "density": 2.402155518474174e-06,
+      "quadratureErrorScaled": 7.816685070725985e-20
+    },
+    {
+      "diameterMm": 0.5,
+      "depthMm": 300,
+      "wavelengthNm": 830,
+      "radiusMm": 0,
+      "density": 2.07633767070799,
+      "quadratureErrorScaled": 4.066652126831763e-15
+    },
+    {
+      "diameterMm": 0.5,
+      "depthMm": 300,
+      "wavelengthNm": 830,
+      "radiusMm": 0.003,
+      "density": 2.0696936948437905,
+      "quadratureErrorScaled": 4.0315947809107995e-15
+    },
+    {
+      "diameterMm": 0.5,
+      "depthMm": 300,
+      "wavelengthNm": 830,
+      "radiusMm": 0.018,
+      "density": 1.8959177463416044,
+      "quadratureErrorScaled": 3.542739568346253e-15
+    },
+    {
+      "diameterMm": 0.5,
+      "depthMm": 300,
+      "wavelengthNm": 830,
+      "radiusMm": 0.036,
+      "density": 1.9438094259628487,
+      "quadratureErrorScaled": 2.3215753520993586e-15
+    },
+    {
+      "diameterMm": 0.5,
+      "depthMm": 300,
+      "wavelengthNm": 830,
+      "radiusMm": 0.1,
+      "density": 7.809092921824683,
+      "quadratureErrorScaled": 1.745076774732404e-15
+    },
+    {
+      "diameterMm": 0.5,
+      "depthMm": 300,
+      "wavelengthNm": 830,
+      "radiusMm": 0.5,
+      "density": 0.04871189022927741,
+      "quadratureErrorScaled": 8.551314413012791e-17
+    },
+    {
+      "diameterMm": 0.5,
+      "depthMm": 300,
+      "wavelengthNm": 830,
+      "radiusMm": 1,
+      "density": 0.0025024537759948725,
+      "quadratureErrorScaled": 1.3020973859316185e-17
+    },
+    {
+      "diameterMm": 0.5,
+      "depthMm": 300,
+      "wavelengthNm": 830,
+      "radiusMm": 4,
+      "density": 3.0634637279870087e-06,
+      "quadratureErrorScaled": 2.0643199420801164e-20
+    },
+    {
+      "diameterMm": 0.5,
+      "depthMm": 300,
+      "wavelengthNm": 830,
+      "radiusMm": 8,
+      "density": 1.810305658744769e-06,
+      "quadratureErrorScaled": 6.385758467582725e-21
+    },
+    {
+      "diameterMm": 0.5,
+      "depthMm": 300,
+      "wavelengthNm": 830,
+      "radiusMm": 11.313708498984761,
+      "density": 1.3244282043209776e-07,
+      "quadratureErrorScaled": 2.7350288957287846e-21
+    }
+  ]
+}

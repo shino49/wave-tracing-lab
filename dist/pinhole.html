@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#101616">
+  <meta name="description" content="真实三维彩色场景通过有限圆孔成像。并排比较几何孔径模糊与标量 Fresnel 衍射，原生 512×512 探测器。">
+  <title>波与光 · 小孔相机</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="pinhole-style.css">
+</head>
+<body class="pinhole-page">
+<div class="app-shell">
+  <header class="masthead">
+    <a class="brand" href="pinhole.html"><span class="brand-symbol" aria-hidden="true"><i></i><i></i><i></i></span><span>波与光<span class="brand-en">WAVE / LIGHT</span></span></a>
+    <span class="header-note"><span class="tiny-dot"></span>本地计算 · 可见光 · 有限孔径</span>
+  </header>
+  <nav class="ph-nav" aria-label="选择实验"><a href="transport.html" style="color:#d5eebc">相干网格引擎 · 512² ↗</a>
+    <a href="pinhole.html" aria-current="page">小孔相机</a>
+    <a href="wave-demo.html">三维局部波动演示</a>
+    <a href="tracer.html">场景与光谱</a>
+    <a href="index.html">双缝参考</a>
+    <a href="coherent.html">二维全波参考</a>
+  </nav>
+  <main id="main">
+    <section class="intro ph-intro" aria-labelledby="phTitle">
+      <div><div class="eyebrow">FINITE APERTURE / SCALAR FRESNEL CAMERA</div><h1 id="phTitle">孔小一点，<span>一定更清楚吗？</span></h1><p class="intro-copy">把一个彩色三维场景放到小孔前。大孔有几何模糊，小孔有衍射扩散；两幅图来自同一场景、同一个物理孔径和同一曝光。</p></div>
+      <a class="ph-method-link" href="#phModel">模型与边界 ↘</a>
+    </section>
+
+    <section class="panel ph-camera" aria-labelledby="phCameraTitle">
+      <div class="ph-section-top"><div><div class="eyebrow">ONE APERTURE / TWO CAMERAS</div><h2 id="phCameraTitle">像面上的真实计算</h2></div><span id="phBackend" class="ph-chip">尚未计算</span></div>
+      <div class="ph-films">
+        <figure><figcaption><div><span class="ph-letter">G</span><strong>有限孔径 · 几何</strong></div><span>直线传播与圆孔模糊</span></figcaption><div class="ph-film"><canvas id="phGeometricCanvas" width="512" height="512" aria-label="原生 512×512 有限孔径几何相机的计算图像"></canvas><div id="phGeometricEmpty" class="ph-empty"><span class="ph-empty-glyph" aria-hidden="true">G</span><strong>孔径不会自动变成无限小</strong><span>点击「计算 512² 图像」开始</span></div><div id="phGeometricPartialWrap" class="ph-partial" hidden><strong class="ph-partial-badge">未完成 · INCOMPLETE</strong><span class="ph-partial-label">源光贡献正在累积</span></div></div><div id="phGeometricResolution" class="ph-film-note">512 × 512 原生输出 · 尚未计算</div></figure>
+        <figure><figcaption><div><span class="ph-letter ph-wave-letter">W</span><strong>有限孔径 · 波动</strong></div><span>标量近轴 Fresnel 衍射</span></figcaption><div class="ph-film"><canvas id="phWaveCanvas" width="512" height="512" aria-label="原生 512×512 标量 Fresnel 小孔相机的计算图像"></canvas><div id="phWaveEmpty" class="ph-empty"><span class="ph-empty-glyph" aria-hidden="true">W</span><strong>从圆孔积分得到衍射扩散</strong><span>与左图共用颜色映射和曝光</span></div><div id="phWavePartialWrap" class="ph-partial" hidden><strong class="ph-partial-badge">未完成 · INCOMPLETE</strong><span class="ph-partial-label">源光贡献正在累积</span></div></div><div id="phWaveResolution" class="ph-film-note">512 × 512 原生输出 · 尚未计算</div></figure>
+      </div>
+      <div class="ph-display"><span>CIE XYZ → sRGB · 固定基准 +16 EV · 不逐图归一化</span><label for="phExposure">共用曝光<input id="phExposure" type="range" min="-8" max="4" step=".25" value="0"><output id="phExposureValue" for="phExposure">0 EV</output></label></div>
+      <div class="ph-status" role="status" aria-live="polite"><span id="phStatus">先选孔径，再开始计算。最终两幅图均为原生 512 × 512。</span><progress id="phProgress" value="0" max="1" hidden></progress></div>
+    </section>
+
+    <div class="ph-workbench">
+      <section class="panel ph-controls" aria-labelledby="phControlsTitle">
+        <div class="ph-section-top"><div><div class="eyebrow">01 / CHANGE THE APERTURE</div><h2 id="phControlsTitle">改变孔径，观察取舍</h2></div></div>
+        <div class="ph-control-body">
+          <label class="ph-slider" for="phDiameter"><span>孔径直径 D<output id="phDiameterValue" for="phDiameter">0.200 mm</output></span><input id="phDiameter" type="range" min="0.04" max="0.5" step="0.005" value="0.2"><small><span>0.04 mm · 衍射更明显</span><span>0.50 mm · 几何模糊更大</span></small></label>
+          <div class="ph-presets" role="group" aria-label="孔径直径快捷选择"><button type="button" data-diameter="0.06">小孔 · 0.06</button><button type="button" data-diameter="0.20">中孔 · 0.20</button><button type="button" data-diameter="0.45">大孔 · 0.45 mm</button></div>
+          <p id="phTradeoff" class="ph-note">小孔更暗，衍射也更宽。两幅图共用曝光，不自动补亮。</p>
+          <div class="ph-control-grid">
+            <label for="phMode">被摄对象<select id="phMode"><option value="scene">三维彩色静物</option><option value="point">轴上点源 · 0.08 mm 环纹预设</option></select></label>
+            <label for="phSpectrum">光谱<select id="phSpectrum"><option value="broadband">宽带 · D65 与表面反射谱</option><option value="narrowband">窄带 · 可见光单波长</option></select></label>
+          </div>
+          <label class="ph-slider" for="phWavelength"><span>窄带波长 λ<output id="phWavelengthValue" for="phWavelength">550 nm</output></span><input id="phWavelength" type="range" min="420" max="680" step="5" value="550"><small id="phSpectrumNote">宽带模式对多波长的强度积分；彩色来自光谱，不是后期着色。</small></label>
+          <div class="ph-actions"><button id="phRun" type="button" class="ph-primary">计算 512² 图像 <span aria-hidden="true">↗</span></button><button id="phCancel" type="button" class="ph-cancel" hidden>取消</button><button id="phReset" type="button" class="ph-text-button">恢复默认</button></div>
+          <p class="ph-note">只计算一次原生 512² 图像。中途展示同一像面上已完成的深度 / 材质贡献，仍缺少部分源光；曝光固定，亮度和颜色仍会改变。这不是噪声或采样收敛。点源直接计算最终图；参数变化会取消旧计算，单次上限 10 分钟。</p>
+          <details class="ph-advanced"><summary>计算设置</summary><div><label for="phCompute">计算后端<select id="phCompute"><option value="auto">自动 · 优先 WebGPU</option><option value="cpu">CPU 参考计算</option></select></label><label for="phLayers">场景深度分层<select id="phLayers"><option value="4">4 层 · 较快</option><option value="8" selected>8 层 · 默认</option><option value="16">16 层 · 更细</option></select></label><p class="ph-note">探测器固定 8 × 8 mm，小孔至像面 50 mm。分辨率不会缩放装置。深度分层是一项数值近似；点源使用自身物距。</p></div></details>
+        </div>
+      </section>
+
+      <section class="panel ph-rig-panel" aria-labelledby="phRigTitle">
+        <div class="ph-section-top"><div><div class="eyebrow">02 / THE SAME 3D RIG</div><h2 id="phRigTitle">场景、小孔与探测器</h2></div><span class="ph-chip">装置视图</span></div>
+        <div class="ph-rig"><canvas id="phRigCanvas" width="1000" height="520" aria-label="同一三维场景、小孔平面和探测器的空间示意"></canvas><div class="ph-aperture-inset"><canvas id="phApertureCanvas" width="180" height="180" aria-label="物理圆孔的放大视图，视野为 1×1 毫米"></canvas><span>圆孔放大图 · 1 × 1 mm</span></div></div>
+        <div class="ph-rig-footer"><label for="phOrbit">观察装置<input id="phOrbit" type="range" min="-40" max="40" step="1" value="0"><output id="phOrbitValue" for="phOrbit">0°</output></label><span>仅转动装置视图，不改变相机结果</span></div>
+        <p id="phSceneDescription" class="ph-note ph-rig-description">三维物体具有真实深度；成像由中心投影、可见性和各深度的圆孔响应共同决定。装置图为透视示意，小孔细节见右上角放大图。</p>
+      </section>
+    </div>
+
+    <section class="panel ph-evidence" aria-labelledby="phEvidenceTitle">
+      <div class="ph-section-top"><div><div class="eyebrow">03 / READ THE EVIDENCE</div><h2 id="phEvidenceTitle">读图，也看计算证据</h2></div><button id="phDownload" type="button" class="ph-text-button" disabled>下载本地运行记录 ↓</button></div>
+      <div class="ph-stats"><div><span>实际图像</span><strong id="phNative">—</strong></div><div><span>光谱积分</span><strong id="phSpectralCount">—</strong></div><div><span>本次用时</span><strong id="phElapsed">—</strong></div><div><span>计算路径</span><strong id="phExecution">—</strong></div></div>
+      <p id="phMeasurement" class="ph-note">同一孔径、同一曝光。结果完成后显示实际后端、分阶段耗时与数值记录。</p>
+      <details class="ph-difference"><summary>查看 |波动 − 几何| 的逐像素亮度差</summary><div><canvas id="phDifferenceCanvas" width="512" height="512" aria-label="两幅原生图像 CIE Y 亮度的绝对差值，固定共用曝光"></canvas><p id="phDifferenceNote" class="ph-note">完成后可查看。差值为 CIE Y 的绝对差，使用与相机相同的曝光，无单独归一化。</p></div></details>
+      <p id="phWarnings" class="ph-warning" role="status"></p>
+      <details class="ph-report"><summary>本地诊断与阶段耗时</summary><p class="ph-note">仅包含有界参数与摘要，不含完整像素数组。记录只留在本地，不会自动上传。</p><pre id="phReport">尚无结果</pre></details>
+    </section>
+
+    <section id="phModel" class="ph-model" aria-labelledby="phModelTitle"><div class="eyebrow">WHAT THIS MODEL DOES</div><h2 id="phModelTitle">一台小孔相机，一条明确的物理边界。</h2><div class="ph-model-grid"><p>波动相机计算有限圆孔的标量近轴 Fresnel 传播。每个物点在孔径内相干叠加；不同物点与不同波长之间按强度相加。</p><p>三维场景采用可见表面的深度分层与空间不变点扩散近似。遮挡按孔中心可见性计算；部分孔径遮挡与视差误差只作诊断，不做完整传播。颜色来自光谱，再经 CIE XYZ 和 sRGB 显示。</p><p>这里只建模小孔的衍射，不是通用全局 Wave Tracing 或 Maxwell 全场解。没有玻璃透镜、折射、跨物点全局相干，也不加入绘制的环纹。</p></div></section>
+    <footer class="ph-footer">本地场景 · 本地计算 · 8 mm 探测器 · 50 mm 像距 <a href="wave-demo.html">查看三维局部散射实验 ↗</a></footer>
+  </main>
+</div>
+<script type="module" src="pinhole-app.js"></script>
+</body>
+</html>

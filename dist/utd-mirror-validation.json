@@ -1,0 +1,116 @@
+{
+  "scope": "One selected ideal infinite planar scalar mirror before or after one coherent local GO+UTD region; conditional f only",
+  "date": "2026-10-12",
+  "status": "validated within stated scope",
+  "physicalGPUValidated": false,
+  "browserRasterValidated": false,
+  "performanceOptimization": false,
+  "oldSlitChanged": false,
+  "admission": {
+    "groups": 16,
+    "conservativeWholeFamily": true,
+    "includes": [
+      "physical halfspaces and source projections",
+      "source disk and whole-region separation",
+      "grazing/order exclusion",
+      "all-path image-triangle swept-bound exclusion",
+      "strict planar reflection facets",
+      "prepared receiver support",
+      "blocker and corner preservation"
+    ]
+  },
+  "independent": {
+    "physicalFermatSommerfeldCases": 48,
+    "finiteStripConfigurations": 80,
+    "edgeContributions": 160,
+    "maxErrors": {
+      "field": 2.946561230572261e-12,
+      "power": 4.4646508712276045e-12,
+      "edgeField": 2.3299515786713154e-12,
+      "point": 7.66053886991358e-14,
+      "mirrorPoint": 9.302688506824683e-14,
+      "range": 1.7763568394002505e-14,
+      "sinBeta": 6.661338147750939e-16,
+      "transitionL": 3.197442310920451e-14,
+      "angle": 1.9984014443252818e-15,
+      "physicalEikonal": 1.4210854715202004e-14,
+      "phaseExcess": 7.871828189287555e-14,
+      "mirrorLaw": 1.6662594659381951e-15,
+      "stationarity": 2.516093740276882e-16,
+      "reflectionHelper": 4.739911241858271e-14,
+      "rigidField": 9.281491046187747e-15
+    },
+    "negativeControls": {
+      "omitSoftMirrorSign": 0.46584380124706676,
+      "useOnlyLastOutgoingLegForSpreading": 0.15776699373209635,
+      "useOnlyLastOutgoingLegForPhase": 0.44564205191272505
+    },
+    "scope": "Independent physical broken-path minimization and SciPy scalar coefficients; finite-strip UTD model, not an exact complete-scene solver"
+  },
+  "nativeWGSL": {
+    "adapter": {
+      "vendor": "google",
+      "architecture": "swiftshader",
+      "device": "swiftshader-device-subzero-",
+      "description": "SwiftShader driver 5.0.0",
+      "isFallbackAdapter": true
+    },
+    "compiler": "Dawn/Tint via webgpu 0.6.2",
+    "scenes": 23,
+    "pixels": 47959,
+    "validPixels": 33706,
+    "engineLifecycleCases": 15,
+    "localSpecularSeamCases": 2,
+    "localSpecularPixels": 792,
+    "maxToleranceRatio": 0.08695631143124778,
+    "maskMismatches": 0,
+    "edgeMismatches": 0,
+    "numericalFailures": 0,
+    "failedScenes": [],
+    "tolerance": {
+      "absolute": 0.00002,
+      "relative": 0.005,
+      "boundaryEpsilon": 0.000002
+    },
+    "gateContract": {
+      "basePoints": 25,
+      "maximumTotalPoints": 81,
+      "unchanged": true
+    },
+    "sourceHashes": {
+      "utd-functions.wgsl": "4dc0ea1c883dd46281fe221151d578a384aa852cf857a65e63feae6681e74281",
+      "utd-compute.wgsl": "d3c704cea6e438516baba9ce50a089086e82f5c23fc20dac8dd5505ff4089fc3"
+    },
+    "referenceHashes": {
+      "utd-scene.js": "bc0e4bded437c52e4a5836b8895b80ee27933014075aa1f101e2697d201a2d64",
+      "utd-mirror.js": "be25dc9d2e1b922ba807c0a17996ae43f4c867fe4b370404317a08564243424c",
+      "utd-gpu-pack.js": "4a9e8dd6639d2307432d021a6b14d2c23bcc9b588736c9fb79cccf92a5ca924e",
+      "utd-engine.js": "f54001ee35182b08f4ef7866f1d2a0e9014725c0e4a5c0d215e9fc11dd2c335a",
+      "utd-gpu-engine.js": "4f8654c5493fec4fcbad4d7fec9e7c59950115a93e78282f123f80f236eb8132"
+    }
+  },
+  "retainedRegressions": {
+    "originalNativeScenes": 15,
+    "axisCases": 1084,
+    "syntheticTrigNegativeControlPassed": true,
+    "diagnosticTracePassed": true,
+    "mockedLifecycleGroups": 25,
+    "gateCoverageGroups": 14,
+    "geometryGroups": 49,
+    "globalGeometryAdmissionGroups": 13,
+    "sceneGroups": 14,
+    "interpretedWGSLScenes": 26,
+    "interpretedWGSLPoints": 650,
+    "meshDOMGroups": 28,
+    "originalDOMPassed": true
+  },
+  "limitations": [
+    "No calibrated irradiance or complete-scene total field",
+    "No summation of different mirror/direct path families",
+    "No finite mirror aperture/rim diffraction",
+    "No two-diffraction or general successive-region PLT transport",
+    "Existing endpoint/corner/grazing/low-kr and absent-path masks stay active",
+    "Conservative geometric clearance does not certify electromagnetic error from omitted remote diffraction/penumbra",
+    "Runtime 25/81 parity is sampled; full-pixel validation here uses synthetic test scenes on a software adapter"
+  ]
+}

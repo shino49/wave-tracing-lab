@@ -1,0 +1,19 @@
+{
+  "buildId": "plt-resident-tight-interval-2026-10-13.5",
+  "allPass": true,
+  "sourceAndHostHashesMatchFrozenValidation": true,
+  "pinnedV20ReportsUnchanged": true,
+  "files": {
+    "tests/plt-resident-tight-transport.mjs": "e7f80a17e065465991ac089b545e6450b3393100df95602d7000d6c150be083f",
+    "tests/plt-resident-tight-submit-timing.mjs": "c9c69f4fcf27fcd5bf135c77b021f348d9621124e9d61a3a7f1b1506aeee99e3",
+    "research/plt-resident-tight-validation.json": "5accec3c0619d476fbc0c93e6d84a9adbd3be5b4a305b3ccfa64436b543eef6f",
+    "research/plt-resident-tight-submit-timing-validation.json": "c04e1940014c2abcb2545ad7db28b5a3503e052f90f996f3c801c759124ef86c",
+    "research/plt-resident-tight-transport.md": "247f42e795d2ec075d93abbc922d9ed6464259a68c8e64a6a9fed5ace7b66853",
+    "research/plt-resident-tight-submit-timing.md": "3456d221150357448dfc136cd781c8b409cb99f2b01ae42200e1e7df0b1081eb",
+    "research/plt-resident-tight-cpu-validation.json": "8a4fcb921dcaac6e7d3bd9216c49bce9d0a19f9362ce23000353d2a210b77f10",
+    "research/plt-resident-tight-compile-validation.json": "067e131e87449db7e5ea775233aefb9014dfdeb16be37a3f49f63f98c7b48459",
+    "research/plt-resident-tight-submit-timing-cpu-validation.json": "cd9a15bddf972028a0859d3f9325e5a6c294bb0012f705ef9cbdfefc133ec9c2",
+    "research/plt-resident-tight-submit-timing-compile-validation.json": "c9e80f5893e1704f6a95bad953e63ee83fd7397d0da94f6de1111fea591b19f3",
+    "research/plt-resident-tight-native-cache-control-validation.json": "0c3669f4753c972cc8fd98489e5a6d3c3a0ea2c088a490f06bf4cf1280f212be"
+  }
+}
